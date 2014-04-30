@@ -60,5 +60,10 @@ namespace PIC16F64_Simulator
         {
 
         }
+
+        private void versionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
