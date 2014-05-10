@@ -65,5 +65,20 @@ namespace PIC16F64_Simulator
         {
 
         }
+
+        private void gprBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trbSpeed_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label69_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
