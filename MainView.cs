@@ -63,7 +63,25 @@ namespace PIC16F64_Simulator
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(
+                " PIC16C84 Simulator "
+                + Environment.NewLine
+                + Environment.NewLine
+                + "TINF12B5"
+                + Environment.NewLine
+                + "Martin Zerler"
+                + Environment.NewLine
+                + "Denis Gauss"
+                + Environment.NewLine
+                + "Contact: martin.zerler@yahoo.de"
+                + Environment.NewLine
+                + Environment.NewLine
+                + "Last Update: 12.05 2014"
+                + Environment.NewLine
+                + "Version 1.0",
+                "Info",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void gprBox_Enter(object sender, EventArgs e)
@@ -78,7 +96,35 @@ namespace PIC16F64_Simulator
 
         private void label69_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void ladenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.InitialDirectory = "C:\\";
+            ofd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            ofd.Title = "Bitte Datei zum öffnen auswählen";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+             
+            }
+        }
+
+        private void List_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dokumentationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\doku.pdf");
+            }
+            catch { MessageBox.Show("doku.pdf not found", "File not found", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }
