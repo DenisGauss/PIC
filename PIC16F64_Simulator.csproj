@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Befehlszeile.cs" />
+    <Compile Include="BefehlszeilenSatz.cs" />
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
     </Compile>
