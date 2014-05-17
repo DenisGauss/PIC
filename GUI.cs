@@ -122,7 +122,7 @@ namespace PIC16F64_Simulator
         /// </summary>
         private void callParser(String filepath)
         {
-            Parser parse = new Parser(filepath);
+            Uebersetzter parse = new Uebersetzter(filepath);
             parse.readFile();
             fillListView();
         }//callParser()

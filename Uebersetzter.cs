@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PIC16F64_Simulator
 {
-    class Parser
+    class Uebersetzter
     {
 
         #region MemberVariables
@@ -19,14 +19,14 @@ namespace PIC16F64_Simulator
         /// <summary>
         /// Bekommt die Datei und übersetzt diese für die Anzeige
         /// </summary>
-        public Parser(String gui_filepath)
+        public Uebersetzter(String gui_filepath)
         {
 
         }
 
         public void readFile()
         {
-            CodeLine codeLine = new CodeLine();
+            Befehlszeile codeLine = new Befehlszeile();
             StreamReader streamReader = new StreamReader(filepath);
             String sLine = "";
             int lineNr = 0;
@@ -45,5 +45,6 @@ namespace PIC16F64_Simulator
             }
         }//readFile()
 
+    }
     }
 }
