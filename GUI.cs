@@ -113,6 +113,8 @@ namespace PIC16F64_Simulator
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                List.Items.Clear();
+                BefehlszeilenSatz.Instance.m_BefehlszeilenList.Clear();
                 callParser(ofd.FileName);
             }
         }
@@ -126,7 +128,18 @@ namespace PIC16F64_Simulator
             parse.readFile();
            // fillListView();
         }//callParser()
-
+        private void fillListView()
+        {
+            foreach (Befehlszeile zeile in BefehlszeilenSatz.Instance.m_BefehlszeilenList)
+            {
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(zeile.LineNr.ToString());
+                item.SubItems.Add(zeile.PclAsString);
+                item.SubItems.Add(zeile.State);
+                item.SubItems.Add(zeile.Command);
+                List.Items.Add(item);
+            }
+        }//fillListView()
         private void List_SelectedIndexChanged(object sender, EventArgs e)
         {
 

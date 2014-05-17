@@ -13,7 +13,7 @@ namespace PIC16F64_Simulator
 
         static readonly BefehlszeilenSatz instance = new BefehlszeilenSatz();
 
-        public List<Befehlszeile> m_BefehlszeileList { get; set; }
+        public List<Befehlszeile> m_BefehlszeilenList { get; set; }
 
         /// <summary>
         /// adds a Befehlszeile to the BefehlszeilenSatz
@@ -21,7 +21,7 @@ namespace PIC16F64_Simulator
         /// <param name="aLine"></param>
         public void addBefehlszeile(Befehlszeile aLine)
         {
-            m_BefehlszeileList.Add(aLine);
+            m_BefehlszeilenList.Add(aLine);
         } //addBefehlszeile()
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace PIC16F64_Simulator
         /// <returns></returns>
         public Befehlszeile getNextBefehlszeile(int pcl)
         {
-            foreach (Befehlszeile aLine in m_BefehlszeileList)
+            foreach (Befehlszeile aLine in m_BefehlszeilenList)
             {
                 if (aLine.Pcl == pcl)
                     return aLine;
@@ -56,7 +56,7 @@ namespace PIC16F64_Simulator
         /// </summary>
         private BefehlszeilenSatz()
         {
-            m_BefehlszeileList = new List<Befehlszeile>();
+            m_BefehlszeilenList = new List<Befehlszeile>();
         }//BefehlszeilenSatz()
     }
 }
