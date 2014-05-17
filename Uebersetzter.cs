@@ -12,7 +12,7 @@ namespace PIC16F64_Simulator
 
         #region MemberVariables
 
-        private String filepath;
+        private String m_sFilePath;
 
         #endregion
 
@@ -21,15 +21,15 @@ namespace PIC16F64_Simulator
         /// <summary>
         /// Bekommt die Datei und übersetzt diese für die Anzeige
         /// </summary>
-        public Uebersetzter(String gui_filepath)
+        public Uebersetzter(String filepath)
         {
-
+            this.m_sFilePath = filepath;
         }
 
         public void readFile()
         {
             Befehlszeile codeLine = new Befehlszeile();
-            StreamReader streamReader = new StreamReader(filepath);
+            StreamReader streamReader = new StreamReader(this.m_sFilePath);
             String sLine = "";
             int lineNr = 0;
             while (sLine != null)

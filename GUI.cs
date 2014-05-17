@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using System.Globalization;
 
 namespace PIC16F64_Simulator
 {
@@ -126,7 +128,7 @@ namespace PIC16F64_Simulator
         {
             Uebersetzter parse = new Uebersetzter(filepath);
             parse.readFile();
-           // fillListView();
+           fillListView();
         }//callParser()
         private void fillListView()
         {
