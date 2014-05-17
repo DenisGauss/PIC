@@ -1992,6 +1992,7 @@
         private PIC16F64_Simulator.GUI.NewListView List;
         private System.Windows.Forms.ColumnHeader columnBreakpoint;
         private System.Windows.Forms.ColumnHeader columnPC;
+        private System.Windows.Forms.ColumnHeader columnLineNr;
         private System.Windows.Forms.ColumnHeader columnState;
         private System.Windows.Forms.ColumnHeader columnCode;
         private System.Windows.Forms.Button button1;
