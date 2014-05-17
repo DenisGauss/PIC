@@ -14,6 +14,8 @@ namespace PIC16F64_Simulator
 
         private String filepath;
 
+        #endregion
+
         #region Functions
 
         /// <summary>
@@ -35,16 +37,17 @@ namespace PIC16F64_Simulator
                 sLine = streamReader.ReadLine();
                 if (sLine != null)
                 {
-                    codeLine = parseLine(sLine, lineNr);
+                   // codeLine = parseLine(sLine, lineNr);
                     if (codeLine != null)
                     {
-                        CodeLineSet.Instance.addCodeLine(codeLine);
+                       // CodeLineSet.Instance.addCodeLine(codeLine);
                         lineNr++;
                     }
                 }
             }
         }//readFile()
-
-    }
+        #endregion
     }
 }
+
+    

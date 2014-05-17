@@ -124,7 +124,7 @@ namespace PIC16F64_Simulator
         {
             Uebersetzter parse = new Uebersetzter(filepath);
             parse.readFile();
-            fillListView();
+           // fillListView();
         }//callParser()
 
         private void List_SelectedIndexChanged(object sender, EventArgs e)
