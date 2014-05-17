@@ -1479,38 +1479,38 @@
             this.List.FullRowSelect = true;
             this.List.GridLines = true;
             this.List.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.List.Location = new System.Drawing.Point(13, 70);
+            this.List.Location = new System.Drawing.Point(13, 160);
             this.List.MultiSelect = false;
             this.List.Name = "List";
-            this.List.Size = new System.Drawing.Size(330, 368);
+            this.List.Size = new System.Drawing.Size(395, 368);
             this.List.TabIndex = 7;
             this.List.UseCompatibleStateImageBehavior = false;
             this.List.View = System.Windows.Forms.View.Details;
             // 
             // columnBreakpoint
             // 
-            this.columnBreakpoint.Text = "Brp.";
-            this.columnBreakpoint.Width = 33;
+            this.columnBreakpoint.Text = "BP";
+            this.columnBreakpoint.Width = 28;
             // 
             // columnLineNr
             // 
-            this.columnLineNr.Text = "Nr";
-            this.columnLineNr.Width = 38;
+            this.columnLineNr.Text = "NR";
+            this.columnLineNr.Width = 40;
             // 
             // columnPC
             // 
             this.columnPC.Text = "PC";
-            this.columnPC.Width = 39;
+            this.columnPC.Width = 40;
             // 
             // columnState
             // 
-            this.columnState.Text = "States";
-            this.columnState.Width = 70;
+            this.columnState.Text = "SPRUNG";
+            this.columnState.Width = 100;
             // 
             // columnCode
             // 
-            this.columnCode.Text = "Code";
-            this.columnCode.Width = 146;
+            this.columnCode.Text = "PROGRAMMCODE";
+            this.columnCode.Width = 185;
             // 
             // button1
             // 
