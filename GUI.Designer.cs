@@ -17,6 +17,12 @@
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SpecialregisterGroup = new System.Windows.Forms.GroupBox();
+            this.List = new PIC16F64_Simulator.GUI.NewListView();
+            this.columnBreakpoint = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLineNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label84 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -123,7 +129,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbReg0C = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.List = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -1462,19 +1467,50 @@
             // 
             // List
             // 
-            this.List.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.List.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.List.CheckBoxes = true;
-            this.List.Cursor = System.Windows.Forms.Cursors.Default;
-            this.List.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.List.HideSelection = false;
-            this.List.Location = new System.Drawing.Point(12, 159);
+            this.List.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnBreakpoint,
+            this.columnLineNr,
+            this.columnPC,
+            this.columnState,
+            this.columnCode});
+            this.List.FullRowSelect = true;
+            this.List.GridLines = true;
+            this.List.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.List.Location = new System.Drawing.Point(13, 70);
             this.List.MultiSelect = false;
             this.List.Name = "List";
-            this.List.Size = new System.Drawing.Size(396, 485);
-            this.List.TabIndex = 10;
+            this.List.Size = new System.Drawing.Size(330, 368);
+            this.List.TabIndex = 7;
             this.List.UseCompatibleStateImageBehavior = false;
-            this.List.View = System.Windows.Forms.View.List;
-            this.List.SelectedIndexChanged += new System.EventHandler(this.List_SelectedIndexChanged);
+            this.List.View = System.Windows.Forms.View.Details;
+            // 
+            // columnBreakpoint
+            // 
+            this.columnBreakpoint.Text = "Brp.";
+            this.columnBreakpoint.Width = 33;
+            // 
+            // columnLineNr
+            // 
+            this.columnLineNr.Text = "Nr";
+            this.columnLineNr.Width = 38;
+            // 
+            // columnPC
+            // 
+            this.columnPC.Text = "PC";
+            this.columnPC.Width = 39;
+            // 
+            // columnState
+            // 
+            this.columnState.Text = "States";
+            this.columnState.Width = 70;
+            // 
+            // columnCode
+            // 
+            this.columnCode.Text = "Code";
+            this.columnCode.Width = 146;
             // 
             // button1
             // 
@@ -1953,7 +1989,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbReg0C;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView List;
+        private PIC16F64_Simulator.GUI.NewListView List;
+        private System.Windows.Forms.ColumnHeader columnBreakpoint;
+        private System.Windows.Forms.ColumnHeader columnPC;
+        private System.Windows.Forms.ColumnHeader columnState;
+        private System.Windows.Forms.ColumnHeader columnCode;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
