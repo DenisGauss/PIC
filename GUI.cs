@@ -14,6 +14,8 @@ namespace PIC16F64_Simulator
 {
     public partial class GUI : Form
     {
+
+        //Konstruktor
         public GUI()
         {
             InitializeComponent();
