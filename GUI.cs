@@ -143,6 +143,8 @@ namespace PIC16F64_Simulator
                 item.SubItems.Add(zeile.Command);
                 List.Items.Add(item);
             }
+            this.Refresh();
+            this.Invalidate();
         }//fillListView()
         private void List_SelectedIndexChanged(object sender, EventArgs e)
         {
