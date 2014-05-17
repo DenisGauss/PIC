@@ -108,8 +108,8 @@ namespace PIC16F64_Simulator
             OpenFileDialog ofd = new OpenFileDialog();
 
             ofd.InitialDirectory = "C:\\";
-            ofd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            ofd.Title = "Bitte Datei zum öffnen auswählen";
+            ofd.Filter = "LST-Datei (*.lst)|*lst";
+            ofd.Title = "Bitte LST-Datei zum öffnen auswählen";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
