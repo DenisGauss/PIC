@@ -122,9 +122,9 @@ namespace PIC16F64_Simulator
         /// </summary>
         private void callParser(String filepath)
         {
-            Parser parse = new Parser(filepath);
+            Uebersetzter parse = new Uebersetzter(filepath);
             parse.readFile();
-            fillListView();
+           // fillListView();
         }//callParser()
 
         private void List_SelectedIndexChanged(object sender, EventArgs e)
