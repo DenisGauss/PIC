@@ -1,6 +1,6 @@
 ﻿namespace PIC16F64_Simulator
 {
-    partial class MainView
+    partial class GUI
     {
         /// <summary>
         /// Erforderliche Designervariable.

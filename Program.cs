@@ -16,7 +16,7 @@ namespace PIC16F64_Simulator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            Application.Run(new GUI());
         }
     }
 }

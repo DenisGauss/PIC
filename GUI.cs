@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PIC16F64_Simulator
 {
-    public partial class MainView : Form
+    public partial class GUI : Form
     {
-        public MainView()
+        public GUI()
         {
             InitializeComponent();
         }
@@ -99,6 +99,10 @@ namespace PIC16F64_Simulator
             
         }
 
+
+        /// <summary>
+        /// Dateiauswahl mit Übergabe an den Parser
+        /// </summary>
         private void ladenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -109,9 +113,19 @@ namespace PIC16F64_Simulator
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-             
+                callParser(ofd.FileName);
             }
         }
+
+        /// <summary>
+        /// Übergibt dem Parser den Dateipfad, der diese dann für die Anzeige übersetzt
+        /// </summary>
+        private void callParser(String filepath)
+        {
+            Parser parse = new Parser(filepath);
+            parse.readFile();
+            fillListView();
+        }//callParser()
 
         private void List_SelectedIndexChanged(object sender, EventArgs e)
         {
