@@ -61,17 +61,17 @@ namespace PIC16F64_Simulator
         /// <summary>
         /// private member for the GPR Memory
         /// </summary>
-        private GPRMemory m_oGPRMemory;
+        //private GPRMemory m_oGPRMemory;
 
         /// <summary>
         /// private Member for the Working Register
         /// </summary>
-        private WRegister m_oWRegister;
+        //private WRegister m_oWRegister;
 
         /// <summary>
         /// private member for the SFR Memory
         /// </summary>
-        private SFRMemory m_oSFRMemory;
+        //private SFRMemory m_oSFRMemory;
 
         /// <summary>
         /// private member for the Watchdog
@@ -91,7 +91,7 @@ namespace PIC16F64_Simulator
         #endregion
 
         #region Getter/Setter
-
+        /*
         public SFRMemory getSFRMemory()
         {
             return this.m_oSFRMemory;
@@ -101,7 +101,7 @@ namespace PIC16F64_Simulator
         {
             return this.m_oGPRMemory;
         }
-
+        */
         #endregion
 
         #region Konstruktor
@@ -114,9 +114,9 @@ namespace PIC16F64_Simulator
             m_iDuration = 0;
             m_iSpeed = 250;
             m_iWatchDogTimer = 0;
-            m_oGPRMemory = new GPRMemory();
-            m_oWRegister = new WRegister();
-            m_oSFRMemory = new SFRMemory();
+            //m_oGPRMemory = new GPRMemory();
+            //m_oWRegister = new WRegister();
+            //m_oSFRMemory = new SFRMemory();
             m_oStack = new Stack();
            
         }//PicCPU()
@@ -141,7 +141,7 @@ namespace PIC16F64_Simulator
 
         public Befehlszeile getNextCodeLine(PIC aCpu)
         {
-            foreach (CodeLine aLine in BefehlszeilenSatz.Instance.m_CodeLineList)
+            foreach (Befehlszeile aLine in BefehlszeilenSatz.Instance.m_BefehlszeilenList)
             {
                 if (aCpu.m_iProgramCounter == aLine.Pcl)
                     return aLine;
