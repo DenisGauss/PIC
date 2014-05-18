@@ -61,7 +61,7 @@ namespace PIC16F64_Simulator
             else if ((opCode & 0x3E00) == 0x3C00) sublw();
             else if ((opCode & 0x3F00) == 0x3A00) xorlw();
         }//decodeOpCode
-        #endregion
+        #endregion 
     }
 
 }

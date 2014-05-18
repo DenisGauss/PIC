@@ -19,6 +19,7 @@ namespace PIC16F64_Simulator
         private Thread m_tCommandExecutor;
         private Befehlszeile m_letzteZeile;
         private PIC m_oPIC;
+        private bool checkWatchDog;
         #endregion
         //Konstruktor
         public GUI()
@@ -277,11 +278,13 @@ namespace PIC16F64_Simulator
             {
                 watchDogPanel.BackColor = Color.Green;
                 watchDogButton.Text = "Deaktivieren";
+                checkWatchDog=true;
             }
             else
             {
                 watchDogPanel.BackColor = Color.Red;
                 watchDogButton.Text = "Aktivieren";
+                checkWatchDog = false;
             }
 
 
