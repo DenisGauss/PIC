@@ -47,6 +47,7 @@
     <Compile Include="Befehle.cs" />
     <Compile Include="Befehlszeile.cs" />
     <Compile Include="BefehlszeilenSatz.cs" />
+    <Compile Include="Decoder.cs" />
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
     </Compile>
