@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Runtime.CompilerServices;
 using System.Collections;
+using System.Windows.Forms;
 
 
 namespace PIC16F64_Simulator
@@ -14,26 +15,27 @@ namespace PIC16F64_Simulator
 
         #region Variablen
 
+        private int[] m_aGPRMemory;
+        private int[] m_aSFRMemory;
+        private int[] m_aStack;
+
         private int m_iProgramCounter;
         private int m_iCommandCounter;
         private bool m_bStep;
         private int m_iCachedTrisA;
         private int m_iCachedTrisB;
-        private Stack m_oStack;
         private int m_iLatchPortA;
         private int m_iLatchPortB;
         private int m_iDuration;
-        private int[] m_aGPRMemory;
         private int m_iWRegister;
-        private int[] m_aSFRMemory;
         private int m_iWatchDogTimer;
         private int m_iPreScaler;
         private int m_iSpeed;
         private int m_iOpCode;
+        
+        private int m_iStackPointer;
 
         #endregion
-
-        #region Konstruktor
 
         public PIC()
         {
@@ -54,18 +56,23 @@ namespace PIC16F64_Simulator
             System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
             SFRinitialize();
 
-            m_oStack = new Stack();
+            // initialise Stack
+            m_aStack = new int[8];
+            System.Array.Clear(m_aStack, 0, 8);
 
         }//PIC()
 
-        #endregion
-
         #region Getter/Setter
+
+        public int[] getStack()
+        {
+            return this.m_aStack;
+        }
 
         public int[] getSFRMemory()
         {
             return this.m_aSFRMemory;
-        }//getSFRMemory()
+        }
 
         public int[] getGRPMemory()
         {
@@ -158,14 +165,11 @@ namespace PIC16F64_Simulator
             return this.m_iWRegister;
         }
 
-        public Stack getStack()
-        {
-            return this.m_oStack;
-        }
-
         #endregion
 
         #region Functions
+
+        #region Allgemeine Funktions
 
         /// <summary>
         /// returns the Codeline for the next m_sCommand
@@ -511,6 +515,8 @@ namespace PIC16F64_Simulator
             else if ((opCode & 0x3F00) == 0x3A00) xorlw();
         }//decodeOpCode
 
+        #endregion Allgemeine Funktions
+
         #region Reset Functions
         /// <summary>
         /// resets all member variables
@@ -526,8 +532,8 @@ namespace PIC16F64_Simulator
 
             resetGPRMemory();
             resetSFRMemory();
+            resetStack();
 
-            m_oStack = new Stack();
         }//resetCPU()
 
         public void resetWRegister()
@@ -544,6 +550,11 @@ namespace PIC16F64_Simulator
         {
             System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
         }//resetSFRMemory()
+
+        public void resetStack()
+        {
+            System.Array.Clear(m_aStack, 0, 8);
+        }//resetStack()
 
         #endregion Reset Funtions
 
@@ -742,6 +753,177 @@ namespace PIC16F64_Simulator
 
         #endregion SFRMemory Internals
         #endregion SFRMemory
+
+        #region Stack Functions
+
+        /// <summary>
+        /// pushes a new Adress on the Stack
+        /// </summary>
+        /// <param name="PCLValue"></param>
+        public bool pushStack(int PCLValue)
+        {
+            if (m_iStackPointer > 7)
+            {
+                MessageBox.Show("PIC-Stacküberlauf: Ausführung wird beendet...", "PIC-Stacküberlauf", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            m_aStack[m_iStackPointer] = PCLValue;
+            m_iStackPointer++;
+            return true;
+        }
+
+        /// <summary>
+        /// drops the last Adress from the Stack
+        /// </summary>
+        /// <returns></returns>
+        public int popStack()
+        {
+            m_iStackPointer--;
+            int value = m_aStack[m_iStackPointer];
+            m_aStack[m_iStackPointer] = 0x00;
+            return value;
+        }
+
+        #endregion Stack Functions
+
+        #region Interrupt Functions
+
+        /// <summary>
+        /// logic of INT Interrupt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void checkINTInterrupt()
+        {
+            //check if GIE and INTE and INTf are set
+            if (getBitAtPosition(getRegisterValue(0x0B), 7) && getBitAtPosition(getRegisterValue(0x0B), 4) && (getBitAtPosition(getRegisterValue(0x0B), 1)))
+            {
+                executeInterrupt();
+            }
+
+        }//checkINTInterrupt()
+
+        /// <summary>
+        /// checks if INTInterrupt occured and sets the INTF flag if yes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void INTInterrupt()
+        {
+            //check for rising/falling edge (if INTEDG == RB0)
+            if (getBitAtPosition(getRegisterValue(0x81), 6) == getBitAtPosition(getRegisterValue(0x06), 0))
+            {
+                //the interrupt occured, set the INTF Flag
+                setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 1, true));
+            }
+        }//INTInterrupt()
+
+        /// <summary>
+        /// logic of TMR0 Interrupt
+        /// </summary>
+        public void checkTMR0Interrupt()
+        {
+            //check if T0CS is not set -> timer mode active
+            if (getBitAtPosition(getRegisterValue(0x81), 5) == false)
+            {
+                //increment TMR0
+                int value = checkForOverflow(getRegisterValue(0x01) + 1);
+                setRegisterValue(0x01, value);
+
+                //check for TMR0 Overflow
+                if (getRegisterValue(0x01) == 0x00)
+                {
+                    //interrupt occured, set T0IF Flag
+                    setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 2, true));
+                }
+            }
+
+            //check if GIE and T0IE and TOIF are set
+            if (getBitAtPosition(getRegisterValue(0x0B), 7) && getBitAtPosition(getRegisterValue(0x0B), 5) && getBitAtPosition(getRegisterValue(0x0B), 2))
+            {
+                //execute the interrupt
+                executeInterrupt();
+            }
+
+        }//checkTMR0Interrupt()
+
+        /// <summary>
+        /// logic of PORT RB Interrupt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void checkPortRBInterrupt()
+        {
+            //check if RBIF is set
+            if (getBitAtPosition(getRegisterValue(0x0B), 0))
+            {
+                //check if GIE and RBIE are set
+                if (getBitAtPosition(getRegisterValue(0x0B), 7) && getBitAtPosition(getRegisterValue(0x0B), 3))
+                {
+                    //execute the interrupt
+                    executeInterrupt();
+                }
+            }
+        }//checkPortRbInterrupt()
+
+        /// <summary>
+        /// checks if PortRBInterrupt occured and sets RBIF if yes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void PortRBInterrupt()
+        {
+            //the interrupt occured, set the RBIF Flag
+            setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 0, true));
+        }//PortRBInterrupt()
+
+        /// <summary>
+        /// logic for the PortRA4 Event(T0CKI)
+        /// </summary>
+        public void PortRA4Interrupt()
+        {
+            //check if T0CS is set -> RA4 T0CKI active
+            if (getBitAtPosition(getRegisterValue(0x81), 5) == true)
+            {
+                //check for edge
+                if (getBitAtPosition(getRegisterValue(0x81), 4) != getBitAtPosition(getRegisterValue(0x05), 4))
+                {
+                    //check if prescaler is assigned to tmr0
+                    if (getBitAtPosition(getRegisterValue(0x81), 3) == false)
+                        incPreScaler();
+
+                    //check if prescaler is assigned to watchdog
+                    if (getBitAtPosition(getRegisterValue(0x81), 3) == true)
+                    {
+                        //increment TMR0
+                        int value = checkForOverflow(getRegisterValue(0x01) + 1);
+                        setRegisterValue(0x01, value);
+
+                        //check for TMR0 Overflow
+                        if (getRegisterValue(0x01) == 0x00)
+                        {
+                            //interrupt occured, set T0IF Flag
+                            setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 2, true));
+                        }
+                    }
+                }
+            }
+        }//portRA4Interrupt()
+
+        /// <summary>
+        /// executes an interrupt
+        /// </summary>
+        /// 
+        public void executeInterrupt()
+        {
+            //set GIE to 0
+            setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 7, false));
+            pushStack(ProgramCounter);
+            ProgramCounter = 0x04;
+        }//executeInterrupt()
+
+        #endregion Interrupt Functions
 
         #endregion
     }

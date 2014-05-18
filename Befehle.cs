@@ -92,7 +92,7 @@ namespace PIC16F64_Simulator
         private void re_turn()
         {
             CommandCounter++;
-            ProgramCounter = m_oStack.popStack();
+            ProgramCounter = popStack();
             Duration += 2;
 
             checkInterrupts_doubleTMRO();
@@ -105,7 +105,7 @@ namespace PIC16F64_Simulator
             WRegisterValue = m_iOpCode & 0xFF;
 
             //get last pcl on stack
-            ProgramCounter = m_oStack.popStack();
+            ProgramCounter = popStack();
 
             CommandCounter++;
             Duration += 2;
@@ -116,7 +116,7 @@ namespace PIC16F64_Simulator
         //implemented
         private void retfie()
         {
-            ProgramCounter = m_oStack.popStack();
+            ProgramCounter = popStack();
 
             //set GIE to 1
             setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 7, true));
@@ -183,7 +183,7 @@ namespace PIC16F64_Simulator
         private void call()
         {
             //pcl of next instruction to stack
-            m_oStack.pushStack(++ProgramCounter);
+            pushStack(++ProgramCounter);
 
             //set pcl to the called pcl
             ProgramCounter = m_iOpCode & 0x7FF;
