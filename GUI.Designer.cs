@@ -141,8 +141,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.watchDogPanel = new System.Windows.Forms.Panel();
+            this.watchDogButton = new System.Windows.Forms.Button();
             this.trbSpeed = new System.Windows.Forms.TrackBar();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.stackBox = new System.Windows.Forms.GroupBox();
@@ -199,14 +199,14 @@
             // ladenToolStripMenuItem
             // 
             this.ladenToolStripMenuItem.Name = "ladenToolStripMenuItem";
-            this.ladenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ladenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.ladenToolStripMenuItem.Text = "Laden";
             this.ladenToolStripMenuItem.Click += new System.EventHandler(this.ladenToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -1621,8 +1621,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.panel2);
-            this.groupBox4.Controls.Add(this.button9);
+            this.groupBox4.Controls.Add(this.watchDogPanel);
+            this.groupBox4.Controls.Add(this.watchDogButton);
             this.groupBox4.Location = new System.Drawing.Point(414, 151);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(112, 52);
@@ -1630,22 +1630,23 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Watchdog";
             // 
-            // panel2
+            // watchDogPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Location = new System.Drawing.Point(89, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(17, 23);
-            this.panel2.TabIndex = 2;
+            this.watchDogPanel.BackColor = System.Drawing.Color.Red;
+            this.watchDogPanel.Location = new System.Drawing.Point(89, 20);
+            this.watchDogPanel.Name = "watchDogPanel";
+            this.watchDogPanel.Size = new System.Drawing.Size(17, 23);
+            this.watchDogPanel.TabIndex = 2;
             // 
-            // button9
+            // watchDogButton
             // 
-            this.button9.Location = new System.Drawing.Point(7, 20);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "Aktivieren";
-            this.button9.UseVisualStyleBackColor = true;
+            this.watchDogButton.Location = new System.Drawing.Point(7, 20);
+            this.watchDogButton.Name = "watchDogButton";
+            this.watchDogButton.Size = new System.Drawing.Size(75, 23);
+            this.watchDogButton.TabIndex = 0;
+            this.watchDogButton.Text = "Aktivieren";
+            this.watchDogButton.UseVisualStyleBackColor = true;
+            this.watchDogButton.Click += new System.EventHandler(this.watchDogButton_Click);
             // 
             // trbSpeed
             // 
@@ -2008,8 +2009,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel watchDogPanel;
+        private System.Windows.Forms.Button watchDogButton;
         private System.Windows.Forms.TrackBar trbSpeed;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox stackBox;

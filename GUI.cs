@@ -18,6 +18,7 @@ namespace PIC16F64_Simulator
         #region Variablen
         private Thread m_tCommandExecutor;
         private Befehlszeile m_letzteZeile;
+        private PIC m_oPIC;
         #endregion
         //Konstruktor
         public GUI()
@@ -190,7 +191,7 @@ namespace PIC16F64_Simulator
             //possible because pcl is initialized with 0
            // LoadCommand(m_oPicCpu.getNextCodeLine(m_oPicCpu));
         }//run()
-        /*public void LoadCommand(Befehlszeile aktuelleZeile)
+        public void LoadCommand(Befehlszeile aktuelleZeile)
         {
              if (aktuelleZeile == null)
              {
@@ -234,33 +235,33 @@ namespace PIC16F64_Simulator
              });
 
              //cache TrisA&TrisB for latch logic
-             m_oPicCpu.cachedTrisA = m_oPicCpu.getRegisterValue(0x85);
-             m_oPicCpu.cachedTrisB = m_oPicCpu.getRegisterValue(0x86);
+             m_oPIC.cachedTrisA = m_oPIC.getRegisterValue(0x85);
+             m_oPIC.cachedTrisB = m_oPIC.getRegisterValue(0x86);
 
              //execute the Assembler command set get ProgramCounter for the next Command
-             m_oPicCpu.executeCommand(aktuelleZeile);
+             m_oPIC.executeCommand(aktuelleZeile);
 
              //check if TrisA or TrisB was changed (Latch Logic)
-             if (m_oPicCpu.cachedTrisA != m_oPicCpu.getRegisterValue(0x85))
-                 m_oPicCpu.writeLatchToPort(m_oPicCpu.getRegisterValue(0x85), 0x05, m_oPicCpu.LatchA);
+             if (m_oPIC.cachedTrisA != m_oPIC.getRegisterValue(0x85))
+                 m_oPIC.writeLatchToPort(m_oPIC.getRegisterValue(0x85), 0x05, m_oPIC.LatchA);
 
-             if (m_oPicCpu.cachedTrisB != m_oPicCpu.getRegisterValue(0x86))
-                 m_oPicCpu.writeLatchToPort(m_oPicCpu.getRegisterValue(0x86), 0x06, m_oPicCpu.LatchB);
+             if (m_oPIC.cachedTrisB != m_oPIC.getRegisterValue(0x86))
+                 m_oPIC.writeLatchToPort(m_oPIC.getRegisterValue(0x86), 0x06, m_oPIC.LatchB);
 
              //checks if watchdog is globally enabled
              if (cbWatchDog.Checked)
               {
-                  m_oPicCpu.incWatchDog();
+                  m_oPIC.incWatchDog();
               }
              
              //wait 500ms before executing the next Command
-             m_oPicCpu.timeOut(m_oPicCpu.Speed);
+             m_oPIC.timeOut(m_oPIC.Speed);
 
              //check if step-button was pushed
-             if (m_oPicCpu.Step == false)
+             if (m_oPIC.Step == false)
              {
                  //call this function again with the codeLine for the next Command
-                 LoadCommand(BefehlszeilenSatz.Instance.getNextBefehlszeile(m_oPicCpu.ProgramCounter));
+                 LoadCommand(BefehlszeilenSatz.Instance.getNextBefehlszeile(m_oPIC.ProgramCounter));
              }
              else
              {
@@ -268,7 +269,25 @@ namespace PIC16F64_Simulator
                  return;
              }
 
-        } */
+        }
+
+        private void watchDogButton_Click(object sender, EventArgs e)
+        {
+            if (watchDogPanel.BackColor == Color.Red)
+            {
+                watchDogPanel.BackColor = Color.Green;
+                watchDogButton.Text = "Deaktivieren";
+            }
+            else
+            {
+                watchDogPanel.BackColor = Color.Red;
+                watchDogButton.Text = "Aktivieren";
+            }
+
+
+
+
+        } 
 
     }
 }
