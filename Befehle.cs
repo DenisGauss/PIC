@@ -41,10 +41,10 @@ namespace PIC16F64_Simulator
             int lit = m_iOpCode & 0xFF;
 
             //xor literal and w and safe in w
-            m_oWRegister.WRegisterValue = lit ^ m_oWRegister.WRegisterValue;
+            WRegisterValue = lit ^ WRegisterValue;
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(m_oWRegister.WRegisterValue);
+            checkForZeroSetOrUnset(WRegisterValue);
 
             checkInterrupts_IncCounters();
         }
@@ -56,18 +56,18 @@ namespace PIC16F64_Simulator
             int value = m_iOpCode & 0xFF;
 
             //check if carry has to be set or unset
-            m_oSFRMemory.checkForCarrySetOrUnsetSubstraction(value - m_oWRegister.WRegisterValue);
+            checkForCarrySetOrUnsetSubstraction(value - WRegisterValue);
 
             //check if digit carry has to be set or unset
-            m_oSFRMemory.checkForDcSetOrUnsetSubstraction((value & 0xF) - (m_oWRegister.WRegisterValue & 0xF));
+            checkForDcSetOrUnsetSubstraction((value & 0xF) - (WRegisterValue & 0xF));
 
             //check for overflow and get value from adress
-            value = checkForOverflow(value - m_oWRegister.WRegisterValue);
+            value = checkForOverflow(value - WRegisterValue);
 
-            m_oWRegister.WRegisterValue = value;
+            WRegisterValue = value;
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -79,10 +79,10 @@ namespace PIC16F64_Simulator
             WatchDog = 0;
 
             //set /TO Flag
-            m_oSFRMemory.setTOFlag();
+            setTOFlag();
 
             //unset /PD Flag
-            m_oSFRMemory.unsetPDFlag();
+            unsetPDFlag();
 
             checkInterrupts_IncCounters();
         }
@@ -101,7 +101,7 @@ namespace PIC16F64_Simulator
         private void retlw()
         {
             //set wregister to the literal
-            m_oWRegister.WRegisterValue = m_iOpCode & 0xFF;
+            WRegisterValue = m_iOpCode & 0xFF;
 
             //get last pcl on stack
             ProgramCounter = m_oStack.popStack();
@@ -133,7 +133,7 @@ namespace PIC16F64_Simulator
             int lit = m_iOpCode & 0x00FF;
 
             //move literal to w
-            m_oWRegister.WRegisterValue = lit;
+            WRegisterValue = lit;
 
             checkInterrupts_IncCounters();
         }
@@ -145,10 +145,10 @@ namespace PIC16F64_Simulator
             int lit = m_iOpCode & 0xFF;
 
             //xor literal and w and safe in w
-            m_oWRegister.WRegisterValue = lit | m_oWRegister.WRegisterValue;
+            WRegisterValue = lit | WRegisterValue;
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(m_oWRegister.WRegisterValue);
+            checkForZeroSetOrUnset(WRegisterValue);
 
             checkInterrupts_IncCounters();
         }
@@ -170,10 +170,10 @@ namespace PIC16F64_Simulator
             WatchDog = 0;
 
             //set TO Flag
-            m_oSFRMemory.setTOFlag();
+            setTOFlag();
 
             //set PD Flag
-            m_oSFRMemory.setPDFlag();
+            setPDFlag();
 
             checkInterrupts_IncCounters();
         }
@@ -197,12 +197,12 @@ namespace PIC16F64_Simulator
         private void andlw()
         {
             //check for overflow and get value from adress
-            int value = (m_iOpCode & 0xFF) & m_oWRegister.WRegisterValue;
+            int value = (m_iOpCode & 0xFF) & WRegisterValue;
 
-            m_oWRegister.WRegisterValue = value;
+            WRegisterValue = value;
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -213,18 +213,18 @@ namespace PIC16F64_Simulator
             int value = m_iOpCode & 0xFF;
 
             //check if carry has to be set or unset
-            m_oSFRMemory.checkForCarrySetOrUnset(value + m_oWRegister.WRegisterValue);
+            checkForCarrySetOrUnset(value + WRegisterValue);
 
             //check if digit carry has to be set or unset
-            m_oSFRMemory.checkForDcSetOrUnset((value & 0xF) + (m_oWRegister.WRegisterValue & 0xF));
+            checkForDcSetOrUnset((value & 0xF) + (WRegisterValue & 0xF));
 
             //check for overflow and get value from adress
-            value = checkForOverflow(value + m_oWRegister.WRegisterValue);
+            value = checkForOverflow(value + WRegisterValue);
 
-            m_oWRegister.WRegisterValue = value;
+            WRegisterValue = value;
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -366,7 +366,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -394,10 +394,10 @@ namespace PIC16F64_Simulator
             addr = checkMirrorBankAddress(addr);
 
             //check if carry is set or not
-            bool carryIsSet = m_oSFRMemory.checkCarryFlag();
+            bool carryIsSet = checkCarryFlag();
 
             //check if bit0 is 1 -> if yes set carry
-            if ((getRegisterValue(addr) & 0x01) == 0x01) m_oSFRMemory.setCarry();
+            if ((getRegisterValue(addr) & 0x01) == 0x01) setCarry();
 
             //check for overflow and get value from adress
             int value = getRegisterValue(addr) >> 1;
@@ -409,7 +409,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -434,13 +434,13 @@ namespace PIC16F64_Simulator
             addr = checkMirrorBankAddress(addr);
 
             //check for overflow and get value from adress
-            int value = getRegisterValue(addr) ^ m_oWRegister.WRegisterValue;
+            int value = getRegisterValue(addr) ^ WRegisterValue;
 
             //check target
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -453,7 +453,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -474,19 +474,19 @@ namespace PIC16F64_Simulator
             addr = checkMirrorBankAddress(addr);
 
             //check if carry has to be set or unset
-            m_oSFRMemory.checkForCarrySetOrUnsetSubstraction(getRegisterValue(addr) - m_oWRegister.WRegisterValue);
+            checkForCarrySetOrUnsetSubstraction(getRegisterValue(addr) - WRegisterValue);
 
             //check if digit carry has to be set or unset
-            m_oSFRMemory.checkForDcSetOrUnsetSubstraction((getRegisterValue(addr) & 0xF) - (m_oWRegister.WRegisterValue & 0xF));
+            checkForDcSetOrUnsetSubstraction((getRegisterValue(addr) & 0xF) - (WRegisterValue & 0xF));
 
             //check for overflow and get value from adress
-            int value = checkForOverflow(getRegisterValue(addr) - m_oWRegister.WRegisterValue);
+            int value = checkForOverflow(getRegisterValue(addr) - WRegisterValue);
 
             //check target
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -499,7 +499,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -513,10 +513,10 @@ namespace PIC16F64_Simulator
             //check for mirrored adresses (if bank1 is active)
             addr = checkMirrorBankAddress(addr);
 
-            bool carryIsSet = m_oSFRMemory.checkCarryFlag();
+            bool carryIsSet = checkCarryFlag();
 
             //check if carry has to be set or unset
-            m_oSFRMemory.checkForCarrySetOrUnset(getRegisterValue(addr) << 1);
+            checkForCarrySetOrUnset(getRegisterValue(addr) << 1);
 
             //check for overflow and get value from adress
             int value = checkForOverflow(getRegisterValue(addr) << 1);
@@ -528,7 +528,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -554,9 +554,9 @@ namespace PIC16F64_Simulator
 
             //set f = wregister
             if (addr == 0x05 || addr == 0x06)
-                checkLatchLogic(addr, m_oWRegister.WRegisterValue);
+                checkLatchLogic(addr, WRegisterValue);
             else
-                setRegisterValue(addr, m_oWRegister.WRegisterValue);
+                setRegisterValue(addr, WRegisterValue);
 
             checkInterrupts_IncCounters();
         }
@@ -576,7 +576,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -588,9 +588,9 @@ namespace PIC16F64_Simulator
                     setRegisterValue(addr, value);
             }
 
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
-            checkINT_IncCounters;
+            checkInterrupts_IncCounters();
         }
 
         //implemented
@@ -603,13 +603,13 @@ namespace PIC16F64_Simulator
             addr = checkMirrorBankAddress(addr);
 
             //get value from adress
-            int value = getRegisterValue(addr) | m_oWRegister.WRegisterValue;
+            int value = getRegisterValue(addr) | WRegisterValue;
 
             //check target
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -622,7 +622,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -643,7 +643,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -688,7 +688,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -701,7 +701,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -722,7 +722,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -760,19 +760,19 @@ namespace PIC16F64_Simulator
             addr = checkMirrorBankAddress(addr);
 
             //check if carry has to be set or unset
-            m_oSFRMemory.checkForCarrySetOrUnset(getRegisterValue(addr) + m_oWRegister.WRegisterValue);
+            checkForCarrySetOrUnset(getRegisterValue(addr) + WRegisterValue);
 
             //check if digit carry has to be set or unset
-            m_oSFRMemory.checkForDcSetOrUnset((getRegisterValue(addr) & 0xF) + (m_oWRegister.WRegisterValue & 0xF));
+            checkForDcSetOrUnset((getRegisterValue(addr) & 0xF) + (WRegisterValue & 0xF));
 
             //check for overflow and get value from adress
-            int value = checkForOverflow(getRegisterValue(addr) + m_oWRegister.WRegisterValue);
+            int value = checkForOverflow(getRegisterValue(addr) + WRegisterValue);
 
             //check target
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -785,7 +785,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -800,13 +800,13 @@ namespace PIC16F64_Simulator
             addr = checkMirrorBankAddress(addr);
 
             //check for overflow and get value from adress
-            int value = getRegisterValue(addr) & m_oWRegister.WRegisterValue;
+            int value = getRegisterValue(addr) & WRegisterValue;
 
             //check target
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -819,7 +819,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -840,7 +840,7 @@ namespace PIC16F64_Simulator
                 setRegisterValue(addr, 0x00);
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(getRegisterValue(addr));
+            checkForZeroSetOrUnset(getRegisterValue(addr));
 
             checkInterrupts_IncCounters();
         }
@@ -848,10 +848,10 @@ namespace PIC16F64_Simulator
         //implemented
         private void clrw()
         {
-            m_oWRegister.WRegisterValue = 0x00;
+            WRegisterValue = 0x00;
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(0);
+            checkForZeroSetOrUnset(0);
 
             checkInterrupts_IncCounters();
         }
@@ -872,7 +872,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -885,7 +885,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
@@ -906,7 +906,7 @@ namespace PIC16F64_Simulator
             if ((m_iOpCode & 0x80) == 0)
             {
                 //target = working register
-                m_oWRegister.WRegisterValue = value;
+                WRegisterValue = value;
             }
             else if ((m_iOpCode & 0x80) == 128)
             {
@@ -919,7 +919,7 @@ namespace PIC16F64_Simulator
             }
 
             //check if zero has to be set or unset
-            m_oSFRMemory.checkForZeroSetOrUnset(value);
+            checkForZeroSetOrUnset(value);
 
             checkInterrupts_IncCounters();
         }
