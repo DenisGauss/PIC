@@ -25,7 +25,7 @@ namespace PIC16F64_Simulator
         public GUI()
         {
             InitializeComponent();
-            //m_oPIC = new PIC();
+            m_oPIC = new PIC();
             checkWatchDog = false;
         }
 
@@ -192,7 +192,7 @@ namespace PIC16F64_Simulator
         private void start()
         {
             //possible because pcl is initialized with 0
-           // LoadCommand(m_oPicCpu.getNextCodeLine(m_oPicCpu));
+            LoadCommand(m_oPIC.getNextBefehlszeile(m_oPIC));
         }//run()
         public void LoadCommand(Befehlszeile aktuelleZeile)
         {
