@@ -8,7 +8,7 @@ namespace PIC16F64_Simulator
 {
     public partial class PIC
     {
-        //yolo
+        
         #region shortcuts
         private void checkInterrupts()
         {
