@@ -25,6 +25,7 @@ namespace PIC16F64_Simulator
         public GUI()
         {
             InitializeComponent();
+            checkWatchDog = false;
         }
 
         private void saveFile_FileOk(object sender, CancelEventArgs e)
@@ -250,7 +251,7 @@ namespace PIC16F64_Simulator
                  m_oPIC.writeLatchToPort(m_oPIC.getRegisterValue(0x86), 0x06, m_oPIC.LatchB);
 
              //checks if watchdog is globally enabled
-             if (cbWatchDog.Checked)
+             if (checkWatchDog)
               {
                   m_oPIC.incWatchDog();
               }
