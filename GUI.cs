@@ -15,6 +15,10 @@ namespace PIC16F64_Simulator
     public partial class GUI : Form
     {
 
+        #region Variablen
+        private Thread m_tCommandExecutor;
+        private Befehlszeile m_letzteZeile;
+        #endregion
         //Konstruktor
         public GUI()
         {
@@ -100,7 +104,7 @@ namespace PIC16F64_Simulator
 
         private void label69_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -130,7 +134,7 @@ namespace PIC16F64_Simulator
         {
             Uebersetzter parse = new Uebersetzter(filepath);
             parse.readFile();
-           fillListView();
+            fillListView();
         }//callParser()
         private void fillListView()
         {
@@ -143,8 +147,7 @@ namespace PIC16F64_Simulator
                 item.SubItems.Add(zeile.Command);
                 List.Items.Add(item);
             }
-            this.Refresh();
-            this.Invalidate();
+           
         }//fillListView()
         private void List_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -159,5 +162,113 @@ namespace PIC16F64_Simulator
             }
             catch { MessageBox.Show("doku.pdf not found", "File not found", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
+
+        private Object InvokeIfRequired(Control target, Delegate methodToInvoke)
+        {
+            if (target.InvokeRequired)
+            {
+                // the control must be changed by invoke since it comes from a background thread.
+                return target.Invoke(methodToInvoke);
+            }
+            else
+            {
+                // The control can be changed directly
+                return methodToInvoke.DynamicInvoke();
+            }
+        }//InvokeIfRequired()
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            startButton.Enabled = false;
+            resetButton.Enabled = true;
+            ladenToolStripMenuItem.Enabled = false;
+            m_tCommandExecutor = new Thread(new ThreadStart(start));
+            m_tCommandExecutor.Start();
+        }
+        private void start()
+        {
+            //possible because pcl is initialized with 0
+           // LoadCommand(m_oPicCpu.getNextCodeLine(m_oPicCpu));
+        }//run()
+        /*public void LoadCommand(Befehlszeile aktuelleZeile)
+        {
+             if (aktuelleZeile == null)
+             {
+                 InvokeIfRequired(startButton, (MethodInvoker)delegate()
+                 {
+                     startButton.Enabled = true;
+                 });
+                 return;
+             }
+
+             //unmark previous codeLine
+             InvokeIfRequired(List, (MethodInvoker)delegate()
+             {
+                 if (m_letzteZeile != null)
+                 {
+                     List.Items[m_letzteZeile.LineNr].BackColor = Color.White;
+                 }
+
+             });
+             //highlight current codeline
+             InvokeIfRequired(List, (MethodInvoker)delegate()
+             {
+                 List.Items[aktuelleZeile.LineNr].BackColor = Color.LightSkyBlue;
+                 m_letzteZeile = aktuelleZeile;
+                 List.EnsureVisible(aktuelleZeile.LineNr);
+             });
+
+             //update gui
+            // GUIUpdate();
+
+             //check for breakpoint
+             InvokeIfRequired(List, (MethodInvoker)delegate()
+             {
+                 if (List.Items[aktuelleZeile.LineNr].Checked == true)
+                 {
+                     List.Items[aktuelleZeile.LineNr].Checked = false;
+                     startButton.Enabled = true;
+                     m_tCommandExecutor.Abort();
+                     return;
+                 }
+             });
+
+             //cache TrisA&TrisB for latch logic
+             m_oPicCpu.cachedTrisA = m_oPicCpu.getRegisterValue(0x85);
+             m_oPicCpu.cachedTrisB = m_oPicCpu.getRegisterValue(0x86);
+
+             //execute the Assembler command set get ProgramCounter for the next Command
+             m_oPicCpu.executeCommand(aktuelleZeile);
+
+             //check if TrisA or TrisB was changed (Latch Logic)
+             if (m_oPicCpu.cachedTrisA != m_oPicCpu.getRegisterValue(0x85))
+                 m_oPicCpu.writeLatchToPort(m_oPicCpu.getRegisterValue(0x85), 0x05, m_oPicCpu.LatchA);
+
+             if (m_oPicCpu.cachedTrisB != m_oPicCpu.getRegisterValue(0x86))
+                 m_oPicCpu.writeLatchToPort(m_oPicCpu.getRegisterValue(0x86), 0x06, m_oPicCpu.LatchB);
+
+             //checks if watchdog is globally enabled
+             if (cbWatchDog.Checked)
+              {
+                  m_oPicCpu.incWatchDog();
+              }
+             
+             //wait 500ms before executing the next Command
+             m_oPicCpu.timeOut(m_oPicCpu.Speed);
+
+             //check if step-button was pushed
+             if (m_oPicCpu.Step == false)
+             {
+                 //call this function again with the codeLine for the next Command
+                 LoadCommand(BefehlszeilenSatz.Instance.getNextBefehlszeile(m_oPicCpu.ProgramCounter));
+             }
+             else
+             {
+                 m_tCommandExecutor.Abort();
+                 return;
+             }
+
+        } */
+
     }
 }

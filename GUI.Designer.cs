@@ -17,12 +17,6 @@
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SpecialregisterGroup = new System.Windows.Forms.GroupBox();
-            this.List = new PIC16F64_Simulator.GUI.NewListView();
-            this.columnBreakpoint = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnLineNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnPC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label84 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -55,6 +49,12 @@
             this.tbReg02 = new System.Windows.Forms.TextBox();
             this.tbReg01 = new System.Windows.Forms.TextBox();
             this.tbReg00 = new System.Windows.Forms.TextBox();
+            this.List = new PIC16F64_Simulator.GUI.NewListView();
+            this.columnBreakpoint = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLineNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.gprBox = new System.Windows.Forms.GroupBox();
             this.tbReg2D = new System.Windows.Forms.TextBox();
@@ -129,10 +129,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbReg0C = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.startButton = new System.Windows.Forms.Button();
+            this.stopButton = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -622,6 +622,53 @@
             this.tbReg00.TabIndex = 87;
             this.tbReg00.Text = "0x00";
             this.tbReg00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // List
+            // 
+            this.List.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.List.CheckBoxes = true;
+            this.List.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnBreakpoint,
+            this.columnLineNr,
+            this.columnPC,
+            this.columnState,
+            this.columnCode});
+            this.List.FullRowSelect = true;
+            this.List.GridLines = true;
+            this.List.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.List.Location = new System.Drawing.Point(13, 160);
+            this.List.MultiSelect = false;
+            this.List.Name = "List";
+            this.List.Size = new System.Drawing.Size(395, 368);
+            this.List.TabIndex = 7;
+            this.List.UseCompatibleStateImageBehavior = false;
+            this.List.View = System.Windows.Forms.View.Details;
+            // 
+            // columnBreakpoint
+            // 
+            this.columnBreakpoint.Text = "BP";
+            this.columnBreakpoint.Width = 28;
+            // 
+            // columnLineNr
+            // 
+            this.columnLineNr.Text = "NR";
+            this.columnLineNr.Width = 40;
+            // 
+            // columnPC
+            // 
+            this.columnPC.Text = "PC";
+            this.columnPC.Width = 40;
+            // 
+            // columnState
+            // 
+            this.columnState.Text = "SPRUNG";
+            this.columnState.Width = 100;
+            // 
+            // columnCode
+            // 
+            this.columnCode.Text = "PROGRAMMCODE";
+            this.columnCode.Width = 185;
             // 
             // openFileDialog1
             // 
@@ -1465,95 +1512,49 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "0Ch";
             // 
-            // List
+            // startButton
             // 
-            this.List.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.List.CheckBoxes = true;
-            this.List.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnBreakpoint,
-            this.columnLineNr,
-            this.columnPC,
-            this.columnState,
-            this.columnCode});
-            this.List.FullRowSelect = true;
-            this.List.GridLines = true;
-            this.List.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.List.Location = new System.Drawing.Point(13, 160);
-            this.List.MultiSelect = false;
-            this.List.Name = "List";
-            this.List.Size = new System.Drawing.Size(395, 368);
-            this.List.TabIndex = 7;
-            this.List.UseCompatibleStateImageBehavior = false;
-            this.List.View = System.Windows.Forms.View.Details;
+            this.startButton.Location = new System.Drawing.Point(6, 19);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.TabIndex = 11;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // columnBreakpoint
+            // stopButton
             // 
-            this.columnBreakpoint.Text = "BP";
-            this.columnBreakpoint.Width = 28;
+            this.stopButton.Location = new System.Drawing.Point(87, 19);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Size = new System.Drawing.Size(75, 23);
+            this.stopButton.TabIndex = 12;
+            this.stopButton.Text = "Stop";
+            this.stopButton.UseVisualStyleBackColor = true;
             // 
-            // columnLineNr
+            // nextButton
             // 
-            this.columnLineNr.Text = "NR";
-            this.columnLineNr.Width = 40;
+            this.nextButton.Location = new System.Drawing.Point(168, 19);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 13;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = true;
             // 
-            // columnPC
+            // resetButton
             // 
-            this.columnPC.Text = "PC";
-            this.columnPC.Width = 40;
-            // 
-            // columnState
-            // 
-            this.columnState.Text = "SPRUNG";
-            this.columnState.Width = 100;
-            // 
-            // columnCode
-            // 
-            this.columnCode.Text = "PROGRAMMCODE";
-            this.columnCode.Width = 185;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(87, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(168, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Next";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(249, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Reset";
-            this.button6.UseVisualStyleBackColor = true;
+            this.resetButton.Location = new System.Drawing.Point(249, 19);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.TabIndex = 16;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.startButton);
+            this.groupBox1.Controls.Add(this.resetButton);
+            this.groupBox1.Controls.Add(this.stopButton);
+            this.groupBox1.Controls.Add(this.nextButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(396, 54);
@@ -1862,7 +1863,7 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Sonstige Werte";
             // 
-            // MainView
+            // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1879,7 +1880,7 @@
             this.Controls.Add(this.SpecialregisterGroup);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainView";
+            this.Name = "GUI";
             this.Text = "PIC16F84-Simulator";
             this.Load += new System.EventHandler(this.MainView_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1995,10 +1996,10 @@
         private System.Windows.Forms.ColumnHeader columnLineNr;
         private System.Windows.Forms.ColumnHeader columnState;
         private System.Windows.Forms.ColumnHeader columnCode;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button7;
