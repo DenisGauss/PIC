@@ -133,9 +133,9 @@ namespace PIC16F64_Simulator
             m_iPreScaler = 0;
             m_iCommandCounter = 0;
             m_iDuration = 0;
-            m_oGPRMemory = new GPRMemory();
-            m_oWRegister = new WRegister();
-            m_oSFRMemory = new SFRMemory();
+            //m_oGPRMemory = new GPRMemory();
+            //m_oWRegister = new WRegister();
+            //m_oSFRMemory = new SFRMemory();
             m_oStack = new Stack();
         }//resetCPU()
 

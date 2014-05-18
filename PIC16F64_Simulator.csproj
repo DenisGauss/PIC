@@ -55,6 +55,7 @@
     <Compile Include="GUI_UPDATE.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PIC.cs" />
     <Compile Include="Uebersetzter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
