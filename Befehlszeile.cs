@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PIC16F64_Simulator
 {
-    class Befehlszeile
+    public class Befehlszeile
     {
         #region MemberVariablen
         //Befehlszeile in die Bestandteile aufteilen für Übersichtlichkeit

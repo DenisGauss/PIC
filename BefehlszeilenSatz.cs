@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PIC16F64_Simulator
 {
-    class BefehlszeilenSatz
+    public class BefehlszeilenSatz
     {
  //* Singleton for the BefehlszeilenSatz: for easy access. * //
         //----------------------------------------------------//

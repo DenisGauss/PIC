@@ -176,7 +176,7 @@ namespace PIC16F64_Simulator
         /// </summary>
         /// <param name="aCpu"></param>
         /// <returns>returns the Codeline for the next m_sCommand</returns>
-        public Befehlszeile getNextCodeLine(PIC aCpu)
+        public Befehlszeile getNextBefehlszeile(PIC aCpu)
         {
             foreach (Befehlszeile aLine in BefehlszeilenSatz.Instance.m_BefehlszeilenList)
             {

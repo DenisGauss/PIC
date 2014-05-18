@@ -25,6 +25,7 @@ namespace PIC16F64_Simulator
         public GUI()
         {
             InitializeComponent();
+            //m_oPIC = new PIC();
             checkWatchDog = false;
         }
 
