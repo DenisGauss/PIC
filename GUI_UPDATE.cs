@@ -26,7 +26,7 @@ namespace PIC16F64_Simulator
             {
                 InvokeIfRequired(((TextBox)m_htGPRRegister[i]), (MethodInvoker)delegate()
                 {
-                    ((TextBox)m_htGPRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getGRPMemory()[i].ToString()));
+                    ((TextBox)m_htGPRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getGPRMemory()[i].ToString()));
                 });
             }
 

@@ -77,7 +77,7 @@ namespace PIC16F64_Simulator
             return this.m_aSFRMemory;
         }
 
-        public int[] getGRPMemory()
+        public int[] getGPRMemory()
         {
             return this.m_aGPRMemory;
         }
@@ -85,6 +85,11 @@ namespace PIC16F64_Simulator
         public void setGPRMemoryValue(int iAdress, int iValue)
         {
             m_aGPRMemory[iAdress] = iValue;
+        }
+
+        public void setSFRMemoryValue(int iAdress, int iValue)
+        {
+            m_aSFRMemory[iAdress] = iValue;
         }
 
         public int WRegisterValue
@@ -337,7 +342,7 @@ namespace PIC16F64_Simulator
         /// <returns></returns>
         internal int getRegisterValue(int addr)
         {
-            if (addr < 0x80 && addr > 0x0B) return getGRPMemory()[addr];
+            if (addr < 0x80 && addr > 0x0B) return getGPRMemory()[addr];
             else return getSFRMemory()[addr];
         }
 
@@ -346,9 +351,10 @@ namespace PIC16F64_Simulator
         /// </summary>
         /// <param name="addr"></param>
         /// <param name="value"></param>
+        
         internal void setRegisterValue(int addr, int value)
         {
-            if (addr < 0x80 && addr > 0x0B) setSFRMemoryValue(addr, value);
+            if (addr < 0x80 && addr > 0x0B) setGPRMemoryValue(addr, value);
             else setSFRMemoryValue(addr, value);
         }
 
@@ -661,16 +667,6 @@ namespace PIC16F64_Simulator
         {
             if ((m_aSFRMemory[0x03] & 0x01) == 0x00) return false;
             return true;
-        }
-
-        /// <summary>
-        /// set value at a register adress
-        /// </summary>
-        /// <param name="iAdress"></param>
-        /// <param name="iValue"></param>
-        public void setSFRMemoryValue(int iAdress, int iValue)
-        {
-            m_aSFRMemory[iAdress] = iValue;
         }
 
         /// <summary>
