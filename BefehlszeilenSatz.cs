@@ -8,8 +8,6 @@ namespace PIC16F64_Simulator
 {
     public class BefehlszeilenSatz
     {
-        //* Singleton for the BefehlszeilenSatz: for easy access. * //
-        //----------------------------------------------------//
 
         static readonly BefehlszeilenSatz instance = new BefehlszeilenSatz();
 

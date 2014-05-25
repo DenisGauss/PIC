@@ -469,6 +469,7 @@ namespace PIC16F64_Simulator
             startButton.Enabled = true;
             stopButton.Enabled = false;
             resetButton.Enabled = true;
+            ladenToolStripMenuItem.Enabled = true;
             return;
         }
         public void INTInterruptHandler(object sender, EventArgs e)
@@ -521,6 +522,16 @@ namespace PIC16F64_Simulator
         }
 
         private void tbStack5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbStatusZ_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void watchDogPanel_Paint(object sender, PaintEventArgs e)
         {
 
         } 

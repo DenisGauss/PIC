@@ -544,7 +544,6 @@ namespace PIC16F64_Simulator
             m_iCommandCounter = 0;
             m_iDuration = 0;
 
-            resetGPRMemory();
             resetSFRMemory();
             resetStack();
             resetWRegister();
@@ -564,6 +563,8 @@ namespace PIC16F64_Simulator
         public void resetSFRMemory()
         {
             System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
+            SFRinitialize();
+            
         }
 
         public void resetStack()

@@ -30,6 +30,23 @@ namespace PIC16F64_Simulator
                 });
             }
 
+            //W-Register
+            InvokeIfRequired((tbRegW), (MethodInvoker)delegate()
+            {
+                tbRegW.Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.WRegisterValue));
+            });
+
+            //Watchdog Textbox
+            InvokeIfRequired((tBWatchDog), (MethodInvoker)delegate()
+            {
+                if (watchDogPanel.BackColor == Color.Green)
+                {
+                    tBWatchDog.Enabled = true;
+                    tBWatchDog.Text = m_oPIC.WatchDog.ToString();
+                    tBWatchDog.Enabled = false;
+                }
+            });
+
             //SFR Registers 0x81 - 0x89
             for (int i = 0x81; i < 0x8A; i++)
             {
@@ -45,6 +62,7 @@ namespace PIC16F64_Simulator
             {
                 Label_Duration.Text = String.Format("{0} µs", System.Convert.ToInt32(m_oPIC.Duration));
             });
+
             //StatusRegister -> ZeroFlag
             InvokeIfRequired((cbStatusZ), (MethodInvoker)delegate()
             {
@@ -93,19 +111,13 @@ namespace PIC16F64_Simulator
                 cbStatusRp0.Enabled = false;
             });
 
-            //Bank0
-            InvokeIfRequired((lblBank0), (MethodInvoker)delegate()
+            //Aktive Bank
+            InvokeIfRequired((lblBank), (MethodInvoker)delegate()
             {
-                if (m_oPIC.checkRP0Flag()) lblBank0.ForeColor = Color.Red;
-                else lblBank0.ForeColor = Color.DarkGreen;
+                if (m_oPIC.checkRP0Flag()) lblBank.Text = "Bank1";
+                else lblBank.Text = "Bank0";
             });
 
-            //Bank1
-            InvokeIfRequired((lblBank1), (MethodInvoker)delegate()
-            {
-                if (m_oPIC.checkRP0Flag()) lblBank1.ForeColor = Color.DarkGreen;
-                else lblBank1.ForeColor = Color.Red;
-            });
             //Stack
             InvokeIfRequired((tbStack0), (MethodInvoker)delegate()
             {
@@ -139,6 +151,8 @@ namespace PIC16F64_Simulator
             {
                 tbStack7.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[7].ToString()));
             });
+
+            #region TRISA
 
             //TrisA Label for RA4
             InvokeIfRequired((lblPortRa4), (MethodInvoker)delegate()
@@ -174,6 +188,75 @@ namespace PIC16F64_Simulator
                 if ((m_oPIC.getSFRMemory()[0x85] & 0x01) == 0x00) lblPortRa0.Text = "OUT";
                 else lblPortRa0.Text = "IN";
             });
+
+            //Checkbox RA0
+            InvokeIfRequired((cbPortRa0), (MethodInvoker)delegate()
+            {
+                cbPortRa0.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x01) == 0x00) cbPortRa0.Checked = false;
+                else cbPortRa0.Checked = true;
+
+                if (lblPortRa0.Text == "OUT")
+                    cbPortRa0.Enabled = false;
+
+
+            });
+
+            //Checkbox RA1
+            InvokeIfRequired((cbPortRa1), (MethodInvoker)delegate()
+            {
+                cbPortRa1.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x02) == 0x00) cbPortRa1.Checked = false;
+                else cbPortRa1.Checked = true;
+
+                if (lblPortRa1.Text == "OUT")
+                    cbPortRa1.Enabled = false;
+
+
+            });
+
+            //Checkbox RA2
+            InvokeIfRequired((cbPortRa2), (MethodInvoker)delegate()
+            {
+                cbPortRa2.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x04) == 0x00) cbPortRa2.Checked = false;
+                else cbPortRa2.Checked = true;
+
+                if (lblPortRa2.Text == "OUT")
+                    cbPortRa2.Enabled = false;
+
+
+            });
+
+            //Checkbox RA3
+            InvokeIfRequired((cbPortRa3), (MethodInvoker)delegate()
+            {
+                cbPortRa3.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x08) == 0x00) cbPortRa3.Checked = false;
+                else cbPortRa3.Checked = true;
+
+                if (lblPortRa3.Text == "OUT")
+                    cbPortRa3.Enabled = false;
+
+
+            });
+
+            //Checkbox RA4
+            InvokeIfRequired((cbPortRa4), (MethodInvoker)delegate()
+            {
+                cbPortRa4.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x10) == 0x00) cbPortRa4.Checked = false;
+                else cbPortRa4.Checked = true;
+
+                if (lblPortRa4.Text == "OUT")
+                    cbPortRa4.Enabled = false;
+
+
+            });
+
+            #endregion TRISA
+
+            #region TRISB
 
             //TrisB Label for RB7
             InvokeIfRequired((lblPortRb7), (MethodInvoker)delegate()
@@ -229,71 +312,6 @@ namespace PIC16F64_Simulator
             {
                 if ((m_oPIC.getSFRMemory()[0x86] & 0x01) == 0x00) lblPortRb0.Text = "OUT";
                 else lblPortRb0.Text = "IN";
-            });
-
-            //Checkbox RA0
-            InvokeIfRequired((cbPortRa0), (MethodInvoker)delegate()
-            {
-                cbPortRa0.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x01) == 0x00) cbPortRa0.Checked = false;
-                else cbPortRa0.Checked = true;
-
-                if (lblPortRa0.Text == "OUT")
-                    cbPortRa0.Enabled = false;
-
-              
-            });
-
-            //Checkbox RA1
-            InvokeIfRequired((cbPortRa1), (MethodInvoker)delegate()
-            {
-                cbPortRa1.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x02) == 0x00) cbPortRa1.Checked = false;
-                else cbPortRa1.Checked = true;
-
-                if (lblPortRa1.Text == "OUT")
-                    cbPortRa1.Enabled = false;
-
-              
-            });
-
-            //Checkbox RA2
-            InvokeIfRequired((cbPortRa2), (MethodInvoker)delegate()
-            {
-                cbPortRa2.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x04) == 0x00) cbPortRa2.Checked = false;
-                else cbPortRa2.Checked = true;
-
-                if (lblPortRa2.Text == "OUT")
-                    cbPortRa2.Enabled = false;
-
-                
-            });
-
-            //Checkbox RA3
-            InvokeIfRequired((cbPortRa3), (MethodInvoker)delegate()
-            {
-                cbPortRa3.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x08) == 0x00) cbPortRa3.Checked = false;
-                else cbPortRa3.Checked = true;
-
-                if (lblPortRa3.Text == "OUT")
-                    cbPortRa3.Enabled = false;
-
-                
-            });
-
-            //Checkbox RA4
-            InvokeIfRequired((cbPortRa4), (MethodInvoker)delegate()
-            {
-                cbPortRa4.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x10) == 0x00) cbPortRa4.Checked = false;
-                else cbPortRa4.Checked = true;
-
-                if (lblPortRa4.Text == "OUT")
-                    cbPortRa4.Enabled = false;
-
-              
             });
 
             //Checkbox RB0
@@ -398,6 +416,8 @@ namespace PIC16F64_Simulator
 
                 
             });
+
+            #endregion TRISB
 
         }
 

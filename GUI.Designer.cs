@@ -169,8 +169,7 @@
             this.tbStack1 = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.lblBank1 = new System.Windows.Forms.Label();
-            this.lblBank0 = new System.Windows.Forms.Label();
+            this.lblBank = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.tbRegW = new System.Windows.Forms.TextBox();
             this.cbStatusTO = new System.Windows.Forms.CheckBox();
@@ -1734,6 +1733,7 @@
             this.watchDogPanel.Name = "watchDogPanel";
             this.watchDogPanel.Size = new System.Drawing.Size(17, 23);
             this.watchDogPanel.TabIndex = 2;
+            this.watchDogPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.watchDogPanel_Paint);
             // 
             // watchDogButton
             // 
@@ -2000,8 +2000,7 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.lblBank1);
-            this.groupBox8.Controls.Add(this.lblBank0);
+            this.groupBox8.Controls.Add(this.lblBank);
             this.groupBox8.Location = new System.Drawing.Point(713, 390);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(106, 50);
@@ -2009,26 +2008,16 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Aktive Bank";
             // 
-            // lblBank1
+            // lblBank
             // 
-            this.lblBank1.AutoSize = true;
-            this.lblBank1.ForeColor = System.Drawing.Color.Red;
-            this.lblBank1.Location = new System.Drawing.Point(9, 31);
-            this.lblBank1.Name = "lblBank1";
-            this.lblBank1.Size = new System.Drawing.Size(38, 13);
-            this.lblBank1.TabIndex = 103;
-            this.lblBank1.Text = "Bank1";
-            // 
-            // lblBank0
-            // 
-            this.lblBank0.AutoSize = true;
-            this.lblBank0.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblBank0.Location = new System.Drawing.Point(9, 17);
-            this.lblBank0.Name = "lblBank0";
-            this.lblBank0.Size = new System.Drawing.Size(38, 13);
-            this.lblBank0.TabIndex = 102;
-            this.lblBank0.Text = "Bank0";
-            this.lblBank0.Click += new System.EventHandler(this.lblBank0_Click);
+            this.lblBank.AutoSize = true;
+            this.lblBank.ForeColor = System.Drawing.Color.Black;
+            this.lblBank.Location = new System.Drawing.Point(29, 24);
+            this.lblBank.Name = "lblBank";
+            this.lblBank.Size = new System.Drawing.Size(38, 13);
+            this.lblBank.TabIndex = 102;
+            this.lblBank.Text = "Bank0";
+            this.lblBank.Click += new System.EventHandler(this.lblBank0_Click);
             // 
             // groupBox9
             // 
@@ -2112,6 +2101,7 @@
             this.cbStatusZ.Size = new System.Drawing.Size(15, 14);
             this.cbStatusZ.TabIndex = 99;
             this.cbStatusZ.UseVisualStyleBackColor = true;
+            this.cbStatusZ.CheckedChanged += new System.EventHandler(this.cbStatusZ_CheckedChanged);
             // 
             // cbStatusDc
             // 
@@ -2847,8 +2837,7 @@
         private System.Windows.Forms.CheckBox cbStatusPD;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label lblBank1;
-        private System.Windows.Forms.Label lblBank0;
+        private System.Windows.Forms.Label lblBank;
         private System.Windows.Forms.CheckBox cbStatusRp0;
         private System.Windows.Forms.CheckBox cbStatusZ;
         private System.Windows.Forms.CheckBox cbStatusDc;
