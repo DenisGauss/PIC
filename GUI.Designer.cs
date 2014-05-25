@@ -141,10 +141,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.tBWatchDog = new System.Windows.Forms.TextBox();
             this.watchDogPanel = new System.Windows.Forms.Panel();
             this.watchDogButton = new System.Windows.Forms.Button();
             this.trbSpeed = new System.Windows.Forms.TrackBar();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.textBox_speed = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.stackBox = new System.Windows.Forms.GroupBox();
             this.label45 = new System.Windows.Forms.Label();
             this.tbStack0 = new System.Windows.Forms.TextBox();
@@ -163,12 +168,15 @@
             this.tbStack5 = new System.Windows.Forms.TextBox();
             this.tbStack1 = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblBank1 = new System.Windows.Forms.Label();
+            this.lblBank0 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.tbRegW = new System.Windows.Forms.TextBox();
             this.cbStatusTO = new System.Windows.Forms.CheckBox();
             this.cbStatusPD = new System.Windows.Forms.CheckBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.lblBank1 = new System.Windows.Forms.Label();
-            this.lblBank0 = new System.Windows.Forms.Label();
             this.cbStatusRp0 = new System.Windows.Forms.CheckBox();
             this.cbStatusZ = new System.Windows.Forms.CheckBox();
             this.cbStatusDc = new System.Windows.Forms.CheckBox();
@@ -178,23 +186,7 @@
             this.label92 = new System.Windows.Forms.Label();
             this.label93 = new System.Windows.Forms.Label();
             this.portsBox = new System.Windows.Forms.GroupBox();
-            this.lblPortRa0 = new System.Windows.Forms.Label();
-            this.lblPortRa1 = new System.Windows.Forms.Label();
-            this.lblPortRa2 = new System.Windows.Forms.Label();
-            this.lblPortRa3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblPortRa4 = new System.Windows.Forms.Label();
-            this.cbPortRa4 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa3 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa2 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa1 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa0 = new System.Windows.Forms.CheckBox();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label108 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.lblPortRb0 = new System.Windows.Forms.Label();
             this.lblPortRb1 = new System.Windows.Forms.Label();
@@ -220,16 +212,24 @@
             this.cbPortRb2 = new System.Windows.Forms.CheckBox();
             this.cbPortRb1 = new System.Windows.Forms.CheckBox();
             this.cbPortRb0 = new System.Windows.Forms.CheckBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.tBWatchDog = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.lblPortRa0 = new System.Windows.Forms.Label();
+            this.lblPortRa1 = new System.Windows.Forms.Label();
+            this.lblPortRa2 = new System.Windows.Forms.Label();
+            this.lblPortRa3 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lblPortRa4 = new System.Windows.Forms.Label();
+            this.cbPortRa4 = new System.Windows.Forms.CheckBox();
+            this.cbPortRa3 = new System.Windows.Forms.CheckBox();
+            this.cbPortRa2 = new System.Windows.Forms.CheckBox();
+            this.cbPortRa1 = new System.Windows.Forms.CheckBox();
+            this.cbPortRa0 = new System.Windows.Forms.CheckBox();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.tbRegW = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox_speed = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SpecialregisterGroup.SuspendLayout();
             this.gprBox.SuspendLayout();
@@ -240,11 +240,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.trbSpeed)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.stackBox.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.portsBox.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.portsBox.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -255,7 +254,7 @@
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(863, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1260, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -350,7 +349,7 @@
             this.SpecialregisterGroup.Controls.Add(this.tbReg02);
             this.SpecialregisterGroup.Controls.Add(this.tbReg01);
             this.SpecialregisterGroup.Controls.Add(this.tbReg00);
-            this.SpecialregisterGroup.Location = new System.Drawing.Point(532, 27);
+            this.SpecialregisterGroup.Location = new System.Drawing.Point(935, 27);
             this.SpecialregisterGroup.Name = "SpecialregisterGroup";
             this.SpecialregisterGroup.Size = new System.Drawing.Size(143, 414);
             this.SpecialregisterGroup.TabIndex = 1;
@@ -712,7 +711,7 @@
             this.List.Location = new System.Drawing.Point(13, 160);
             this.List.MultiSelect = false;
             this.List.Name = "List";
-            this.List.Size = new System.Drawing.Size(399, 368);
+            this.List.Size = new System.Drawing.Size(399, 281);
             this.List.TabIndex = 7;
             this.List.UseCompatibleStateImageBehavior = false;
             this.List.View = System.Windows.Forms.View.Details;
@@ -820,7 +819,7 @@
             this.gprBox.Controls.Add(this.label2);
             this.gprBox.Controls.Add(this.tbReg0C);
             this.gprBox.Controls.Add(this.label1);
-            this.gprBox.Location = new System.Drawing.Point(681, 27);
+            this.gprBox.Location = new System.Drawing.Point(1084, 27);
             this.gprBox.Name = "gprBox";
             this.gprBox.Size = new System.Drawing.Size(166, 414);
             this.gprBox.TabIndex = 9;
@@ -1641,7 +1640,7 @@
             // 
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.Label_Duration);
-            this.groupBox2.Location = new System.Drawing.Point(418, 27);
+            this.groupBox2.Location = new System.Drawing.Point(821, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(108, 53);
             this.groupBox2.TabIndex = 18;
@@ -1671,7 +1670,7 @@
             // 
             this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Location = new System.Drawing.Point(418, 86);
+            this.groupBox3.Location = new System.Drawing.Point(821, 76);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(108, 59);
             this.groupBox3.TabIndex = 19;
@@ -1701,12 +1700,32 @@
             this.groupBox4.Controls.Add(this.tBWatchDog);
             this.groupBox4.Controls.Add(this.watchDogPanel);
             this.groupBox4.Controls.Add(this.watchDogButton);
-            this.groupBox4.Location = new System.Drawing.Point(418, 151);
+            this.groupBox4.Location = new System.Drawing.Point(821, 134);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(108, 83);
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Watchdog";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(10, 55);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(44, 13);
+            this.label50.TabIndex = 88;
+            this.label50.Text = "Counter";
+            // 
+            // tBWatchDog
+            // 
+            this.tBWatchDog.Enabled = false;
+            this.tBWatchDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBWatchDog.Location = new System.Drawing.Point(65, 52);
+            this.tBWatchDog.Name = "tBWatchDog";
+            this.tBWatchDog.Size = new System.Drawing.Size(39, 20);
+            this.tBWatchDog.TabIndex = 87;
+            this.tBWatchDog.Text = "0";
+            this.tBWatchDog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // watchDogPanel
             // 
@@ -1752,6 +1771,33 @@
             this.groupBox5.Text = "Quarzfrequenz";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(368, 17);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(18, 13);
+            this.label51.TabIndex = 56;
+            this.label51.Text = "µs";
+            // 
+            // textBox_speed
+            // 
+            this.textBox_speed.Location = new System.Drawing.Point(313, 14);
+            this.textBox_speed.Name = "textBox_speed";
+            this.textBox_speed.Size = new System.Drawing.Size(49, 20);
+            this.textBox_speed.TabIndex = 55;
+            this.textBox_speed.Text = "250";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(313, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 54;
+            this.button1.Text = "setzen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // stackBox
             // 
             this.stackBox.Controls.Add(this.label45);
@@ -1770,7 +1816,7 @@
             this.stackBox.Controls.Add(this.tbStack6);
             this.stackBox.Controls.Add(this.tbStack5);
             this.stackBox.Controls.Add(this.tbStack1);
-            this.stackBox.Location = new System.Drawing.Point(418, 239);
+            this.stackBox.Location = new System.Drawing.Point(821, 218);
             this.stackBox.Name = "stackBox";
             this.stackBox.Size = new System.Drawing.Size(106, 223);
             this.stackBox.TabIndex = 55;
@@ -1945,14 +1991,65 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.groupBox8);
-            this.groupBox6.Controls.Add(this.groupBox9);
-            this.groupBox6.Location = new System.Drawing.Point(532, 447);
+            this.groupBox6.Location = new System.Drawing.Point(418, 205);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(315, 258);
+            this.groupBox6.Size = new System.Drawing.Size(289, 236);
             this.groupBox6.TabIndex = 56;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Sonstige Werte zur Überprüfung";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lblBank1);
+            this.groupBox8.Controls.Add(this.lblBank0);
+            this.groupBox8.Location = new System.Drawing.Point(713, 390);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(106, 50);
+            this.groupBox8.TabIndex = 59;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Aktive Bank";
+            // 
+            // lblBank1
+            // 
+            this.lblBank1.AutoSize = true;
+            this.lblBank1.ForeColor = System.Drawing.Color.Red;
+            this.lblBank1.Location = new System.Drawing.Point(9, 31);
+            this.lblBank1.Name = "lblBank1";
+            this.lblBank1.Size = new System.Drawing.Size(38, 13);
+            this.lblBank1.TabIndex = 103;
+            this.lblBank1.Text = "Bank1";
+            // 
+            // lblBank0
+            // 
+            this.lblBank0.AutoSize = true;
+            this.lblBank0.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblBank0.Location = new System.Drawing.Point(9, 17);
+            this.lblBank0.Name = "lblBank0";
+            this.lblBank0.Size = new System.Drawing.Size(38, 13);
+            this.lblBank0.TabIndex = 102;
+            this.lblBank0.Text = "Bank0";
+            this.lblBank0.Click += new System.EventHandler(this.lblBank0_Click);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.tbRegW);
+            this.groupBox9.Location = new System.Drawing.Point(713, 339);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(106, 45);
+            this.groupBox9.TabIndex = 60;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Working-Register";
+            // 
+            // tbRegW
+            // 
+            this.tbRegW.Enabled = false;
+            this.tbRegW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRegW.Location = new System.Drawing.Point(11, 18);
+            this.tbRegW.Name = "tbRegW";
+            this.tbRegW.Size = new System.Drawing.Size(42, 20);
+            this.tbRegW.TabIndex = 31;
+            this.tbRegW.Text = "0x00";
+            this.tbRegW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cbStatusTO
             // 
@@ -1995,27 +2092,6 @@
             this.label46.Size = new System.Drawing.Size(28, 13);
             this.label46.TabIndex = 104;
             this.label46.Text = "¬PD";
-            // 
-            // lblBank1
-            // 
-            this.lblBank1.AutoSize = true;
-            this.lblBank1.ForeColor = System.Drawing.Color.Red;
-            this.lblBank1.Location = new System.Drawing.Point(9, 31);
-            this.lblBank1.Name = "lblBank1";
-            this.lblBank1.Size = new System.Drawing.Size(38, 13);
-            this.lblBank1.TabIndex = 103;
-            this.lblBank1.Text = "Bank1";
-            // 
-            // lblBank0
-            // 
-            this.lblBank0.AutoSize = true;
-            this.lblBank0.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblBank0.Location = new System.Drawing.Point(9, 17);
-            this.lblBank0.Name = "lblBank0";
-            this.lblBank0.Size = new System.Drawing.Size(38, 13);
-            this.lblBank0.TabIndex = 102;
-            this.lblBank0.Text = "Bank0";
-            this.lblBank0.Click += new System.EventHandler(this.lblBank0_Click);
             // 
             // cbStatusRp0
             // 
@@ -2138,167 +2214,21 @@
             this.portsBox.Controls.Add(this.label106);
             this.portsBox.Controls.Add(this.label107);
             this.portsBox.Controls.Add(this.label108);
-            this.portsBox.Location = new System.Drawing.Point(13, 533);
+            this.portsBox.Location = new System.Drawing.Point(418, 27);
             this.portsBox.Name = "portsBox";
             this.portsBox.Size = new System.Drawing.Size(399, 172);
             this.portsBox.TabIndex = 57;
             this.portsBox.TabStop = false;
             this.portsBox.Text = "Ports";
             // 
-            // lblPortRa0
+            // label49
             // 
-            this.lblPortRa0.AutoSize = true;
-            this.lblPortRa0.Location = new System.Drawing.Point(218, 46);
-            this.lblPortRa0.Name = "lblPortRa0";
-            this.lblPortRa0.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa0.TabIndex = 96;
-            this.lblPortRa0.Text = "IN";
-            // 
-            // lblPortRa1
-            // 
-            this.lblPortRa1.AutoSize = true;
-            this.lblPortRa1.Location = new System.Drawing.Point(183, 49);
-            this.lblPortRa1.Name = "lblPortRa1";
-            this.lblPortRa1.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa1.TabIndex = 95;
-            this.lblPortRa1.Text = "IN";
-            // 
-            // lblPortRa2
-            // 
-            this.lblPortRa2.AutoSize = true;
-            this.lblPortRa2.Location = new System.Drawing.Point(148, 46);
-            this.lblPortRa2.Name = "lblPortRa2";
-            this.lblPortRa2.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa2.TabIndex = 94;
-            this.lblPortRa2.Text = "IN";
-            // 
-            // lblPortRa3
-            // 
-            this.lblPortRa3.AutoSize = true;
-            this.lblPortRa3.Location = new System.Drawing.Point(115, 46);
-            this.lblPortRa3.Name = "lblPortRa3";
-            this.lblPortRa3.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa3.TabIndex = 93;
-            this.lblPortRa3.Text = "IN";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(6, 46);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(48, 13);
-            this.textBox4.TabIndex = 91;
-            this.textBox4.Text = "TRISA";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblPortRa4
-            // 
-            this.lblPortRa4.AutoSize = true;
-            this.lblPortRa4.Location = new System.Drawing.Point(82, 46);
-            this.lblPortRa4.Name = "lblPortRa4";
-            this.lblPortRa4.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa4.TabIndex = 90;
-            this.lblPortRa4.Text = "IN";
-            // 
-            // cbPortRa4
-            // 
-            this.cbPortRa4.AutoSize = true;
-            this.cbPortRa4.Location = new System.Drawing.Point(85, 66);
-            this.cbPortRa4.Name = "cbPortRa4";
-            this.cbPortRa4.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa4.TabIndex = 70;
-            this.cbPortRa4.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa3
-            // 
-            this.cbPortRa3.AutoSize = true;
-            this.cbPortRa3.Location = new System.Drawing.Point(118, 66);
-            this.cbPortRa3.Name = "cbPortRa3";
-            this.cbPortRa3.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa3.TabIndex = 69;
-            this.cbPortRa3.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa2
-            // 
-            this.cbPortRa2.AutoSize = true;
-            this.cbPortRa2.Location = new System.Drawing.Point(151, 66);
-            this.cbPortRa2.Name = "cbPortRa2";
-            this.cbPortRa2.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa2.TabIndex = 68;
-            this.cbPortRa2.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa1
-            // 
-            this.cbPortRa1.AutoSize = true;
-            this.cbPortRa1.Location = new System.Drawing.Point(186, 66);
-            this.cbPortRa1.Name = "cbPortRa1";
-            this.cbPortRa1.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa1.TabIndex = 67;
-            this.cbPortRa1.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa0
-            // 
-            this.cbPortRa0.AutoSize = true;
-            this.cbPortRa0.Location = new System.Drawing.Point(221, 66);
-            this.cbPortRa0.Name = "cbPortRa0";
-            this.cbPortRa0.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa0.TabIndex = 66;
-            this.cbPortRa0.UseVisualStyleBackColor = true;
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(115, 26);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(28, 13);
-            this.label104.TabIndex = 46;
-            this.label104.Text = "RA3";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(148, 26);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(28, 13);
-            this.label105.TabIndex = 45;
-            this.label105.Text = "RA2";
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(218, 26);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(28, 13);
-            this.label106.TabIndex = 44;
-            this.label106.Text = "RA0";
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(183, 26);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(28, 13);
-            this.label107.TabIndex = 43;
-            this.label107.Text = "RA1";
-            // 
-            // label108
-            // 
-            this.label108.AutoSize = true;
-            this.label108.Location = new System.Drawing.Point(82, 26);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(28, 13);
-            this.label108.TabIndex = 42;
-            this.label108.Text = "RA4";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(10, 66);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(44, 13);
-            this.label48.TabIndex = 97;
-            this.label48.Text = "PORTA";
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(14, 122);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(39, 13);
+            this.label49.TabIndex = 157;
+            this.label49.Text = "TRISB";
             // 
             // label47
             // 
@@ -2525,34 +2455,160 @@
             this.cbPortRb0.TabIndex = 132;
             this.cbPortRb0.UseVisualStyleBackColor = true;
             // 
-            // label49
+            // label48
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(14, 122);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(39, 13);
-            this.label49.TabIndex = 157;
-            this.label49.Text = "TRISB";
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(10, 66);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(44, 13);
+            this.label48.TabIndex = 97;
+            this.label48.Text = "PORTA";
             // 
-            // tBWatchDog
+            // lblPortRa0
             // 
-            this.tBWatchDog.Enabled = false;
-            this.tBWatchDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBWatchDog.Location = new System.Drawing.Point(65, 52);
-            this.tBWatchDog.Name = "tBWatchDog";
-            this.tBWatchDog.Size = new System.Drawing.Size(39, 20);
-            this.tBWatchDog.TabIndex = 87;
-            this.tBWatchDog.Text = "0";
-            this.tBWatchDog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblPortRa0.AutoSize = true;
+            this.lblPortRa0.Location = new System.Drawing.Point(218, 46);
+            this.lblPortRa0.Name = "lblPortRa0";
+            this.lblPortRa0.Size = new System.Drawing.Size(18, 13);
+            this.lblPortRa0.TabIndex = 96;
+            this.lblPortRa0.Text = "IN";
             // 
-            // label50
+            // lblPortRa1
             // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(10, 55);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(44, 13);
-            this.label50.TabIndex = 88;
-            this.label50.Text = "Counter";
+            this.lblPortRa1.AutoSize = true;
+            this.lblPortRa1.Location = new System.Drawing.Point(183, 46);
+            this.lblPortRa1.Name = "lblPortRa1";
+            this.lblPortRa1.Size = new System.Drawing.Size(18, 13);
+            this.lblPortRa1.TabIndex = 95;
+            this.lblPortRa1.Text = "IN";
+            // 
+            // lblPortRa2
+            // 
+            this.lblPortRa2.AutoSize = true;
+            this.lblPortRa2.Location = new System.Drawing.Point(148, 46);
+            this.lblPortRa2.Name = "lblPortRa2";
+            this.lblPortRa2.Size = new System.Drawing.Size(18, 13);
+            this.lblPortRa2.TabIndex = 94;
+            this.lblPortRa2.Text = "IN";
+            // 
+            // lblPortRa3
+            // 
+            this.lblPortRa3.AutoSize = true;
+            this.lblPortRa3.Location = new System.Drawing.Point(115, 46);
+            this.lblPortRa3.Name = "lblPortRa3";
+            this.lblPortRa3.Size = new System.Drawing.Size(18, 13);
+            this.lblPortRa3.TabIndex = 93;
+            this.lblPortRa3.Text = "IN";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Location = new System.Drawing.Point(6, 46);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(48, 13);
+            this.textBox4.TabIndex = 91;
+            this.textBox4.Text = "TRISA";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblPortRa4
+            // 
+            this.lblPortRa4.AutoSize = true;
+            this.lblPortRa4.Location = new System.Drawing.Point(82, 46);
+            this.lblPortRa4.Name = "lblPortRa4";
+            this.lblPortRa4.Size = new System.Drawing.Size(18, 13);
+            this.lblPortRa4.TabIndex = 90;
+            this.lblPortRa4.Text = "IN";
+            // 
+            // cbPortRa4
+            // 
+            this.cbPortRa4.AutoSize = true;
+            this.cbPortRa4.Location = new System.Drawing.Point(85, 66);
+            this.cbPortRa4.Name = "cbPortRa4";
+            this.cbPortRa4.Size = new System.Drawing.Size(15, 14);
+            this.cbPortRa4.TabIndex = 70;
+            this.cbPortRa4.UseVisualStyleBackColor = true;
+            // 
+            // cbPortRa3
+            // 
+            this.cbPortRa3.AutoSize = true;
+            this.cbPortRa3.Location = new System.Drawing.Point(118, 66);
+            this.cbPortRa3.Name = "cbPortRa3";
+            this.cbPortRa3.Size = new System.Drawing.Size(15, 14);
+            this.cbPortRa3.TabIndex = 69;
+            this.cbPortRa3.UseVisualStyleBackColor = true;
+            // 
+            // cbPortRa2
+            // 
+            this.cbPortRa2.AutoSize = true;
+            this.cbPortRa2.Location = new System.Drawing.Point(151, 66);
+            this.cbPortRa2.Name = "cbPortRa2";
+            this.cbPortRa2.Size = new System.Drawing.Size(15, 14);
+            this.cbPortRa2.TabIndex = 68;
+            this.cbPortRa2.UseVisualStyleBackColor = true;
+            // 
+            // cbPortRa1
+            // 
+            this.cbPortRa1.AutoSize = true;
+            this.cbPortRa1.Location = new System.Drawing.Point(186, 66);
+            this.cbPortRa1.Name = "cbPortRa1";
+            this.cbPortRa1.Size = new System.Drawing.Size(15, 14);
+            this.cbPortRa1.TabIndex = 67;
+            this.cbPortRa1.UseVisualStyleBackColor = true;
+            // 
+            // cbPortRa0
+            // 
+            this.cbPortRa0.AutoSize = true;
+            this.cbPortRa0.Location = new System.Drawing.Point(221, 66);
+            this.cbPortRa0.Name = "cbPortRa0";
+            this.cbPortRa0.Size = new System.Drawing.Size(15, 14);
+            this.cbPortRa0.TabIndex = 66;
+            this.cbPortRa0.UseVisualStyleBackColor = true;
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(115, 26);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(28, 13);
+            this.label104.TabIndex = 46;
+            this.label104.Text = "RA3";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(148, 26);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(28, 13);
+            this.label105.TabIndex = 45;
+            this.label105.Text = "RA2";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(218, 26);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(28, 13);
+            this.label106.TabIndex = 44;
+            this.label106.Text = "RA0";
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(183, 26);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(28, 13);
+            this.label107.TabIndex = 43;
+            this.label107.Text = "RA1";
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(82, 26);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(28, 13);
+            this.label108.TabIndex = 42;
+            this.label108.Text = "RA4";
             // 
             // groupBox7
             // 
@@ -2568,78 +2624,21 @@
             this.groupBox7.Controls.Add(this.cbStatusDc);
             this.groupBox7.Controls.Add(this.cbStatusRp0);
             this.groupBox7.Controls.Add(this.cbStatusZ);
-            this.groupBox7.Location = new System.Drawing.Point(418, 468);
+            this.groupBox7.Location = new System.Drawing.Point(713, 205);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(106, 130);
+            this.groupBox7.Size = new System.Drawing.Size(102, 128);
             this.groupBox7.TabIndex = 58;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Status Register";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.lblBank1);
-            this.groupBox8.Controls.Add(this.lblBank0);
-            this.groupBox8.Location = new System.Drawing.Point(12, 72);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(106, 50);
-            this.groupBox8.TabIndex = 59;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Aktive Bank";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.tbRegW);
-            this.groupBox9.Location = new System.Drawing.Point(12, 21);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(106, 45);
-            this.groupBox9.TabIndex = 60;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Working-Register";
-            // 
-            // tbRegW
-            // 
-            this.tbRegW.Enabled = false;
-            this.tbRegW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRegW.Location = new System.Drawing.Point(11, 18);
-            this.tbRegW.Name = "tbRegW";
-            this.tbRegW.Size = new System.Drawing.Size(42, 20);
-            this.tbRegW.TabIndex = 31;
-            this.tbRegW.Text = "0x00";
-            this.tbRegW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(313, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "setzen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox_speed
-            // 
-            this.textBox_speed.Location = new System.Drawing.Point(313, 14);
-            this.textBox_speed.Name = "textBox_speed";
-            this.textBox_speed.Size = new System.Drawing.Size(49, 20);
-            this.textBox_speed.TabIndex = 55;
-            this.textBox_speed.Text = "250";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(368, 17);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(18, 13);
-            this.label51.TabIndex = 56;
-            this.label51.Text = "µs";
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 710);
+            this.ClientSize = new System.Drawing.Size(1260, 444);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.portsBox);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.stackBox);
@@ -2673,15 +2672,14 @@
             this.groupBox5.PerformLayout();
             this.stackBox.ResumeLayout(false);
             this.stackBox.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.portsBox.ResumeLayout(false);
-            this.portsBox.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.portsBox.ResumeLayout(false);
+            this.portsBox.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
