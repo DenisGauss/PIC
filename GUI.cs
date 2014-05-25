@@ -250,7 +250,9 @@ namespace PIC16F64_Simulator
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            m_oPIC.Step = false;
             startButton.Enabled = false;
+            stopButton.Enabled = true;
             resetButton.Enabled = true;
             ladenToolStripMenuItem.Enabled = false;
             m_tCommandExecutor = new Thread(new ThreadStart(start));
@@ -364,7 +366,8 @@ namespace PIC16F64_Simulator
         private void nextButton_Click(object sender, EventArgs e)
         {
             ladenToolStripMenuItem.Enabled = false;
-            startButton.Enabled = false;
+            startButton.Enabled = true;
+            stopButton.Enabled = false;
             resetButton.Enabled = true;
             nextButton.Enabled = true;
             m_oPIC.Step = true;
@@ -392,6 +395,19 @@ namespace PIC16F64_Simulator
         private void Label_Duration_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblBank0_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            m_tCommandExecutor.Abort();
+            startButton.Enabled = true;
+            stopButton.Enabled = false;
+            return;
         } 
 
     }

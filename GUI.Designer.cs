@@ -1602,6 +1602,7 @@
             this.stopButton.TabIndex = 12;
             this.stopButton.Text = "Stop";
             this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
             // nextButton
             // 
@@ -2007,6 +2008,7 @@
             this.lblBank0.Size = new System.Drawing.Size(38, 13);
             this.lblBank0.TabIndex = 102;
             this.lblBank0.Text = "Bank0";
+            this.lblBank0.Click += new System.EventHandler(this.lblBank0_Click);
             // 
             // cbStatusRp0
             // 
