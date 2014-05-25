@@ -147,7 +147,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.stackBox = new System.Windows.Forms.GroupBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbStack0 = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -1755,7 +1755,7 @@
             // stackBox
             // 
             this.stackBox.Controls.Add(this.label45);
-            this.stackBox.Controls.Add(this.textBox1);
+            this.stackBox.Controls.Add(this.tbStack0);
             this.stackBox.Controls.Add(this.label44);
             this.stackBox.Controls.Add(this.label43);
             this.stackBox.Controls.Add(this.label42);
@@ -1786,16 +1786,17 @@
             this.label45.TabIndex = 119;
             this.label45.Text = "[7]";
             // 
-            // textBox1
+            // tbStack0
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(53, 197);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(42, 20);
-            this.textBox1.TabIndex = 118;
-            this.textBox1.Text = "0x0000";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbStack0.Enabled = false;
+            this.tbStack0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStack0.Location = new System.Drawing.Point(53, 14);
+            this.tbStack0.Name = "tbStack0";
+            this.tbStack0.Size = new System.Drawing.Size(42, 20);
+            this.tbStack0.TabIndex = 118;
+            this.tbStack0.Text = "0x0000";
+            this.tbStack0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbStack0.TextChanged += new System.EventHandler(this.tbStack0_TextChanged);
             // 
             // label44
             // 
@@ -1864,12 +1865,13 @@
             // 
             this.tbStack7.Enabled = false;
             this.tbStack7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStack7.Location = new System.Drawing.Point(53, 170);
+            this.tbStack7.Location = new System.Drawing.Point(53, 197);
             this.tbStack7.Name = "tbStack7";
             this.tbStack7.Size = new System.Drawing.Size(42, 20);
             this.tbStack7.TabIndex = 110;
             this.tbStack7.Text = "0x0000";
             this.tbStack7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbStack7.TextChanged += new System.EventHandler(this.tbStack7_TextChanged);
             // 
             // tbStack4
             // 
@@ -1903,17 +1905,19 @@
             this.tbStack2.TabIndex = 104;
             this.tbStack2.Text = "0x0000";
             this.tbStack2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbStack2.TextChanged += new System.EventHandler(this.tbStack2_TextChanged);
             // 
             // tbStack6
             // 
             this.tbStack6.Enabled = false;
             this.tbStack6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStack6.Location = new System.Drawing.Point(53, 40);
+            this.tbStack6.Location = new System.Drawing.Point(53, 170);
             this.tbStack6.Name = "tbStack6";
             this.tbStack6.Size = new System.Drawing.Size(42, 20);
             this.tbStack6.TabIndex = 102;
             this.tbStack6.Text = "0x0000";
             this.tbStack6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbStack6.TextChanged += new System.EventHandler(this.tbStack6_TextChanged);
             // 
             // tbStack5
             // 
@@ -1925,17 +1929,19 @@
             this.tbStack5.TabIndex = 100;
             this.tbStack5.Text = "0x0000";
             this.tbStack5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbStack5.TextChanged += new System.EventHandler(this.tbStack5_TextChanged);
             // 
             // tbStack1
             // 
             this.tbStack1.Enabled = false;
             this.tbStack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStack1.Location = new System.Drawing.Point(53, 14);
+            this.tbStack1.Location = new System.Drawing.Point(53, 40);
             this.tbStack1.Name = "tbStack1";
             this.tbStack1.Size = new System.Drawing.Size(42, 20);
             this.tbStack1.TabIndex = 98;
             this.tbStack1.Text = "0x0000";
             this.tbStack1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbStack1.TextChanged += new System.EventHandler(this.tbStack1_TextChanged);
             // 
             // groupBox6
             // 
@@ -2830,7 +2836,7 @@
         private System.Windows.Forms.TextBox tbReg01;
         private System.Windows.Forms.TextBox tbReg00;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbStack0;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;

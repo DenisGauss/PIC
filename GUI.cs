@@ -427,6 +427,36 @@ namespace PIC16F64_Simulator
                 GUI_UPDATE();
                 return;
             }
+        }
+
+        private void tbStack1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbStack6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbStack2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbStack7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbStack0_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbStack5_TextChanged(object sender, EventArgs e)
+        {
+
         } 
 
     }
