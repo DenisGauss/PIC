@@ -89,6 +89,10 @@ namespace PIC16F64_Simulator
 
         public void setSFRMemoryValue(int iAdress, int iValue)
         {
+            if (iAdress == 6)
+            {
+            
+            }
             m_aSFRMemory[iAdress] = iValue;
         }
 

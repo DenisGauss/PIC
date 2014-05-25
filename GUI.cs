@@ -93,6 +93,34 @@ namespace PIC16F64_Simulator
             m_htGPRRegister.Add(0x2F, tbReg2F);
 
             #endregion initGPRHash
+            #region Interrupt
+            //Eventhandlers for checkboxes
+            cbPortRa0.Click += new System.EventHandler(portAChecked);
+            cbPortRa1.Click += new System.EventHandler(portAChecked);
+            cbPortRa2.Click += new System.EventHandler(portAChecked);
+            cbPortRa3.Click += new System.EventHandler(portAChecked);
+            cbPortRa4.Click += new System.EventHandler(portAChecked);
+            cbPortRa4.Click += new System.EventHandler(RA4InterruptHandler);
+
+            cbPortRb0.Click += new System.EventHandler(portBChecked);
+            cbPortRb0.Click += new System.EventHandler(INTInterruptHandler);
+
+            cbPortRb1.Click += new System.EventHandler(portBChecked);
+            cbPortRb2.Click += new System.EventHandler(portBChecked);
+            cbPortRb3.Click += new System.EventHandler(portBChecked);
+
+            cbPortRb4.Click += new System.EventHandler(portBChecked);
+            cbPortRb4.Click += new System.EventHandler(RBInterruptHandler);
+
+            cbPortRb5.Click += new System.EventHandler(portBChecked);
+            cbPortRb5.Click += new System.EventHandler(RBInterruptHandler);
+
+            cbPortRb6.Click += new System.EventHandler(portBChecked);
+            cbPortRb6.Click += new System.EventHandler(RBInterruptHandler);
+
+            cbPortRb7.Click += new System.EventHandler(portBChecked);
+            cbPortRb7.Click += new System.EventHandler(RBInterruptHandler);
+            #endregion
         }
 
         private void saveFile_FileOk(object sender, CancelEventArgs e)
@@ -273,6 +301,7 @@ namespace PIC16F64_Simulator
                  });
                  return;
              }
+         
 
              //unmark previous codeLine
              InvokeIfRequired(List, (MethodInvoker)delegate()
@@ -342,7 +371,39 @@ namespace PIC16F64_Simulator
              }
 
         }
+        public void portBChecked(object sender, EventArgs e)
+        {
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 0, cbPortRb0.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 1, cbPortRb1.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 2, cbPortRb2.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 3, cbPortRb3.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 4, cbPortRb4.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 5, cbPortRb5.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 6, cbPortRb6.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 7, cbPortRb7.Checked);
 
+            GUI_UPDATE();
+        }
+        public void portAChecked(object sender, EventArgs e)
+        {
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 0, cbPortRa0.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 1, cbPortRa1.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 2, cbPortRa2.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 3, cbPortRa3.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 4, cbPortRa4.Checked);
+
+            GUI_UPDATE();
+        }
+        public void RBInterruptHandler(object sender, EventArgs e)
+        {
+            m_oPIC.PortRBInterrupt();
+            GUI_UPDATE();
+        }
+        public void RA4InterruptHandler(object sender, EventArgs e)
+        {
+             m_oPIC.PortRA4Interrupt();
+            GUI_UPDATE();
+        }
         private void watchDogButton_Click(object sender, EventArgs e)
         {
             if (watchDogPanel.BackColor == Color.Red)
@@ -376,7 +437,7 @@ namespace PIC16F64_Simulator
                 m_tCommandExecutor = new Thread(new ThreadStart(start));
                 m_tCommandExecutor.Start();
             }
-            else
+            
             {
                 LoadCommand(m_oPIC.getNextBefehlszeile(m_oPIC));
             }
@@ -409,7 +470,11 @@ namespace PIC16F64_Simulator
             stopButton.Enabled = false;
             return;
         }
-
+        public void INTInterruptHandler(object sender, EventArgs e)
+        {
+            m_oPIC.INTInterrupt();
+            GUI_UPDATE();
+        }
         private void resetButton_Click(object sender, EventArgs e)
         {
             if (m_tCommandExecutor != null)
