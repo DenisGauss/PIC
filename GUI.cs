@@ -408,6 +408,25 @@ namespace PIC16F64_Simulator
             startButton.Enabled = true;
             stopButton.Enabled = false;
             return;
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            if (m_tCommandExecutor != null)
+            {
+                m_tCommandExecutor.Abort();
+                m_oPIC.resetPIC();
+                GUI_UPDATE();
+                startButton.Enabled = true;
+                return;
+            }
+            else
+            {
+                startButton.Enabled = true;
+                m_oPIC.resetPIC();
+                GUI_UPDATE();
+                return;
+            }
         } 
 
     }

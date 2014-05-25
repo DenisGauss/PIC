@@ -543,6 +543,7 @@ namespace PIC16F64_Simulator
             resetGPRMemory();
             resetSFRMemory();
             resetStack();
+            resetWRegister();
 
         }
 

@@ -46,14 +46,14 @@ namespace PIC16F64_Simulator
                 Label_Duration.Text = String.Format("{0} µs", System.Convert.ToInt32(m_oPIC.Duration));
             });
 
-            //Bank0 Label
+            //Bank0
             InvokeIfRequired((lblBank0), (MethodInvoker)delegate()
             {
                 if (m_oPIC.checkRP0Flag()) lblBank0.ForeColor = Color.Red;
                 else lblBank0.ForeColor = Color.DarkGreen;
             });
 
-            //Bank1 Label
+            //Bank1
             InvokeIfRequired((lblBank1), (MethodInvoker)delegate()
             {
                 if (m_oPIC.checkRP0Flag()) lblBank1.ForeColor = Color.DarkGreen;
