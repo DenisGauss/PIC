@@ -59,6 +59,39 @@ namespace PIC16F64_Simulator
                 if (m_oPIC.checkRP0Flag()) lblBank1.ForeColor = Color.DarkGreen;
                 else lblBank1.ForeColor = Color.Red;
             });
+            //Stack
+            InvokeIfRequired((tbStack0), (MethodInvoker)delegate()
+            {
+                tbStack0.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[0].ToString()));
+            });
+            InvokeIfRequired((tbStack1), (MethodInvoker)delegate()
+            {
+                tbStack1.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[1].ToString()));
+            });
+            InvokeIfRequired((tbStack2), (MethodInvoker)delegate()
+            {
+                tbStack2.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[2].ToString()));
+            });
+            InvokeIfRequired((tbStack3), (MethodInvoker)delegate()
+            {
+                tbStack3.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[3].ToString()));
+            });
+            InvokeIfRequired((tbStack4), (MethodInvoker)delegate()
+            {
+                tbStack4.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[4].ToString()));
+            });
+            InvokeIfRequired((tbStack5), (MethodInvoker)delegate()
+            {
+                tbStack5.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[5].ToString()));
+            });
+            InvokeIfRequired((tbStack6), (MethodInvoker)delegate()
+            {
+                tbStack6.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[6].ToString()));
+            });
+            InvokeIfRequired((tbStack7), (MethodInvoker)delegate()
+            {
+                tbStack7.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[7].ToString()));
+            });
 
         }
 
