@@ -170,6 +170,7 @@ namespace PIC16F64_Simulator
         private void trbSpeed_Scroll(object sender, EventArgs e)
         {
             m_oPIC.Speed = trbSpeed.Value * 50;
+            textBox_speed.Text = Convert.ToString(m_oPIC.Speed);
         }
 
         private void label69_Click(object sender, EventArgs e)
@@ -376,6 +377,21 @@ namespace PIC16F64_Simulator
             {
                 LoadCommand(m_oPIC.getNextBefehlszeile(m_oPIC));
             }
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            m_oPIC.Speed = Convert.ToInt32(textBox_speed.Text);
+        }
+
+        private void Label_Duration_Click(object sender, EventArgs e)
+        {
+
         } 
 
     }

@@ -227,6 +227,9 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.tbRegW = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_speed = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SpecialregisterGroup.SuspendLayout();
             this.gprBox.SuspendLayout();
@@ -1660,6 +1663,7 @@
             this.Label_Duration.Size = new System.Drawing.Size(42, 13);
             this.Label_Duration.TabIndex = 0;
             this.Label_Duration.Text = "0,00 us";
+            this.Label_Duration.Click += new System.EventHandler(this.Label_Duration_Click);
             // 
             // groupBox3
             // 
@@ -1726,7 +1730,7 @@
             this.trbSpeed.Name = "trbSpeed";
             this.trbSpeed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.trbSpeed.RightToLeftLayout = true;
-            this.trbSpeed.Size = new System.Drawing.Size(384, 45);
+            this.trbSpeed.Size = new System.Drawing.Size(299, 45);
             this.trbSpeed.TabIndex = 53;
             this.trbSpeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.trbSpeed.Value = 5;
@@ -1734,13 +1738,17 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label51);
+            this.groupBox5.Controls.Add(this.textBox_speed);
+            this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.trbSpeed);
             this.groupBox5.Location = new System.Drawing.Point(12, 86);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(400, 67);
             this.groupBox5.TabIndex = 54;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Geschwindigkeit";
+            this.groupBox5.Text = "Quarzfrequenz";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // stackBox
             // 
@@ -2590,6 +2598,33 @@
             this.tbRegW.Text = "0x00";
             this.tbRegW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(313, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 54;
+            this.button1.Text = "setzen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox_speed
+            // 
+            this.textBox_speed.Location = new System.Drawing.Point(313, 14);
+            this.textBox_speed.Name = "textBox_speed";
+            this.textBox_speed.Size = new System.Drawing.Size(49, 20);
+            this.textBox_speed.TabIndex = 55;
+            this.textBox_speed.Text = "250";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(368, 17);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(18, 13);
+            this.label51.TabIndex = 56;
+            this.label51.Text = "µs";
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2865,6 +2900,9 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TextBox tbRegW;
+        private System.Windows.Forms.TextBox textBox_speed;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label51;
     }
 }
 
