@@ -568,7 +568,7 @@ namespace PIC16F64_Simulator
 
         public void resetStack()
         {
-            System.Array.Clear(m_aStack, 0, 8);
+            System.Array.Clear(m_aStack, 0, m_aStack.Length);
         }
 
         #endregion Reset Funtions

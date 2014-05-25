@@ -281,7 +281,7 @@ namespace PIC16F64_Simulator
             m_oPIC.Step = false;
             startButton.Enabled = false;
             stopButton.Enabled = true;
-            resetButton.Enabled = true;
+            resetButton.Enabled = false;
             ladenToolStripMenuItem.Enabled = false;
             m_tCommandExecutor = new Thread(new ThreadStart(start));
             m_tCommandExecutor.Start();
@@ -468,6 +468,7 @@ namespace PIC16F64_Simulator
             m_tCommandExecutor.Abort();
             startButton.Enabled = true;
             stopButton.Enabled = false;
+            resetButton.Enabled = true;
             return;
         }
         public void INTInterruptHandler(object sender, EventArgs e)
