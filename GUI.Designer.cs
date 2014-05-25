@@ -136,7 +136,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
+            this.Label_Duration = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -1539,6 +1539,7 @@
             this.nextButton.TabIndex = 13;
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // resetButton
             // 
@@ -1565,7 +1566,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.Label_Duration);
             this.groupBox2.Location = new System.Drawing.Point(414, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(112, 53);
@@ -1582,14 +1583,14 @@
             this.button7.Text = "reset";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // label24
+            // Label_Duration
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(11, 23);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(42, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "0,00 us";
+            this.Label_Duration.AutoSize = true;
+            this.Label_Duration.Location = new System.Drawing.Point(11, 23);
+            this.Label_Duration.Name = "Label_Duration";
+            this.Label_Duration.Size = new System.Drawing.Size(42, 13);
+            this.Label_Duration.TabIndex = 0;
+            this.Label_Duration.Text = "0,00 us";
             // 
             // groupBox3
             // 
@@ -2004,7 +2005,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label Label_Duration;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button8;

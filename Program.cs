@@ -8,9 +8,8 @@ namespace PIC16F64_Simulator
 {
     static class Program
     {
-        /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
-        /// </summary>
+        #region Main
+
         [STAThread]
         static void Main()
         {
@@ -18,5 +17,7 @@ namespace PIC16F64_Simulator
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new GUI());
         }
+
+        #endregion Main
     }
 }

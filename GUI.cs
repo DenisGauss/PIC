@@ -20,6 +20,8 @@ namespace PIC16F64_Simulator
         private Befehlszeile m_letzteZeile;
         private PIC m_oPIC;
         private bool checkWatchDog;
+        private Hashtable m_htSFRRegister;
+        private Hashtable m_htGPRRegister;
         #endregion
         //Konstruktor
         public GUI()
@@ -27,6 +29,70 @@ namespace PIC16F64_Simulator
             InitializeComponent();
             m_oPIC = new PIC();
             checkWatchDog = false;
+
+            #region initSFRHash
+            //fill hashtable SFR register
+            m_htSFRRegister = new Hashtable(16);
+            m_htSFRRegister.Add(0x00, tbReg00);
+            m_htSFRRegister.Add(0x01, tbReg01);
+            m_htSFRRegister.Add(0x02, tbReg02);
+            m_htSFRRegister.Add(0x03, tbReg03);
+            m_htSFRRegister.Add(0x04, tbReg04);
+            m_htSFRRegister.Add(0x05, tbReg05);
+            m_htSFRRegister.Add(0x06, tbReg06);
+            m_htSFRRegister.Add(0x08, tbReg08);
+            m_htSFRRegister.Add(0x09, tbReg09);
+            m_htSFRRegister.Add(0x0A, tbReg0A);
+            m_htSFRRegister.Add(0x0B, tbReg0B);
+            m_htSFRRegister.Add(0x81, tbReg81);
+            m_htSFRRegister.Add(0x85, tbReg85);
+            m_htSFRRegister.Add(0x86, tbReg86);
+            m_htSFRRegister.Add(0x88, tbReg88);
+            m_htSFRRegister.Add(0x89, tbReg89);
+            #endregion
+
+            #region initGPRHash
+
+            // fill hashtable GPRRegister
+            m_htGPRRegister = new Hashtable(36);
+            m_htGPRRegister.Add(0x0C, tbReg0C);
+            m_htGPRRegister.Add(0x0D, tbReg0D);
+            m_htGPRRegister.Add(0x0E, tbReg0E);
+            m_htGPRRegister.Add(0x0F, tbReg0F);
+            m_htGPRRegister.Add(0x10, tbReg10);
+            m_htGPRRegister.Add(0x11, tbReg11);
+            m_htGPRRegister.Add(0x12, tbReg12);
+            m_htGPRRegister.Add(0x13, tbReg13);
+            m_htGPRRegister.Add(0x14, tbReg14);
+            m_htGPRRegister.Add(0x15, tbReg15);
+            m_htGPRRegister.Add(0x16, tbReg16);
+            m_htGPRRegister.Add(0x17, tbReg17);
+            m_htGPRRegister.Add(0x18, tbReg18);
+            m_htGPRRegister.Add(0x19, tbReg19);
+            m_htGPRRegister.Add(0x1A, tbReg1A);
+            m_htGPRRegister.Add(0x1B, tbReg1B);
+            m_htGPRRegister.Add(0x1C, tbReg1C);
+            m_htGPRRegister.Add(0x1D, tbReg1D);
+            m_htGPRRegister.Add(0x1E, tbReg1E);
+            m_htGPRRegister.Add(0x1F, tbReg1F);
+            m_htGPRRegister.Add(0x20, tbReg20);
+            m_htGPRRegister.Add(0x21, tbReg21);
+            m_htGPRRegister.Add(0x22, tbReg22);
+            m_htGPRRegister.Add(0x23, tbReg23);
+            m_htGPRRegister.Add(0x24, tbReg24);
+            m_htGPRRegister.Add(0x25, tbReg25);
+            m_htGPRRegister.Add(0x26, tbReg26);
+            m_htGPRRegister.Add(0x27, tbReg27);
+            m_htGPRRegister.Add(0x28, tbReg28);
+            m_htGPRRegister.Add(0x29, tbReg29);
+            m_htGPRRegister.Add(0x2A, tbReg2A);
+            m_htGPRRegister.Add(0x2B, tbReg2B);
+            m_htGPRRegister.Add(0x2C, tbReg2C);
+            m_htGPRRegister.Add(0x2D, tbReg2D);
+            m_htGPRRegister.Add(0x2E, tbReg2E);
+            m_htGPRRegister.Add(0x2F, tbReg2F);
+
+            #endregion initGPRHash
         }
 
         private void saveFile_FileOk(object sender, CancelEventArgs e)
@@ -103,7 +169,7 @@ namespace PIC16F64_Simulator
 
         private void trbSpeed_Scroll(object sender, EventArgs e)
         {
-
+            m_oPIC.Speed = trbSpeed.Value * 50;
         }
 
         private void label69_Click(object sender, EventArgs e)
@@ -223,7 +289,7 @@ namespace PIC16F64_Simulator
              });
 
              //update gui
-            // GUIUpdate();
+             GUI_UPDATE();
 
              //check for breakpoint
              InvokeIfRequired(List, (MethodInvoker)delegate()
@@ -292,6 +358,24 @@ namespace PIC16F64_Simulator
 
 
 
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            ladenToolStripMenuItem.Enabled = false;
+            startButton.Enabled = false;
+            resetButton.Enabled = true;
+            nextButton.Enabled = true;
+            m_oPIC.Step = true;
+            if (m_tCommandExecutor == null)
+            {
+                m_tCommandExecutor = new Thread(new ThreadStart(start));
+                m_tCommandExecutor.Start();
+            }
+            else
+            {
+                LoadCommand(m_oPIC.getNextBefehlszeile(m_oPIC));
+            }
         } 
 
     }

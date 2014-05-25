@@ -8,12 +8,17 @@ namespace PIC16F64_Simulator
 {
     public class BefehlszeilenSatz
     {
- //* Singleton for the BefehlszeilenSatz: for easy access. * //
+        //* Singleton for the BefehlszeilenSatz: for easy access. * //
         //----------------------------------------------------//
 
         static readonly BefehlszeilenSatz instance = new BefehlszeilenSatz();
 
+        #region Getter/Setter
         public List<Befehlszeile> m_BefehlszeilenList { get; set; }
+
+        #endregion Getter/Setter
+
+        #region Functions
 
         /// <summary>
         /// adds a Befehlszeile to the BefehlszeilenSatz
@@ -58,5 +63,7 @@ namespace PIC16F64_Simulator
         {
             m_BefehlszeilenList = new List<Befehlszeile>();
         }//BefehlszeilenSatz()
+
+        #endregion Functions
     }
 }

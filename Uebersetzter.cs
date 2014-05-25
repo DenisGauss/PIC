@@ -12,8 +12,7 @@ namespace PIC16F64_Simulator
 {
     class Uebersetzter
     {
-
-        #region MemberVariables
+        #region Variables
 
         private String m_sFilePath;
 

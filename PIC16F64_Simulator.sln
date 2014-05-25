@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIC16F64_Simulator", "PIC16F64_Simulator.csproj", "{EA47E657-7AFD-4BBD-81FB-892A5121B39E}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML Diagramme", "..\ModelingProject1\UML Diagramme.modelproj", "{B02B74A5-B2F2-44A0-AAFD-563D634E557F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EA47E657-7AFD-4BBD-81FB-892A5121B39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA47E657-7AFD-4BBD-81FB-892A5121B39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA47E657-7AFD-4BBD-81FB-892A5121B39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02B74A5-B2F2-44A0-AAFD-563D634E557F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02B74A5-B2F2-44A0-AAFD-563D634E557F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02B74A5-B2F2-44A0-AAFD-563D634E557F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02B74A5-B2F2-44A0-AAFD-563D634E557F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

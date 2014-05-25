@@ -21,7 +21,6 @@ namespace PIC16F64_Simulator
 
         private int m_iProgramCounter;
         private int m_iCommandCounter;
-        private bool m_bStep;
         private int m_iCachedTrisA;
         private int m_iCachedTrisB;
         private int m_iLatchPortA;
@@ -32,10 +31,12 @@ namespace PIC16F64_Simulator
         private int m_iPreScaler;
         private int m_iSpeed;
         private int m_iOpCode;
-        
         private int m_iStackPointer;
+        private bool m_bStep;
 
         #endregion
+
+        #region Konstruktor
 
         public PIC()
         {
@@ -47,20 +48,22 @@ namespace PIC16F64_Simulator
             m_iSpeed = 250;
             m_iWatchDogTimer = 0;
 
-            //size=48, because 0x2F is the highest adress in GPR
+            //Initialisierung des GPR (size=48, because 0x2F is the highest adress in GPR)
             m_aGPRMemory = new int[48];
             System.Array.Clear(m_aGPRMemory, 0, m_aGPRMemory.Length);
 
-            // int size 138, because of the highest Adress in SFR is 89h
+            // Initialisierung des SFR (int size 138, because of the highest Adress in SFR is 89h)
             m_aSFRMemory = new int[138];
             System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
             SFRinitialize();
 
-            // initialise Stack
+            // Initialisierung des Stack
             m_aStack = new int[8];
             System.Array.Clear(m_aStack, 0, 8);
 
         }//PIC()
+
+        #endregion Kosntruktor
 
         #region Getter/Setter
 
@@ -104,61 +107,61 @@ namespace PIC16F64_Simulator
                 value = value >> 8;
                 setSFRMemoryValue(0x0A, value & 0x1F);
             }
-        }//ProgramCounter()
+        }
 
         public int cachedTrisA
         {
             get { return m_iCachedTrisA; }
             set { m_iCachedTrisA = value; }
-        }//cachedTrisA()
+        }
 
         public int cachedTrisB
         {
             get { return m_iCachedTrisB; }
             set { m_iCachedTrisB = value; }
-        }//cachedTrisB()
+        }
 
         public bool Step
         {
             get { return m_bStep; }
             set { m_bStep = value; }
-        }//Step()
+        }
 
         public int LatchA
         {
             get { return m_iLatchPortA; }
             set { m_iLatchPortA = value; }
-        }//LatchA()
+        }
 
         public int LatchB
         {
             get { return m_iLatchPortB; }
             set { m_iLatchPortB = value; }
-        }//LatchB()
+        }
 
         public int Speed
         {
             get { return m_iSpeed; }
             set { m_iSpeed = value; }
-        }//Speed()
+        }
 
         public int WatchDog
         {
             get { return m_iWatchDogTimer; }
             set { m_iWatchDogTimer = value; }
-        }//Watchdog()
+        }
 
         public int CommandCounter
         {
             get { return m_iCommandCounter; }
             set { m_iCommandCounter = value; }
-        }//CommandCounter()
+        }
 
         public int Duration
         {
             get { return m_iDuration; }
             set { m_iDuration = value; }
-        }//Duration()
+        }
 
         public int getWRegister()
         {
@@ -185,7 +188,7 @@ namespace PIC16F64_Simulator
             }
 
             return null;
-        }//getNextCodeLine()
+        }
 
         /// <summary>
         /// checks for adress mirror (SFR set GPR)
@@ -200,7 +203,7 @@ namespace PIC16F64_Simulator
             if (addr == 0x08 && checkRP0Flag()) addr = 0x88; //EECON1
             if (addr == 0x09 && checkRP0Flag()) addr = 0x89; //EECON2
             return addr;
-        }//checkMirrorBankAddress()
+        }
 
         /// <summary>
         /// checks if indirect adressing is used
@@ -211,7 +214,7 @@ namespace PIC16F64_Simulator
         {
             if (addr == 0x00) return getSFRMemory()[0x04];
             return addr;
-        }//checkIndirectAddressing()
+        }
 
         /// <summary>
         /// checks the latch logic if a command writes to porta or portb
@@ -246,7 +249,7 @@ namespace PIC16F64_Simulator
                 //check which ports are OUTgoing ports, only this ports can be set!
                 writeLatchToPort(trisB, addr, LatchB);
             }
-        }//checkLatchLogic()
+        }
 
         /// <summary>
         /// checks if a port is OUT and if yes, writes the Latch to port
@@ -313,7 +316,7 @@ namespace PIC16F64_Simulator
 
             if ((regvalue & set) == 0x00) return regvalue;
             return regvalue &= unset;
-        }//setBitAtPosition()
+        }
 
         /// <summary>
         /// checks if a bit in a value is set and returns true or false
@@ -325,7 +328,7 @@ namespace PIC16F64_Simulator
         {
             if (((regvalue >> pos) & 0x01) == 0x00) return false;
             else return true;
-        }//getBitAtPosition()
+        }
 
         /// <summary>
         /// get Register value of a SFR unset GPR
@@ -336,7 +339,7 @@ namespace PIC16F64_Simulator
         {
             if (addr < 0x80 && addr > 0x0B) return getGRPMemory()[addr];
             else return getSFRMemory()[addr];
-        }//getRegisterValue()
+        }
 
         /// <summary>
         /// sets register value of a SFR unset GPR
@@ -347,7 +350,7 @@ namespace PIC16F64_Simulator
         {
             if (addr < 0x80 && addr > 0x0B) setSFRMemoryValue(addr, value);
             else setSFRMemoryValue(addr, value);
-        }//setRegisterValue()
+        }
 
         /// <summary>
         /// Checks for an overflow
@@ -365,7 +368,7 @@ namespace PIC16F64_Simulator
                 value -= 0x100;
             }
             return value;
-        }//checkForOverflow()
+        }
 
         /// <summary>
         /// increments the prescaler
@@ -407,7 +410,7 @@ namespace PIC16F64_Simulator
                 }
             }
 
-        }//incPreScaler()
+        }
 
         /// <summary>
         /// increments the watchdog timer
@@ -430,7 +433,7 @@ namespace PIC16F64_Simulator
                 WatchDog = 0;
                 activateWatchDogReset();
             }
-        }//incWatchDog()
+        }
 
         /// <summary>
         /// watchdog reset
@@ -453,7 +456,7 @@ namespace PIC16F64_Simulator
             getSFRMemory()[0x81] = 0xFF; //OPTION_REG
             getSFRMemory()[0x85] = 0x1F; //TRISA
             getSFRMemory()[0x86] = 0xFF; //TRISB
-        }//activateWatchDogReset()
+        }
 
         /// <summary>
         /// gives the actuel command to decoder, then it will be executed
@@ -464,7 +467,7 @@ namespace PIC16F64_Simulator
         {
             // decodes the opcode set calls the matching function
             decodeOpCode(aCodeLine.OpCode);
-        }//executeCommand()
+        }
 
         /// <summary>
         /// realises a timeout, the picCPU is sleeping for a time.
@@ -473,7 +476,7 @@ namespace PIC16F64_Simulator
         {
             System.Threading.Thread.Sleep(time);
 
-        } //timeOut()
+        }
 
         public void decodeOpCode(int opCode)
         {
@@ -513,11 +516,12 @@ namespace PIC16F64_Simulator
             else if ((opCode & 0x3FFF) == 0x0063) sleep();
             else if ((opCode & 0x3E00) == 0x3C00) sublw();
             else if ((opCode & 0x3F00) == 0x3A00) xorlw();
-        }//decodeOpCode
+        }
 
         #endregion Allgemeine Funktions
 
         #region Reset Functions
+
         /// <summary>
         /// resets all member variables
         /// </summary>
@@ -534,27 +538,27 @@ namespace PIC16F64_Simulator
             resetSFRMemory();
             resetStack();
 
-        }//resetCPU()
+        }
 
         public void resetWRegister()
         {
             m_iWRegister = 0;
-        }//resetRegister()
+        }
 
         public void resetGPRMemory()
         {
             System.Array.Clear(m_aGPRMemory, 0, m_aGPRMemory.Length);
-        }//resetGPRMemory()
+        }
 
         public void resetSFRMemory()
         {
             System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
-        }//resetSFRMemory()
+        }
 
         public void resetStack()
         {
             System.Array.Clear(m_aStack, 0, 8);
-        }//resetStack()
+        }
 
         #endregion Reset Funtions
 
@@ -567,7 +571,7 @@ namespace PIC16F64_Simulator
             m_aSFRMemory[0x81] = 0xff;
             m_aSFRMemory[0x85] = 0x1f;
             m_aSFRMemory[0x86] = 0xff;
-        }//initialize()
+        }
 
         /// <summary>
         /// checks if carrybit has to be set or unset
@@ -577,7 +581,7 @@ namespace PIC16F64_Simulator
         {
             if (value > 0xFF) setCarry();
             else unsetCarry();
-        }//checkForCarrySetOrUnset
+        }
 
         /// <summary>
         /// checks if carrybit has to be set or unset FOR SUBSTRACTION COMMANDS
@@ -587,7 +591,7 @@ namespace PIC16F64_Simulator
         {
             if (value < 0) unsetCarry();
             else setCarry();
-        }//checkForCarrySetOrUnsetSubstraction
+        }
 
         /// <summary>
         /// checks if digit carry has to be set or unset
@@ -597,7 +601,7 @@ namespace PIC16F64_Simulator
         {
             if (value > 0xF) setDCFlag();
             else unsetDCFlag();
-        }//checkForDcSetOrUnset()
+        }
 
         /// <summary>
         /// checks if digit carry has to be set or unset SUBSTRACTION
@@ -607,7 +611,7 @@ namespace PIC16F64_Simulator
         {
             if (value < 0x00) unsetDCFlag();
             else setDCFlag();
-        }//checkForDcSetOrUnsetSubstraction()
+        }
 
         /// <summary>
         /// checks if zero has to be set or unset
@@ -617,7 +621,7 @@ namespace PIC16F64_Simulator
         {
             if (value == 0) setZero();
             else unsetZero();
-        }//checkForZeroSetOrUnset()
+        }
 
         /// <summary>
         /// check if RP0 is set unset not
@@ -627,7 +631,7 @@ namespace PIC16F64_Simulator
         {
             if ((m_aSFRMemory[0x03] & 0x20) == 0x00) return false;
             return true;
-        }//checkRP0Flag()
+        }
 
         /// <summary>
         /// check if PD is set unset not
@@ -637,7 +641,7 @@ namespace PIC16F64_Simulator
         {
             if ((m_aSFRMemory[0x03] & 0x08) == 0x00) return false;
             return true;
-        }//checkPDFlag()
+        }
 
         /// <summary>
         /// check if TO is set unset not
@@ -647,7 +651,7 @@ namespace PIC16F64_Simulator
         {
             if ((m_aSFRMemory[0x03] & 0x10) == 0x00) return false;
             return true;
-        }//checkTOFlag()
+        }
 
         /// <summary>
         /// checks if carrybit is set unset not
@@ -657,7 +661,7 @@ namespace PIC16F64_Simulator
         {
             if ((m_aSFRMemory[0x03] & 0x01) == 0x00) return false;
             return true;
-        }//checkCarryFlag()
+        }
 
         /// <summary>
         /// set value at a register adress
@@ -724,34 +728,35 @@ namespace PIC16F64_Simulator
         internal void setRP0Flag()
         {
             m_aSFRMemory[0x03] |= 0x20;
-        }//setRP0Flag()
+        }
 
         internal void unsetRP0Flag()
         {
             m_aSFRMemory[0x03] &= 0xDF;
-        }//unsetRP0Flag()
+        }
 
         internal void setCarry()
         {
             m_aSFRMemory[0x03] |= 0x01;
-        }//setCarry()
+        }
 
         internal void unsetCarry()
         {
             m_aSFRMemory[0x03] &= 0xFE;
-        }//unsetCarry()
+        }
 
         internal void setZero()
         {
             m_aSFRMemory[0x3] |= 0x04;
-        }//setZero()
+        }
 
         internal void unsetZero()
         {
             m_aSFRMemory[0x3] &= 0xFB;
-        }//unsetZero()
+        }
 
         #endregion SFRMemory Internals
+
         #endregion SFRMemory
 
         #region Stack Functions
@@ -802,7 +807,7 @@ namespace PIC16F64_Simulator
                 executeInterrupt();
             }
 
-        }//checkINTInterrupt()
+        }
 
         /// <summary>
         /// checks if INTInterrupt occured and sets the INTF flag if yes
@@ -817,7 +822,7 @@ namespace PIC16F64_Simulator
                 //the interrupt occured, set the INTF Flag
                 setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 1, true));
             }
-        }//INTInterrupt()
+        }
 
         /// <summary>
         /// logic of TMR0 Interrupt
@@ -846,7 +851,7 @@ namespace PIC16F64_Simulator
                 executeInterrupt();
             }
 
-        }//checkTMR0Interrupt()
+        }
 
         /// <summary>
         /// logic of PORT RB Interrupt
@@ -865,7 +870,7 @@ namespace PIC16F64_Simulator
                     executeInterrupt();
                 }
             }
-        }//checkPortRbInterrupt()
+        }
 
         /// <summary>
         /// checks if PortRBInterrupt occured and sets RBIF if yes.
@@ -876,7 +881,7 @@ namespace PIC16F64_Simulator
         {
             //the interrupt occured, set the RBIF Flag
             setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 0, true));
-        }//PortRBInterrupt()
+        }
 
         /// <summary>
         /// logic for the PortRA4 Event(T0CKI)
@@ -909,7 +914,7 @@ namespace PIC16F64_Simulator
                     }
                 }
             }
-        }//portRA4Interrupt()
+        }
 
         /// <summary>
         /// executes an interrupt
@@ -921,7 +926,7 @@ namespace PIC16F64_Simulator
             setRegisterValue(0x0B, setBitAtPosition(getRegisterValue(0x0B), 7, false));
             pushStack(ProgramCounter);
             ProgramCounter = 0x04;
-        }//executeInterrupt()
+        }
 
         #endregion Interrupt Functions
 

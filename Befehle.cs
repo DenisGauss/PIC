@@ -9,7 +9,7 @@ namespace PIC16F64_Simulator
     public partial class PIC
     {
         
-        #region shortcuts
+        #region Interrupts
         private void checkInterrupts()
         {
             checkTMR0Interrupt();
@@ -30,11 +30,8 @@ namespace PIC16F64_Simulator
             checkInterrupts();
         }
         
-        #endregion
-        //* THE ASSEMBLER FUNCTIONS OF THE PIC16C84 ARE IMPLEMENTED HERE * //
-        //-----------------------------------------------------------------//
+        #endregion Interrupts
 
-        //implemented
         #region Befehle
         private void xorlw()
         {
