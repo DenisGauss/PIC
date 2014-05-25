@@ -8,7 +8,8 @@ namespace PIC16F64_Simulator
 {
     public class Befehlszeile
     {
-        #region MemberVariablen
+        #region Variablen
+
         //Befehlszeile in die Bestandteile aufteilen für Übersichtlichkeit
         private String m_sState;
         private String m_sOpCode;

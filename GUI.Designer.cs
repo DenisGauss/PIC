@@ -138,8 +138,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.Label_Duration = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.serialPanel = new System.Windows.Forms.Panel();
+            this.btn_serial = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label50 = new System.Windows.Forms.Label();
             this.tBWatchDog = new System.Windows.Forms.TextBox();
@@ -1667,8 +1667,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.panel1);
-            this.groupBox3.Controls.Add(this.button8);
+            this.groupBox3.Controls.Add(this.serialPanel);
+            this.groupBox3.Controls.Add(this.btn_serial);
             this.groupBox3.Location = new System.Drawing.Point(821, 76);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(108, 59);
@@ -1676,22 +1676,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Serial Port";
             // 
-            // panel1
+            // serialPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(87, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(17, 23);
-            this.panel1.TabIndex = 1;
+            this.serialPanel.BackColor = System.Drawing.Color.Red;
+            this.serialPanel.Location = new System.Drawing.Point(87, 20);
+            this.serialPanel.Name = "serialPanel";
+            this.serialPanel.Size = new System.Drawing.Size(17, 23);
+            this.serialPanel.TabIndex = 1;
+            this.serialPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.serialPanel_Paint);
             // 
-            // button8
+            // btn_serial
             // 
-            this.button8.Location = new System.Drawing.Point(7, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Verbinden";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_serial.Location = new System.Drawing.Point(7, 20);
+            this.btn_serial.Name = "btn_serial";
+            this.btn_serial.Size = new System.Drawing.Size(75, 23);
+            this.btn_serial.TabIndex = 0;
+            this.btn_serial.Text = "Verbinden";
+            this.btn_serial.UseVisualStyleBackColor = true;
+            this.btn_serial.Click += new System.EventHandler(this.btn_serial_Click);
             // 
             // groupBox4
             // 
@@ -2776,8 +2778,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label Label_Duration;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Panel serialPanel;
+        private System.Windows.Forms.Button btn_serial;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel watchDogPanel;
         private System.Windows.Forms.Button watchDogButton;

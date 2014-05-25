@@ -199,6 +199,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRa0.Text == "OUT")
                     cbPortRa0.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
 
             });
 
@@ -212,6 +217,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRa1.Text == "OUT")
                     cbPortRa1.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
 
             });
 
@@ -225,6 +235,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRa2.Text == "OUT")
                     cbPortRa2.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
 
             });
 
@@ -238,6 +253,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRa3.Text == "OUT")
                     cbPortRa3.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
 
             });
 
@@ -251,10 +271,43 @@ namespace PIC16F64_Simulator
                 if (lblPortRa4.Text == "OUT")
                     cbPortRa4.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
 
             });
 
             #endregion TRISA
+
+            #region COM Schnittstelle
+
+            //SerialPort Textbox
+            InvokeIfRequired((serialPanel), (MethodInvoker)delegate()
+            {
+                if (m_tSerialPortThread != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED) serialPanel.BackColor = Color.Green;
+                    else if (m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE) serialPanel.BackColor = Color.Yellow;
+                    else
+                    {
+                        serialPanel.BackColor = Color.Red; m_tSerialPortThread.Abort();
+                    }
+                }
+            });
+
+            //"Connect"-Button
+            InvokeIfRequired((btn_serial), (MethodInvoker)delegate()
+            {
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.ABORTED || m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE)
+                        btn_serial.Enabled = true;
+                }
+            });
+
+            #endregion COM Schnittstelle
 
             #region TRISB
 
@@ -324,6 +377,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb0.Text == "OUT")
                     cbPortRb0.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
                 
             });
 
@@ -337,6 +395,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb1.Text == "OUT")
                     cbPortRb1.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
                 
             });
 
@@ -350,6 +413,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb2.Text == "OUT")
                     cbPortRb2.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
             });
 
             //Checkbox RB3
@@ -362,6 +430,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb3.Text == "OUT")
                     cbPortRb3.Enabled = false;
 
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
                 
             });
 
@@ -375,7 +448,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb4.Text == "OUT")
                     cbPortRb4.Enabled = false;
 
-                
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
             });
 
             //Checkbox RB5
@@ -388,7 +465,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb5.Text == "OUT")
                     cbPortRb5.Enabled = false;
 
-                
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
             });
 
             //Checkbox RB6
@@ -401,7 +482,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb6.Text == "OUT")
                     cbPortRb6.Enabled = false;
 
-                
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
             });
 
             //Checkbox RB7
@@ -414,7 +499,11 @@ namespace PIC16F64_Simulator
                 if (lblPortRb7.Text == "OUT")
                     cbPortRb7.Enabled = false;
 
-                
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
+                        cbPortRa0.Enabled = false;
+                }
             });
 
             #endregion TRISB

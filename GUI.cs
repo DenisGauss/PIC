@@ -19,6 +19,8 @@ namespace PIC16F64_Simulator
         private Thread m_tCommandExecutor;
         private Befehlszeile m_letzteZeile;
         private PIC m_oPIC;
+        private COM m_oHwPort;
+        private Thread m_tSerialPortThread;
         private bool checkWatchDog;
         private Hashtable m_htSFRRegister;
         private Hashtable m_htGPRRegister;
@@ -532,6 +534,32 @@ namespace PIC16F64_Simulator
         }
 
         private void watchDogPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_serial_Click(object sender, EventArgs e)
+        {
+            if (serialPanel.BackColor == Color.Red)
+            {
+                //disable "Connect"-Button
+                btn_serial.Enabled = false;
+
+                GUI temp = this;
+
+                //create HardwarePort Object and start the thread
+                m_oHwPort = new COM(ref m_oPIC, ref temp, "COM1");
+                m_tSerialPortThread = new Thread(new ThreadStart(m_oHwPort.run));
+                m_tSerialPortThread.Start();
+                while (m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE)
+                {
+                    //wait 
+                }
+                GUI_UPDATE();
+            }
+        }
+
+        private void serialPanel_Paint(object sender, PaintEventArgs e)
         {
 
         } 

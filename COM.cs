@@ -9,7 +9,7 @@ namespace PIC16F64_Simulator
 {
     class COM
     {
-        #region MemberVariables
+        #region Variables
 
         //holds a reference to the picCPU
         private PIC m_oPicCPU;
