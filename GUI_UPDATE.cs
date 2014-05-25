@@ -31,19 +31,19 @@ namespace PIC16F64_Simulator
             }
 
             //W-Register
-            InvokeIfRequired((tbRegW), (MethodInvoker)delegate()
+            InvokeIfRequired((tb_RegW), (MethodInvoker)delegate()
             {
-                tbRegW.Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.WRegisterValue));
+                tb_RegW.Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.WRegisterValue));
             });
 
             //Watchdog Textbox
-            InvokeIfRequired((tBWatchDog), (MethodInvoker)delegate()
+            InvokeIfRequired((tb_WatchDogCounter), (MethodInvoker)delegate()
             {
                 if (watchDogPanel.BackColor == Color.Green)
                 {
-                    tBWatchDog.Enabled = true;
-                    tBWatchDog.Text = m_oPIC.WatchDog.ToString();
-                    tBWatchDog.Enabled = false;
+                    tb_WatchDogCounter.Enabled = true;
+                    tb_WatchDogCounter.Text = m_oPIC.WatchDog.ToString();
+                    tb_WatchDogCounter.Enabled = false;
                 }
             });
 
@@ -58,64 +58,64 @@ namespace PIC16F64_Simulator
                 });
             }
 
-            InvokeIfRequired((Label_Duration), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_Laufzeit), (MethodInvoker)delegate()
             {
-                Label_Duration.Text = String.Format("{0} µs", System.Convert.ToInt32(m_oPIC.Duration));
+                lbl_Laufzeit.Text = String.Format("{0} µs", System.Convert.ToInt32(m_oPIC.Duration));
             });
 
             //StatusRegister -> ZeroFlag
-            InvokeIfRequired((cbStatusZ), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_StatusZ), (MethodInvoker)delegate()
             {
-                cbStatusZ.Enabled = true;
-                cbStatusZ.Checked = m_oPIC.checkZeroFlag();
-                cbStatusZ.Enabled = false;
+                cb_StatusZ.Enabled = true;
+                cb_StatusZ.Checked = m_oPIC.checkZeroFlag();
+                cb_StatusZ.Enabled = false;
             });
 
             //StatusRegister -> /PD
-            InvokeIfRequired((cbStatusPD), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_StatusPD), (MethodInvoker)delegate()
             {
-                cbStatusPD.Enabled = true;
-                cbStatusPD.Checked = m_oPIC.checkPDFlag();
-                cbStatusPD.Enabled = false;
+                cb_StatusPD.Enabled = true;
+                cb_StatusPD.Checked = m_oPIC.checkPDFlag();
+                cb_StatusPD.Enabled = false;
             });
 
             //StatusRegister -> /TO
-            InvokeIfRequired((cbStatusTO), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_StatusTO), (MethodInvoker)delegate()
             {
-                cbStatusPD.Enabled = true;
-                cbStatusPD.Checked = m_oPIC.checkTOFlag();
-                cbStatusPD.Enabled = false;
+                cb_StatusPD.Enabled = true;
+                cb_StatusPD.Checked = m_oPIC.checkTOFlag();
+                cb_StatusPD.Enabled = false;
             });
 
             //StatusRegister -> CarryFlag
-            InvokeIfRequired((cbStatusC), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_StatusC), (MethodInvoker)delegate()
             {
-                cbStatusC.Enabled = true;
-                cbStatusC.Checked = m_oPIC.checkCarryFlag();
-                cbStatusC.Enabled = false;
+                cb_StatusC.Enabled = true;
+                cb_StatusC.Checked = m_oPIC.checkCarryFlag();
+                cb_StatusC.Enabled = false;
             });
 
             //StatusRegister -> DCFlag
-            InvokeIfRequired((cbStatusDc), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_StatusDc), (MethodInvoker)delegate()
             {
-                cbStatusDc.Enabled = true;
-                cbStatusDc.Checked = m_oPIC.checkDCFlag();
-                cbStatusDc.Enabled = false;
+                cb_StatusDc.Enabled = true;
+                cb_StatusDc.Checked = m_oPIC.checkDCFlag();
+                cb_StatusDc.Enabled = false;
             });
 
             //StatusRegister -> RP0
-            InvokeIfRequired((cbStatusRp0), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_StatusRp0), (MethodInvoker)delegate()
             {
-                cbStatusRp0.Enabled = true;
-                cbStatusRp0.Checked = m_oPIC.checkRP0Flag();
-                cbStatusRp0.Enabled = false;
+                cb_StatusRp0.Enabled = true;
+                cb_StatusRp0.Checked = m_oPIC.checkRP0Flag();
+                cb_StatusRp0.Enabled = false;
             });
 
             //Aktive Bank
-            InvokeIfRequired((lblBank), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_Bank), (MethodInvoker)delegate()
             {
-                if (m_oPIC.checkRP0Flag()) lblBank.Text = "Bank1";
-                else lblBank.Text = "Bank0";
+                if (m_oPIC.checkRP0Flag()) lbl_Bank.Text = "Bank1";
+                else lbl_Bank.Text = "Bank0";
             });
 
             //Stack
@@ -155,126 +155,126 @@ namespace PIC16F64_Simulator
             #region TRISA
 
             //TrisA Label for RA4
-            InvokeIfRequired((lblPortRa4), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRa4), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x10) == 0x00) lblPortRa4.Text = "OUT";
-                else lblPortRa4.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x85] & 0x10) == 0x00) lbl_PortRa4.Text = "OUT";
+                else lbl_PortRa4.Text = "IN";
             });
 
             //TrisA Label for RA3
-            InvokeIfRequired((lblPortRa3), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRa3), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x08) == 0x00) lblPortRa3.Text = "OUT";
-                else lblPortRa3.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x85] & 0x08) == 0x00) lbl_PortRa3.Text = "OUT";
+                else lbl_PortRa3.Text = "IN";
             });
 
             //TrisA Label for RA2
-            InvokeIfRequired((lblPortRa2), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRa2), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x04) == 0x00) lblPortRa2.Text = "OUT";
-                else lblPortRa2.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x85] & 0x04) == 0x00) lbl_PortRa2.Text = "OUT";
+                else lbl_PortRa2.Text = "IN";
             });
 
             //TrisA Label for RA1
-            InvokeIfRequired((lblPortRa1), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRa1), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x02) == 0x00) lblPortRa1.Text = "OUT";
-                else lblPortRa1.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x85] & 0x02) == 0x00) lbl_PortRa1.Text = "OUT";
+                else lbl_PortRa1.Text = "IN";
             });
 
             //TrisA Label for RA0
-            InvokeIfRequired((lblPortRa0), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRa0), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x01) == 0x00) lblPortRa0.Text = "OUT";
-                else lblPortRa0.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x85] & 0x01) == 0x00) lbl_PortRa0.Text = "OUT";
+                else lbl_PortRa0.Text = "IN";
             });
 
             //Checkbox RA0
-            InvokeIfRequired((cbPortRa0), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRa0), (MethodInvoker)delegate()
             {
-                cbPortRa0.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x01) == 0x00) cbPortRa0.Checked = false;
-                else cbPortRa0.Checked = true;
+                cb_PortRa0.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x01) == 0x00) cb_PortRa0.Checked = false;
+                else cb_PortRa0.Checked = true;
 
-                if (lblPortRa0.Text == "OUT")
-                    cbPortRa0.Enabled = false;
+                if (lbl_PortRa0.Text == "OUT")
+                    cb_PortRa0.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
 
             });
 
             //Checkbox RA1
-            InvokeIfRequired((cbPortRa1), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRa1), (MethodInvoker)delegate()
             {
-                cbPortRa1.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x02) == 0x00) cbPortRa1.Checked = false;
-                else cbPortRa1.Checked = true;
+                cb_PortRa1.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x02) == 0x00) cb_PortRa1.Checked = false;
+                else cb_PortRa1.Checked = true;
 
-                if (lblPortRa1.Text == "OUT")
-                    cbPortRa1.Enabled = false;
+                if (lbl_PortRa1.Text == "OUT")
+                    cb_PortRa1.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
 
             });
 
             //Checkbox RA2
-            InvokeIfRequired((cbPortRa2), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRa2), (MethodInvoker)delegate()
             {
-                cbPortRa2.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x04) == 0x00) cbPortRa2.Checked = false;
-                else cbPortRa2.Checked = true;
+                cb_PortRa2.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x04) == 0x00) cb_PortRa2.Checked = false;
+                else cb_PortRa2.Checked = true;
 
-                if (lblPortRa2.Text == "OUT")
-                    cbPortRa2.Enabled = false;
+                if (lbl_PortRa2.Text == "OUT")
+                    cb_PortRa2.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
 
             });
 
             //Checkbox RA3
-            InvokeIfRequired((cbPortRa3), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRa3), (MethodInvoker)delegate()
             {
-                cbPortRa3.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x08) == 0x00) cbPortRa3.Checked = false;
-                else cbPortRa3.Checked = true;
+                cb_PortRa3.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x08) == 0x00) cb_PortRa3.Checked = false;
+                else cb_PortRa3.Checked = true;
 
-                if (lblPortRa3.Text == "OUT")
-                    cbPortRa3.Enabled = false;
+                if (lbl_PortRa3.Text == "OUT")
+                    cb_PortRa3.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
 
             });
 
             //Checkbox RA4
-            InvokeIfRequired((cbPortRa4), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRa4), (MethodInvoker)delegate()
             {
-                cbPortRa4.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x10) == 0x00) cbPortRa4.Checked = false;
-                else cbPortRa4.Checked = true;
+                cb_PortRa4.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x05] & 0x10) == 0x00) cb_PortRa4.Checked = false;
+                else cb_PortRa4.Checked = true;
 
-                if (lblPortRa4.Text == "OUT")
-                    cbPortRa4.Enabled = false;
+                if (lbl_PortRa4.Text == "OUT")
+                    cb_PortRa4.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
 
             });
@@ -298,12 +298,12 @@ namespace PIC16F64_Simulator
             });
 
             //"Connect"-Button
-            InvokeIfRequired((btn_serial), (MethodInvoker)delegate()
+            InvokeIfRequired((btn_VerbindeCom), (MethodInvoker)delegate()
             {
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.ABORTED || m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE)
-                        btn_serial.Enabled = true;
+                        btn_VerbindeCom.Enabled = true;
                 }
             });
 
@@ -312,197 +312,197 @@ namespace PIC16F64_Simulator
             #region TRISB
 
             //TrisB Label for RB7
-            InvokeIfRequired((lblPortRb7), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb7), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x80) == 0x00) lblPortRb7.Text = "OUT";
-                else lblPortRb7.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x80) == 0x00) lbl_PortRb7.Text = "OUT";
+                else lbl_PortRb7.Text = "IN";
             });
 
             //TrisB Label for RB6
-            InvokeIfRequired((lblPortRb6), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb6), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x40) == 0x00) lblPortRb6.Text = "OUT";
-                else lblPortRb6.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x40) == 0x00) lbl_PortRb6.Text = "OUT";
+                else lbl_PortRb6.Text = "IN";
             });
 
             //TrisB Label for RB5
-            InvokeIfRequired((lblPortRb5), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb5), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x20) == 0x00) lblPortRb5.Text = "OUT";
-                else lblPortRb5.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x20) == 0x00) lbl_PortRb5.Text = "OUT";
+                else lbl_PortRb5.Text = "IN";
             });
 
             //TrisB Label for RB4
-            InvokeIfRequired((lblPortRb4), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb4), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x10) == 0x00) lblPortRb4.Text = "OUT";
-                else lblPortRb4.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x10) == 0x00) lbl_PortRb4.Text = "OUT";
+                else lbl_PortRb4.Text = "IN";
             });
 
             //TrisB Label for RB3
-            InvokeIfRequired((lblPortRb3), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb3), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x08) == 0x00) lblPortRb3.Text = "OUT";
-                else lblPortRb3.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x08) == 0x00) lbl_PortRb3.Text = "OUT";
+                else lbl_PortRb3.Text = "IN";
             });
 
             //TrisB Label for RB2
-            InvokeIfRequired((lblPortRb2), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb2), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x04) == 0x00) lblPortRb2.Text = "OUT";
-                else lblPortRb2.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x04) == 0x00) lbl_PortRb2.Text = "OUT";
+                else lbl_PortRb2.Text = "IN";
             });
 
             //TrisB Label for RB1
-            InvokeIfRequired((lblPortRb1), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb1), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x02) == 0x00) lblPortRb1.Text = "OUT";
-                else lblPortRb1.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x02) == 0x00) lbl_PortRb1.Text = "OUT";
+                else lbl_PortRb1.Text = "IN";
             });
 
             //TrisB Label for RB0
-            InvokeIfRequired((lblPortRb0), (MethodInvoker)delegate()
+            InvokeIfRequired((lbl_PortRb0), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x01) == 0x00) lblPortRb0.Text = "OUT";
-                else lblPortRb0.Text = "IN";
+                if ((m_oPIC.getSFRMemory()[0x86] & 0x01) == 0x00) lbl_PortRb0.Text = "OUT";
+                else lbl_PortRb0.Text = "IN";
             });
 
             //Checkbox RB0
-            InvokeIfRequired((cbPortRb0), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb0), (MethodInvoker)delegate()
             {
-                cbPortRb0.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x01) == 0x00) cbPortRb0.Checked = false;
-                else cbPortRb0.Checked = true;
+                cb_PortRb0.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x01) == 0x00) cb_PortRb0.Checked = false;
+                else cb_PortRb0.Checked = true;
 
-                if (lblPortRb0.Text == "OUT")
-                    cbPortRb0.Enabled = false;
+                if (lbl_PortRb0.Text == "OUT")
+                    cb_PortRb0.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
                 
             });
 
             //Checkbox RB1
-            InvokeIfRequired((cbPortRb1), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb1), (MethodInvoker)delegate()
             {
-                cbPortRb1.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x02) == 0x00) cbPortRb1.Checked = false;
-                else cbPortRb1.Checked = true;
+                cb_PortRb1.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x02) == 0x00) cb_PortRb1.Checked = false;
+                else cb_PortRb1.Checked = true;
 
-                if (lblPortRb1.Text == "OUT")
-                    cbPortRb1.Enabled = false;
+                if (lbl_PortRb1.Text == "OUT")
+                    cb_PortRb1.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
                 
             });
 
             //Checkbox RB2
-            InvokeIfRequired((cbPortRb2), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb2), (MethodInvoker)delegate()
             {
-                cbPortRb2.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x04) == 0x00) cbPortRb2.Checked = false;
-                else cbPortRb2.Checked = true;
+                cb_PortRb2.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x04) == 0x00) cb_PortRb2.Checked = false;
+                else cb_PortRb2.Checked = true;
 
-                if (lblPortRb2.Text == "OUT")
-                    cbPortRb2.Enabled = false;
+                if (lbl_PortRb2.Text == "OUT")
+                    cb_PortRb2.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
             });
 
             //Checkbox RB3
-            InvokeIfRequired((cbPortRb3), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb3), (MethodInvoker)delegate()
             {
-                cbPortRb3.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x08) == 0x00) cbPortRb3.Checked = false;
-                else cbPortRb3.Checked = true;
+                cb_PortRb3.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x08) == 0x00) cb_PortRb3.Checked = false;
+                else cb_PortRb3.Checked = true;
 
-                if (lblPortRb3.Text == "OUT")
-                    cbPortRb3.Enabled = false;
+                if (lbl_PortRb3.Text == "OUT")
+                    cb_PortRb3.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
                 
             });
 
             //Checkbox RB4
-            InvokeIfRequired((cbPortRb4), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb4), (MethodInvoker)delegate()
             {
-                cbPortRb4.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x10) == 0x00) cbPortRb4.Checked = false;
-                else cbPortRb4.Checked = true;
+                cb_PortRb4.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x10) == 0x00) cb_PortRb4.Checked = false;
+                else cb_PortRb4.Checked = true;
 
-                if (lblPortRb4.Text == "OUT")
-                    cbPortRb4.Enabled = false;
+                if (lbl_PortRb4.Text == "OUT")
+                    cb_PortRb4.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
             });
 
             //Checkbox RB5
-            InvokeIfRequired((cbPortRb5), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb5), (MethodInvoker)delegate()
             {
-                cbPortRb5.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x20) == 0x00) cbPortRb5.Checked = false;
-                else cbPortRb5.Checked = true;
+                cb_PortRb5.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x20) == 0x00) cb_PortRb5.Checked = false;
+                else cb_PortRb5.Checked = true;
 
-                if (lblPortRb5.Text == "OUT")
-                    cbPortRb5.Enabled = false;
+                if (lbl_PortRb5.Text == "OUT")
+                    cb_PortRb5.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
             });
 
             //Checkbox RB6
-            InvokeIfRequired((cbPortRb6), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb6), (MethodInvoker)delegate()
             {
-                cbPortRb6.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x40) == 0x00) cbPortRb6.Checked = false;
-                else cbPortRb6.Checked = true;
+                cb_PortRb6.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x40) == 0x00) cb_PortRb6.Checked = false;
+                else cb_PortRb6.Checked = true;
 
-                if (lblPortRb6.Text == "OUT")
-                    cbPortRb6.Enabled = false;
+                if (lbl_PortRb6.Text == "OUT")
+                    cb_PortRb6.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
             });
 
             //Checkbox RB7
-            InvokeIfRequired((cbPortRb7), (MethodInvoker)delegate()
+            InvokeIfRequired((cb_PortRb7), (MethodInvoker)delegate()
             {
-                cbPortRb7.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x80) == 0x00) cbPortRb7.Checked = false;
-                else cbPortRb7.Checked = true;
+                cb_PortRb7.Enabled = true;
+                if ((m_oPIC.getSFRMemory()[0x06] & 0x80) == 0x00) cb_PortRb7.Checked = false;
+                else cb_PortRb7.Checked = true;
 
-                if (lblPortRb7.Text == "OUT")
-                    cbPortRb7.Enabled = false;
+                if (lbl_PortRb7.Text == "OUT")
+                    cb_PortRb7.Enabled = false;
 
                 if (m_oHwPort != null)
                 {
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
-                        cbPortRa0.Enabled = false;
+                        cb_PortRa0.Enabled = false;
                 }
             });
 

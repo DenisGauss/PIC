@@ -8,15 +8,15 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.DateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ladenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dokumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.SpecialregisterGroup = new System.Windows.Forms.GroupBox();
+            this.gb_SFR = new System.Windows.Forms.GroupBox();
             this.label84 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -33,22 +33,22 @@
             this.label72 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
-            this.tbReg89 = new System.Windows.Forms.TextBox();
-            this.tbReg88 = new System.Windows.Forms.TextBox();
-            this.tbReg86 = new System.Windows.Forms.TextBox();
-            this.tbReg85 = new System.Windows.Forms.TextBox();
-            this.tbReg81 = new System.Windows.Forms.TextBox();
-            this.tbReg0B = new System.Windows.Forms.TextBox();
-            this.tbReg0A = new System.Windows.Forms.TextBox();
-            this.tbReg09 = new System.Windows.Forms.TextBox();
-            this.tbReg08 = new System.Windows.Forms.TextBox();
-            this.tbReg06 = new System.Windows.Forms.TextBox();
-            this.tbReg05 = new System.Windows.Forms.TextBox();
-            this.tbReg04 = new System.Windows.Forms.TextBox();
-            this.tbReg03 = new System.Windows.Forms.TextBox();
-            this.tbReg02 = new System.Windows.Forms.TextBox();
-            this.tbReg01 = new System.Windows.Forms.TextBox();
-            this.tbReg00 = new System.Windows.Forms.TextBox();
+            this.tb_Reg89 = new System.Windows.Forms.TextBox();
+            this.tb_Reg88 = new System.Windows.Forms.TextBox();
+            this.tb_Reg86 = new System.Windows.Forms.TextBox();
+            this.tb_Reg85 = new System.Windows.Forms.TextBox();
+            this.tb_Reg81 = new System.Windows.Forms.TextBox();
+            this.tb_Reg0B = new System.Windows.Forms.TextBox();
+            this.tb_Reg0A = new System.Windows.Forms.TextBox();
+            this.tb_Reg09 = new System.Windows.Forms.TextBox();
+            this.tb_Reg08 = new System.Windows.Forms.TextBox();
+            this.tb_Reg06 = new System.Windows.Forms.TextBox();
+            this.tb_Reg05 = new System.Windows.Forms.TextBox();
+            this.tb_Reg04 = new System.Windows.Forms.TextBox();
+            this.tb_Reg03 = new System.Windows.Forms.TextBox();
+            this.tb_Reg02 = new System.Windows.Forms.TextBox();
+            this.tb_Reg01 = new System.Windows.Forms.TextBox();
+            this.tb_Reg00 = new System.Windows.Forms.TextBox();
             this.List = new PIC16F64_Simulator.GUI.NewListView();
             this.columnBreakpoint = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLineNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -56,110 +56,110 @@
             this.columnState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.gprBox = new System.Windows.Forms.GroupBox();
-            this.tbReg2D = new System.Windows.Forms.TextBox();
+            this.gb_GPR = new System.Windows.Forms.GroupBox();
+            this.tb_Reg2D = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.tbReg2F = new System.Windows.Forms.TextBox();
+            this.tb_Reg2F = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.tbReg2E = new System.Windows.Forms.TextBox();
+            this.tb_Reg2E = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.tbReg26 = new System.Windows.Forms.TextBox();
+            this.tb_Reg26 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.tbReg25 = new System.Windows.Forms.TextBox();
+            this.tb_Reg25 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.tbReg2C = new System.Windows.Forms.TextBox();
+            this.tb_Reg2C = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.tbReg2B = new System.Windows.Forms.TextBox();
+            this.tb_Reg2B = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.tbReg2A = new System.Windows.Forms.TextBox();
+            this.tb_Reg2A = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.tbReg29 = new System.Windows.Forms.TextBox();
+            this.tb_Reg29 = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.tbReg28 = new System.Windows.Forms.TextBox();
+            this.tb_Reg28 = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.tbReg27 = new System.Windows.Forms.TextBox();
+            this.tb_Reg27 = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.tbReg24 = new System.Windows.Forms.TextBox();
+            this.tb_Reg24 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.tbReg23 = new System.Windows.Forms.TextBox();
+            this.tb_Reg23 = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.tbReg22 = new System.Windows.Forms.TextBox();
+            this.tb_Reg22 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.tbReg21 = new System.Windows.Forms.TextBox();
+            this.tb_Reg21 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.tbReg20 = new System.Windows.Forms.TextBox();
+            this.tb_Reg20 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.tbReg1F = new System.Windows.Forms.TextBox();
+            this.tb_Reg1F = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.tbReg1E = new System.Windows.Forms.TextBox();
+            this.tb_Reg1E = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.tbReg1D = new System.Windows.Forms.TextBox();
+            this.tb_Reg1D = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.tbReg16 = new System.Windows.Forms.TextBox();
+            this.tb_Reg16 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.tbReg1C = new System.Windows.Forms.TextBox();
+            this.tb_Reg1C = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.tbReg1B = new System.Windows.Forms.TextBox();
+            this.tb_Reg1B = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.tbReg1A = new System.Windows.Forms.TextBox();
+            this.tb_Reg1A = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.tbReg19 = new System.Windows.Forms.TextBox();
+            this.tb_Reg19 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.tbReg18 = new System.Windows.Forms.TextBox();
+            this.tb_Reg18 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.tbReg17 = new System.Windows.Forms.TextBox();
+            this.tb_Reg17 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.tbReg0F = new System.Windows.Forms.TextBox();
+            this.tb_Reg0F = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbReg0E = new System.Windows.Forms.TextBox();
+            this.tb_Reg0E = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbReg15 = new System.Windows.Forms.TextBox();
+            this.tb_Reg15 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbReg14 = new System.Windows.Forms.TextBox();
+            this.tb_Reg14 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbReg13 = new System.Windows.Forms.TextBox();
+            this.tb_Reg13 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbReg12 = new System.Windows.Forms.TextBox();
+            this.tb_Reg12 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbReg11 = new System.Windows.Forms.TextBox();
+            this.tb_Reg11 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbReg10 = new System.Windows.Forms.TextBox();
+            this.tb_Reg10 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbReg0D = new System.Windows.Forms.TextBox();
+            this.tb_Reg0D = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbReg0C = new System.Windows.Forms.TextBox();
+            this.tb_Reg0C = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.startButton = new System.Windows.Forms.Button();
-            this.stopButton = new System.Windows.Forms.Button();
-            this.nextButton = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.Label_Duration = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_Start = new System.Windows.Forms.Button();
+            this.btn_Stop = new System.Windows.Forms.Button();
+            this.btn_Next = new System.Windows.Forms.Button();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.gb_Steuerung = new System.Windows.Forms.GroupBox();
+            this.gb_Laufzeit = new System.Windows.Forms.GroupBox();
+            this.btn_ResetLaufzeit = new System.Windows.Forms.Button();
+            this.lbl_Laufzeit = new System.Windows.Forms.Label();
+            this.gb_SerialPort = new System.Windows.Forms.GroupBox();
             this.serialPanel = new System.Windows.Forms.Panel();
-            this.btn_serial = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_VerbindeCom = new System.Windows.Forms.Button();
+            this.gb_WatchDog = new System.Windows.Forms.GroupBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.tBWatchDog = new System.Windows.Forms.TextBox();
+            this.tb_WatchDogCounter = new System.Windows.Forms.TextBox();
             this.watchDogPanel = new System.Windows.Forms.Panel();
-            this.watchDogButton = new System.Windows.Forms.Button();
-            this.trbSpeed = new System.Windows.Forms.TrackBar();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.textBox_speed = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.stackBox = new System.Windows.Forms.GroupBox();
-            this.label45 = new System.Windows.Forms.Label();
+            this.btn_WatchDog = new System.Windows.Forms.Button();
+            this.trb_Speed = new System.Windows.Forms.TrackBar();
+            this.gb_Quarzfrequenz = new System.Windows.Forms.GroupBox();
+            this.lbl_us = new System.Windows.Forms.Label();
+            this.tb_Speed = new System.Windows.Forms.TextBox();
+            this.btn_TaktSetzen = new System.Windows.Forms.Button();
+            this.gb_Stack = new System.Windows.Forms.GroupBox();
+            this.lbl_Stack_7 = new System.Windows.Forms.Label();
             this.tbStack0 = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lbl_Stack_6 = new System.Windows.Forms.Label();
+            this.lbl_Stack_5 = new System.Windows.Forms.Label();
+            this.lbl_Stack_4 = new System.Windows.Forms.Label();
+            this.lbl_Stack_3 = new System.Windows.Forms.Label();
+            this.lbl_Stack_2 = new System.Windows.Forms.Label();
+            this.lbl_Stack_1 = new System.Windows.Forms.Label();
+            this.lbl_Stack_0 = new System.Windows.Forms.Label();
             this.tbStack7 = new System.Windows.Forms.TextBox();
             this.tbStack4 = new System.Windows.Forms.TextBox();
             this.tbStack3 = new System.Windows.Forms.TextBox();
@@ -167,104 +167,104 @@
             this.tbStack6 = new System.Windows.Forms.TextBox();
             this.tbStack5 = new System.Windows.Forms.TextBox();
             this.tbStack1 = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.lblBank = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.tbRegW = new System.Windows.Forms.TextBox();
-            this.cbStatusTO = new System.Windows.Forms.CheckBox();
-            this.cbStatusPD = new System.Windows.Forms.CheckBox();
+            this.gb_Sonstige = new System.Windows.Forms.GroupBox();
+            this.gb_AktiveBank = new System.Windows.Forms.GroupBox();
+            this.lbl_Bank = new System.Windows.Forms.Label();
+            this.gb_WorkingRegister = new System.Windows.Forms.GroupBox();
+            this.tb_RegW = new System.Windows.Forms.TextBox();
+            this.cb_StatusTO = new System.Windows.Forms.CheckBox();
+            this.cb_StatusPD = new System.Windows.Forms.CheckBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.cbStatusRp0 = new System.Windows.Forms.CheckBox();
-            this.cbStatusZ = new System.Windows.Forms.CheckBox();
-            this.cbStatusDc = new System.Windows.Forms.CheckBox();
-            this.cbStatusC = new System.Windows.Forms.CheckBox();
+            this.cb_StatusRp0 = new System.Windows.Forms.CheckBox();
+            this.cb_StatusZ = new System.Windows.Forms.CheckBox();
+            this.cb_StatusDc = new System.Windows.Forms.CheckBox();
+            this.cb_StatusC = new System.Windows.Forms.CheckBox();
             this.label89 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.label93 = new System.Windows.Forms.Label();
-            this.portsBox = new System.Windows.Forms.GroupBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.lblPortRb0 = new System.Windows.Forms.Label();
-            this.lblPortRb1 = new System.Windows.Forms.Label();
-            this.lblPortRb2 = new System.Windows.Forms.Label();
-            this.lblPortRb3 = new System.Windows.Forms.Label();
-            this.lblPortRb4 = new System.Windows.Forms.Label();
-            this.lblPortRb5 = new System.Windows.Forms.Label();
-            this.lblPortRb6 = new System.Windows.Forms.Label();
-            this.lblPortRb7 = new System.Windows.Forms.Label();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label97 = new System.Windows.Forms.Label();
-            this.label98 = new System.Windows.Forms.Label();
-            this.label99 = new System.Windows.Forms.Label();
-            this.label100 = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
-            this.cbPortRb7 = new System.Windows.Forms.CheckBox();
-            this.cbPortRb6 = new System.Windows.Forms.CheckBox();
-            this.cbPortRb5 = new System.Windows.Forms.CheckBox();
-            this.cbPortRb4 = new System.Windows.Forms.CheckBox();
-            this.cbPortRb3 = new System.Windows.Forms.CheckBox();
-            this.cbPortRb2 = new System.Windows.Forms.CheckBox();
-            this.cbPortRb1 = new System.Windows.Forms.CheckBox();
-            this.cbPortRb0 = new System.Windows.Forms.CheckBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.lblPortRa0 = new System.Windows.Forms.Label();
-            this.lblPortRa1 = new System.Windows.Forms.Label();
-            this.lblPortRa2 = new System.Windows.Forms.Label();
-            this.lblPortRa3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblPortRa4 = new System.Windows.Forms.Label();
-            this.cbPortRa4 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa3 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa2 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa1 = new System.Windows.Forms.CheckBox();
-            this.cbPortRa0 = new System.Windows.Forms.CheckBox();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label108 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.gb_Ports = new System.Windows.Forms.GroupBox();
+            this.lbl_TrisA = new System.Windows.Forms.Label();
+            this.lbl_TrisB = new System.Windows.Forms.Label();
+            this.lbl_PortB = new System.Windows.Forms.Label();
+            this.lbl_PortRb0 = new System.Windows.Forms.Label();
+            this.lbl_PortRb1 = new System.Windows.Forms.Label();
+            this.lbl_PortRb2 = new System.Windows.Forms.Label();
+            this.lbl_PortRb3 = new System.Windows.Forms.Label();
+            this.lbl_PortRb4 = new System.Windows.Forms.Label();
+            this.lbl_PortRb5 = new System.Windows.Forms.Label();
+            this.lbl_PortRb6 = new System.Windows.Forms.Label();
+            this.lbl_PortRb7 = new System.Windows.Forms.Label();
+            this.lbl_RB6 = new System.Windows.Forms.Label();
+            this.lbl_RB3 = new System.Windows.Forms.Label();
+            this.lbl_RB2 = new System.Windows.Forms.Label();
+            this.lbl_RB0 = new System.Windows.Forms.Label();
+            this.lbl_RB1 = new System.Windows.Forms.Label();
+            this.lbl_RB4 = new System.Windows.Forms.Label();
+            this.lbl_RB5 = new System.Windows.Forms.Label();
+            this.lbl_RB7 = new System.Windows.Forms.Label();
+            this.cb_PortRb7 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRb6 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRb5 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRb4 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRb3 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRb2 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRb1 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRb0 = new System.Windows.Forms.CheckBox();
+            this.lbl_PortA = new System.Windows.Forms.Label();
+            this.lbl_PortRa0 = new System.Windows.Forms.Label();
+            this.lbl_PortRa1 = new System.Windows.Forms.Label();
+            this.lbl_PortRa2 = new System.Windows.Forms.Label();
+            this.lbl_PortRa3 = new System.Windows.Forms.Label();
+            this.lbl_PortRa4 = new System.Windows.Forms.Label();
+            this.cb_PortRa4 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRa3 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRa2 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRa1 = new System.Windows.Forms.CheckBox();
+            this.cb_PortRa0 = new System.Windows.Forms.CheckBox();
+            this.lbl_RA3 = new System.Windows.Forms.Label();
+            this.lbl_RA2 = new System.Windows.Forms.Label();
+            this.lbl_RA0 = new System.Windows.Forms.Label();
+            this.lbl_RA1 = new System.Windows.Forms.Label();
+            this.lbl_RA4 = new System.Windows.Forms.Label();
+            this.gb_StatusRegister = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
-            this.SpecialregisterGroup.SuspendLayout();
-            this.gprBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trbSpeed)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.stackBox.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.portsBox.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.gb_SFR.SuspendLayout();
+            this.gb_GPR.SuspendLayout();
+            this.gb_Steuerung.SuspendLayout();
+            this.gb_Laufzeit.SuspendLayout();
+            this.gb_SerialPort.SuspendLayout();
+            this.gb_WatchDog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trb_Speed)).BeginInit();
+            this.gb_Quarzfrequenz.SuspendLayout();
+            this.gb_Stack.SuspendLayout();
+            this.gb_AktiveBank.SuspendLayout();
+            this.gb_WorkingRegister.SuspendLayout();
+            this.gb_Ports.SuspendLayout();
+            this.gb_StatusRegister.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.hilfeToolStripMenuItem,
-            this.infoToolStripMenuItem});
+            this.DateiToolStripMenuItem,
+            this.HilfeToolStripMenuItem,
+            this.InfoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1260, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // DateiToolStripMenuItem
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ladenToolStripMenuItem,
             this.beendenToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(46, 20);
-            this.toolStripMenuItem1.Text = "Datei";
+            this.DateiToolStripMenuItem.Name = "DateiToolStripMenuItem";
+            this.DateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.DateiToolStripMenuItem.Text = "Datei";
             // 
             // ladenToolStripMenuItem
             // 
@@ -280,13 +280,13 @@
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
-            // hilfeToolStripMenuItem
+            // HilfeToolStripMenuItem
             // 
-            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.HilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dokumentationToolStripMenuItem});
-            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.hilfeToolStripMenuItem.Text = "Hilfe";
+            this.HilfeToolStripMenuItem.Name = "HilfeToolStripMenuItem";
+            this.HilfeToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.HilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // dokumentationToolStripMenuItem
             // 
@@ -295,18 +295,18 @@
             this.dokumentationToolStripMenuItem.Text = "Dokumentation";
             this.dokumentationToolStripMenuItem.Click += new System.EventHandler(this.dokumentationToolStripMenuItem_Click);
             // 
-            // infoToolStripMenuItem
+            // InfoToolStripMenuItem
             // 
-            this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.InfoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.versionToolStripMenuItem});
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.infoToolStripMenuItem.Text = "Info";
+            this.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem";
+            this.InfoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.InfoToolStripMenuItem.Text = "Info";
             // 
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.versionToolStripMenuItem.Text = "Informationen";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
@@ -314,47 +314,47 @@
             // 
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFile_FileOk);
             // 
-            // SpecialregisterGroup
+            // gb_SFR
             // 
-            this.SpecialregisterGroup.Controls.Add(this.label84);
-            this.SpecialregisterGroup.Controls.Add(this.label81);
-            this.SpecialregisterGroup.Controls.Add(this.label82);
-            this.SpecialregisterGroup.Controls.Add(this.label83);
-            this.SpecialregisterGroup.Controls.Add(this.label77);
-            this.SpecialregisterGroup.Controls.Add(this.label78);
-            this.SpecialregisterGroup.Controls.Add(this.label79);
-            this.SpecialregisterGroup.Controls.Add(this.label80);
-            this.SpecialregisterGroup.Controls.Add(this.label73);
-            this.SpecialregisterGroup.Controls.Add(this.label74);
-            this.SpecialregisterGroup.Controls.Add(this.label75);
-            this.SpecialregisterGroup.Controls.Add(this.label76);
-            this.SpecialregisterGroup.Controls.Add(this.label71);
-            this.SpecialregisterGroup.Controls.Add(this.label72);
-            this.SpecialregisterGroup.Controls.Add(this.label70);
-            this.SpecialregisterGroup.Controls.Add(this.label69);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg89);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg88);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg86);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg85);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg81);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg0B);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg0A);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg09);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg08);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg06);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg05);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg04);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg03);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg02);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg01);
-            this.SpecialregisterGroup.Controls.Add(this.tbReg00);
-            this.SpecialregisterGroup.Location = new System.Drawing.Point(935, 27);
-            this.SpecialregisterGroup.Name = "SpecialregisterGroup";
-            this.SpecialregisterGroup.Size = new System.Drawing.Size(143, 414);
-            this.SpecialregisterGroup.TabIndex = 1;
-            this.SpecialregisterGroup.TabStop = false;
-            this.SpecialregisterGroup.Text = "Spezialfunktionsregister";
-            this.SpecialregisterGroup.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gb_SFR.Controls.Add(this.label84);
+            this.gb_SFR.Controls.Add(this.label81);
+            this.gb_SFR.Controls.Add(this.label82);
+            this.gb_SFR.Controls.Add(this.label83);
+            this.gb_SFR.Controls.Add(this.label77);
+            this.gb_SFR.Controls.Add(this.label78);
+            this.gb_SFR.Controls.Add(this.label79);
+            this.gb_SFR.Controls.Add(this.label80);
+            this.gb_SFR.Controls.Add(this.label73);
+            this.gb_SFR.Controls.Add(this.label74);
+            this.gb_SFR.Controls.Add(this.label75);
+            this.gb_SFR.Controls.Add(this.label76);
+            this.gb_SFR.Controls.Add(this.label71);
+            this.gb_SFR.Controls.Add(this.label72);
+            this.gb_SFR.Controls.Add(this.label70);
+            this.gb_SFR.Controls.Add(this.label69);
+            this.gb_SFR.Controls.Add(this.tb_Reg89);
+            this.gb_SFR.Controls.Add(this.tb_Reg88);
+            this.gb_SFR.Controls.Add(this.tb_Reg86);
+            this.gb_SFR.Controls.Add(this.tb_Reg85);
+            this.gb_SFR.Controls.Add(this.tb_Reg81);
+            this.gb_SFR.Controls.Add(this.tb_Reg0B);
+            this.gb_SFR.Controls.Add(this.tb_Reg0A);
+            this.gb_SFR.Controls.Add(this.tb_Reg09);
+            this.gb_SFR.Controls.Add(this.tb_Reg08);
+            this.gb_SFR.Controls.Add(this.tb_Reg06);
+            this.gb_SFR.Controls.Add(this.tb_Reg05);
+            this.gb_SFR.Controls.Add(this.tb_Reg04);
+            this.gb_SFR.Controls.Add(this.tb_Reg03);
+            this.gb_SFR.Controls.Add(this.tb_Reg02);
+            this.gb_SFR.Controls.Add(this.tb_Reg01);
+            this.gb_SFR.Controls.Add(this.tb_Reg00);
+            this.gb_SFR.Location = new System.Drawing.Point(935, 27);
+            this.gb_SFR.Name = "gb_SFR";
+            this.gb_SFR.Size = new System.Drawing.Size(143, 414);
+            this.gb_SFR.TabIndex = 1;
+            this.gb_SFR.TabStop = false;
+            this.gb_SFR.Text = "SFR";
+            this.gb_SFR.Enter += new System.EventHandler(this.gb_Steuerung_Enter);
             // 
             // label84
             // 
@@ -445,26 +445,7 @@
             this.label73.Size = new System.Drawing.Size(50, 13);
             this.label73.TabIndex = 110;
             this.label73.Text = "EEDATA";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.BackColor = System.Drawing.Color.Transparent;
-            this.label74.Location = new System.Drawing.Point(9, 150);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(44, 13);
-            this.label74.TabIndex = 109;
-            this.label74.Text = "PORTB";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.BackColor = System.Drawing.Color.Transparent;
-            this.label75.Location = new System.Drawing.Point(9, 128);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(44, 13);
-            this.label75.TabIndex = 108;
-            this.label75.Text = "PORTA";
+
             // 
             // label76
             // 
@@ -517,181 +498,181 @@
             this.label69.Text = "INDF";
             this.label69.Click += new System.EventHandler(this.label69_Click);
             // 
-            // tbReg89
+            // tb_Reg89
             // 
-            this.tbReg89.Enabled = false;
-            this.tbReg89.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg89.Location = new System.Drawing.Point(90, 345);
-            this.tbReg89.Name = "tbReg89";
-            this.tbReg89.Size = new System.Drawing.Size(39, 20);
-            this.tbReg89.TabIndex = 102;
-            this.tbReg89.Text = "0x00";
-            this.tbReg89.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg89.Enabled = false;
+            this.tb_Reg89.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg89.Location = new System.Drawing.Point(90, 345);
+            this.tb_Reg89.Name = "tb_Reg89";
+            this.tb_Reg89.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg89.TabIndex = 102;
+            this.tb_Reg89.Text = "0x00";
+            this.tb_Reg89.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg88
+            // tb_Reg88
             // 
-            this.tbReg88.Enabled = false;
-            this.tbReg88.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg88.Location = new System.Drawing.Point(90, 323);
-            this.tbReg88.Name = "tbReg88";
-            this.tbReg88.Size = new System.Drawing.Size(39, 20);
-            this.tbReg88.TabIndex = 101;
-            this.tbReg88.Text = "0x00";
-            this.tbReg88.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg88.Enabled = false;
+            this.tb_Reg88.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg88.Location = new System.Drawing.Point(90, 323);
+            this.tb_Reg88.Name = "tb_Reg88";
+            this.tb_Reg88.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg88.TabIndex = 101;
+            this.tb_Reg88.Text = "0x00";
+            this.tb_Reg88.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg86
+            // tb_Reg86
             // 
-            this.tbReg86.Enabled = false;
-            this.tbReg86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg86.Location = new System.Drawing.Point(90, 301);
-            this.tbReg86.Name = "tbReg86";
-            this.tbReg86.Size = new System.Drawing.Size(39, 20);
-            this.tbReg86.TabIndex = 100;
-            this.tbReg86.Text = "0xff";
-            this.tbReg86.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg86.Enabled = false;
+            this.tb_Reg86.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg86.Location = new System.Drawing.Point(90, 301);
+            this.tb_Reg86.Name = "tb_Reg86";
+            this.tb_Reg86.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg86.TabIndex = 100;
+            this.tb_Reg86.Text = "0xff";
+            this.tb_Reg86.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg85
+            // tb_Reg85
             // 
-            this.tbReg85.Enabled = false;
-            this.tbReg85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg85.Location = new System.Drawing.Point(90, 279);
-            this.tbReg85.Name = "tbReg85";
-            this.tbReg85.Size = new System.Drawing.Size(39, 20);
-            this.tbReg85.TabIndex = 99;
-            this.tbReg85.Text = "0x1f";
-            this.tbReg85.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg85.Enabled = false;
+            this.tb_Reg85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg85.Location = new System.Drawing.Point(90, 279);
+            this.tb_Reg85.Name = "tb_Reg85";
+            this.tb_Reg85.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg85.TabIndex = 99;
+            this.tb_Reg85.Text = "0x1f";
+            this.tb_Reg85.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg81
+            // tb_Reg81
             // 
-            this.tbReg81.Enabled = false;
-            this.tbReg81.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg81.Location = new System.Drawing.Point(90, 257);
-            this.tbReg81.Name = "tbReg81";
-            this.tbReg81.Size = new System.Drawing.Size(39, 20);
-            this.tbReg81.TabIndex = 98;
-            this.tbReg81.Text = "0xff";
-            this.tbReg81.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg81.Enabled = false;
+            this.tb_Reg81.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg81.Location = new System.Drawing.Point(90, 257);
+            this.tb_Reg81.Name = "tb_Reg81";
+            this.tb_Reg81.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg81.TabIndex = 98;
+            this.tb_Reg81.Text = "0xff";
+            this.tb_Reg81.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg0B
+            // tb_Reg0B
             // 
-            this.tbReg0B.Enabled = false;
-            this.tbReg0B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg0B.Location = new System.Drawing.Point(90, 235);
-            this.tbReg0B.Name = "tbReg0B";
-            this.tbReg0B.Size = new System.Drawing.Size(39, 20);
-            this.tbReg0B.TabIndex = 97;
-            this.tbReg0B.Text = "0x00";
-            this.tbReg0B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg0B.Enabled = false;
+            this.tb_Reg0B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg0B.Location = new System.Drawing.Point(90, 235);
+            this.tb_Reg0B.Name = "tb_Reg0B";
+            this.tb_Reg0B.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg0B.TabIndex = 97;
+            this.tb_Reg0B.Text = "0x00";
+            this.tb_Reg0B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg0A
+            // tb_Reg0A
             // 
-            this.tbReg0A.Enabled = false;
-            this.tbReg0A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg0A.Location = new System.Drawing.Point(90, 213);
-            this.tbReg0A.Name = "tbReg0A";
-            this.tbReg0A.Size = new System.Drawing.Size(39, 20);
-            this.tbReg0A.TabIndex = 96;
-            this.tbReg0A.Text = "0x00";
-            this.tbReg0A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg0A.Enabled = false;
+            this.tb_Reg0A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg0A.Location = new System.Drawing.Point(90, 213);
+            this.tb_Reg0A.Name = "tb_Reg0A";
+            this.tb_Reg0A.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg0A.TabIndex = 96;
+            this.tb_Reg0A.Text = "0x00";
+            this.tb_Reg0A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg09
+            // tb_Reg09
             // 
-            this.tbReg09.Enabled = false;
-            this.tbReg09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg09.Location = new System.Drawing.Point(90, 191);
-            this.tbReg09.Name = "tbReg09";
-            this.tbReg09.Size = new System.Drawing.Size(39, 20);
-            this.tbReg09.TabIndex = 95;
-            this.tbReg09.Text = "0x00";
-            this.tbReg09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg09.Enabled = false;
+            this.tb_Reg09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg09.Location = new System.Drawing.Point(90, 191);
+            this.tb_Reg09.Name = "tb_Reg09";
+            this.tb_Reg09.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg09.TabIndex = 95;
+            this.tb_Reg09.Text = "0x00";
+            this.tb_Reg09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg08
+            // tb_Reg08
             // 
-            this.tbReg08.Enabled = false;
-            this.tbReg08.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg08.Location = new System.Drawing.Point(90, 169);
-            this.tbReg08.Name = "tbReg08";
-            this.tbReg08.Size = new System.Drawing.Size(39, 20);
-            this.tbReg08.TabIndex = 94;
-            this.tbReg08.Text = "0x00";
-            this.tbReg08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg08.Enabled = false;
+            this.tb_Reg08.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg08.Location = new System.Drawing.Point(90, 169);
+            this.tb_Reg08.Name = "tb_Reg08";
+            this.tb_Reg08.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg08.TabIndex = 94;
+            this.tb_Reg08.Text = "0x00";
+            this.tb_Reg08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg06
+            // tb_Reg06
             // 
-            this.tbReg06.Enabled = false;
-            this.tbReg06.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg06.Location = new System.Drawing.Point(90, 147);
-            this.tbReg06.Name = "tbReg06";
-            this.tbReg06.Size = new System.Drawing.Size(39, 20);
-            this.tbReg06.TabIndex = 93;
-            this.tbReg06.Text = "0x00";
-            this.tbReg06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg06.Enabled = false;
+            this.tb_Reg06.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg06.Location = new System.Drawing.Point(90, 147);
+            this.tb_Reg06.Name = "tb_Reg06";
+            this.tb_Reg06.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg06.TabIndex = 93;
+            this.tb_Reg06.Text = "0x00";
+            this.tb_Reg06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg05
+            // tb_Reg05
             // 
-            this.tbReg05.Enabled = false;
-            this.tbReg05.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg05.Location = new System.Drawing.Point(90, 125);
-            this.tbReg05.Name = "tbReg05";
-            this.tbReg05.Size = new System.Drawing.Size(39, 20);
-            this.tbReg05.TabIndex = 92;
-            this.tbReg05.Text = "0x00";
-            this.tbReg05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg05.Enabled = false;
+            this.tb_Reg05.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg05.Location = new System.Drawing.Point(90, 125);
+            this.tb_Reg05.Name = "tb_Reg05";
+            this.tb_Reg05.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg05.TabIndex = 92;
+            this.tb_Reg05.Text = "0x00";
+            this.tb_Reg05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg04
+            // tb_Reg04
             // 
-            this.tbReg04.Enabled = false;
-            this.tbReg04.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg04.Location = new System.Drawing.Point(90, 103);
-            this.tbReg04.Name = "tbReg04";
-            this.tbReg04.Size = new System.Drawing.Size(39, 20);
-            this.tbReg04.TabIndex = 91;
-            this.tbReg04.Text = "0x00";
-            this.tbReg04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg04.Enabled = false;
+            this.tb_Reg04.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg04.Location = new System.Drawing.Point(90, 103);
+            this.tb_Reg04.Name = "tb_Reg04";
+            this.tb_Reg04.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg04.TabIndex = 91;
+            this.tb_Reg04.Text = "0x00";
+            this.tb_Reg04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg03
+            // tb_Reg03
             // 
-            this.tbReg03.Enabled = false;
-            this.tbReg03.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg03.Location = new System.Drawing.Point(90, 81);
-            this.tbReg03.Name = "tbReg03";
-            this.tbReg03.Size = new System.Drawing.Size(39, 20);
-            this.tbReg03.TabIndex = 90;
-            this.tbReg03.Text = "0x18";
-            this.tbReg03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg03.Enabled = false;
+            this.tb_Reg03.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg03.Location = new System.Drawing.Point(90, 81);
+            this.tb_Reg03.Name = "tb_Reg03";
+            this.tb_Reg03.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg03.TabIndex = 90;
+            this.tb_Reg03.Text = "0x18";
+            this.tb_Reg03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg02
+            // tb_Reg02
             // 
-            this.tbReg02.Enabled = false;
-            this.tbReg02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg02.Location = new System.Drawing.Point(90, 59);
-            this.tbReg02.Name = "tbReg02";
-            this.tbReg02.Size = new System.Drawing.Size(39, 20);
-            this.tbReg02.TabIndex = 89;
-            this.tbReg02.Text = "0x00";
-            this.tbReg02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg02.Enabled = false;
+            this.tb_Reg02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg02.Location = new System.Drawing.Point(90, 59);
+            this.tb_Reg02.Name = "tb_Reg02";
+            this.tb_Reg02.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg02.TabIndex = 89;
+            this.tb_Reg02.Text = "0x00";
+            this.tb_Reg02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg01
+            // tb_Reg01
             // 
-            this.tbReg01.Enabled = false;
-            this.tbReg01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg01.Location = new System.Drawing.Point(90, 37);
-            this.tbReg01.Name = "tbReg01";
-            this.tbReg01.Size = new System.Drawing.Size(39, 20);
-            this.tbReg01.TabIndex = 88;
-            this.tbReg01.Text = "0x00";
-            this.tbReg01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg01.Enabled = false;
+            this.tb_Reg01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg01.Location = new System.Drawing.Point(90, 37);
+            this.tb_Reg01.Name = "tb_Reg01";
+            this.tb_Reg01.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg01.TabIndex = 88;
+            this.tb_Reg01.Text = "0x00";
+            this.tb_Reg01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbReg00
+            // tb_Reg00
             // 
-            this.tbReg00.Enabled = false;
-            this.tbReg00.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg00.Location = new System.Drawing.Point(90, 15);
-            this.tbReg00.Name = "tbReg00";
-            this.tbReg00.Size = new System.Drawing.Size(39, 20);
-            this.tbReg00.TabIndex = 87;
-            this.tbReg00.Text = "0x00";
-            this.tbReg00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg00.Enabled = false;
+            this.tb_Reg00.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg00.Location = new System.Drawing.Point(90, 15);
+            this.tb_Reg00.Name = "tb_Reg00";
+            this.tb_Reg00.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg00.TabIndex = 87;
+            this.tb_Reg00.Text = "0x00";
+            this.tb_Reg00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // List
             // 
@@ -744,98 +725,98 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // gprBox
+            // gb_GPR
             // 
-            this.gprBox.Controls.Add(this.tbReg2D);
-            this.gprBox.Controls.Add(this.label25);
-            this.gprBox.Controls.Add(this.tbReg2F);
-            this.gprBox.Controls.Add(this.label30);
-            this.gprBox.Controls.Add(this.tbReg2E);
-            this.gprBox.Controls.Add(this.label31);
-            this.gprBox.Controls.Add(this.tbReg26);
-            this.gprBox.Controls.Add(this.label32);
-            this.gprBox.Controls.Add(this.tbReg25);
-            this.gprBox.Controls.Add(this.label33);
-            this.gprBox.Controls.Add(this.tbReg2C);
-            this.gprBox.Controls.Add(this.label34);
-            this.gprBox.Controls.Add(this.tbReg2B);
-            this.gprBox.Controls.Add(this.label35);
-            this.gprBox.Controls.Add(this.tbReg2A);
-            this.gprBox.Controls.Add(this.label36);
-            this.gprBox.Controls.Add(this.tbReg29);
-            this.gprBox.Controls.Add(this.label37);
-            this.gprBox.Controls.Add(this.tbReg28);
-            this.gprBox.Controls.Add(this.label38);
-            this.gprBox.Controls.Add(this.tbReg27);
-            this.gprBox.Controls.Add(this.label39);
-            this.gprBox.Controls.Add(this.tbReg24);
-            this.gprBox.Controls.Add(this.label40);
-            this.gprBox.Controls.Add(this.tbReg23);
-            this.gprBox.Controls.Add(this.label41);
-            this.gprBox.Controls.Add(this.tbReg22);
-            this.gprBox.Controls.Add(this.label23);
-            this.gprBox.Controls.Add(this.tbReg21);
-            this.gprBox.Controls.Add(this.label18);
-            this.gprBox.Controls.Add(this.tbReg20);
-            this.gprBox.Controls.Add(this.label19);
-            this.gprBox.Controls.Add(this.tbReg1F);
-            this.gprBox.Controls.Add(this.label20);
-            this.gprBox.Controls.Add(this.tbReg1E);
-            this.gprBox.Controls.Add(this.label21);
-            this.gprBox.Controls.Add(this.tbReg1D);
-            this.gprBox.Controls.Add(this.label22);
-            this.gprBox.Controls.Add(this.tbReg16);
-            this.gprBox.Controls.Add(this.label11);
-            this.gprBox.Controls.Add(this.tbReg1C);
-            this.gprBox.Controls.Add(this.label12);
-            this.gprBox.Controls.Add(this.tbReg1B);
-            this.gprBox.Controls.Add(this.label13);
-            this.gprBox.Controls.Add(this.tbReg1A);
-            this.gprBox.Controls.Add(this.label14);
-            this.gprBox.Controls.Add(this.tbReg19);
-            this.gprBox.Controls.Add(this.label15);
-            this.gprBox.Controls.Add(this.tbReg18);
-            this.gprBox.Controls.Add(this.label16);
-            this.gprBox.Controls.Add(this.tbReg17);
-            this.gprBox.Controls.Add(this.label17);
-            this.gprBox.Controls.Add(this.tbReg0F);
-            this.gprBox.Controls.Add(this.label9);
-            this.gprBox.Controls.Add(this.tbReg0E);
-            this.gprBox.Controls.Add(this.label10);
-            this.gprBox.Controls.Add(this.tbReg15);
-            this.gprBox.Controls.Add(this.label5);
-            this.gprBox.Controls.Add(this.tbReg14);
-            this.gprBox.Controls.Add(this.label6);
-            this.gprBox.Controls.Add(this.tbReg13);
-            this.gprBox.Controls.Add(this.label7);
-            this.gprBox.Controls.Add(this.tbReg12);
-            this.gprBox.Controls.Add(this.label8);
-            this.gprBox.Controls.Add(this.tbReg11);
-            this.gprBox.Controls.Add(this.label3);
-            this.gprBox.Controls.Add(this.tbReg10);
-            this.gprBox.Controls.Add(this.label4);
-            this.gprBox.Controls.Add(this.tbReg0D);
-            this.gprBox.Controls.Add(this.label2);
-            this.gprBox.Controls.Add(this.tbReg0C);
-            this.gprBox.Controls.Add(this.label1);
-            this.gprBox.Location = new System.Drawing.Point(1084, 27);
-            this.gprBox.Name = "gprBox";
-            this.gprBox.Size = new System.Drawing.Size(166, 414);
-            this.gprBox.TabIndex = 9;
-            this.gprBox.TabStop = false;
-            this.gprBox.Text = "GPR";
-            this.gprBox.Enter += new System.EventHandler(this.gprBox_Enter);
+            this.gb_GPR.Controls.Add(this.tb_Reg2D);
+            this.gb_GPR.Controls.Add(this.label25);
+            this.gb_GPR.Controls.Add(this.tb_Reg2F);
+            this.gb_GPR.Controls.Add(this.label30);
+            this.gb_GPR.Controls.Add(this.tb_Reg2E);
+            this.gb_GPR.Controls.Add(this.label31);
+            this.gb_GPR.Controls.Add(this.tb_Reg26);
+            this.gb_GPR.Controls.Add(this.label32);
+            this.gb_GPR.Controls.Add(this.tb_Reg25);
+            this.gb_GPR.Controls.Add(this.label33);
+            this.gb_GPR.Controls.Add(this.tb_Reg2C);
+            this.gb_GPR.Controls.Add(this.label34);
+            this.gb_GPR.Controls.Add(this.tb_Reg2B);
+            this.gb_GPR.Controls.Add(this.label35);
+            this.gb_GPR.Controls.Add(this.tb_Reg2A);
+            this.gb_GPR.Controls.Add(this.label36);
+            this.gb_GPR.Controls.Add(this.tb_Reg29);
+            this.gb_GPR.Controls.Add(this.label37);
+            this.gb_GPR.Controls.Add(this.tb_Reg28);
+            this.gb_GPR.Controls.Add(this.label38);
+            this.gb_GPR.Controls.Add(this.tb_Reg27);
+            this.gb_GPR.Controls.Add(this.label39);
+            this.gb_GPR.Controls.Add(this.tb_Reg24);
+            this.gb_GPR.Controls.Add(this.label40);
+            this.gb_GPR.Controls.Add(this.tb_Reg23);
+            this.gb_GPR.Controls.Add(this.label41);
+            this.gb_GPR.Controls.Add(this.tb_Reg22);
+            this.gb_GPR.Controls.Add(this.label23);
+            this.gb_GPR.Controls.Add(this.tb_Reg21);
+            this.gb_GPR.Controls.Add(this.label18);
+            this.gb_GPR.Controls.Add(this.tb_Reg20);
+            this.gb_GPR.Controls.Add(this.label19);
+            this.gb_GPR.Controls.Add(this.tb_Reg1F);
+            this.gb_GPR.Controls.Add(this.label20);
+            this.gb_GPR.Controls.Add(this.tb_Reg1E);
+            this.gb_GPR.Controls.Add(this.label21);
+            this.gb_GPR.Controls.Add(this.tb_Reg1D);
+            this.gb_GPR.Controls.Add(this.label22);
+            this.gb_GPR.Controls.Add(this.tb_Reg16);
+            this.gb_GPR.Controls.Add(this.label11);
+            this.gb_GPR.Controls.Add(this.tb_Reg1C);
+            this.gb_GPR.Controls.Add(this.label12);
+            this.gb_GPR.Controls.Add(this.tb_Reg1B);
+            this.gb_GPR.Controls.Add(this.label13);
+            this.gb_GPR.Controls.Add(this.tb_Reg1A);
+            this.gb_GPR.Controls.Add(this.label14);
+            this.gb_GPR.Controls.Add(this.tb_Reg19);
+            this.gb_GPR.Controls.Add(this.label15);
+            this.gb_GPR.Controls.Add(this.tb_Reg18);
+            this.gb_GPR.Controls.Add(this.label16);
+            this.gb_GPR.Controls.Add(this.tb_Reg17);
+            this.gb_GPR.Controls.Add(this.label17);
+            this.gb_GPR.Controls.Add(this.tb_Reg0F);
+            this.gb_GPR.Controls.Add(this.label9);
+            this.gb_GPR.Controls.Add(this.tb_Reg0E);
+            this.gb_GPR.Controls.Add(this.label10);
+            this.gb_GPR.Controls.Add(this.tb_Reg15);
+            this.gb_GPR.Controls.Add(this.label5);
+            this.gb_GPR.Controls.Add(this.tb_Reg14);
+            this.gb_GPR.Controls.Add(this.label6);
+            this.gb_GPR.Controls.Add(this.tb_Reg13);
+            this.gb_GPR.Controls.Add(this.label7);
+            this.gb_GPR.Controls.Add(this.tb_Reg12);
+            this.gb_GPR.Controls.Add(this.label8);
+            this.gb_GPR.Controls.Add(this.tb_Reg11);
+            this.gb_GPR.Controls.Add(this.label3);
+            this.gb_GPR.Controls.Add(this.tb_Reg10);
+            this.gb_GPR.Controls.Add(this.label4);
+            this.gb_GPR.Controls.Add(this.tb_Reg0D);
+            this.gb_GPR.Controls.Add(this.label2);
+            this.gb_GPR.Controls.Add(this.tb_Reg0C);
+            this.gb_GPR.Controls.Add(this.label1);
+            this.gb_GPR.Location = new System.Drawing.Point(1084, 27);
+            this.gb_GPR.Name = "gb_GPR";
+            this.gb_GPR.Size = new System.Drawing.Size(166, 414);
+            this.gb_GPR.TabIndex = 9;
+            this.gb_GPR.TabStop = false;
+            this.gb_GPR.Text = "GPR";
+            this.gb_GPR.Enter += new System.EventHandler(this.gb_GPR_Enter);
             // 
-            // tbReg2D
+            // tb_Reg2D
             // 
-            this.tbReg2D.Enabled = false;
-            this.tbReg2D.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg2D.Location = new System.Drawing.Point(114, 345);
-            this.tbReg2D.Name = "tbReg2D";
-            this.tbReg2D.Size = new System.Drawing.Size(39, 20);
-            this.tbReg2D.TabIndex = 82;
-            this.tbReg2D.Text = "0x00";
-            this.tbReg2D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg2D.Enabled = false;
+            this.tb_Reg2D.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg2D.Location = new System.Drawing.Point(114, 345);
+            this.tb_Reg2D.Name = "tb_Reg2D";
+            this.tb_Reg2D.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg2D.TabIndex = 82;
+            this.tb_Reg2D.Text = "0x00";
+            this.tb_Reg2D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label25
             // 
@@ -847,16 +828,16 @@
             this.label25.TabIndex = 81;
             this.label25.Text = "2Dh";
             // 
-            // tbReg2F
+            // tb_Reg2F
             // 
-            this.tbReg2F.Enabled = false;
-            this.tbReg2F.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg2F.Location = new System.Drawing.Point(114, 389);
-            this.tbReg2F.Name = "tbReg2F";
-            this.tbReg2F.Size = new System.Drawing.Size(39, 20);
-            this.tbReg2F.TabIndex = 72;
-            this.tbReg2F.Text = "0x00";
-            this.tbReg2F.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg2F.Enabled = false;
+            this.tb_Reg2F.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg2F.Location = new System.Drawing.Point(114, 389);
+            this.tb_Reg2F.Name = "tb_Reg2F";
+            this.tb_Reg2F.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg2F.TabIndex = 72;
+            this.tb_Reg2F.Text = "0x00";
+            this.tb_Reg2F.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label30
             // 
@@ -868,16 +849,16 @@
             this.label30.TabIndex = 71;
             this.label30.Text = "2Fh";
             // 
-            // tbReg2E
+            // tb_Reg2E
             // 
-            this.tbReg2E.Enabled = false;
-            this.tbReg2E.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg2E.Location = new System.Drawing.Point(114, 367);
-            this.tbReg2E.Name = "tbReg2E";
-            this.tbReg2E.Size = new System.Drawing.Size(39, 20);
-            this.tbReg2E.TabIndex = 70;
-            this.tbReg2E.Text = "0x00";
-            this.tbReg2E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg2E.Enabled = false;
+            this.tb_Reg2E.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg2E.Location = new System.Drawing.Point(114, 367);
+            this.tb_Reg2E.Name = "tb_Reg2E";
+            this.tb_Reg2E.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg2E.TabIndex = 70;
+            this.tb_Reg2E.Text = "0x00";
+            this.tb_Reg2E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label31
             // 
@@ -889,16 +870,16 @@
             this.label31.TabIndex = 69;
             this.label31.Text = "2Eh";
             // 
-            // tbReg26
+            // tb_Reg26
             // 
-            this.tbReg26.Enabled = false;
-            this.tbReg26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg26.Location = new System.Drawing.Point(114, 191);
-            this.tbReg26.Name = "tbReg26";
-            this.tbReg26.Size = new System.Drawing.Size(39, 20);
-            this.tbReg26.TabIndex = 68;
-            this.tbReg26.Text = "0x00";
-            this.tbReg26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg26.Enabled = false;
+            this.tb_Reg26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg26.Location = new System.Drawing.Point(114, 191);
+            this.tb_Reg26.Name = "tb_Reg26";
+            this.tb_Reg26.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg26.TabIndex = 68;
+            this.tb_Reg26.Text = "0x00";
+            this.tb_Reg26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label32
             // 
@@ -910,16 +891,16 @@
             this.label32.TabIndex = 67;
             this.label32.Text = "26h";
             // 
-            // tbReg25
+            // tb_Reg25
             // 
-            this.tbReg25.Enabled = false;
-            this.tbReg25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg25.Location = new System.Drawing.Point(114, 169);
-            this.tbReg25.Name = "tbReg25";
-            this.tbReg25.Size = new System.Drawing.Size(39, 20);
-            this.tbReg25.TabIndex = 66;
-            this.tbReg25.Text = "0x00";
-            this.tbReg25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg25.Enabled = false;
+            this.tb_Reg25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg25.Location = new System.Drawing.Point(114, 169);
+            this.tb_Reg25.Name = "tb_Reg25";
+            this.tb_Reg25.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg25.TabIndex = 66;
+            this.tb_Reg25.Text = "0x00";
+            this.tb_Reg25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label33
             // 
@@ -931,16 +912,16 @@
             this.label33.TabIndex = 65;
             this.label33.Text = "25h";
             // 
-            // tbReg2C
+            // tb_Reg2C
             // 
-            this.tbReg2C.Enabled = false;
-            this.tbReg2C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg2C.Location = new System.Drawing.Point(114, 323);
-            this.tbReg2C.Name = "tbReg2C";
-            this.tbReg2C.Size = new System.Drawing.Size(39, 20);
-            this.tbReg2C.TabIndex = 64;
-            this.tbReg2C.Text = "0x00";
-            this.tbReg2C.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg2C.Enabled = false;
+            this.tb_Reg2C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg2C.Location = new System.Drawing.Point(114, 323);
+            this.tb_Reg2C.Name = "tb_Reg2C";
+            this.tb_Reg2C.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg2C.TabIndex = 64;
+            this.tb_Reg2C.Text = "0x00";
+            this.tb_Reg2C.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label34
             // 
@@ -952,16 +933,16 @@
             this.label34.TabIndex = 63;
             this.label34.Text = "2Ch";
             // 
-            // tbReg2B
+            // tb_Reg2B
             // 
-            this.tbReg2B.Enabled = false;
-            this.tbReg2B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg2B.Location = new System.Drawing.Point(114, 301);
-            this.tbReg2B.Name = "tbReg2B";
-            this.tbReg2B.Size = new System.Drawing.Size(39, 20);
-            this.tbReg2B.TabIndex = 62;
-            this.tbReg2B.Text = "0x00";
-            this.tbReg2B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg2B.Enabled = false;
+            this.tb_Reg2B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg2B.Location = new System.Drawing.Point(114, 301);
+            this.tb_Reg2B.Name = "tb_Reg2B";
+            this.tb_Reg2B.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg2B.TabIndex = 62;
+            this.tb_Reg2B.Text = "0x00";
+            this.tb_Reg2B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label35
             // 
@@ -973,16 +954,16 @@
             this.label35.TabIndex = 61;
             this.label35.Text = "2Bh";
             // 
-            // tbReg2A
+            // tb_Reg2A
             // 
-            this.tbReg2A.Enabled = false;
-            this.tbReg2A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg2A.Location = new System.Drawing.Point(114, 279);
-            this.tbReg2A.Name = "tbReg2A";
-            this.tbReg2A.Size = new System.Drawing.Size(39, 20);
-            this.tbReg2A.TabIndex = 60;
-            this.tbReg2A.Text = "0x00";
-            this.tbReg2A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg2A.Enabled = false;
+            this.tb_Reg2A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg2A.Location = new System.Drawing.Point(114, 279);
+            this.tb_Reg2A.Name = "tb_Reg2A";
+            this.tb_Reg2A.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg2A.TabIndex = 60;
+            this.tb_Reg2A.Text = "0x00";
+            this.tb_Reg2A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label36
             // 
@@ -994,16 +975,16 @@
             this.label36.TabIndex = 59;
             this.label36.Text = "2Ah";
             // 
-            // tbReg29
+            // tb_Reg29
             // 
-            this.tbReg29.Enabled = false;
-            this.tbReg29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg29.Location = new System.Drawing.Point(114, 257);
-            this.tbReg29.Name = "tbReg29";
-            this.tbReg29.Size = new System.Drawing.Size(39, 20);
-            this.tbReg29.TabIndex = 58;
-            this.tbReg29.Text = "0x00";
-            this.tbReg29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg29.Enabled = false;
+            this.tb_Reg29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg29.Location = new System.Drawing.Point(114, 257);
+            this.tb_Reg29.Name = "tb_Reg29";
+            this.tb_Reg29.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg29.TabIndex = 58;
+            this.tb_Reg29.Text = "0x00";
+            this.tb_Reg29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label37
             // 
@@ -1015,16 +996,16 @@
             this.label37.TabIndex = 57;
             this.label37.Text = "29h";
             // 
-            // tbReg28
+            // tb_Reg28
             // 
-            this.tbReg28.Enabled = false;
-            this.tbReg28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg28.Location = new System.Drawing.Point(114, 235);
-            this.tbReg28.Name = "tbReg28";
-            this.tbReg28.Size = new System.Drawing.Size(39, 20);
-            this.tbReg28.TabIndex = 56;
-            this.tbReg28.Text = "0x00";
-            this.tbReg28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg28.Enabled = false;
+            this.tb_Reg28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg28.Location = new System.Drawing.Point(114, 235);
+            this.tb_Reg28.Name = "tb_Reg28";
+            this.tb_Reg28.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg28.TabIndex = 56;
+            this.tb_Reg28.Text = "0x00";
+            this.tb_Reg28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label38
             // 
@@ -1036,16 +1017,16 @@
             this.label38.TabIndex = 55;
             this.label38.Text = "28h";
             // 
-            // tbReg27
+            // tb_Reg27
             // 
-            this.tbReg27.Enabled = false;
-            this.tbReg27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg27.Location = new System.Drawing.Point(114, 213);
-            this.tbReg27.Name = "tbReg27";
-            this.tbReg27.Size = new System.Drawing.Size(39, 20);
-            this.tbReg27.TabIndex = 54;
-            this.tbReg27.Text = "0x00";
-            this.tbReg27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg27.Enabled = false;
+            this.tb_Reg27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg27.Location = new System.Drawing.Point(114, 213);
+            this.tb_Reg27.Name = "tb_Reg27";
+            this.tb_Reg27.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg27.TabIndex = 54;
+            this.tb_Reg27.Text = "0x00";
+            this.tb_Reg27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label39
             // 
@@ -1057,16 +1038,16 @@
             this.label39.TabIndex = 53;
             this.label39.Text = "27h";
             // 
-            // tbReg24
+            // tb_Reg24
             // 
-            this.tbReg24.Enabled = false;
-            this.tbReg24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg24.Location = new System.Drawing.Point(114, 147);
-            this.tbReg24.Name = "tbReg24";
-            this.tbReg24.Size = new System.Drawing.Size(39, 20);
-            this.tbReg24.TabIndex = 52;
-            this.tbReg24.Text = "0x00";
-            this.tbReg24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg24.Enabled = false;
+            this.tb_Reg24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg24.Location = new System.Drawing.Point(114, 147);
+            this.tb_Reg24.Name = "tb_Reg24";
+            this.tb_Reg24.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg24.TabIndex = 52;
+            this.tb_Reg24.Text = "0x00";
+            this.tb_Reg24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label40
             // 
@@ -1078,16 +1059,16 @@
             this.label40.TabIndex = 51;
             this.label40.Text = "24h";
             // 
-            // tbReg23
+            // tb_Reg23
             // 
-            this.tbReg23.Enabled = false;
-            this.tbReg23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg23.Location = new System.Drawing.Point(114, 125);
-            this.tbReg23.Name = "tbReg23";
-            this.tbReg23.Size = new System.Drawing.Size(39, 20);
-            this.tbReg23.TabIndex = 50;
-            this.tbReg23.Text = "0x00";
-            this.tbReg23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg23.Enabled = false;
+            this.tb_Reg23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg23.Location = new System.Drawing.Point(114, 125);
+            this.tb_Reg23.Name = "tb_Reg23";
+            this.tb_Reg23.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg23.TabIndex = 50;
+            this.tb_Reg23.Text = "0x00";
+            this.tb_Reg23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label41
             // 
@@ -1099,16 +1080,16 @@
             this.label41.TabIndex = 49;
             this.label41.Text = "23h";
             // 
-            // tbReg22
+            // tb_Reg22
             // 
-            this.tbReg22.Enabled = false;
-            this.tbReg22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg22.Location = new System.Drawing.Point(114, 103);
-            this.tbReg22.Name = "tbReg22";
-            this.tbReg22.Size = new System.Drawing.Size(39, 20);
-            this.tbReg22.TabIndex = 48;
-            this.tbReg22.Text = "0x00";
-            this.tbReg22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg22.Enabled = false;
+            this.tb_Reg22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg22.Location = new System.Drawing.Point(114, 103);
+            this.tb_Reg22.Name = "tb_Reg22";
+            this.tb_Reg22.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg22.TabIndex = 48;
+            this.tb_Reg22.Text = "0x00";
+            this.tb_Reg22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label23
             // 
@@ -1120,16 +1101,16 @@
             this.label23.TabIndex = 47;
             this.label23.Text = "22h";
             // 
-            // tbReg21
+            // tb_Reg21
             // 
-            this.tbReg21.Enabled = false;
-            this.tbReg21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg21.Location = new System.Drawing.Point(114, 81);
-            this.tbReg21.Name = "tbReg21";
-            this.tbReg21.Size = new System.Drawing.Size(39, 20);
-            this.tbReg21.TabIndex = 46;
-            this.tbReg21.Text = "0x00";
-            this.tbReg21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg21.Enabled = false;
+            this.tb_Reg21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg21.Location = new System.Drawing.Point(114, 81);
+            this.tb_Reg21.Name = "tb_Reg21";
+            this.tb_Reg21.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg21.TabIndex = 46;
+            this.tb_Reg21.Text = "0x00";
+            this.tb_Reg21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -1141,16 +1122,16 @@
             this.label18.TabIndex = 45;
             this.label18.Text = "21h";
             // 
-            // tbReg20
+            // tb_Reg20
             // 
-            this.tbReg20.Enabled = false;
-            this.tbReg20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg20.Location = new System.Drawing.Point(114, 59);
-            this.tbReg20.Name = "tbReg20";
-            this.tbReg20.Size = new System.Drawing.Size(39, 20);
-            this.tbReg20.TabIndex = 44;
-            this.tbReg20.Text = "0x00";
-            this.tbReg20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg20.Enabled = false;
+            this.tb_Reg20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg20.Location = new System.Drawing.Point(114, 59);
+            this.tb_Reg20.Name = "tb_Reg20";
+            this.tb_Reg20.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg20.TabIndex = 44;
+            this.tb_Reg20.Text = "0x00";
+            this.tb_Reg20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
@@ -1162,16 +1143,16 @@
             this.label19.TabIndex = 43;
             this.label19.Text = "20h";
             // 
-            // tbReg1F
+            // tb_Reg1F
             // 
-            this.tbReg1F.Enabled = false;
-            this.tbReg1F.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg1F.Location = new System.Drawing.Point(114, 37);
-            this.tbReg1F.Name = "tbReg1F";
-            this.tbReg1F.Size = new System.Drawing.Size(39, 20);
-            this.tbReg1F.TabIndex = 42;
-            this.tbReg1F.Text = "0x00";
-            this.tbReg1F.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg1F.Enabled = false;
+            this.tb_Reg1F.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg1F.Location = new System.Drawing.Point(114, 37);
+            this.tb_Reg1F.Name = "tb_Reg1F";
+            this.tb_Reg1F.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg1F.TabIndex = 42;
+            this.tb_Reg1F.Text = "0x00";
+            this.tb_Reg1F.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label20
             // 
@@ -1183,16 +1164,16 @@
             this.label20.TabIndex = 41;
             this.label20.Text = "1Fh";
             // 
-            // tbReg1E
+            // tb_Reg1E
             // 
-            this.tbReg1E.Enabled = false;
-            this.tbReg1E.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg1E.Location = new System.Drawing.Point(114, 15);
-            this.tbReg1E.Name = "tbReg1E";
-            this.tbReg1E.Size = new System.Drawing.Size(39, 20);
-            this.tbReg1E.TabIndex = 40;
-            this.tbReg1E.Text = "0x00";
-            this.tbReg1E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg1E.Enabled = false;
+            this.tb_Reg1E.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg1E.Location = new System.Drawing.Point(114, 15);
+            this.tb_Reg1E.Name = "tb_Reg1E";
+            this.tb_Reg1E.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg1E.TabIndex = 40;
+            this.tb_Reg1E.Text = "0x00";
+            this.tb_Reg1E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -1204,16 +1185,16 @@
             this.label21.TabIndex = 39;
             this.label21.Text = "1Eh";
             // 
-            // tbReg1D
+            // tb_Reg1D
             // 
-            this.tbReg1D.Enabled = false;
-            this.tbReg1D.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg1D.Location = new System.Drawing.Point(33, 389);
-            this.tbReg1D.Name = "tbReg1D";
-            this.tbReg1D.Size = new System.Drawing.Size(39, 20);
-            this.tbReg1D.TabIndex = 38;
-            this.tbReg1D.Text = "0x00";
-            this.tbReg1D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg1D.Enabled = false;
+            this.tb_Reg1D.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg1D.Location = new System.Drawing.Point(33, 389);
+            this.tb_Reg1D.Name = "tb_Reg1D";
+            this.tb_Reg1D.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg1D.TabIndex = 38;
+            this.tb_Reg1D.Text = "0x00";
+            this.tb_Reg1D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -1225,16 +1206,16 @@
             this.label22.TabIndex = 37;
             this.label22.Text = "1Dh";
             // 
-            // tbReg16
+            // tb_Reg16
             // 
-            this.tbReg16.Enabled = false;
-            this.tbReg16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg16.Location = new System.Drawing.Point(33, 235);
-            this.tbReg16.Name = "tbReg16";
-            this.tbReg16.Size = new System.Drawing.Size(39, 20);
-            this.tbReg16.TabIndex = 36;
-            this.tbReg16.Text = "0x00";
-            this.tbReg16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg16.Enabled = false;
+            this.tb_Reg16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg16.Location = new System.Drawing.Point(33, 235);
+            this.tb_Reg16.Name = "tb_Reg16";
+            this.tb_Reg16.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg16.TabIndex = 36;
+            this.tb_Reg16.Text = "0x00";
+            this.tb_Reg16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -1246,16 +1227,16 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "16h";
             // 
-            // tbReg1C
+            // tb_Reg1C
             // 
-            this.tbReg1C.Enabled = false;
-            this.tbReg1C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg1C.Location = new System.Drawing.Point(33, 367);
-            this.tbReg1C.Name = "tbReg1C";
-            this.tbReg1C.Size = new System.Drawing.Size(39, 20);
-            this.tbReg1C.TabIndex = 34;
-            this.tbReg1C.Text = "0x00";
-            this.tbReg1C.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg1C.Enabled = false;
+            this.tb_Reg1C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg1C.Location = new System.Drawing.Point(33, 367);
+            this.tb_Reg1C.Name = "tb_Reg1C";
+            this.tb_Reg1C.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg1C.TabIndex = 34;
+            this.tb_Reg1C.Text = "0x00";
+            this.tb_Reg1C.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -1267,16 +1248,16 @@
             this.label12.TabIndex = 33;
             this.label12.Text = "1Ch";
             // 
-            // tbReg1B
+            // tb_Reg1B
             // 
-            this.tbReg1B.Enabled = false;
-            this.tbReg1B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg1B.Location = new System.Drawing.Point(33, 345);
-            this.tbReg1B.Name = "tbReg1B";
-            this.tbReg1B.Size = new System.Drawing.Size(39, 20);
-            this.tbReg1B.TabIndex = 32;
-            this.tbReg1B.Text = "0x00";
-            this.tbReg1B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg1B.Enabled = false;
+            this.tb_Reg1B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg1B.Location = new System.Drawing.Point(33, 345);
+            this.tb_Reg1B.Name = "tb_Reg1B";
+            this.tb_Reg1B.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg1B.TabIndex = 32;
+            this.tb_Reg1B.Text = "0x00";
+            this.tb_Reg1B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -1288,16 +1269,16 @@
             this.label13.TabIndex = 31;
             this.label13.Text = "1Bh";
             // 
-            // tbReg1A
+            // tb_Reg1A
             // 
-            this.tbReg1A.Enabled = false;
-            this.tbReg1A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg1A.Location = new System.Drawing.Point(33, 323);
-            this.tbReg1A.Name = "tbReg1A";
-            this.tbReg1A.Size = new System.Drawing.Size(39, 20);
-            this.tbReg1A.TabIndex = 30;
-            this.tbReg1A.Text = "0x00";
-            this.tbReg1A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg1A.Enabled = false;
+            this.tb_Reg1A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg1A.Location = new System.Drawing.Point(33, 323);
+            this.tb_Reg1A.Name = "tb_Reg1A";
+            this.tb_Reg1A.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg1A.TabIndex = 30;
+            this.tb_Reg1A.Text = "0x00";
+            this.tb_Reg1A.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -1309,16 +1290,16 @@
             this.label14.TabIndex = 29;
             this.label14.Text = "1Ah";
             // 
-            // tbReg19
+            // tb_Reg19
             // 
-            this.tbReg19.Enabled = false;
-            this.tbReg19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg19.Location = new System.Drawing.Point(33, 301);
-            this.tbReg19.Name = "tbReg19";
-            this.tbReg19.Size = new System.Drawing.Size(39, 20);
-            this.tbReg19.TabIndex = 28;
-            this.tbReg19.Text = "0x00";
-            this.tbReg19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg19.Enabled = false;
+            this.tb_Reg19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg19.Location = new System.Drawing.Point(33, 301);
+            this.tb_Reg19.Name = "tb_Reg19";
+            this.tb_Reg19.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg19.TabIndex = 28;
+            this.tb_Reg19.Text = "0x00";
+            this.tb_Reg19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
@@ -1330,16 +1311,16 @@
             this.label15.TabIndex = 27;
             this.label15.Text = "19h";
             // 
-            // tbReg18
+            // tb_Reg18
             // 
-            this.tbReg18.Enabled = false;
-            this.tbReg18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg18.Location = new System.Drawing.Point(33, 279);
-            this.tbReg18.Name = "tbReg18";
-            this.tbReg18.Size = new System.Drawing.Size(39, 20);
-            this.tbReg18.TabIndex = 26;
-            this.tbReg18.Text = "0x00";
-            this.tbReg18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg18.Enabled = false;
+            this.tb_Reg18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg18.Location = new System.Drawing.Point(33, 279);
+            this.tb_Reg18.Name = "tb_Reg18";
+            this.tb_Reg18.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg18.TabIndex = 26;
+            this.tb_Reg18.Text = "0x00";
+            this.tb_Reg18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16
             // 
@@ -1351,16 +1332,16 @@
             this.label16.TabIndex = 25;
             this.label16.Text = "18h";
             // 
-            // tbReg17
+            // tb_Reg17
             // 
-            this.tbReg17.Enabled = false;
-            this.tbReg17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg17.Location = new System.Drawing.Point(33, 257);
-            this.tbReg17.Name = "tbReg17";
-            this.tbReg17.Size = new System.Drawing.Size(39, 20);
-            this.tbReg17.TabIndex = 24;
-            this.tbReg17.Text = "0x00";
-            this.tbReg17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg17.Enabled = false;
+            this.tb_Reg17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg17.Location = new System.Drawing.Point(33, 257);
+            this.tb_Reg17.Name = "tb_Reg17";
+            this.tb_Reg17.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg17.TabIndex = 24;
+            this.tb_Reg17.Text = "0x00";
+            this.tb_Reg17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
@@ -1372,16 +1353,16 @@
             this.label17.TabIndex = 23;
             this.label17.Text = "17h";
             // 
-            // tbReg0F
+            // tb_Reg0F
             // 
-            this.tbReg0F.Enabled = false;
-            this.tbReg0F.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg0F.Location = new System.Drawing.Point(33, 81);
-            this.tbReg0F.Name = "tbReg0F";
-            this.tbReg0F.Size = new System.Drawing.Size(39, 20);
-            this.tbReg0F.TabIndex = 22;
-            this.tbReg0F.Text = "0x00";
-            this.tbReg0F.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg0F.Enabled = false;
+            this.tb_Reg0F.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg0F.Location = new System.Drawing.Point(33, 81);
+            this.tb_Reg0F.Name = "tb_Reg0F";
+            this.tb_Reg0F.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg0F.TabIndex = 22;
+            this.tb_Reg0F.Text = "0x00";
+            this.tb_Reg0F.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -1393,16 +1374,16 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "0Fh";
             // 
-            // tbReg0E
+            // tb_Reg0E
             // 
-            this.tbReg0E.Enabled = false;
-            this.tbReg0E.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg0E.Location = new System.Drawing.Point(33, 59);
-            this.tbReg0E.Name = "tbReg0E";
-            this.tbReg0E.Size = new System.Drawing.Size(39, 20);
-            this.tbReg0E.TabIndex = 20;
-            this.tbReg0E.Text = "0x00";
-            this.tbReg0E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg0E.Enabled = false;
+            this.tb_Reg0E.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg0E.Location = new System.Drawing.Point(33, 59);
+            this.tb_Reg0E.Name = "tb_Reg0E";
+            this.tb_Reg0E.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg0E.TabIndex = 20;
+            this.tb_Reg0E.Text = "0x00";
+            this.tb_Reg0E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -1414,16 +1395,16 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "0Eh";
             // 
-            // tbReg15
+            // tb_Reg15
             // 
-            this.tbReg15.Enabled = false;
-            this.tbReg15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg15.Location = new System.Drawing.Point(33, 213);
-            this.tbReg15.Name = "tbReg15";
-            this.tbReg15.Size = new System.Drawing.Size(39, 20);
-            this.tbReg15.TabIndex = 18;
-            this.tbReg15.Text = "0x00";
-            this.tbReg15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg15.Enabled = false;
+            this.tb_Reg15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg15.Location = new System.Drawing.Point(33, 213);
+            this.tb_Reg15.Name = "tb_Reg15";
+            this.tb_Reg15.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg15.TabIndex = 18;
+            this.tb_Reg15.Text = "0x00";
+            this.tb_Reg15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -1435,16 +1416,16 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "15h";
             // 
-            // tbReg14
+            // tb_Reg14
             // 
-            this.tbReg14.Enabled = false;
-            this.tbReg14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg14.Location = new System.Drawing.Point(33, 191);
-            this.tbReg14.Name = "tbReg14";
-            this.tbReg14.Size = new System.Drawing.Size(39, 20);
-            this.tbReg14.TabIndex = 16;
-            this.tbReg14.Text = "0x00";
-            this.tbReg14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg14.Enabled = false;
+            this.tb_Reg14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg14.Location = new System.Drawing.Point(33, 191);
+            this.tb_Reg14.Name = "tb_Reg14";
+            this.tb_Reg14.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg14.TabIndex = 16;
+            this.tb_Reg14.Text = "0x00";
+            this.tb_Reg14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -1456,16 +1437,16 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "14h";
             // 
-            // tbReg13
+            // tb_Reg13
             // 
-            this.tbReg13.Enabled = false;
-            this.tbReg13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg13.Location = new System.Drawing.Point(33, 169);
-            this.tbReg13.Name = "tbReg13";
-            this.tbReg13.Size = new System.Drawing.Size(39, 20);
-            this.tbReg13.TabIndex = 14;
-            this.tbReg13.Text = "0x00";
-            this.tbReg13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg13.Enabled = false;
+            this.tb_Reg13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg13.Location = new System.Drawing.Point(33, 169);
+            this.tb_Reg13.Name = "tb_Reg13";
+            this.tb_Reg13.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg13.TabIndex = 14;
+            this.tb_Reg13.Text = "0x00";
+            this.tb_Reg13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -1477,16 +1458,16 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "13h";
             // 
-            // tbReg12
+            // tb_Reg12
             // 
-            this.tbReg12.Enabled = false;
-            this.tbReg12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg12.Location = new System.Drawing.Point(33, 147);
-            this.tbReg12.Name = "tbReg12";
-            this.tbReg12.Size = new System.Drawing.Size(39, 20);
-            this.tbReg12.TabIndex = 12;
-            this.tbReg12.Text = "0x00";
-            this.tbReg12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg12.Enabled = false;
+            this.tb_Reg12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg12.Location = new System.Drawing.Point(33, 147);
+            this.tb_Reg12.Name = "tb_Reg12";
+            this.tb_Reg12.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg12.TabIndex = 12;
+            this.tb_Reg12.Text = "0x00";
+            this.tb_Reg12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -1498,16 +1479,16 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "12h";
             // 
-            // tbReg11
+            // tb_Reg11
             // 
-            this.tbReg11.Enabled = false;
-            this.tbReg11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg11.Location = new System.Drawing.Point(33, 125);
-            this.tbReg11.Name = "tbReg11";
-            this.tbReg11.Size = new System.Drawing.Size(39, 20);
-            this.tbReg11.TabIndex = 10;
-            this.tbReg11.Text = "0x00";
-            this.tbReg11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg11.Enabled = false;
+            this.tb_Reg11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg11.Location = new System.Drawing.Point(33, 125);
+            this.tb_Reg11.Name = "tb_Reg11";
+            this.tb_Reg11.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg11.TabIndex = 10;
+            this.tb_Reg11.Text = "0x00";
+            this.tb_Reg11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -1519,16 +1500,16 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "11h";
             // 
-            // tbReg10
+            // tb_Reg10
             // 
-            this.tbReg10.Enabled = false;
-            this.tbReg10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg10.Location = new System.Drawing.Point(33, 103);
-            this.tbReg10.Name = "tbReg10";
-            this.tbReg10.Size = new System.Drawing.Size(39, 20);
-            this.tbReg10.TabIndex = 8;
-            this.tbReg10.Text = "0x00";
-            this.tbReg10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg10.Enabled = false;
+            this.tb_Reg10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg10.Location = new System.Drawing.Point(33, 103);
+            this.tb_Reg10.Name = "tb_Reg10";
+            this.tb_Reg10.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg10.TabIndex = 8;
+            this.tb_Reg10.Text = "0x00";
+            this.tb_Reg10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -1540,16 +1521,16 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "10h";
             // 
-            // tbReg0D
+            // tb_Reg0D
             // 
-            this.tbReg0D.Enabled = false;
-            this.tbReg0D.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg0D.Location = new System.Drawing.Point(33, 37);
-            this.tbReg0D.Name = "tbReg0D";
-            this.tbReg0D.Size = new System.Drawing.Size(39, 20);
-            this.tbReg0D.TabIndex = 6;
-            this.tbReg0D.Text = "0x00";
-            this.tbReg0D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg0D.Enabled = false;
+            this.tb_Reg0D.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg0D.Location = new System.Drawing.Point(33, 37);
+            this.tb_Reg0D.Name = "tb_Reg0D";
+            this.tb_Reg0D.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg0D.TabIndex = 6;
+            this.tb_Reg0D.Text = "0x00";
+            this.tb_Reg0D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -1561,16 +1542,16 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "0Dh";
             // 
-            // tbReg0C
+            // tb_Reg0C
             // 
-            this.tbReg0C.Enabled = false;
-            this.tbReg0C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReg0C.Location = new System.Drawing.Point(33, 15);
-            this.tbReg0C.Name = "tbReg0C";
-            this.tbReg0C.Size = new System.Drawing.Size(39, 20);
-            this.tbReg0C.TabIndex = 4;
-            this.tbReg0C.Text = "0x00";
-            this.tbReg0C.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Reg0C.Enabled = false;
+            this.tb_Reg0C.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Reg0C.Location = new System.Drawing.Point(33, 15);
+            this.tb_Reg0C.Name = "tb_Reg0C";
+            this.tb_Reg0C.Size = new System.Drawing.Size(39, 20);
+            this.tb_Reg0C.TabIndex = 4;
+            this.tb_Reg0C.Text = "0x00";
+            this.tb_Reg0C.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -1582,99 +1563,99 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "0Ch";
             // 
-            // startButton
+            // btn_Start
             // 
-            this.startButton.Location = new System.Drawing.Point(6, 19);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(75, 23);
-            this.startButton.TabIndex = 11;
-            this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = true;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            this.btn_Start.Location = new System.Drawing.Point(6, 19);
+            this.btn_Start.Name = "btn_Start";
+            this.btn_Start.Size = new System.Drawing.Size(75, 23);
+            this.btn_Start.TabIndex = 11;
+            this.btn_Start.Text = "Start";
+            this.btn_Start.UseVisualStyleBackColor = true;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
-            // stopButton
+            // btn_Stop
             // 
-            this.stopButton.Location = new System.Drawing.Point(87, 19);
-            this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(75, 23);
-            this.stopButton.TabIndex = 12;
-            this.stopButton.Text = "Stop";
-            this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
+            this.btn_Stop.Location = new System.Drawing.Point(87, 19);
+            this.btn_Stop.Name = "btn_Stop";
+            this.btn_Stop.Size = new System.Drawing.Size(75, 23);
+            this.btn_Stop.TabIndex = 12;
+            this.btn_Stop.Text = "Stop";
+            this.btn_Stop.UseVisualStyleBackColor = true;
+            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
-            // nextButton
+            // btn_Next
             // 
-            this.nextButton.Location = new System.Drawing.Point(168, 19);
-            this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(75, 23);
-            this.nextButton.TabIndex = 13;
-            this.nextButton.Text = "Next";
-            this.nextButton.UseVisualStyleBackColor = true;
-            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            this.btn_Next.Location = new System.Drawing.Point(168, 19);
+            this.btn_Next.Name = "btn_Next";
+            this.btn_Next.Size = new System.Drawing.Size(75, 23);
+            this.btn_Next.TabIndex = 13;
+            this.btn_Next.Text = "Next";
+            this.btn_Next.UseVisualStyleBackColor = true;
+            this.btn_Next.Click += new System.EventHandler(this.btn_Next_Click);
             // 
-            // resetButton
+            // btn_Reset
             // 
-            this.resetButton.Location = new System.Drawing.Point(249, 19);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(75, 23);
-            this.resetButton.TabIndex = 16;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            this.btn_Reset.Location = new System.Drawing.Point(249, 19);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(75, 23);
+            this.btn_Reset.TabIndex = 16;
+            this.btn_Reset.Text = "Reset";
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
-            // groupBox1
+            // gb_Steuerung
             // 
-            this.groupBox1.Controls.Add(this.startButton);
-            this.groupBox1.Controls.Add(this.resetButton);
-            this.groupBox1.Controls.Add(this.stopButton);
-            this.groupBox1.Controls.Add(this.nextButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(400, 54);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Steuerung";
+            this.gb_Steuerung.Controls.Add(this.btn_Start);
+            this.gb_Steuerung.Controls.Add(this.btn_Reset);
+            this.gb_Steuerung.Controls.Add(this.btn_Stop);
+            this.gb_Steuerung.Controls.Add(this.btn_Next);
+            this.gb_Steuerung.Location = new System.Drawing.Point(12, 27);
+            this.gb_Steuerung.Name = "gb_Steuerung";
+            this.gb_Steuerung.Size = new System.Drawing.Size(400, 54);
+            this.gb_Steuerung.TabIndex = 17;
+            this.gb_Steuerung.TabStop = false;
+            this.gb_Steuerung.Text = "Steuerung";
             // 
-            // groupBox2
+            // gb_Laufzeit
             // 
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.Label_Duration);
-            this.groupBox2.Location = new System.Drawing.Point(821, 27);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(108, 53);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Laufzeit";
+            this.gb_Laufzeit.Controls.Add(this.btn_ResetLaufzeit);
+            this.gb_Laufzeit.Controls.Add(this.lbl_Laufzeit);
+            this.gb_Laufzeit.Location = new System.Drawing.Point(821, 27);
+            this.gb_Laufzeit.Name = "gb_Laufzeit";
+            this.gb_Laufzeit.Size = new System.Drawing.Size(108, 53);
+            this.gb_Laufzeit.TabIndex = 18;
+            this.gb_Laufzeit.TabStop = false;
+            this.gb_Laufzeit.Text = "Laufzeit";
             // 
-            // button7
+            // btn_ResetLaufzeit
             // 
-            this.button7.Location = new System.Drawing.Point(59, 18);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(47, 23);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "reset";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_ResetLaufzeit.Location = new System.Drawing.Point(59, 18);
+            this.btn_ResetLaufzeit.Name = "btn_ResetLaufzeit";
+            this.btn_ResetLaufzeit.Size = new System.Drawing.Size(47, 23);
+            this.btn_ResetLaufzeit.TabIndex = 1;
+            this.btn_ResetLaufzeit.Text = "reset";
+            this.btn_ResetLaufzeit.UseVisualStyleBackColor = true;
             // 
-            // Label_Duration
+            // lbl_Laufzeit
             // 
-            this.Label_Duration.AutoSize = true;
-            this.Label_Duration.Location = new System.Drawing.Point(11, 23);
-            this.Label_Duration.Name = "Label_Duration";
-            this.Label_Duration.Size = new System.Drawing.Size(42, 13);
-            this.Label_Duration.TabIndex = 0;
-            this.Label_Duration.Text = "0,00 us";
-            this.Label_Duration.Click += new System.EventHandler(this.Label_Duration_Click);
+            this.lbl_Laufzeit.AutoSize = true;
+            this.lbl_Laufzeit.Location = new System.Drawing.Point(11, 23);
+            this.lbl_Laufzeit.Name = "lbl_Laufzeit";
+            this.lbl_Laufzeit.Size = new System.Drawing.Size(42, 13);
+            this.lbl_Laufzeit.TabIndex = 0;
+            this.lbl_Laufzeit.Text = "0,00 us";
+            this.lbl_Laufzeit.Click += new System.EventHandler(this.lbl_Laufzeit_Click);
             // 
-            // groupBox3
+            // gb_SerialPort
             // 
-            this.groupBox3.Controls.Add(this.serialPanel);
-            this.groupBox3.Controls.Add(this.btn_serial);
-            this.groupBox3.Location = new System.Drawing.Point(821, 76);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(108, 59);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Serial Port";
+            this.gb_SerialPort.Controls.Add(this.serialPanel);
+            this.gb_SerialPort.Controls.Add(this.btn_VerbindeCom);
+            this.gb_SerialPort.Location = new System.Drawing.Point(821, 76);
+            this.gb_SerialPort.Name = "gb_SerialPort";
+            this.gb_SerialPort.Size = new System.Drawing.Size(108, 59);
+            this.gb_SerialPort.TabIndex = 19;
+            this.gb_SerialPort.TabStop = false;
+            this.gb_SerialPort.Text = "Serial Port";
             // 
             // serialPanel
             // 
@@ -1683,30 +1664,29 @@
             this.serialPanel.Name = "serialPanel";
             this.serialPanel.Size = new System.Drawing.Size(17, 23);
             this.serialPanel.TabIndex = 1;
-            this.serialPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.serialPanel_Paint);
             // 
-            // btn_serial
+            // btn_VerbindeCom
             // 
-            this.btn_serial.Location = new System.Drawing.Point(7, 20);
-            this.btn_serial.Name = "btn_serial";
-            this.btn_serial.Size = new System.Drawing.Size(75, 23);
-            this.btn_serial.TabIndex = 0;
-            this.btn_serial.Text = "Verbinden";
-            this.btn_serial.UseVisualStyleBackColor = true;
-            this.btn_serial.Click += new System.EventHandler(this.btn_serial_Click);
+            this.btn_VerbindeCom.Location = new System.Drawing.Point(7, 20);
+            this.btn_VerbindeCom.Name = "btn_VerbindeCom";
+            this.btn_VerbindeCom.Size = new System.Drawing.Size(75, 23);
+            this.btn_VerbindeCom.TabIndex = 0;
+            this.btn_VerbindeCom.Text = "Verbinden";
+            this.btn_VerbindeCom.UseVisualStyleBackColor = true;
+            this.btn_VerbindeCom.Click += new System.EventHandler(this.btn_VerbindeCom_Click);
             // 
-            // groupBox4
+            // gb_WatchDog
             // 
-            this.groupBox4.Controls.Add(this.label50);
-            this.groupBox4.Controls.Add(this.tBWatchDog);
-            this.groupBox4.Controls.Add(this.watchDogPanel);
-            this.groupBox4.Controls.Add(this.watchDogButton);
-            this.groupBox4.Location = new System.Drawing.Point(821, 134);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(108, 83);
-            this.groupBox4.TabIndex = 20;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Watchdog";
+            this.gb_WatchDog.Controls.Add(this.label50);
+            this.gb_WatchDog.Controls.Add(this.tb_WatchDogCounter);
+            this.gb_WatchDog.Controls.Add(this.watchDogPanel);
+            this.gb_WatchDog.Controls.Add(this.btn_WatchDog);
+            this.gb_WatchDog.Location = new System.Drawing.Point(821, 134);
+            this.gb_WatchDog.Name = "gb_WatchDog";
+            this.gb_WatchDog.Size = new System.Drawing.Size(108, 83);
+            this.gb_WatchDog.TabIndex = 20;
+            this.gb_WatchDog.TabStop = false;
+            this.gb_WatchDog.Text = "Watchdog";
             // 
             // label50
             // 
@@ -1717,16 +1697,16 @@
             this.label50.TabIndex = 88;
             this.label50.Text = "Counter";
             // 
-            // tBWatchDog
+            // tb_WatchDogCounter
             // 
-            this.tBWatchDog.Enabled = false;
-            this.tBWatchDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBWatchDog.Location = new System.Drawing.Point(65, 52);
-            this.tBWatchDog.Name = "tBWatchDog";
-            this.tBWatchDog.Size = new System.Drawing.Size(39, 20);
-            this.tBWatchDog.TabIndex = 87;
-            this.tBWatchDog.Text = "0";
-            this.tBWatchDog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_WatchDogCounter.Enabled = false;
+            this.tb_WatchDogCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_WatchDogCounter.Location = new System.Drawing.Point(65, 52);
+            this.tb_WatchDogCounter.Name = "tb_WatchDogCounter";
+            this.tb_WatchDogCounter.Size = new System.Drawing.Size(39, 20);
+            this.tb_WatchDogCounter.TabIndex = 87;
+            this.tb_WatchDogCounter.Text = "0";
+            this.tb_WatchDogCounter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // watchDogPanel
             // 
@@ -1737,102 +1717,102 @@
             this.watchDogPanel.TabIndex = 2;
             this.watchDogPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.watchDogPanel_Paint);
             // 
-            // watchDogButton
+            // btn_WatchDog
             // 
-            this.watchDogButton.Location = new System.Drawing.Point(7, 20);
-            this.watchDogButton.Name = "watchDogButton";
-            this.watchDogButton.Size = new System.Drawing.Size(75, 23);
-            this.watchDogButton.TabIndex = 0;
-            this.watchDogButton.Text = "Aktivieren";
-            this.watchDogButton.UseVisualStyleBackColor = true;
-            this.watchDogButton.Click += new System.EventHandler(this.watchDogButton_Click);
+            this.btn_WatchDog.Location = new System.Drawing.Point(7, 20);
+            this.btn_WatchDog.Name = "btn_WatchDog";
+            this.btn_WatchDog.Size = new System.Drawing.Size(75, 23);
+            this.btn_WatchDog.TabIndex = 0;
+            this.btn_WatchDog.Text = "Aktivieren";
+            this.btn_WatchDog.UseVisualStyleBackColor = true;
+            this.btn_WatchDog.Click += new System.EventHandler(this.btn_WatchDog_Click);
             // 
-            // trbSpeed
+            // trb_Speed
             // 
-            this.trbSpeed.Location = new System.Drawing.Point(6, 16);
-            this.trbSpeed.Name = "trbSpeed";
-            this.trbSpeed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.trbSpeed.RightToLeftLayout = true;
-            this.trbSpeed.Size = new System.Drawing.Size(299, 45);
-            this.trbSpeed.TabIndex = 53;
-            this.trbSpeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trbSpeed.Value = 5;
-            this.trbSpeed.Scroll += new System.EventHandler(this.trbSpeed_Scroll);
+            this.trb_Speed.Location = new System.Drawing.Point(6, 16);
+            this.trb_Speed.Name = "trb_Speed";
+            this.trb_Speed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.trb_Speed.RightToLeftLayout = true;
+            this.trb_Speed.Size = new System.Drawing.Size(299, 45);
+            this.trb_Speed.TabIndex = 53;
+            this.trb_Speed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.trb_Speed.Value = 5;
+            this.trb_Speed.Scroll += new System.EventHandler(this.trb_Speed_Scroll);
             // 
-            // groupBox5
+            // gb_Quarzfrequenz
             // 
-            this.groupBox5.Controls.Add(this.label51);
-            this.groupBox5.Controls.Add(this.textBox_speed);
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.trbSpeed);
-            this.groupBox5.Location = new System.Drawing.Point(12, 86);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(400, 67);
-            this.groupBox5.TabIndex = 54;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Quarzfrequenz";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            this.gb_Quarzfrequenz.Controls.Add(this.lbl_us);
+            this.gb_Quarzfrequenz.Controls.Add(this.tb_Speed);
+            this.gb_Quarzfrequenz.Controls.Add(this.btn_TaktSetzen);
+            this.gb_Quarzfrequenz.Controls.Add(this.trb_Speed);
+            this.gb_Quarzfrequenz.Location = new System.Drawing.Point(12, 86);
+            this.gb_Quarzfrequenz.Name = "gb_Quarzfrequenz";
+            this.gb_Quarzfrequenz.Size = new System.Drawing.Size(400, 67);
+            this.gb_Quarzfrequenz.TabIndex = 54;
+            this.gb_Quarzfrequenz.TabStop = false;
+            this.gb_Quarzfrequenz.Text = "Quarzfrequenz";
+            this.gb_Quarzfrequenz.Enter += new System.EventHandler(this.gb_Quarzfrequenz_Enter);
             // 
-            // label51
+            // lbl_us
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(368, 17);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(18, 13);
-            this.label51.TabIndex = 56;
-            this.label51.Text = "µs";
+            this.lbl_us.AutoSize = true;
+            this.lbl_us.Location = new System.Drawing.Point(368, 17);
+            this.lbl_us.Name = "lbl_us";
+            this.lbl_us.Size = new System.Drawing.Size(18, 13);
+            this.lbl_us.TabIndex = 56;
+            this.lbl_us.Text = "µs";
             // 
-            // textBox_speed
+            // tb_Speed
             // 
-            this.textBox_speed.Location = new System.Drawing.Point(313, 14);
-            this.textBox_speed.Name = "textBox_speed";
-            this.textBox_speed.Size = new System.Drawing.Size(49, 20);
-            this.textBox_speed.TabIndex = 55;
-            this.textBox_speed.Text = "250";
+            this.tb_Speed.Location = new System.Drawing.Point(313, 14);
+            this.tb_Speed.Name = "tb_Speed";
+            this.tb_Speed.Size = new System.Drawing.Size(49, 20);
+            this.tb_Speed.TabIndex = 55;
+            this.tb_Speed.Text = "250";
             // 
-            // button1
+            // btn_TaktSetzen
             // 
-            this.button1.Location = new System.Drawing.Point(313, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "setzen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_TaktSetzen.Location = new System.Drawing.Point(313, 39);
+            this.btn_TaktSetzen.Name = "btn_TaktSetzen";
+            this.btn_TaktSetzen.Size = new System.Drawing.Size(75, 23);
+            this.btn_TaktSetzen.TabIndex = 54;
+            this.btn_TaktSetzen.Text = "setzen";
+            this.btn_TaktSetzen.UseVisualStyleBackColor = true;
+            this.btn_TaktSetzen.Click += new System.EventHandler(this.btn_TaktSetzen_Click);
             // 
-            // stackBox
+            // gb_Stack
             // 
-            this.stackBox.Controls.Add(this.label45);
-            this.stackBox.Controls.Add(this.tbStack0);
-            this.stackBox.Controls.Add(this.label44);
-            this.stackBox.Controls.Add(this.label43);
-            this.stackBox.Controls.Add(this.label42);
-            this.stackBox.Controls.Add(this.label29);
-            this.stackBox.Controls.Add(this.label28);
-            this.stackBox.Controls.Add(this.label27);
-            this.stackBox.Controls.Add(this.label26);
-            this.stackBox.Controls.Add(this.tbStack7);
-            this.stackBox.Controls.Add(this.tbStack4);
-            this.stackBox.Controls.Add(this.tbStack3);
-            this.stackBox.Controls.Add(this.tbStack2);
-            this.stackBox.Controls.Add(this.tbStack6);
-            this.stackBox.Controls.Add(this.tbStack5);
-            this.stackBox.Controls.Add(this.tbStack1);
-            this.stackBox.Location = new System.Drawing.Point(821, 218);
-            this.stackBox.Name = "stackBox";
-            this.stackBox.Size = new System.Drawing.Size(106, 223);
-            this.stackBox.TabIndex = 55;
-            this.stackBox.TabStop = false;
-            this.stackBox.Text = "Stack";
+            this.gb_Stack.Controls.Add(this.lbl_Stack_7);
+            this.gb_Stack.Controls.Add(this.tbStack0);
+            this.gb_Stack.Controls.Add(this.lbl_Stack_6);
+            this.gb_Stack.Controls.Add(this.lbl_Stack_5);
+            this.gb_Stack.Controls.Add(this.lbl_Stack_4);
+            this.gb_Stack.Controls.Add(this.lbl_Stack_3);
+            this.gb_Stack.Controls.Add(this.lbl_Stack_2);
+            this.gb_Stack.Controls.Add(this.lbl_Stack_1);
+            this.gb_Stack.Controls.Add(this.lbl_Stack_0);
+            this.gb_Stack.Controls.Add(this.tbStack7);
+            this.gb_Stack.Controls.Add(this.tbStack4);
+            this.gb_Stack.Controls.Add(this.tbStack3);
+            this.gb_Stack.Controls.Add(this.tbStack2);
+            this.gb_Stack.Controls.Add(this.tbStack6);
+            this.gb_Stack.Controls.Add(this.tbStack5);
+            this.gb_Stack.Controls.Add(this.tbStack1);
+            this.gb_Stack.Location = new System.Drawing.Point(821, 218);
+            this.gb_Stack.Name = "gb_Stack";
+            this.gb_Stack.Size = new System.Drawing.Size(106, 223);
+            this.gb_Stack.TabIndex = 55;
+            this.gb_Stack.TabStop = false;
+            this.gb_Stack.Text = "Stack";
             // 
-            // label45
+            // lbl_Stack_7
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(7, 200);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(19, 13);
-            this.label45.TabIndex = 119;
-            this.label45.Text = "[7]";
+            this.lbl_Stack_7.AutoSize = true;
+            this.lbl_Stack_7.Location = new System.Drawing.Point(7, 200);
+            this.lbl_Stack_7.Name = "lbl_Stack_7";
+            this.lbl_Stack_7.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_7.TabIndex = 119;
+            this.lbl_Stack_7.Text = "[7]";
             // 
             // tbStack0
             // 
@@ -1846,68 +1826,68 @@
             this.tbStack0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbStack0.TextChanged += new System.EventHandler(this.tbStack0_TextChanged);
             // 
-            // label44
+            // lbl_Stack_6
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(7, 173);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(19, 13);
-            this.label44.TabIndex = 117;
-            this.label44.Text = "[6]";
+            this.lbl_Stack_6.AutoSize = true;
+            this.lbl_Stack_6.Location = new System.Drawing.Point(7, 173);
+            this.lbl_Stack_6.Name = "lbl_Stack_6";
+            this.lbl_Stack_6.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_6.TabIndex = 117;
+            this.lbl_Stack_6.Text = "[6]";
             // 
-            // label43
+            // lbl_Stack_5
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(7, 147);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(19, 13);
-            this.label43.TabIndex = 116;
-            this.label43.Text = "[5]";
+            this.lbl_Stack_5.AutoSize = true;
+            this.lbl_Stack_5.Location = new System.Drawing.Point(7, 147);
+            this.lbl_Stack_5.Name = "lbl_Stack_5";
+            this.lbl_Stack_5.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_5.TabIndex = 116;
+            this.lbl_Stack_5.Text = "[5]";
             // 
-            // label42
+            // lbl_Stack_4
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(7, 121);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(19, 13);
-            this.label42.TabIndex = 115;
-            this.label42.Text = "[4]";
+            this.lbl_Stack_4.AutoSize = true;
+            this.lbl_Stack_4.Location = new System.Drawing.Point(7, 121);
+            this.lbl_Stack_4.Name = "lbl_Stack_4";
+            this.lbl_Stack_4.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_4.TabIndex = 115;
+            this.lbl_Stack_4.Text = "[4]";
             // 
-            // label29
+            // lbl_Stack_3
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(7, 95);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(19, 13);
-            this.label29.TabIndex = 114;
-            this.label29.Text = "[3]";
+            this.lbl_Stack_3.AutoSize = true;
+            this.lbl_Stack_3.Location = new System.Drawing.Point(7, 95);
+            this.lbl_Stack_3.Name = "lbl_Stack_3";
+            this.lbl_Stack_3.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_3.TabIndex = 114;
+            this.lbl_Stack_3.Text = "[3]";
             // 
-            // label28
+            // lbl_Stack_2
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(7, 69);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(19, 13);
-            this.label28.TabIndex = 113;
-            this.label28.Text = "[2]";
+            this.lbl_Stack_2.AutoSize = true;
+            this.lbl_Stack_2.Location = new System.Drawing.Point(7, 69);
+            this.lbl_Stack_2.Name = "lbl_Stack_2";
+            this.lbl_Stack_2.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_2.TabIndex = 113;
+            this.lbl_Stack_2.Text = "[2]";
             // 
-            // label27
+            // lbl_Stack_1
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(7, 43);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(19, 13);
-            this.label27.TabIndex = 112;
-            this.label27.Text = "[1]";
+            this.lbl_Stack_1.AutoSize = true;
+            this.lbl_Stack_1.Location = new System.Drawing.Point(7, 43);
+            this.lbl_Stack_1.Name = "lbl_Stack_1";
+            this.lbl_Stack_1.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_1.TabIndex = 112;
+            this.lbl_Stack_1.Text = "[1]";
             // 
-            // label26
+            // lbl_Stack_0
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(7, 17);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(19, 13);
-            this.label26.TabIndex = 111;
-            this.label26.Text = "[0]";
+            this.lbl_Stack_0.AutoSize = true;
+            this.lbl_Stack_0.Location = new System.Drawing.Point(7, 17);
+            this.lbl_Stack_0.Name = "lbl_Stack_0";
+            this.lbl_Stack_0.Size = new System.Drawing.Size(19, 13);
+            this.lbl_Stack_0.TabIndex = 111;
+            this.lbl_Stack_0.Text = "[0]";
             // 
             // tbStack7
             // 
@@ -1991,80 +1971,80 @@
             this.tbStack1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbStack1.TextChanged += new System.EventHandler(this.tbStack1_TextChanged);
             // 
-            // groupBox6
+            // gb_Sonstige
             // 
-            this.groupBox6.Location = new System.Drawing.Point(418, 205);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(289, 236);
-            this.groupBox6.TabIndex = 56;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Sonstige Werte zur Überprüfung";
+            this.gb_Sonstige.Location = new System.Drawing.Point(418, 205);
+            this.gb_Sonstige.Name = "gb_Sonstige";
+            this.gb_Sonstige.Size = new System.Drawing.Size(289, 236);
+            this.gb_Sonstige.TabIndex = 56;
+            this.gb_Sonstige.TabStop = false;
+            this.gb_Sonstige.Text = "Sonstige Werte zur Überprüfung";
             // 
-            // groupBox8
+            // gb_AktiveBank
             // 
-            this.groupBox8.Controls.Add(this.lblBank);
-            this.groupBox8.Location = new System.Drawing.Point(713, 390);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(106, 50);
-            this.groupBox8.TabIndex = 59;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Aktive Bank";
+            this.gb_AktiveBank.Controls.Add(this.lbl_Bank);
+            this.gb_AktiveBank.Location = new System.Drawing.Point(713, 390);
+            this.gb_AktiveBank.Name = "gb_AktiveBank";
+            this.gb_AktiveBank.Size = new System.Drawing.Size(106, 50);
+            this.gb_AktiveBank.TabIndex = 59;
+            this.gb_AktiveBank.TabStop = false;
+            this.gb_AktiveBank.Text = "Aktive Bank";
             // 
-            // lblBank
+            // lbl_Bank
             // 
-            this.lblBank.AutoSize = true;
-            this.lblBank.ForeColor = System.Drawing.Color.Black;
-            this.lblBank.Location = new System.Drawing.Point(29, 24);
-            this.lblBank.Name = "lblBank";
-            this.lblBank.Size = new System.Drawing.Size(38, 13);
-            this.lblBank.TabIndex = 102;
-            this.lblBank.Text = "Bank0";
-            this.lblBank.Click += new System.EventHandler(this.lblBank0_Click);
+            this.lbl_Bank.AutoSize = true;
+            this.lbl_Bank.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Bank.Location = new System.Drawing.Point(29, 24);
+            this.lbl_Bank.Name = "lbl_Bank";
+            this.lbl_Bank.Size = new System.Drawing.Size(38, 13);
+            this.lbl_Bank.TabIndex = 102;
+            this.lbl_Bank.Text = "Bank0";
+            this.lbl_Bank.Click += new System.EventHandler(this.lbl_Bank0_Click);
             // 
-            // groupBox9
+            // gb_WorkingRegister
             // 
-            this.groupBox9.Controls.Add(this.tbRegW);
-            this.groupBox9.Location = new System.Drawing.Point(713, 339);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(106, 45);
-            this.groupBox9.TabIndex = 60;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Working-Register";
+            this.gb_WorkingRegister.Controls.Add(this.tb_RegW);
+            this.gb_WorkingRegister.Location = new System.Drawing.Point(713, 339);
+            this.gb_WorkingRegister.Name = "gb_WorkingRegister";
+            this.gb_WorkingRegister.Size = new System.Drawing.Size(106, 45);
+            this.gb_WorkingRegister.TabIndex = 60;
+            this.gb_WorkingRegister.TabStop = false;
+            this.gb_WorkingRegister.Text = "Working Register";
             // 
-            // tbRegW
+            // tb_RegW
             // 
-            this.tbRegW.Enabled = false;
-            this.tbRegW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRegW.Location = new System.Drawing.Point(11, 18);
-            this.tbRegW.Name = "tbRegW";
-            this.tbRegW.Size = new System.Drawing.Size(42, 20);
-            this.tbRegW.TabIndex = 31;
-            this.tbRegW.Text = "0x00";
-            this.tbRegW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_RegW.Enabled = false;
+            this.tb_RegW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_RegW.Location = new System.Drawing.Point(11, 18);
+            this.tb_RegW.Name = "tb_RegW";
+            this.tb_RegW.Size = new System.Drawing.Size(42, 20);
+            this.tb_RegW.TabIndex = 31;
+            this.tb_RegW.Text = "0x00";
+            this.tb_RegW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // cbStatusTO
+            // cb_StatusTO
             // 
-            this.cbStatusTO.AutoSize = true;
-            this.cbStatusTO.Checked = true;
-            this.cbStatusTO.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbStatusTO.Enabled = false;
-            this.cbStatusTO.Location = new System.Drawing.Point(59, 37);
-            this.cbStatusTO.Name = "cbStatusTO";
-            this.cbStatusTO.Size = new System.Drawing.Size(15, 14);
-            this.cbStatusTO.TabIndex = 107;
-            this.cbStatusTO.UseVisualStyleBackColor = true;
+            this.cb_StatusTO.AutoSize = true;
+            this.cb_StatusTO.Checked = true;
+            this.cb_StatusTO.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_StatusTO.Enabled = false;
+            this.cb_StatusTO.Location = new System.Drawing.Point(59, 37);
+            this.cb_StatusTO.Name = "cb_StatusTO";
+            this.cb_StatusTO.Size = new System.Drawing.Size(15, 14);
+            this.cb_StatusTO.TabIndex = 107;
+            this.cb_StatusTO.UseVisualStyleBackColor = true;
             // 
-            // cbStatusPD
+            // cb_StatusPD
             // 
-            this.cbStatusPD.AutoSize = true;
-            this.cbStatusPD.Checked = true;
-            this.cbStatusPD.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbStatusPD.Enabled = false;
-            this.cbStatusPD.Location = new System.Drawing.Point(59, 54);
-            this.cbStatusPD.Name = "cbStatusPD";
-            this.cbStatusPD.Size = new System.Drawing.Size(15, 14);
-            this.cbStatusPD.TabIndex = 106;
-            this.cbStatusPD.UseVisualStyleBackColor = true;
+            this.cb_StatusPD.AutoSize = true;
+            this.cb_StatusPD.Checked = true;
+            this.cb_StatusPD.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_StatusPD.Enabled = false;
+            this.cb_StatusPD.Location = new System.Drawing.Point(59, 54);
+            this.cb_StatusPD.Name = "cb_StatusPD";
+            this.cb_StatusPD.Size = new System.Drawing.Size(15, 14);
+            this.cb_StatusPD.TabIndex = 106;
+            this.cb_StatusPD.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
@@ -2084,46 +2064,46 @@
             this.label46.TabIndex = 104;
             this.label46.Text = "¬PD";
             // 
-            // cbStatusRp0
+            // cb_StatusRp0
             // 
-            this.cbStatusRp0.AutoSize = true;
-            this.cbStatusRp0.Enabled = false;
-            this.cbStatusRp0.Location = new System.Drawing.Point(59, 21);
-            this.cbStatusRp0.Name = "cbStatusRp0";
-            this.cbStatusRp0.Size = new System.Drawing.Size(15, 14);
-            this.cbStatusRp0.TabIndex = 100;
-            this.cbStatusRp0.UseVisualStyleBackColor = true;
+            this.cb_StatusRp0.AutoSize = true;
+            this.cb_StatusRp0.Enabled = false;
+            this.cb_StatusRp0.Location = new System.Drawing.Point(59, 21);
+            this.cb_StatusRp0.Name = "cb_StatusRp0";
+            this.cb_StatusRp0.Size = new System.Drawing.Size(15, 14);
+            this.cb_StatusRp0.TabIndex = 100;
+            this.cb_StatusRp0.UseVisualStyleBackColor = true;
             // 
-            // cbStatusZ
+            // cb_StatusZ
             // 
-            this.cbStatusZ.AutoSize = true;
-            this.cbStatusZ.Enabled = false;
-            this.cbStatusZ.Location = new System.Drawing.Point(59, 71);
-            this.cbStatusZ.Name = "cbStatusZ";
-            this.cbStatusZ.Size = new System.Drawing.Size(15, 14);
-            this.cbStatusZ.TabIndex = 99;
-            this.cbStatusZ.UseVisualStyleBackColor = true;
-            this.cbStatusZ.CheckedChanged += new System.EventHandler(this.cbStatusZ_CheckedChanged);
+            this.cb_StatusZ.AutoSize = true;
+            this.cb_StatusZ.Enabled = false;
+            this.cb_StatusZ.Location = new System.Drawing.Point(59, 71);
+            this.cb_StatusZ.Name = "cb_StatusZ";
+            this.cb_StatusZ.Size = new System.Drawing.Size(15, 14);
+            this.cb_StatusZ.TabIndex = 99;
+            this.cb_StatusZ.UseVisualStyleBackColor = true;
+            this.cb_StatusZ.CheckedChanged += new System.EventHandler(this.cb_StatusZ_CheckedChanged);
             // 
-            // cbStatusDc
+            // cb_StatusDc
             // 
-            this.cbStatusDc.AutoSize = true;
-            this.cbStatusDc.Enabled = false;
-            this.cbStatusDc.Location = new System.Drawing.Point(59, 89);
-            this.cbStatusDc.Name = "cbStatusDc";
-            this.cbStatusDc.Size = new System.Drawing.Size(15, 14);
-            this.cbStatusDc.TabIndex = 98;
-            this.cbStatusDc.UseVisualStyleBackColor = true;
+            this.cb_StatusDc.AutoSize = true;
+            this.cb_StatusDc.Enabled = false;
+            this.cb_StatusDc.Location = new System.Drawing.Point(59, 89);
+            this.cb_StatusDc.Name = "cb_StatusDc";
+            this.cb_StatusDc.Size = new System.Drawing.Size(15, 14);
+            this.cb_StatusDc.TabIndex = 98;
+            this.cb_StatusDc.UseVisualStyleBackColor = true;
             // 
-            // cbStatusC
+            // cb_StatusC
             // 
-            this.cbStatusC.AutoSize = true;
-            this.cbStatusC.Enabled = false;
-            this.cbStatusC.Location = new System.Drawing.Point(59, 107);
-            this.cbStatusC.Name = "cbStatusC";
-            this.cbStatusC.Size = new System.Drawing.Size(15, 14);
-            this.cbStatusC.TabIndex = 97;
-            this.cbStatusC.UseVisualStyleBackColor = true;
+            this.cb_StatusC.AutoSize = true;
+            this.cb_StatusC.Enabled = false;
+            this.cb_StatusC.Location = new System.Drawing.Point(59, 107);
+            this.cb_StatusC.Name = "cb_StatusC";
+            this.cb_StatusC.Size = new System.Drawing.Size(15, 14);
+            this.cb_StatusC.TabIndex = 97;
+            this.cb_StatusC.UseVisualStyleBackColor = true;
             // 
             // label89
             // 
@@ -2161,487 +2141,485 @@
             this.label93.TabIndex = 93;
             this.label93.Text = "RP0";
             // 
-            // portsBox
-            // 
-            this.portsBox.Controls.Add(this.label49);
-            this.portsBox.Controls.Add(this.label47);
-            this.portsBox.Controls.Add(this.lblPortRb0);
-            this.portsBox.Controls.Add(this.lblPortRb1);
-            this.portsBox.Controls.Add(this.lblPortRb2);
-            this.portsBox.Controls.Add(this.lblPortRb3);
-            this.portsBox.Controls.Add(this.lblPortRb4);
-            this.portsBox.Controls.Add(this.lblPortRb5);
-            this.portsBox.Controls.Add(this.lblPortRb6);
-            this.portsBox.Controls.Add(this.lblPortRb7);
-            this.portsBox.Controls.Add(this.label96);
-            this.portsBox.Controls.Add(this.label97);
-            this.portsBox.Controls.Add(this.label98);
-            this.portsBox.Controls.Add(this.label99);
-            this.portsBox.Controls.Add(this.label100);
-            this.portsBox.Controls.Add(this.label101);
-            this.portsBox.Controls.Add(this.label102);
-            this.portsBox.Controls.Add(this.label103);
-            this.portsBox.Controls.Add(this.cbPortRb7);
-            this.portsBox.Controls.Add(this.cbPortRb6);
-            this.portsBox.Controls.Add(this.cbPortRb5);
-            this.portsBox.Controls.Add(this.cbPortRb4);
-            this.portsBox.Controls.Add(this.cbPortRb3);
-            this.portsBox.Controls.Add(this.cbPortRb2);
-            this.portsBox.Controls.Add(this.cbPortRb1);
-            this.portsBox.Controls.Add(this.cbPortRb0);
-            this.portsBox.Controls.Add(this.label48);
-            this.portsBox.Controls.Add(this.lblPortRa0);
-            this.portsBox.Controls.Add(this.lblPortRa1);
-            this.portsBox.Controls.Add(this.lblPortRa2);
-            this.portsBox.Controls.Add(this.lblPortRa3);
-            this.portsBox.Controls.Add(this.textBox4);
-            this.portsBox.Controls.Add(this.lblPortRa4);
-            this.portsBox.Controls.Add(this.cbPortRa4);
-            this.portsBox.Controls.Add(this.cbPortRa3);
-            this.portsBox.Controls.Add(this.cbPortRa2);
-            this.portsBox.Controls.Add(this.cbPortRa1);
-            this.portsBox.Controls.Add(this.cbPortRa0);
-            this.portsBox.Controls.Add(this.label104);
-            this.portsBox.Controls.Add(this.label105);
-            this.portsBox.Controls.Add(this.label106);
-            this.portsBox.Controls.Add(this.label107);
-            this.portsBox.Controls.Add(this.label108);
-            this.portsBox.Location = new System.Drawing.Point(418, 27);
-            this.portsBox.Name = "portsBox";
-            this.portsBox.Size = new System.Drawing.Size(399, 172);
-            this.portsBox.TabIndex = 57;
-            this.portsBox.TabStop = false;
-            this.portsBox.Text = "Ports";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(14, 122);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(39, 13);
-            this.label49.TabIndex = 157;
-            this.label49.Text = "TRISB";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(11, 144);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(44, 13);
-            this.label47.TabIndex = 156;
-            this.label47.Text = "PORTB";
-            // 
-            // lblPortRb0
-            // 
-            this.lblPortRb0.AutoSize = true;
-            this.lblPortRb0.Location = new System.Drawing.Point(320, 122);
-            this.lblPortRb0.Name = "lblPortRb0";
-            this.lblPortRb0.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb0.TabIndex = 155;
-            this.lblPortRb0.Text = "IN";
-            // 
-            // lblPortRb1
-            // 
-            this.lblPortRb1.AutoSize = true;
-            this.lblPortRb1.Location = new System.Drawing.Point(286, 122);
-            this.lblPortRb1.Name = "lblPortRb1";
-            this.lblPortRb1.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb1.TabIndex = 154;
-            this.lblPortRb1.Text = "IN";
-            // 
-            // lblPortRb2
-            // 
-            this.lblPortRb2.AutoSize = true;
-            this.lblPortRb2.Location = new System.Drawing.Point(251, 122);
-            this.lblPortRb2.Name = "lblPortRb2";
-            this.lblPortRb2.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb2.TabIndex = 153;
-            this.lblPortRb2.Text = "IN";
-            // 
-            // lblPortRb3
-            // 
-            this.lblPortRb3.AutoSize = true;
-            this.lblPortRb3.Location = new System.Drawing.Point(218, 122);
-            this.lblPortRb3.Name = "lblPortRb3";
-            this.lblPortRb3.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb3.TabIndex = 152;
-            this.lblPortRb3.Text = "IN";
-            // 
-            // lblPortRb4
-            // 
-            this.lblPortRb4.AutoSize = true;
-            this.lblPortRb4.Location = new System.Drawing.Point(183, 122);
-            this.lblPortRb4.Name = "lblPortRb4";
-            this.lblPortRb4.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb4.TabIndex = 151;
-            this.lblPortRb4.Text = "IN";
-            // 
-            // lblPortRb5
-            // 
-            this.lblPortRb5.AutoSize = true;
-            this.lblPortRb5.Location = new System.Drawing.Point(148, 122);
-            this.lblPortRb5.Name = "lblPortRb5";
-            this.lblPortRb5.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb5.TabIndex = 150;
-            this.lblPortRb5.Text = "IN";
-            // 
-            // lblPortRb6
-            // 
-            this.lblPortRb6.AutoSize = true;
-            this.lblPortRb6.Location = new System.Drawing.Point(115, 122);
-            this.lblPortRb6.Name = "lblPortRb6";
-            this.lblPortRb6.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb6.TabIndex = 149;
-            this.lblPortRb6.Text = "IN";
-            // 
-            // lblPortRb7
-            // 
-            this.lblPortRb7.AutoSize = true;
-            this.lblPortRb7.Location = new System.Drawing.Point(82, 122);
-            this.lblPortRb7.Name = "lblPortRb7";
-            this.lblPortRb7.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRb7.TabIndex = 148;
-            this.lblPortRb7.Text = "IN";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(115, 103);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(28, 13);
-            this.label96.TabIndex = 147;
-            this.label96.Text = "RB6";
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(218, 103);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(28, 13);
-            this.label97.TabIndex = 146;
-            this.label97.Text = "RB3";
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(251, 103);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(28, 13);
-            this.label98.TabIndex = 145;
-            this.label98.Text = "RB2";
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(320, 103);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(28, 13);
-            this.label99.TabIndex = 144;
-            this.label99.Text = "RB0";
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(286, 103);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(28, 13);
-            this.label100.TabIndex = 143;
-            this.label100.Text = "RB1";
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(183, 103);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(28, 13);
-            this.label101.TabIndex = 142;
-            this.label101.Text = "RB4";
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(148, 103);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(28, 13);
-            this.label102.TabIndex = 141;
-            this.label102.Text = "RB5";
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(82, 103);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(28, 13);
-            this.label103.TabIndex = 140;
-            this.label103.Text = "RB7";
-            // 
-            // cbPortRb7
-            // 
-            this.cbPortRb7.AutoSize = true;
-            this.cbPortRb7.Location = new System.Drawing.Point(85, 144);
-            this.cbPortRb7.Name = "cbPortRb7";
-            this.cbPortRb7.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb7.TabIndex = 139;
-            this.cbPortRb7.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRb6
-            // 
-            this.cbPortRb6.AutoSize = true;
-            this.cbPortRb6.Location = new System.Drawing.Point(118, 144);
-            this.cbPortRb6.Name = "cbPortRb6";
-            this.cbPortRb6.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb6.TabIndex = 138;
-            this.cbPortRb6.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRb5
-            // 
-            this.cbPortRb5.AutoSize = true;
-            this.cbPortRb5.Location = new System.Drawing.Point(151, 144);
-            this.cbPortRb5.Name = "cbPortRb5";
-            this.cbPortRb5.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb5.TabIndex = 137;
-            this.cbPortRb5.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRb4
-            // 
-            this.cbPortRb4.AutoSize = true;
-            this.cbPortRb4.Location = new System.Drawing.Point(186, 144);
-            this.cbPortRb4.Name = "cbPortRb4";
-            this.cbPortRb4.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb4.TabIndex = 136;
-            this.cbPortRb4.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRb3
-            // 
-            this.cbPortRb3.AutoSize = true;
-            this.cbPortRb3.Location = new System.Drawing.Point(221, 144);
-            this.cbPortRb3.Name = "cbPortRb3";
-            this.cbPortRb3.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb3.TabIndex = 135;
-            this.cbPortRb3.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRb2
-            // 
-            this.cbPortRb2.AutoSize = true;
-            this.cbPortRb2.Location = new System.Drawing.Point(254, 144);
-            this.cbPortRb2.Name = "cbPortRb2";
-            this.cbPortRb2.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb2.TabIndex = 134;
-            this.cbPortRb2.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRb1
-            // 
-            this.cbPortRb1.AutoSize = true;
-            this.cbPortRb1.Location = new System.Drawing.Point(289, 144);
-            this.cbPortRb1.Name = "cbPortRb1";
-            this.cbPortRb1.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb1.TabIndex = 133;
-            this.cbPortRb1.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRb0
-            // 
-            this.cbPortRb0.AutoSize = true;
-            this.cbPortRb0.Location = new System.Drawing.Point(323, 144);
-            this.cbPortRb0.Name = "cbPortRb0";
-            this.cbPortRb0.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRb0.TabIndex = 132;
-            this.cbPortRb0.UseVisualStyleBackColor = true;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(10, 66);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(44, 13);
-            this.label48.TabIndex = 97;
-            this.label48.Text = "PORTA";
-            // 
-            // lblPortRa0
-            // 
-            this.lblPortRa0.AutoSize = true;
-            this.lblPortRa0.Location = new System.Drawing.Point(218, 46);
-            this.lblPortRa0.Name = "lblPortRa0";
-            this.lblPortRa0.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa0.TabIndex = 96;
-            this.lblPortRa0.Text = "IN";
-            // 
-            // lblPortRa1
-            // 
-            this.lblPortRa1.AutoSize = true;
-            this.lblPortRa1.Location = new System.Drawing.Point(183, 46);
-            this.lblPortRa1.Name = "lblPortRa1";
-            this.lblPortRa1.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa1.TabIndex = 95;
-            this.lblPortRa1.Text = "IN";
-            // 
-            // lblPortRa2
-            // 
-            this.lblPortRa2.AutoSize = true;
-            this.lblPortRa2.Location = new System.Drawing.Point(148, 46);
-            this.lblPortRa2.Name = "lblPortRa2";
-            this.lblPortRa2.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa2.TabIndex = 94;
-            this.lblPortRa2.Text = "IN";
-            // 
-            // lblPortRa3
-            // 
-            this.lblPortRa3.AutoSize = true;
-            this.lblPortRa3.Location = new System.Drawing.Point(115, 46);
-            this.lblPortRa3.Name = "lblPortRa3";
-            this.lblPortRa3.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa3.TabIndex = 93;
-            this.lblPortRa3.Text = "IN";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(6, 46);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(48, 13);
-            this.textBox4.TabIndex = 91;
-            this.textBox4.Text = "TRISA";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblPortRa4
-            // 
-            this.lblPortRa4.AutoSize = true;
-            this.lblPortRa4.Location = new System.Drawing.Point(82, 46);
-            this.lblPortRa4.Name = "lblPortRa4";
-            this.lblPortRa4.Size = new System.Drawing.Size(18, 13);
-            this.lblPortRa4.TabIndex = 90;
-            this.lblPortRa4.Text = "IN";
-            // 
-            // cbPortRa4
-            // 
-            this.cbPortRa4.AutoSize = true;
-            this.cbPortRa4.Location = new System.Drawing.Point(85, 66);
-            this.cbPortRa4.Name = "cbPortRa4";
-            this.cbPortRa4.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa4.TabIndex = 70;
-            this.cbPortRa4.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa3
-            // 
-            this.cbPortRa3.AutoSize = true;
-            this.cbPortRa3.Location = new System.Drawing.Point(118, 66);
-            this.cbPortRa3.Name = "cbPortRa3";
-            this.cbPortRa3.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa3.TabIndex = 69;
-            this.cbPortRa3.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa2
-            // 
-            this.cbPortRa2.AutoSize = true;
-            this.cbPortRa2.Location = new System.Drawing.Point(151, 66);
-            this.cbPortRa2.Name = "cbPortRa2";
-            this.cbPortRa2.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa2.TabIndex = 68;
-            this.cbPortRa2.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa1
-            // 
-            this.cbPortRa1.AutoSize = true;
-            this.cbPortRa1.Location = new System.Drawing.Point(186, 66);
-            this.cbPortRa1.Name = "cbPortRa1";
-            this.cbPortRa1.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa1.TabIndex = 67;
-            this.cbPortRa1.UseVisualStyleBackColor = true;
-            // 
-            // cbPortRa0
-            // 
-            this.cbPortRa0.AutoSize = true;
-            this.cbPortRa0.Location = new System.Drawing.Point(221, 66);
-            this.cbPortRa0.Name = "cbPortRa0";
-            this.cbPortRa0.Size = new System.Drawing.Size(15, 14);
-            this.cbPortRa0.TabIndex = 66;
-            this.cbPortRa0.UseVisualStyleBackColor = true;
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(115, 26);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(28, 13);
-            this.label104.TabIndex = 46;
-            this.label104.Text = "RA3";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(148, 26);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(28, 13);
-            this.label105.TabIndex = 45;
-            this.label105.Text = "RA2";
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(218, 26);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(28, 13);
-            this.label106.TabIndex = 44;
-            this.label106.Text = "RA0";
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(183, 26);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(28, 13);
-            this.label107.TabIndex = 43;
-            this.label107.Text = "RA1";
-            // 
-            // label108
-            // 
-            this.label108.AutoSize = true;
-            this.label108.Location = new System.Drawing.Point(82, 26);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(28, 13);
-            this.label108.TabIndex = 42;
-            this.label108.Text = "RA4";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.cbStatusTO);
-            this.groupBox7.Controls.Add(this.label46);
-            this.groupBox7.Controls.Add(this.cbStatusPD);
-            this.groupBox7.Controls.Add(this.label93);
-            this.groupBox7.Controls.Add(this.label24);
-            this.groupBox7.Controls.Add(this.label92);
-            this.groupBox7.Controls.Add(this.label90);
-            this.groupBox7.Controls.Add(this.label89);
-            this.groupBox7.Controls.Add(this.cbStatusC);
-            this.groupBox7.Controls.Add(this.cbStatusDc);
-            this.groupBox7.Controls.Add(this.cbStatusRp0);
-            this.groupBox7.Controls.Add(this.cbStatusZ);
-            this.groupBox7.Location = new System.Drawing.Point(713, 205);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(102, 128);
-            this.groupBox7.TabIndex = 58;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Status Register";
+            // gb_Ports
+            // 
+            this.gb_Ports.Controls.Add(this.lbl_TrisA);
+            this.gb_Ports.Controls.Add(this.lbl_TrisB);
+            this.gb_Ports.Controls.Add(this.lbl_PortB);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb0);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb1);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb2);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb3);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb4);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb5);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb6);
+            this.gb_Ports.Controls.Add(this.lbl_PortRb7);
+            this.gb_Ports.Controls.Add(this.lbl_RB6);
+            this.gb_Ports.Controls.Add(this.lbl_RB3);
+            this.gb_Ports.Controls.Add(this.lbl_RB2);
+            this.gb_Ports.Controls.Add(this.lbl_RB0);
+            this.gb_Ports.Controls.Add(this.lbl_RB1);
+            this.gb_Ports.Controls.Add(this.lbl_RB4);
+            this.gb_Ports.Controls.Add(this.lbl_RB5);
+            this.gb_Ports.Controls.Add(this.lbl_RB7);
+            this.gb_Ports.Controls.Add(this.cb_PortRb7);
+            this.gb_Ports.Controls.Add(this.cb_PortRb6);
+            this.gb_Ports.Controls.Add(this.cb_PortRb5);
+            this.gb_Ports.Controls.Add(this.cb_PortRb4);
+            this.gb_Ports.Controls.Add(this.cb_PortRb3);
+            this.gb_Ports.Controls.Add(this.cb_PortRb2);
+            this.gb_Ports.Controls.Add(this.cb_PortRb1);
+            this.gb_Ports.Controls.Add(this.cb_PortRb0);
+            this.gb_Ports.Controls.Add(this.lbl_PortA);
+            this.gb_Ports.Controls.Add(this.lbl_PortRa0);
+            this.gb_Ports.Controls.Add(this.lbl_PortRa1);
+            this.gb_Ports.Controls.Add(this.lbl_PortRa2);
+            this.gb_Ports.Controls.Add(this.lbl_PortRa3);
+            this.gb_Ports.Controls.Add(this.lbl_PortRa4);
+            this.gb_Ports.Controls.Add(this.cb_PortRa4);
+            this.gb_Ports.Controls.Add(this.cb_PortRa3);
+            this.gb_Ports.Controls.Add(this.cb_PortRa2);
+            this.gb_Ports.Controls.Add(this.cb_PortRa1);
+            this.gb_Ports.Controls.Add(this.cb_PortRa0);
+            this.gb_Ports.Controls.Add(this.lbl_RA3);
+            this.gb_Ports.Controls.Add(this.lbl_RA2);
+            this.gb_Ports.Controls.Add(this.lbl_RA0);
+            this.gb_Ports.Controls.Add(this.lbl_RA1);
+            this.gb_Ports.Controls.Add(this.lbl_RA4);
+            this.gb_Ports.Location = new System.Drawing.Point(418, 27);
+            this.gb_Ports.Name = "gb_Ports";
+            this.gb_Ports.Size = new System.Drawing.Size(399, 172);
+            this.gb_Ports.TabIndex = 57;
+            this.gb_Ports.TabStop = false;
+            this.gb_Ports.Text = "Ports";
+            // 
+            // lbl_TrisA
+            // 
+            this.lbl_TrisA.AutoSize = true;
+            this.lbl_TrisA.Location = new System.Drawing.Point(11, 45);
+            this.lbl_TrisA.Name = "lbl_TrisA";
+            this.lbl_TrisA.Size = new System.Drawing.Size(39, 13);
+            this.lbl_TrisA.TabIndex = 158;
+            this.lbl_TrisA.Text = "TRISA";
+            // 
+            // lbl_TrisB
+            // 
+            this.lbl_TrisB.AutoSize = true;
+            this.lbl_TrisB.Location = new System.Drawing.Point(11, 122);
+            this.lbl_TrisB.Name = "lbl_TrisB";
+            this.lbl_TrisB.Size = new System.Drawing.Size(39, 13);
+            this.lbl_TrisB.TabIndex = 157;
+            this.lbl_TrisB.Text = "TRISB";
+            // 
+            // lbl_PortB
+            // 
+            this.lbl_PortB.AutoSize = true;
+            this.lbl_PortB.Location = new System.Drawing.Point(11, 144);
+            this.lbl_PortB.Name = "lbl_PortB";
+            this.lbl_PortB.Size = new System.Drawing.Size(44, 13);
+            this.lbl_PortB.TabIndex = 156;
+            this.lbl_PortB.Text = "PORTB";
+            // 
+            // lbl_PortRb0
+            // 
+            this.lbl_PortRb0.AutoSize = true;
+            this.lbl_PortRb0.Location = new System.Drawing.Point(320, 122);
+            this.lbl_PortRb0.Name = "lbl_PortRb0";
+            this.lbl_PortRb0.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb0.TabIndex = 155;
+            this.lbl_PortRb0.Text = "IN";
+            // 
+            // lbl_PortRb1
+            // 
+            this.lbl_PortRb1.AutoSize = true;
+            this.lbl_PortRb1.Location = new System.Drawing.Point(286, 122);
+            this.lbl_PortRb1.Name = "lbl_PortRb1";
+            this.lbl_PortRb1.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb1.TabIndex = 154;
+            this.lbl_PortRb1.Text = "IN";
+            // 
+            // lbl_PortRb2
+            // 
+            this.lbl_PortRb2.AutoSize = true;
+            this.lbl_PortRb2.Location = new System.Drawing.Point(251, 122);
+            this.lbl_PortRb2.Name = "lbl_PortRb2";
+            this.lbl_PortRb2.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb2.TabIndex = 153;
+            this.lbl_PortRb2.Text = "IN";
+            // 
+            // lbl_PortRb3
+            // 
+            this.lbl_PortRb3.AutoSize = true;
+            this.lbl_PortRb3.Location = new System.Drawing.Point(218, 122);
+            this.lbl_PortRb3.Name = "lbl_PortRb3";
+            this.lbl_PortRb3.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb3.TabIndex = 152;
+            this.lbl_PortRb3.Text = "IN";
+            // 
+            // lbl_PortRb4
+            // 
+            this.lbl_PortRb4.AutoSize = true;
+            this.lbl_PortRb4.Location = new System.Drawing.Point(183, 122);
+            this.lbl_PortRb4.Name = "lbl_PortRb4";
+            this.lbl_PortRb4.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb4.TabIndex = 151;
+            this.lbl_PortRb4.Text = "IN";
+            // 
+            // lbl_PortRb5
+            // 
+            this.lbl_PortRb5.AutoSize = true;
+            this.lbl_PortRb5.Location = new System.Drawing.Point(148, 122);
+            this.lbl_PortRb5.Name = "lbl_PortRb5";
+            this.lbl_PortRb5.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb5.TabIndex = 150;
+            this.lbl_PortRb5.Text = "IN";
+            // 
+            // lbl_PortRb6
+            // 
+            this.lbl_PortRb6.AutoSize = true;
+            this.lbl_PortRb6.Location = new System.Drawing.Point(115, 122);
+            this.lbl_PortRb6.Name = "lbl_PortRb6";
+            this.lbl_PortRb6.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb6.TabIndex = 149;
+            this.lbl_PortRb6.Text = "IN";
+            // 
+            // lbl_PortRb7
+            // 
+            this.lbl_PortRb7.AutoSize = true;
+            this.lbl_PortRb7.Location = new System.Drawing.Point(82, 122);
+            this.lbl_PortRb7.Name = "lbl_PortRb7";
+            this.lbl_PortRb7.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRb7.TabIndex = 148;
+            this.lbl_PortRb7.Text = "IN";
+            // 
+            // lbl_RB6
+            // 
+            this.lbl_RB6.AutoSize = true;
+            this.lbl_RB6.Location = new System.Drawing.Point(115, 103);
+            this.lbl_RB6.Name = "lbl_RB6";
+            this.lbl_RB6.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB6.TabIndex = 147;
+            this.lbl_RB6.Text = "RB6";
+            // 
+            // lbl_RB3
+            // 
+            this.lbl_RB3.AutoSize = true;
+            this.lbl_RB3.Location = new System.Drawing.Point(218, 103);
+            this.lbl_RB3.Name = "lbl_RB3";
+            this.lbl_RB3.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB3.TabIndex = 146;
+            this.lbl_RB3.Text = "RB3";
+            // 
+            // lbl_RB2
+            // 
+            this.lbl_RB2.AutoSize = true;
+            this.lbl_RB2.Location = new System.Drawing.Point(251, 103);
+            this.lbl_RB2.Name = "lbl_RB2";
+            this.lbl_RB2.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB2.TabIndex = 145;
+            this.lbl_RB2.Text = "RB2";
+            // 
+            // lbl_RB0
+            // 
+            this.lbl_RB0.AutoSize = true;
+            this.lbl_RB0.Location = new System.Drawing.Point(320, 103);
+            this.lbl_RB0.Name = "lbl_RB0";
+            this.lbl_RB0.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB0.TabIndex = 144;
+            this.lbl_RB0.Text = "RB0";
+            // 
+            // lbl_RB1
+            // 
+            this.lbl_RB1.AutoSize = true;
+            this.lbl_RB1.Location = new System.Drawing.Point(286, 103);
+            this.lbl_RB1.Name = "lbl_RB1";
+            this.lbl_RB1.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB1.TabIndex = 143;
+            this.lbl_RB1.Text = "RB1";
+            // 
+            // lbl_RB4
+            // 
+            this.lbl_RB4.AutoSize = true;
+            this.lbl_RB4.Location = new System.Drawing.Point(183, 103);
+            this.lbl_RB4.Name = "lbl_RB4";
+            this.lbl_RB4.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB4.TabIndex = 142;
+            this.lbl_RB4.Text = "RB4";
+            // 
+            // lbl_RB5
+            // 
+            this.lbl_RB5.AutoSize = true;
+            this.lbl_RB5.Location = new System.Drawing.Point(148, 103);
+            this.lbl_RB5.Name = "lbl_RB5";
+            this.lbl_RB5.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB5.TabIndex = 141;
+            this.lbl_RB5.Text = "RB5";
+            // 
+            // lbl_RB7
+            // 
+            this.lbl_RB7.AutoSize = true;
+            this.lbl_RB7.Location = new System.Drawing.Point(82, 103);
+            this.lbl_RB7.Name = "lbl_RB7";
+            this.lbl_RB7.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RB7.TabIndex = 140;
+            this.lbl_RB7.Text = "RB7";
+            // 
+            // cb_PortRb7
+            // 
+            this.cb_PortRb7.AutoSize = true;
+            this.cb_PortRb7.Location = new System.Drawing.Point(85, 144);
+            this.cb_PortRb7.Name = "cb_PortRb7";
+            this.cb_PortRb7.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb7.TabIndex = 139;
+            this.cb_PortRb7.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRb6
+            // 
+            this.cb_PortRb6.AutoSize = true;
+            this.cb_PortRb6.Location = new System.Drawing.Point(118, 144);
+            this.cb_PortRb6.Name = "cb_PortRb6";
+            this.cb_PortRb6.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb6.TabIndex = 138;
+            this.cb_PortRb6.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRb5
+            // 
+            this.cb_PortRb5.AutoSize = true;
+            this.cb_PortRb5.Location = new System.Drawing.Point(151, 144);
+            this.cb_PortRb5.Name = "cb_PortRb5";
+            this.cb_PortRb5.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb5.TabIndex = 137;
+            this.cb_PortRb5.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRb4
+            // 
+            this.cb_PortRb4.AutoSize = true;
+            this.cb_PortRb4.Location = new System.Drawing.Point(186, 144);
+            this.cb_PortRb4.Name = "cb_PortRb4";
+            this.cb_PortRb4.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb4.TabIndex = 136;
+            this.cb_PortRb4.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRb3
+            // 
+            this.cb_PortRb3.AutoSize = true;
+            this.cb_PortRb3.Location = new System.Drawing.Point(221, 144);
+            this.cb_PortRb3.Name = "cb_PortRb3";
+            this.cb_PortRb3.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb3.TabIndex = 135;
+            this.cb_PortRb3.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRb2
+            // 
+            this.cb_PortRb2.AutoSize = true;
+            this.cb_PortRb2.Location = new System.Drawing.Point(254, 144);
+            this.cb_PortRb2.Name = "cb_PortRb2";
+            this.cb_PortRb2.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb2.TabIndex = 134;
+            this.cb_PortRb2.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRb1
+            // 
+            this.cb_PortRb1.AutoSize = true;
+            this.cb_PortRb1.Location = new System.Drawing.Point(289, 144);
+            this.cb_PortRb1.Name = "cb_PortRb1";
+            this.cb_PortRb1.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb1.TabIndex = 133;
+            this.cb_PortRb1.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRb0
+            // 
+            this.cb_PortRb0.AutoSize = true;
+            this.cb_PortRb0.Location = new System.Drawing.Point(323, 144);
+            this.cb_PortRb0.Name = "cb_PortRb0";
+            this.cb_PortRb0.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRb0.TabIndex = 132;
+            this.cb_PortRb0.UseVisualStyleBackColor = true;
+            // 
+            // lbl_PortA
+            // 
+            this.lbl_PortA.AutoSize = true;
+            this.lbl_PortA.Location = new System.Drawing.Point(11, 66);
+            this.lbl_PortA.Name = "lbl_PortA";
+            this.lbl_PortA.Size = new System.Drawing.Size(44, 13);
+            this.lbl_PortA.TabIndex = 97;
+            this.lbl_PortA.Text = "PORTA";
+            // 
+            // lbl_PortRa0
+            // 
+            this.lbl_PortRa0.AutoSize = true;
+            this.lbl_PortRa0.Location = new System.Drawing.Point(218, 46);
+            this.lbl_PortRa0.Name = "lbl_PortRa0";
+            this.lbl_PortRa0.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRa0.TabIndex = 96;
+            this.lbl_PortRa0.Text = "IN";
+            // 
+            // lbl_PortRa1
+            // 
+            this.lbl_PortRa1.AutoSize = true;
+            this.lbl_PortRa1.Location = new System.Drawing.Point(183, 46);
+            this.lbl_PortRa1.Name = "lbl_PortRa1";
+            this.lbl_PortRa1.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRa1.TabIndex = 95;
+            this.lbl_PortRa1.Text = "IN";
+            // 
+            // lbl_PortRa2
+            // 
+            this.lbl_PortRa2.AutoSize = true;
+            this.lbl_PortRa2.Location = new System.Drawing.Point(148, 46);
+            this.lbl_PortRa2.Name = "lbl_PortRa2";
+            this.lbl_PortRa2.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRa2.TabIndex = 94;
+            this.lbl_PortRa2.Text = "IN";
+            // 
+            // lbl_PortRa3
+            // 
+            this.lbl_PortRa3.AutoSize = true;
+            this.lbl_PortRa3.Location = new System.Drawing.Point(115, 46);
+            this.lbl_PortRa3.Name = "lbl_PortRa3";
+            this.lbl_PortRa3.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRa3.TabIndex = 93;
+            this.lbl_PortRa3.Text = "IN";
+            // 
+            // lbl_PortRa4
+            // 
+            this.lbl_PortRa4.AutoSize = true;
+            this.lbl_PortRa4.Location = new System.Drawing.Point(82, 46);
+            this.lbl_PortRa4.Name = "lbl_PortRa4";
+            this.lbl_PortRa4.Size = new System.Drawing.Size(18, 13);
+            this.lbl_PortRa4.TabIndex = 90;
+            this.lbl_PortRa4.Text = "IN";
+            // 
+            // cb_PortRa4
+            // 
+            this.cb_PortRa4.AutoSize = true;
+            this.cb_PortRa4.Location = new System.Drawing.Point(85, 66);
+            this.cb_PortRa4.Name = "cb_PortRa4";
+            this.cb_PortRa4.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRa4.TabIndex = 70;
+            this.cb_PortRa4.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRa3
+            // 
+            this.cb_PortRa3.AutoSize = true;
+            this.cb_PortRa3.Location = new System.Drawing.Point(118, 66);
+            this.cb_PortRa3.Name = "cb_PortRa3";
+            this.cb_PortRa3.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRa3.TabIndex = 69;
+            this.cb_PortRa3.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRa2
+            // 
+            this.cb_PortRa2.AutoSize = true;
+            this.cb_PortRa2.Location = new System.Drawing.Point(151, 66);
+            this.cb_PortRa2.Name = "cb_PortRa2";
+            this.cb_PortRa2.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRa2.TabIndex = 68;
+            this.cb_PortRa2.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRa1
+            // 
+            this.cb_PortRa1.AutoSize = true;
+            this.cb_PortRa1.Location = new System.Drawing.Point(186, 66);
+            this.cb_PortRa1.Name = "cb_PortRa1";
+            this.cb_PortRa1.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRa1.TabIndex = 67;
+            this.cb_PortRa1.UseVisualStyleBackColor = true;
+            // 
+            // cb_PortRa0
+            // 
+            this.cb_PortRa0.AutoSize = true;
+            this.cb_PortRa0.Location = new System.Drawing.Point(221, 66);
+            this.cb_PortRa0.Name = "cb_PortRa0";
+            this.cb_PortRa0.Size = new System.Drawing.Size(15, 14);
+            this.cb_PortRa0.TabIndex = 66;
+            this.cb_PortRa0.UseVisualStyleBackColor = true;
+            // 
+            // lbl_RA3
+            // 
+            this.lbl_RA3.AutoSize = true;
+            this.lbl_RA3.Location = new System.Drawing.Point(115, 26);
+            this.lbl_RA3.Name = "lbl_RA3";
+            this.lbl_RA3.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RA3.TabIndex = 46;
+            this.lbl_RA3.Text = "RA3";
+            // 
+            // lbl_RA2
+            // 
+            this.lbl_RA2.AutoSize = true;
+            this.lbl_RA2.Location = new System.Drawing.Point(148, 26);
+            this.lbl_RA2.Name = "lbl_RA2";
+            this.lbl_RA2.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RA2.TabIndex = 45;
+            this.lbl_RA2.Text = "RA2";
+            // 
+            // lbl_RA0
+            // 
+            this.lbl_RA0.AutoSize = true;
+            this.lbl_RA0.Location = new System.Drawing.Point(218, 26);
+            this.lbl_RA0.Name = "lbl_RA0";
+            this.lbl_RA0.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RA0.TabIndex = 44;
+            this.lbl_RA0.Text = "RA0";
+            // 
+            // lbl_RA1
+            // 
+            this.lbl_RA1.AutoSize = true;
+            this.lbl_RA1.Location = new System.Drawing.Point(183, 26);
+            this.lbl_RA1.Name = "lbl_RA1";
+            this.lbl_RA1.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RA1.TabIndex = 43;
+            this.lbl_RA1.Text = "RA1";
+            // 
+            // lbl_RA4
+            // 
+            this.lbl_RA4.AutoSize = true;
+            this.lbl_RA4.Location = new System.Drawing.Point(82, 26);
+            this.lbl_RA4.Name = "lbl_RA4";
+            this.lbl_RA4.Size = new System.Drawing.Size(28, 13);
+            this.lbl_RA4.TabIndex = 42;
+            this.lbl_RA4.Text = "RA4";
+            // 
+            // gb_StatusRegister
+            // 
+            this.gb_StatusRegister.Controls.Add(this.cb_StatusTO);
+            this.gb_StatusRegister.Controls.Add(this.label46);
+            this.gb_StatusRegister.Controls.Add(this.cb_StatusPD);
+            this.gb_StatusRegister.Controls.Add(this.label93);
+            this.gb_StatusRegister.Controls.Add(this.label24);
+            this.gb_StatusRegister.Controls.Add(this.label92);
+            this.gb_StatusRegister.Controls.Add(this.label90);
+            this.gb_StatusRegister.Controls.Add(this.label89);
+            this.gb_StatusRegister.Controls.Add(this.cb_StatusC);
+            this.gb_StatusRegister.Controls.Add(this.cb_StatusDc);
+            this.gb_StatusRegister.Controls.Add(this.cb_StatusRp0);
+            this.gb_StatusRegister.Controls.Add(this.cb_StatusZ);
+            this.gb_StatusRegister.Location = new System.Drawing.Point(713, 205);
+            this.gb_StatusRegister.Name = "gb_StatusRegister";
+            this.gb_StatusRegister.Size = new System.Drawing.Size(102, 128);
+            this.gb_StatusRegister.TabIndex = 58;
+            this.gb_StatusRegister.TabStop = false;
+            this.gb_StatusRegister.Text = "Status Register";
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 444);
-            this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.portsBox);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.stackBox);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_AktiveBank);
+            this.Controls.Add(this.gb_StatusRegister);
+            this.Controls.Add(this.gb_WorkingRegister);
+            this.Controls.Add(this.gb_Ports);
+            this.Controls.Add(this.gb_Sonstige);
+            this.Controls.Add(this.gb_Stack);
+            this.Controls.Add(this.gb_Quarzfrequenz);
+            this.Controls.Add(this.gb_WatchDog);
+            this.Controls.Add(this.gb_SerialPort);
+            this.Controls.Add(this.gb_Laufzeit);
+            this.Controls.Add(this.gb_Steuerung);
             this.Controls.Add(this.List);
-            this.Controls.Add(this.gprBox);
-            this.Controls.Add(this.SpecialregisterGroup);
+            this.Controls.Add(this.gb_GPR);
+            this.Controls.Add(this.gb_SFR);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GUI";
@@ -2649,29 +2627,29 @@
             this.Load += new System.EventHandler(this.MainView_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.SpecialregisterGroup.ResumeLayout(false);
-            this.SpecialregisterGroup.PerformLayout();
-            this.gprBox.ResumeLayout(false);
-            this.gprBox.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trbSpeed)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.stackBox.ResumeLayout(false);
-            this.stackBox.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.portsBox.ResumeLayout(false);
-            this.portsBox.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.gb_SFR.ResumeLayout(false);
+            this.gb_SFR.PerformLayout();
+            this.gb_GPR.ResumeLayout(false);
+            this.gb_GPR.PerformLayout();
+            this.gb_Steuerung.ResumeLayout(false);
+            this.gb_Laufzeit.ResumeLayout(false);
+            this.gb_Laufzeit.PerformLayout();
+            this.gb_SerialPort.ResumeLayout(false);
+            this.gb_WatchDog.ResumeLayout(false);
+            this.gb_WatchDog.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trb_Speed)).EndInit();
+            this.gb_Quarzfrequenz.ResumeLayout(false);
+            this.gb_Quarzfrequenz.PerformLayout();
+            this.gb_Stack.ResumeLayout(false);
+            this.gb_Stack.PerformLayout();
+            this.gb_AktiveBank.ResumeLayout(false);
+            this.gb_AktiveBank.PerformLayout();
+            this.gb_WorkingRegister.ResumeLayout(false);
+            this.gb_WorkingRegister.PerformLayout();
+            this.gb_Ports.ResumeLayout(false);
+            this.gb_Ports.PerformLayout();
+            this.gb_StatusRegister.ResumeLayout(false);
+            this.gb_StatusRegister.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2680,88 +2658,88 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem DateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ladenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HilfeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem InfoToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.GroupBox SpecialregisterGroup;
+        private System.Windows.Forms.GroupBox gb_SFR;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem dokumentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem versionToolStripMenuItem;
-        private System.Windows.Forms.GroupBox gprBox;
-        private System.Windows.Forms.TextBox tbReg2D;
+        private System.Windows.Forms.GroupBox gb_GPR;
+        private System.Windows.Forms.TextBox tb_Reg2D;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox tbReg2F;
+        private System.Windows.Forms.TextBox tb_Reg2F;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox tbReg2E;
+        private System.Windows.Forms.TextBox tb_Reg2E;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox tbReg26;
+        private System.Windows.Forms.TextBox tb_Reg26;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox tbReg25;
+        private System.Windows.Forms.TextBox tb_Reg25;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox tbReg2C;
+        private System.Windows.Forms.TextBox tb_Reg2C;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox tbReg2B;
+        private System.Windows.Forms.TextBox tb_Reg2B;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox tbReg2A;
+        private System.Windows.Forms.TextBox tb_Reg2A;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox tbReg29;
+        private System.Windows.Forms.TextBox tb_Reg29;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox tbReg28;
+        private System.Windows.Forms.TextBox tb_Reg28;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox tbReg27;
+        private System.Windows.Forms.TextBox tb_Reg27;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox tbReg24;
+        private System.Windows.Forms.TextBox tb_Reg24;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox tbReg23;
+        private System.Windows.Forms.TextBox tb_Reg23;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox tbReg22;
+        private System.Windows.Forms.TextBox tb_Reg22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox tbReg21;
+        private System.Windows.Forms.TextBox tb_Reg21;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox tbReg20;
+        private System.Windows.Forms.TextBox tb_Reg20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox tbReg1F;
+        private System.Windows.Forms.TextBox tb_Reg1F;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox tbReg1E;
+        private System.Windows.Forms.TextBox tb_Reg1E;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox tbReg1D;
+        private System.Windows.Forms.TextBox tb_Reg1D;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox tbReg16;
+        private System.Windows.Forms.TextBox tb_Reg16;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbReg1C;
+        private System.Windows.Forms.TextBox tb_Reg1C;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox tbReg1B;
+        private System.Windows.Forms.TextBox tb_Reg1B;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox tbReg1A;
+        private System.Windows.Forms.TextBox tb_Reg1A;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox tbReg19;
+        private System.Windows.Forms.TextBox tb_Reg19;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox tbReg18;
+        private System.Windows.Forms.TextBox tb_Reg18;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox tbReg17;
+        private System.Windows.Forms.TextBox tb_Reg17;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox tbReg0F;
+        private System.Windows.Forms.TextBox tb_Reg0F;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbReg0E;
+        private System.Windows.Forms.TextBox tb_Reg0E;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tbReg15;
+        private System.Windows.Forms.TextBox tb_Reg15;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbReg14;
+        private System.Windows.Forms.TextBox tb_Reg14;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbReg13;
+        private System.Windows.Forms.TextBox tb_Reg13;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbReg12;
+        private System.Windows.Forms.TextBox tb_Reg12;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbReg11;
+        private System.Windows.Forms.TextBox tb_Reg11;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbReg10;
+        private System.Windows.Forms.TextBox tb_Reg10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbReg0D;
+        private System.Windows.Forms.TextBox tb_Reg0D;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbReg0C;
+        private System.Windows.Forms.TextBox tb_Reg0C;
         private System.Windows.Forms.Label label1;
         private PIC16F64_Simulator.GUI.NewListView List;
         private System.Windows.Forms.ColumnHeader columnBreakpoint;
@@ -2769,23 +2747,23 @@
         private System.Windows.Forms.ColumnHeader columnLineNr;
         private System.Windows.Forms.ColumnHeader columnState;
         private System.Windows.Forms.ColumnHeader columnCode;
-        private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Button stopButton;
-        private System.Windows.Forms.Button nextButton;
-        private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label Label_Duration;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btn_Start;
+        private System.Windows.Forms.Button btn_Stop;
+        private System.Windows.Forms.Button btn_Next;
+        private System.Windows.Forms.Button btn_Reset;
+        private System.Windows.Forms.GroupBox gb_Steuerung;
+        private System.Windows.Forms.GroupBox gb_Laufzeit;
+        private System.Windows.Forms.Button btn_ResetLaufzeit;
+        private System.Windows.Forms.Label lbl_Laufzeit;
+        private System.Windows.Forms.GroupBox gb_SerialPort;
         private System.Windows.Forms.Panel serialPanel;
-        private System.Windows.Forms.Button btn_serial;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_VerbindeCom;
+        private System.Windows.Forms.GroupBox gb_WatchDog;
         private System.Windows.Forms.Panel watchDogPanel;
-        private System.Windows.Forms.Button watchDogButton;
-        private System.Windows.Forms.TrackBar trbSpeed;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox stackBox;
+        private System.Windows.Forms.Button btn_WatchDog;
+        private System.Windows.Forms.TrackBar trb_Speed;
+        private System.Windows.Forms.GroupBox gb_Quarzfrequenz;
+        private System.Windows.Forms.GroupBox gb_Stack;
         private System.Windows.Forms.TextBox tbStack7;
         private System.Windows.Forms.TextBox tbStack4;
         private System.Windows.Forms.TextBox tbStack3;
@@ -2809,98 +2787,98 @@
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.TextBox tbReg89;
-        private System.Windows.Forms.TextBox tbReg88;
-        private System.Windows.Forms.TextBox tbReg86;
-        private System.Windows.Forms.TextBox tbReg85;
-        private System.Windows.Forms.TextBox tbReg81;
-        private System.Windows.Forms.TextBox tbReg0B;
-        private System.Windows.Forms.TextBox tbReg0A;
-        private System.Windows.Forms.TextBox tbReg09;
-        private System.Windows.Forms.TextBox tbReg08;
-        private System.Windows.Forms.TextBox tbReg06;
-        private System.Windows.Forms.TextBox tbReg05;
-        private System.Windows.Forms.TextBox tbReg04;
-        private System.Windows.Forms.TextBox tbReg03;
-        private System.Windows.Forms.TextBox tbReg02;
-        private System.Windows.Forms.TextBox tbReg01;
-        private System.Windows.Forms.TextBox tbReg00;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox tb_Reg89;
+        private System.Windows.Forms.TextBox tb_Reg88;
+        private System.Windows.Forms.TextBox tb_Reg86;
+        private System.Windows.Forms.TextBox tb_Reg85;
+        private System.Windows.Forms.TextBox tb_Reg81;
+        private System.Windows.Forms.TextBox tb_Reg0B;
+        private System.Windows.Forms.TextBox tb_Reg0A;
+        private System.Windows.Forms.TextBox tb_Reg09;
+        private System.Windows.Forms.TextBox tb_Reg08;
+        private System.Windows.Forms.TextBox tb_Reg06;
+        private System.Windows.Forms.TextBox tb_Reg05;
+        private System.Windows.Forms.TextBox tb_Reg04;
+        private System.Windows.Forms.TextBox tb_Reg03;
+        private System.Windows.Forms.TextBox tb_Reg02;
+        private System.Windows.Forms.TextBox tb_Reg01;
+        private System.Windows.Forms.TextBox tb_Reg00;
+        private System.Windows.Forms.Label lbl_Stack_7;
         private System.Windows.Forms.TextBox tbStack0;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox cbStatusTO;
-        private System.Windows.Forms.CheckBox cbStatusPD;
+        private System.Windows.Forms.Label lbl_Stack_6;
+        private System.Windows.Forms.Label lbl_Stack_5;
+        private System.Windows.Forms.Label lbl_Stack_4;
+        private System.Windows.Forms.Label lbl_Stack_3;
+        private System.Windows.Forms.Label lbl_Stack_2;
+        private System.Windows.Forms.Label lbl_Stack_1;
+        private System.Windows.Forms.Label lbl_Stack_0;
+        private System.Windows.Forms.GroupBox gb_Sonstige;
+        private System.Windows.Forms.CheckBox cb_StatusTO;
+        private System.Windows.Forms.CheckBox cb_StatusPD;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label lblBank;
-        private System.Windows.Forms.CheckBox cbStatusRp0;
-        private System.Windows.Forms.CheckBox cbStatusZ;
-        private System.Windows.Forms.CheckBox cbStatusDc;
-        private System.Windows.Forms.CheckBox cbStatusC;
+        private System.Windows.Forms.Label lbl_Bank;
+        private System.Windows.Forms.CheckBox cb_StatusRp0;
+        private System.Windows.Forms.CheckBox cb_StatusZ;
+        private System.Windows.Forms.CheckBox cb_StatusDc;
+        private System.Windows.Forms.CheckBox cb_StatusC;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox tBWatchDog;
-        private System.Windows.Forms.GroupBox portsBox;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label lblPortRb0;
-        private System.Windows.Forms.Label lblPortRb1;
-        private System.Windows.Forms.Label lblPortRb2;
-        private System.Windows.Forms.Label lblPortRb3;
-        private System.Windows.Forms.Label lblPortRb4;
-        private System.Windows.Forms.Label lblPortRb5;
-        private System.Windows.Forms.Label lblPortRb6;
-        private System.Windows.Forms.Label lblPortRb7;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.Label label97;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.CheckBox cbPortRb7;
-        private System.Windows.Forms.CheckBox cbPortRb6;
-        private System.Windows.Forms.CheckBox cbPortRb5;
-        private System.Windows.Forms.CheckBox cbPortRb4;
-        private System.Windows.Forms.CheckBox cbPortRb3;
-        private System.Windows.Forms.CheckBox cbPortRb2;
-        private System.Windows.Forms.CheckBox cbPortRb1;
-        private System.Windows.Forms.CheckBox cbPortRb0;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label lblPortRa0;
-        private System.Windows.Forms.Label lblPortRa1;
-        private System.Windows.Forms.Label lblPortRa2;
-        private System.Windows.Forms.Label lblPortRa3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label lblPortRa4;
-        private System.Windows.Forms.CheckBox cbPortRa4;
-        private System.Windows.Forms.CheckBox cbPortRa3;
-        private System.Windows.Forms.CheckBox cbPortRa2;
-        private System.Windows.Forms.CheckBox cbPortRa1;
-        private System.Windows.Forms.CheckBox cbPortRa0;
-        private System.Windows.Forms.Label label104;
-        private System.Windows.Forms.Label label105;
-        private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox tbRegW;
-        private System.Windows.Forms.TextBox textBox_speed;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox tb_WatchDogCounter;
+        private System.Windows.Forms.GroupBox gb_Ports;
+        private System.Windows.Forms.Label lbl_TrisB;
+        private System.Windows.Forms.Label lbl_PortB;
+        private System.Windows.Forms.Label lbl_PortRb0;
+        private System.Windows.Forms.Label lbl_PortRb1;
+        private System.Windows.Forms.Label lbl_PortRb2;
+        private System.Windows.Forms.Label lbl_PortRb3;
+        private System.Windows.Forms.Label lbl_PortRb4;
+        private System.Windows.Forms.Label lbl_PortRb5;
+        private System.Windows.Forms.Label lbl_PortRb6;
+        private System.Windows.Forms.Label lbl_PortRb7;
+        private System.Windows.Forms.Label lbl_RB6;
+        private System.Windows.Forms.Label lbl_RB3;
+        private System.Windows.Forms.Label lbl_RB2;
+        private System.Windows.Forms.Label lbl_RB0;
+        private System.Windows.Forms.Label lbl_RB1;
+        private System.Windows.Forms.Label lbl_RB4;
+        private System.Windows.Forms.Label lbl_RB5;
+        private System.Windows.Forms.Label lbl_RB7;
+        private System.Windows.Forms.CheckBox cb_PortRb7;
+        private System.Windows.Forms.CheckBox cb_PortRb6;
+        private System.Windows.Forms.CheckBox cb_PortRb5;
+        private System.Windows.Forms.CheckBox cb_PortRb4;
+        private System.Windows.Forms.CheckBox cb_PortRb3;
+        private System.Windows.Forms.CheckBox cb_PortRb2;
+        private System.Windows.Forms.CheckBox cb_PortRb1;
+        private System.Windows.Forms.CheckBox cb_PortRb0;
+        private System.Windows.Forms.Label lbl_PortA;
+        private System.Windows.Forms.Label lbl_PortRa0;
+        private System.Windows.Forms.Label lbl_PortRa1;
+        private System.Windows.Forms.Label lbl_PortRa2;
+        private System.Windows.Forms.Label lbl_PortRa3;
+        private System.Windows.Forms.Label lbl_PortRa4;
+        private System.Windows.Forms.CheckBox cb_PortRa4;
+        private System.Windows.Forms.CheckBox cb_PortRa3;
+        private System.Windows.Forms.CheckBox cb_PortRa2;
+        private System.Windows.Forms.CheckBox cb_PortRa1;
+        private System.Windows.Forms.CheckBox cb_PortRa0;
+        private System.Windows.Forms.Label lbl_RA3;
+        private System.Windows.Forms.Label lbl_RA2;
+        private System.Windows.Forms.Label lbl_RA0;
+        private System.Windows.Forms.Label lbl_RA1;
+        private System.Windows.Forms.Label lbl_RA4;
+        private System.Windows.Forms.GroupBox gb_StatusRegister;
+        private System.Windows.Forms.GroupBox gb_AktiveBank;
+        private System.Windows.Forms.GroupBox gb_WorkingRegister;
+        private System.Windows.Forms.TextBox tb_RegW;
+        private System.Windows.Forms.TextBox tb_Speed;
+        private System.Windows.Forms.Button btn_TaktSetzen;
+        private System.Windows.Forms.Label lbl_us;
+        private System.Windows.Forms.Label lbl_TrisA;
     }
 }
 

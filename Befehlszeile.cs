@@ -11,13 +11,13 @@ namespace PIC16F64_Simulator
         #region Variablen
 
         //Befehlszeile in die Bestandteile aufteilen für Übersichtlichkeit
-        private String m_sState;
-        private String m_sOpCode;
-        private int m_iOpCode;
-        private String m_sCommand;
-        private String m_sPc;
-        private int m_iPc;
-        private int m_iLineNr;
+        private String m_sState;    //Sprungadresse als String
+        private String m_sOpCode;   //OperationCode als String
+        private int m_iOpCode;      // Befehlscode als Int
+        private String m_sCommand;  //Befehl als String
+        private String m_sPc;       //Programmcounter als String
+        private int m_iPc;          //Programmcounter als Int
+        private int m_iLineNr;      //Zeilennummer
 
         #endregion
 

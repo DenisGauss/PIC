@@ -14,20 +14,19 @@ namespace PIC16F64_Simulator
     {
         #region Variables
 
-        private String m_sFilePath;
+        private String m_sFilePath; //DateiPfad als String
 
         #endregion
 
         #region Functions
 
-        /// <summary>
-        /// Bekommt die Datei und übersetzt diese für die Anzeige
-        /// </summary>
+ 
+        //Konstruktor mit Dateipfad
         public Uebersetzter(String filepath)
         {
             this.m_sFilePath = filepath;
         }
-
+        //
         public void readFile()
         {
             Befehlszeile codeLine = new Befehlszeile();
@@ -42,7 +41,7 @@ namespace PIC16F64_Simulator
                    codeLine = parseLine(sLine, lineNr);
                     if (codeLine != null)
                     {
-                        BefehlszeilenSatz.Instance.addBefehlszeile(codeLine);
+                        BefehlszeilenSatz.Instanz.addBefehlszeile(codeLine);
                         lineNr++;
                     }
                 }

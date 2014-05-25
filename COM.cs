@@ -11,24 +11,14 @@ namespace PIC16F64_Simulator
     {
         #region Variables
 
-        //holds a reference to the picCPU
-        private PIC m_oPicCPU;
 
-        //holds a reference to the Gui
-        private GUI m_oGui;
-
-        //using the existing class SerialPort for I/O-Connection
-        private SerialPort m_oSerialPort;
-
-        //timeout value
-        private int m_iReadTimeOut = 400;
-
-        //portname
-        private String m_sPortName;
-
-        //ConnectionStatus
-        public enum ConnectionState { IDLE, CONNECTED, ABORTED, };
-        private ConnectionState m_eConnectionState;
+        private PIC m_oPIC;                                             //PIC Referenz
+        private GUI m_oGUI;                                             //GUI Referenz
+        private SerialPort m_oSerialPort;                               //SerialPort Referenz
+        private int m_iReadTimeOut = 400;                               //Timeout Zeit
+        private String m_sPortName;                                     //Portname
+        public enum ConnectionState { IDLE, CONNECTED, ABORTED, };      //Zustaende als Enum
+        private ConnectionState m_eConnectionState;                     
 
         #endregion
 
@@ -48,22 +38,17 @@ namespace PIC16F64_Simulator
         #endregion
 
         #region Functions
-        /// <summary>
-        /// constructor
-        /// </summary>
-        /// <param name="cpu"></param>
+        //Konstruktor
         public COM(ref PIC cpu, ref GUI gui, String portName)
         {
             actuelConnectionState = ConnectionState.IDLE;
-            m_oPicCPU = cpu;
-            m_oGui = gui;
+            m_oPIC = cpu;
+            m_oGUI = gui;
             m_sPortName = portName;
             m_oSerialPort = new SerialPort(m_sPortName, 4800, Parity.None, 8, StopBits.One);
         }
 
-        /// <summary>
-        /// loop for serial port communication
-        /// </summary>
+        //Schleife fuer die Verbindung
         public void run()
         {
             connect();
@@ -71,13 +56,11 @@ namespace PIC16F64_Simulator
             while ((actuelConnectionState == ConnectionState.IDLE) || (actuelConnectionState == ConnectionState.CONNECTED))
             {
                 update();
-                m_oGui.GUI_UPDATE();
+                m_oGUI.GUI_UPDATE();
             }
         }
 
-        /// <summary>
-        /// tries to open the connection
-        /// </summary>
+        //Versuche Verbindung herzustellen
         private void connect()
         {
             try
@@ -89,81 +72,66 @@ namespace PIC16F64_Simulator
             catch
             {
                 actuelConnectionState = ConnectionState.ABORTED;
-                m_oGui.GUI_UPDATE();
+                m_oGUI.GUI_UPDATE();
             }
         }
 
-        /// <summary>
-        /// calls the decodeDataToSend/encodeReceivedData functions
-        /// </summary>
+        //Dekodier und Verschluessel-Funktion aufrufen
         private void update() 
         {
-            String temp = sendAndReceive(decodeDataToSend(m_oPicCPU.getSFRMemory()[0x05], m_oPicCPU.getSFRMemory()[0x06], m_oPicCPU.getSFRMemory()[0x85], m_oPicCPU.getSFRMemory()[0x86]));
+            String temp = sendAndReceive(decodeDataToSend(m_oPIC.getSFRMemory()[0x05], m_oPIC.getSFRMemory()[0x06], m_oPIC.getSFRMemory()[0x85], m_oPIC.getSFRMemory()[0x86]));
             
             if (temp != null) encodeReceivedData(temp);
 
         }
 
-        /// <summary>
-        /// decodes the data for communication with serial port
-        /// </summary>
-        /// <param name="portA"></param>
-        /// <param name="portB"></param>
-        /// <param name="trisA"></param>
-        /// <param name="trisB"></param>
-        /// <returns></returns>
+        //Zu Sendende Daten werden dekodiert
         private char[] decodeDataToSend(int portA, int portB, int trisA, int trisB)
         {
-            //Computer to platine
+            //Computer zu Platine
             char[] temp =
-                {(char)(0x30 + (trisA >> 4)),//high
-                (char)(0x30 + (trisA & 0xF)),//low
-                (char)(0x30 + (portA >> 4)),//high
-                (char)(0x30 + (portA & 0xF)),//low
-                (char)(0x30 + (trisB >> 4)),//high
-                (char)(0x30 + (trisB & 0xF)),//low
-                (char)(0x30 + (portB >> 4)),//high
-                (char)(0x30 + (portB & 0xF)),//low
+                {(char)(0x30 + (trisA >> 4)),   //high
+                (char)(0x30 + (trisA & 0xF)),   //low
+                (char)(0x30 + (portA >> 4)),    //high
+                (char)(0x30 + (portA & 0xF)),   //low
+                (char)(0x30 + (trisB >> 4)),    //high
+                (char)(0x30 + (trisB & 0xF)),   //low
+                (char)(0x30 + (portB >> 4)),    //high
+                (char)(0x30 + (portB & 0xF)),   //low
                 (char)0xD};
             return temp;
         }
 
-        /// <summary>
-        /// encodes the data received over the serial port
-        /// </summary>
-        /// <param name="data"></param>
+            /// <summary>
+        //Eingehenden Daten verschluesseln
         private void encodeReceivedData(String data)
         {
             try
             {
                 char[] temp = data.ToCharArray();
 
-                //check for changes PortA
-                if (m_oPicCPU.getSFRMemory()[0x05] != ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F))
+                //Ueberpruefe PortA auf Aenderungen
+                if (m_oPIC.getSFRMemory()[0x05] != ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F))
                 {
-                    m_oPicCPU.getSFRMemory()[0x05] = ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F);
-                    m_oPicCPU.PortRA4Interrupt();
+                    m_oPIC.getSFRMemory()[0x05] = ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F);
+                    m_oPIC.PortRA4Interrupt();
                 }
 
-                //check for changes PortB
-                if (m_oPicCPU.getSFRMemory()[0x06] != ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F))
+                //Ueberpruefe PortB auf Aenderungen
+                if (m_oPIC.getSFRMemory()[0x06] != ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F))
                 {
-                    m_oPicCPU.getSFRMemory()[0x06] = ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F);
-                    m_oPicCPU.INTInterrupt();
+                    m_oPIC.getSFRMemory()[0x06] = ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F);
+                    m_oPIC.INTInterrupt();
                 }
             }
             catch 
             {
                 actuelConnectionState = ConnectionState.ABORTED;
-                m_oGui.GUI_UPDATE();
+                m_oGUI.GUI_UPDATE();
             }
         }
 
-        /// <summary>
-        /// tries to send the decoded data to the serial port and to receive data.
-        /// </summary>
-        /// <param name="data">is returned to the update() function and then sent to encodeReceivedData() for encoding</param>
-        /// <returns></returns>
+        //Sende und Empfange Daten
         private String sendAndReceive(char[] data)
         {
             String temp = null;
@@ -176,7 +144,7 @@ namespace PIC16F64_Simulator
             catch
             {
                 actuelConnectionState = ConnectionState.ABORTED;
-                m_oGui.GUI_UPDATE();
+                m_oGUI.GUI_UPDATE();
             }
 
             return temp;

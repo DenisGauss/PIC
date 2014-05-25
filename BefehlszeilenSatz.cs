@@ -8,30 +8,33 @@ namespace PIC16F64_Simulator
 {
     public class BefehlszeilenSatz
     {
-
-        static readonly BefehlszeilenSatz instance = new BefehlszeilenSatz();
+        //Objekt vom BefehlszeilenSatz erstellen
+        static readonly BefehlszeilenSatz instanz = new BefehlszeilenSatz(); 
 
         #region Getter/Setter
+        //Neue Liste erstellen mit Get/Set
         public List<Befehlszeile> m_BefehlszeilenList { get; set; }
+
+        //Instanz zurueckgeben
+        public static BefehlszeilenSatz Instanz
+        {
+            get
+            {
+                return instanz;
+            }
+        }
 
         #endregion Getter/Setter
 
-        #region Functions
+        #region Funktionen
 
-        /// <summary>
-        /// adds a Befehlszeile to the BefehlszeilenSatz
-        /// </summary>
-        /// <param name="aLine"></param>
+        //Befehlszeile zur Befehlszeilen-Liste hinzufuegen
         public void addBefehlszeile(Befehlszeile aLine)
         {
             m_BefehlszeilenList.Add(aLine);
-        } //addBefehlszeile()
+        } 
 
-        /// <summary>
-        /// returns the next Befehlszeile
-        /// </summary>
-        /// <param name="m_iPc"></param>
-        /// <returns></returns>
+        //Naechste Befehlszeile in der Liste zurueckgeben
         public Befehlszeile getNextBefehlszeile(int pcl)
         {
             foreach (Befehlszeile aLine in m_BefehlszeilenList)
@@ -41,27 +44,14 @@ namespace PIC16F64_Simulator
             }
 
             return null;
-        }//getNextBefehlszeile()
+        }
 
-        /// <summary>
-        /// Public method that returns the instance of this singleton class
-        /// </summary>
-        public static BefehlszeilenSatz Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }//Instance
-
-        /// <summary>
-        /// Private Constructor
-        /// </summary>
+        //Konstruktor fuer Objekt der Klasse
         private BefehlszeilenSatz()
         {
             m_BefehlszeilenList = new List<Befehlszeile>();
-        }//BefehlszeilenSatz()
+        }
 
-        #endregion Functions
+        #endregion Funktionen
     }
 }

@@ -11,11 +11,11 @@ namespace PIC16F64_Simulator
         #region Main
 
         [STAThread]
-        static void Main()
+        static void Main() //MainFunktion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI());
+            Application.Run(new GUI()); //GUI Element erzeugen
         }
 
         #endregion Main

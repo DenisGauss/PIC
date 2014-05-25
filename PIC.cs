@@ -190,7 +190,7 @@ namespace PIC16F64_Simulator
         /// <returns>returns the Codeline for the next m_sCommand</returns>
         public Befehlszeile getNextBefehlszeile(PIC aCpu)
         {
-            foreach (Befehlszeile aLine in BefehlszeilenSatz.Instance.m_BefehlszeilenList)
+            foreach (Befehlszeile aLine in BefehlszeilenSatz.Instanz.m_BefehlszeilenList)
             {
                 if (aCpu.m_iProgramCounter == aLine.Pcl)
                     return aLine;

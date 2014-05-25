@@ -35,93 +35,93 @@ namespace PIC16F64_Simulator
             #region initSFRHash
             //fill hashtable SFR register
             m_htSFRRegister = new Hashtable(16);
-            m_htSFRRegister.Add(0x00, tbReg00);
-            m_htSFRRegister.Add(0x01, tbReg01);
-            m_htSFRRegister.Add(0x02, tbReg02);
-            m_htSFRRegister.Add(0x03, tbReg03);
-            m_htSFRRegister.Add(0x04, tbReg04);
-            m_htSFRRegister.Add(0x05, tbReg05);
-            m_htSFRRegister.Add(0x06, tbReg06);
-            m_htSFRRegister.Add(0x08, tbReg08);
-            m_htSFRRegister.Add(0x09, tbReg09);
-            m_htSFRRegister.Add(0x0A, tbReg0A);
-            m_htSFRRegister.Add(0x0B, tbReg0B);
-            m_htSFRRegister.Add(0x81, tbReg81);
-            m_htSFRRegister.Add(0x85, tbReg85);
-            m_htSFRRegister.Add(0x86, tbReg86);
-            m_htSFRRegister.Add(0x88, tbReg88);
-            m_htSFRRegister.Add(0x89, tbReg89);
+            m_htSFRRegister.Add(0x00, tb_Reg00);
+            m_htSFRRegister.Add(0x01, tb_Reg01);
+            m_htSFRRegister.Add(0x02, tb_Reg02);
+            m_htSFRRegister.Add(0x03, tb_Reg03);
+            m_htSFRRegister.Add(0x04, tb_Reg04);
+            m_htSFRRegister.Add(0x05, tb_Reg05);
+            m_htSFRRegister.Add(0x06, tb_Reg06);
+            m_htSFRRegister.Add(0x08, tb_Reg08);
+            m_htSFRRegister.Add(0x09, tb_Reg09);
+            m_htSFRRegister.Add(0x0A, tb_Reg0A);
+            m_htSFRRegister.Add(0x0B, tb_Reg0B);
+            m_htSFRRegister.Add(0x81, tb_Reg81);
+            m_htSFRRegister.Add(0x85, tb_Reg85);
+            m_htSFRRegister.Add(0x86, tb_Reg86);
+            m_htSFRRegister.Add(0x88, tb_Reg88);
+            m_htSFRRegister.Add(0x89, tb_Reg89);
             #endregion
 
             #region initGPRHash
 
             // fill hashtable GPRRegister
             m_htGPRRegister = new Hashtable(36);
-            m_htGPRRegister.Add(0x0C, tbReg0C);
-            m_htGPRRegister.Add(0x0D, tbReg0D);
-            m_htGPRRegister.Add(0x0E, tbReg0E);
-            m_htGPRRegister.Add(0x0F, tbReg0F);
-            m_htGPRRegister.Add(0x10, tbReg10);
-            m_htGPRRegister.Add(0x11, tbReg11);
-            m_htGPRRegister.Add(0x12, tbReg12);
-            m_htGPRRegister.Add(0x13, tbReg13);
-            m_htGPRRegister.Add(0x14, tbReg14);
-            m_htGPRRegister.Add(0x15, tbReg15);
-            m_htGPRRegister.Add(0x16, tbReg16);
-            m_htGPRRegister.Add(0x17, tbReg17);
-            m_htGPRRegister.Add(0x18, tbReg18);
-            m_htGPRRegister.Add(0x19, tbReg19);
-            m_htGPRRegister.Add(0x1A, tbReg1A);
-            m_htGPRRegister.Add(0x1B, tbReg1B);
-            m_htGPRRegister.Add(0x1C, tbReg1C);
-            m_htGPRRegister.Add(0x1D, tbReg1D);
-            m_htGPRRegister.Add(0x1E, tbReg1E);
-            m_htGPRRegister.Add(0x1F, tbReg1F);
-            m_htGPRRegister.Add(0x20, tbReg20);
-            m_htGPRRegister.Add(0x21, tbReg21);
-            m_htGPRRegister.Add(0x22, tbReg22);
-            m_htGPRRegister.Add(0x23, tbReg23);
-            m_htGPRRegister.Add(0x24, tbReg24);
-            m_htGPRRegister.Add(0x25, tbReg25);
-            m_htGPRRegister.Add(0x26, tbReg26);
-            m_htGPRRegister.Add(0x27, tbReg27);
-            m_htGPRRegister.Add(0x28, tbReg28);
-            m_htGPRRegister.Add(0x29, tbReg29);
-            m_htGPRRegister.Add(0x2A, tbReg2A);
-            m_htGPRRegister.Add(0x2B, tbReg2B);
-            m_htGPRRegister.Add(0x2C, tbReg2C);
-            m_htGPRRegister.Add(0x2D, tbReg2D);
-            m_htGPRRegister.Add(0x2E, tbReg2E);
-            m_htGPRRegister.Add(0x2F, tbReg2F);
+            m_htGPRRegister.Add(0x0C, tb_Reg0C);
+            m_htGPRRegister.Add(0x0D, tb_Reg0D);
+            m_htGPRRegister.Add(0x0E, tb_Reg0E);
+            m_htGPRRegister.Add(0x0F, tb_Reg0F);
+            m_htGPRRegister.Add(0x10, tb_Reg10);
+            m_htGPRRegister.Add(0x11, tb_Reg11);
+            m_htGPRRegister.Add(0x12, tb_Reg12);
+            m_htGPRRegister.Add(0x13, tb_Reg13);
+            m_htGPRRegister.Add(0x14, tb_Reg14);
+            m_htGPRRegister.Add(0x15, tb_Reg15);
+            m_htGPRRegister.Add(0x16, tb_Reg16);
+            m_htGPRRegister.Add(0x17, tb_Reg17);
+            m_htGPRRegister.Add(0x18, tb_Reg18);
+            m_htGPRRegister.Add(0x19, tb_Reg19);
+            m_htGPRRegister.Add(0x1A, tb_Reg1A);
+            m_htGPRRegister.Add(0x1B, tb_Reg1B);
+            m_htGPRRegister.Add(0x1C, tb_Reg1C);
+            m_htGPRRegister.Add(0x1D, tb_Reg1D);
+            m_htGPRRegister.Add(0x1E, tb_Reg1E);
+            m_htGPRRegister.Add(0x1F, tb_Reg1F);
+            m_htGPRRegister.Add(0x20, tb_Reg20);
+            m_htGPRRegister.Add(0x21, tb_Reg21);
+            m_htGPRRegister.Add(0x22, tb_Reg22);
+            m_htGPRRegister.Add(0x23, tb_Reg23);
+            m_htGPRRegister.Add(0x24, tb_Reg24);
+            m_htGPRRegister.Add(0x25, tb_Reg25);
+            m_htGPRRegister.Add(0x26, tb_Reg26);
+            m_htGPRRegister.Add(0x27, tb_Reg27);
+            m_htGPRRegister.Add(0x28, tb_Reg28);
+            m_htGPRRegister.Add(0x29, tb_Reg29);
+            m_htGPRRegister.Add(0x2A, tb_Reg2A);
+            m_htGPRRegister.Add(0x2B, tb_Reg2B);
+            m_htGPRRegister.Add(0x2C, tb_Reg2C);
+            m_htGPRRegister.Add(0x2D, tb_Reg2D);
+            m_htGPRRegister.Add(0x2E, tb_Reg2E);
+            m_htGPRRegister.Add(0x2F, tb_Reg2F);
 
             #endregion initGPRHash
             #region Interrupt
             //Eventhandlers for checkboxes
-            cbPortRa0.Click += new System.EventHandler(portAChecked);
-            cbPortRa1.Click += new System.EventHandler(portAChecked);
-            cbPortRa2.Click += new System.EventHandler(portAChecked);
-            cbPortRa3.Click += new System.EventHandler(portAChecked);
-            cbPortRa4.Click += new System.EventHandler(portAChecked);
-            cbPortRa4.Click += new System.EventHandler(RA4InterruptHandler);
+            cb_PortRa0.Click += new System.EventHandler(portAChecked);
+            cb_PortRa1.Click += new System.EventHandler(portAChecked);
+            cb_PortRa2.Click += new System.EventHandler(portAChecked);
+            cb_PortRa3.Click += new System.EventHandler(portAChecked);
+            cb_PortRa4.Click += new System.EventHandler(portAChecked);
+            cb_PortRa4.Click += new System.EventHandler(RA4InterruptHandler);
 
-            cbPortRb0.Click += new System.EventHandler(portBChecked);
-            cbPortRb0.Click += new System.EventHandler(INTInterruptHandler);
+            cb_PortRb0.Click += new System.EventHandler(portBChecked);
+            cb_PortRb0.Click += new System.EventHandler(INTInterruptHandler);
 
-            cbPortRb1.Click += new System.EventHandler(portBChecked);
-            cbPortRb2.Click += new System.EventHandler(portBChecked);
-            cbPortRb3.Click += new System.EventHandler(portBChecked);
+            cb_PortRb1.Click += new System.EventHandler(portBChecked);
+            cb_PortRb2.Click += new System.EventHandler(portBChecked);
+            cb_PortRb3.Click += new System.EventHandler(portBChecked);
 
-            cbPortRb4.Click += new System.EventHandler(portBChecked);
-            cbPortRb4.Click += new System.EventHandler(RBInterruptHandler);
+            cb_PortRb4.Click += new System.EventHandler(portBChecked);
+            cb_PortRb4.Click += new System.EventHandler(RBInterruptHandler);
 
-            cbPortRb5.Click += new System.EventHandler(portBChecked);
-            cbPortRb5.Click += new System.EventHandler(RBInterruptHandler);
+            cb_PortRb5.Click += new System.EventHandler(portBChecked);
+            cb_PortRb5.Click += new System.EventHandler(RBInterruptHandler);
 
-            cbPortRb6.Click += new System.EventHandler(portBChecked);
-            cbPortRb6.Click += new System.EventHandler(RBInterruptHandler);
+            cb_PortRb6.Click += new System.EventHandler(portBChecked);
+            cb_PortRb6.Click += new System.EventHandler(RBInterruptHandler);
 
-            cbPortRb7.Click += new System.EventHandler(portBChecked);
-            cbPortRb7.Click += new System.EventHandler(RBInterruptHandler);
+            cb_PortRb7.Click += new System.EventHandler(portBChecked);
+            cb_PortRb7.Click += new System.EventHandler(RBInterruptHandler);
             #endregion
         }
 
@@ -135,7 +135,7 @@ namespace PIC16F64_Simulator
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void gb_Steuerung_Enter(object sender, EventArgs e)
         {
 
         }
@@ -192,15 +192,15 @@ namespace PIC16F64_Simulator
                 MessageBoxIcon.Information);
         }
 
-        private void gprBox_Enter(object sender, EventArgs e)
+        private void gb_GPR_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void trbSpeed_Scroll(object sender, EventArgs e)
+        private void trb_Speed_Scroll(object sender, EventArgs e)
         {
-            m_oPIC.Speed = trbSpeed.Value * 50;
-            textBox_speed.Text = Convert.ToString(m_oPIC.Speed);
+            m_oPIC.Speed = trb_Speed.Value * 50;
+            tb_Speed.Text = Convert.ToString(m_oPIC.Speed);
         }
 
         private void label69_Click(object sender, EventArgs e)
@@ -223,7 +223,7 @@ namespace PIC16F64_Simulator
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 List.Items.Clear();
-                BefehlszeilenSatz.Instance.m_BefehlszeilenList.Clear();
+                BefehlszeilenSatz.Instanz.m_BefehlszeilenList.Clear();
                 callParser(ofd.FileName);
             }
         }
@@ -239,7 +239,7 @@ namespace PIC16F64_Simulator
         }//callParser()
         private void fillListView()
         {
-            foreach (Befehlszeile zeile in BefehlszeilenSatz.Instance.m_BefehlszeilenList)
+            foreach (Befehlszeile zeile in BefehlszeilenSatz.Instanz.m_BefehlszeilenList)
             {
                 ListViewItem item = new ListViewItem();
                 item.SubItems.Add(zeile.LineNr.ToString());
@@ -278,12 +278,12 @@ namespace PIC16F64_Simulator
             }
         }//InvokeIfRequired()
 
-        private void startButton_Click(object sender, EventArgs e)
+        private void btn_Start_Click(object sender, EventArgs e)
         {
             m_oPIC.Step = false;
-            startButton.Enabled = false;
-            stopButton.Enabled = true;
-            resetButton.Enabled = false;
+            btn_Start.Enabled = false;
+            btn_Stop.Enabled = true;
+            btn_Reset.Enabled = false;
             ladenToolStripMenuItem.Enabled = false;
             m_tCommandExecutor = new Thread(new ThreadStart(start));
             m_tCommandExecutor.Start();
@@ -297,9 +297,9 @@ namespace PIC16F64_Simulator
         {
              if (aktuelleZeile == null)
              {
-                 InvokeIfRequired(startButton, (MethodInvoker)delegate()
+                 InvokeIfRequired(btn_Start, (MethodInvoker)delegate()
                  {
-                     startButton.Enabled = true;
+                     btn_Start.Enabled = true;
                  });
                  return;
              }
@@ -331,7 +331,7 @@ namespace PIC16F64_Simulator
                  if (List.Items[aktuelleZeile.LineNr].Checked == true)
                  {
                      List.Items[aktuelleZeile.LineNr].Checked = false;
-                     startButton.Enabled = true;
+                     btn_Start.Enabled = true;
                      m_tCommandExecutor.Abort();
                      return;
                  }
@@ -364,7 +364,7 @@ namespace PIC16F64_Simulator
              if (m_oPIC.Step == false)
              {
                  //call this function again with the codeLine for the next Command
-                 LoadCommand(BefehlszeilenSatz.Instance.getNextBefehlszeile(m_oPIC.ProgramCounter));
+                 LoadCommand(BefehlszeilenSatz.Instanz.getNextBefehlszeile(m_oPIC.ProgramCounter));
              }
              else
              {
@@ -375,24 +375,24 @@ namespace PIC16F64_Simulator
         }
         public void portBChecked(object sender, EventArgs e)
         {
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 0, cbPortRb0.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 1, cbPortRb1.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 2, cbPortRb2.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 3, cbPortRb3.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 4, cbPortRb4.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 5, cbPortRb5.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 6, cbPortRb6.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 7, cbPortRb7.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 0, cb_PortRb0.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 1, cb_PortRb1.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 2, cb_PortRb2.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 3, cb_PortRb3.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 4, cb_PortRb4.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 5, cb_PortRb5.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 6, cb_PortRb6.Checked);
+            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 7, cb_PortRb7.Checked);
 
             GUI_UPDATE();
         }
         public void portAChecked(object sender, EventArgs e)
         {
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 0, cbPortRa0.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 1, cbPortRa1.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 2, cbPortRa2.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 3, cbPortRa3.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 4, cbPortRa4.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 0, cb_PortRa0.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 1, cb_PortRa1.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 2, cb_PortRa2.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 3, cb_PortRa3.Checked);
+             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 4, cb_PortRa4.Checked);
 
             GUI_UPDATE();
         }
@@ -406,18 +406,18 @@ namespace PIC16F64_Simulator
              m_oPIC.PortRA4Interrupt();
             GUI_UPDATE();
         }
-        private void watchDogButton_Click(object sender, EventArgs e)
+        private void btn_WatchDog_Click(object sender, EventArgs e)
         {
             if (watchDogPanel.BackColor == Color.Red)
             {
                 watchDogPanel.BackColor = Color.Green;
-                watchDogButton.Text = "Deaktivieren";
+                btn_WatchDog.Text = "Deaktivieren";
                 checkWatchDog=true;
             }
             else
             {
                 watchDogPanel.BackColor = Color.Red;
-                watchDogButton.Text = "Aktivieren";
+                btn_WatchDog.Text = "Aktivieren";
                 checkWatchDog = false;
             }
 
@@ -426,13 +426,13 @@ namespace PIC16F64_Simulator
 
         }
 
-        private void nextButton_Click(object sender, EventArgs e)
+        private void btn_Next_Click(object sender, EventArgs e)
         {
             ladenToolStripMenuItem.Enabled = false;
-            startButton.Enabled = true;
-            stopButton.Enabled = false;
-            resetButton.Enabled = true;
-            nextButton.Enabled = true;
+            btn_Start.Enabled = true;
+            btn_Stop.Enabled = false;
+            btn_Reset.Enabled = true;
+            btn_Next.Enabled = true;
             m_oPIC.Step = true;
             if (m_tCommandExecutor == null)
             {
@@ -445,33 +445,34 @@ namespace PIC16F64_Simulator
             }
         }
 
-        private void groupBox5_Enter(object sender, EventArgs e)
+        private void gb_Quarzfrequenz_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_TaktSetzen_Click(object sender, EventArgs e)
         {
-            m_oPIC.Speed = Convert.ToInt32(textBox_speed.Text);
+            m_oPIC.Speed = Convert.ToInt32(tb_Speed.Text);
         }
 
-        private void Label_Duration_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblBank0_Click(object sender, EventArgs e)
+        private void lbl_Laufzeit_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void stopButton_Click(object sender, EventArgs e)
+        private void lbl_Bank0_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Stop_Click(object sender, EventArgs e)
         {
             m_tCommandExecutor.Abort();
-            startButton.Enabled = true;
-            stopButton.Enabled = false;
-            resetButton.Enabled = true;
+            btn_Start.Enabled = true;
+            btn_Stop.Enabled = false;
+            btn_Reset.Enabled = true;
             ladenToolStripMenuItem.Enabled = true;
+           
             return;
         }
         public void INTInterruptHandler(object sender, EventArgs e)
@@ -479,19 +480,31 @@ namespace PIC16F64_Simulator
             m_oPIC.INTInterrupt();
             GUI_UPDATE();
         }
-        private void resetButton_Click(object sender, EventArgs e)
+        private void btn_Reset_Click(object sender, EventArgs e)
         {
+            //abort the SerialPort thread
+            if (m_tSerialPortThread != null)
+            {
+                m_oHwPort.sPort.Close();
+                m_oHwPort.actuelConnectionState = COM.ConnectionState.IDLE;
+                m_tSerialPortThread.Abort();
+            }
+
+            //enable Connect button
+            btn_VerbindeCom.Enabled = true;
             if (m_tCommandExecutor != null)
             {
                 m_tCommandExecutor.Abort();
                 m_oPIC.resetPIC();
+                List.EnsureVisible(0);
                 GUI_UPDATE();
-                startButton.Enabled = true;
+                btn_Start.Enabled = true;
+                
                 return;
             }
             else
             {
-                startButton.Enabled = true;
+                btn_Start.Enabled = true;
                 m_oPIC.resetPIC();
                 GUI_UPDATE();
                 return;
@@ -528,7 +541,7 @@ namespace PIC16F64_Simulator
 
         }
 
-        private void cbStatusZ_CheckedChanged(object sender, EventArgs e)
+        private void cb_StatusZ_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -538,12 +551,12 @@ namespace PIC16F64_Simulator
 
         }
 
-        private void btn_serial_Click(object sender, EventArgs e)
+        private void btn_VerbindeCom_Click(object sender, EventArgs e)
         {
             if (serialPanel.BackColor == Color.Red)
             {
                 //disable "Connect"-Button
-                btn_serial.Enabled = false;
+                btn_VerbindeCom.Enabled = false;
 
                 GUI temp = this;
 
@@ -559,10 +572,6 @@ namespace PIC16F64_Simulator
             }
         }
 
-        private void serialPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        } 
 
     }
 }

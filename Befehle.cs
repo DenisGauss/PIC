@@ -10,12 +10,14 @@ namespace PIC16F64_Simulator
     {
         
         #region Interrupts
+        //Ueberpruefen ob Interrupts an
         private void checkInterrupts()
         {
             checkTMR0Interrupt();
             checkPortRBInterrupt();
             checkINTInterrupt();
         }
+        //Interrupts ueberpruefen und Zaehler hochzaehlen
         private void checkInterrupts_IncCounters()
         {
             Duration++;
@@ -23,9 +25,9 @@ namespace PIC16F64_Simulator
             CommandCounter++;
             checkInterrupts();
         }
+        //Interrupts ueberpruefen, doppelt TMRO weil return zwei Zyklen hat
         private void checkInterrupts_doubleTMRO()
         {
-            //check two times, because return has two cycles
             checkTMR0Interrupt();
             checkInterrupts();
         }
