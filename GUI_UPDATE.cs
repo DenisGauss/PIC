@@ -11,6 +11,9 @@ namespace PIC16F64_Simulator
     {
         public void GUI_UPDATE()
         {
+
+            #region Update Register
+            //SFR Register
             for (int i = 0x00; i < 0x0C; i++)
             {
                 if (i == 0x07) continue;
@@ -21,33 +24,7 @@ namespace PIC16F64_Simulator
                 });
             }
 
-            //GPR Registers
-            for (int i = 0x0C; i < 0x30; i++)
-            {
-                InvokeIfRequired(((TextBox)m_htGPRRegister[i]), (MethodInvoker)delegate()
-                {
-                    ((TextBox)m_htGPRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getGPRMemory()[i].ToString()));
-                });
-            }
-
-            //W-Register
-            InvokeIfRequired((tb_RegW), (MethodInvoker)delegate()
-            {
-                tb_RegW.Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.WRegisterValue));
-            });
-
-            //Watchdog Textbox
-            InvokeIfRequired((tb_WatchDogCounter), (MethodInvoker)delegate()
-            {
-                if (watchDogPanel.BackColor == Color.Green)
-                {
-                    tb_WatchDogCounter.Enabled = true;
-                    tb_WatchDogCounter.Text = m_oPIC.WatchDog.ToString();
-                    tb_WatchDogCounter.Enabled = false;
-                }
-            });
-
-            //SFR Registers 0x81 - 0x89
+            //SFR Register
             for (int i = 0x81; i < 0x8A; i++)
             {
                 if (i == 0x82 || i == 0x82 || i == 0x83 || i == 0x84 || i == 0x87) continue;
@@ -58,11 +35,44 @@ namespace PIC16F64_Simulator
                 });
             }
 
+
+            //GPR Register
+            for (int i = 0x0C; i < 0x30; i++)
+            {
+                InvokeIfRequired(((TextBox)m_htGPRRegister[i]), (MethodInvoker)delegate()
+                {
+                    ((TextBox)m_htGPRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getGPRMemory()[i].ToString()));
+                });
+            }
+
+            //W Register
+            InvokeIfRequired((tb_RegW), (MethodInvoker)delegate()
+            {
+                tb_RegW.Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.WRegisterValue));
+            });
+            #endregion Update Register
+
+            #region WatchDog Update
+            //Watchdog
+            InvokeIfRequired((tb_WatchDogCounter), (MethodInvoker)delegate()
+            {
+                if (watchDogPanel.BackColor == Color.Green)
+                {
+                    tb_WatchDogCounter.Enabled = true;
+                    tb_WatchDogCounter.Text = m_oPIC.WatchDog.ToString();
+                    tb_WatchDogCounter.Enabled = false;
+                }
+            });
+            #endregion
+
+            #region Laufzeit Update
             InvokeIfRequired((lbl_Laufzeit), (MethodInvoker)delegate()
             {
                 lbl_Laufzeit.Text = String.Format("{0} µs", System.Convert.ToInt32(m_oPIC.Duration));
             });
+            #endregion
 
+            #region Status Register Update
             //StatusRegister -> ZeroFlag
             InvokeIfRequired((cb_StatusZ), (MethodInvoker)delegate()
             {
@@ -71,7 +81,7 @@ namespace PIC16F64_Simulator
                 cb_StatusZ.Enabled = false;
             });
 
-            //StatusRegister -> /PD
+            //StatusRegister -> !PD
             InvokeIfRequired((cb_StatusPD), (MethodInvoker)delegate()
             {
                 cb_StatusPD.Enabled = true;
@@ -79,7 +89,7 @@ namespace PIC16F64_Simulator
                 cb_StatusPD.Enabled = false;
             });
 
-            //StatusRegister -> /TO
+            //StatusRegister -> !TO
             InvokeIfRequired((cb_StatusTO), (MethodInvoker)delegate()
             {
                 cb_StatusPD.Enabled = true;
@@ -110,15 +120,19 @@ namespace PIC16F64_Simulator
                 cb_StatusRp0.Checked = m_oPIC.checkRP0Flag();
                 cb_StatusRp0.Enabled = false;
             });
+            #endregion Status Register Update
 
+            #region Bank Update
             //Aktive Bank
             InvokeIfRequired((lbl_Bank), (MethodInvoker)delegate()
             {
                 if (m_oPIC.checkRP0Flag()) lbl_Bank.Text = "Bank1";
                 else lbl_Bank.Text = "Bank0";
             });
+            #endregion
 
-            //Stack
+            #region Stack Update
+            //Stack Updaten 
             InvokeIfRequired((tbStack0), (MethodInvoker)delegate()
             {
                 tbStack0.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[0].ToString()));
@@ -151,8 +165,9 @@ namespace PIC16F64_Simulator
             {
                 tbStack7.Text = String.Format("0x{0:x4}", System.Convert.ToInt32(m_oPIC.getStack()[7].ToString()));
             });
+            #endregion Stack Update
 
-            #region TRISA
+            #region TRISA Update
 
             //TrisA Label for RA4
             InvokeIfRequired((lbl_PortRa4), (MethodInvoker)delegate()
@@ -281,35 +296,7 @@ namespace PIC16F64_Simulator
 
             #endregion TRISA
 
-            #region COM Schnittstelle
-
-            //SerialPort Textbox
-            InvokeIfRequired((serialPanel), (MethodInvoker)delegate()
-            {
-                if (m_tSerialPortThread != null)
-                {
-                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED) serialPanel.BackColor = Color.Green;
-                    else if (m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE) serialPanel.BackColor = Color.Yellow;
-                    else
-                    {
-                        serialPanel.BackColor = Color.Red; m_tSerialPortThread.Abort();
-                    }
-                }
-            });
-
-            //"Connect"-Button
-            InvokeIfRequired((btn_VerbindeCom), (MethodInvoker)delegate()
-            {
-                if (m_oHwPort != null)
-                {
-                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.ABORTED || m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE)
-                        btn_VerbindeCom.Enabled = true;
-                }
-            });
-
-            #endregion COM Schnittstelle
-
-            #region TRISB
+            #region TRISB Update
 
             //TrisB Label for RB7
             InvokeIfRequired((lbl_PortRb7), (MethodInvoker)delegate()
@@ -382,7 +369,7 @@ namespace PIC16F64_Simulator
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
                         cb_PortRa0.Enabled = false;
                 }
-                
+
             });
 
             //Checkbox RB1
@@ -400,7 +387,7 @@ namespace PIC16F64_Simulator
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
                         cb_PortRa0.Enabled = false;
                 }
-                
+
             });
 
             //Checkbox RB2
@@ -435,7 +422,7 @@ namespace PIC16F64_Simulator
                     if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED)
                         cb_PortRa0.Enabled = false;
                 }
-                
+
             });
 
             //Checkbox RB4
@@ -507,6 +494,34 @@ namespace PIC16F64_Simulator
             });
 
             #endregion TRISB
+
+            #region COM Schnittstelle Update
+
+            //SerialPort Textbox
+            InvokeIfRequired((serialPanel), (MethodInvoker)delegate()
+            {
+                if (m_tSerialPortThread != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.CONNECTED) serialPanel.BackColor = Color.Green;
+                    else if (m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE) serialPanel.BackColor = Color.Yellow;
+                    else
+                    {
+                        serialPanel.BackColor = Color.Red; m_tSerialPortThread.Abort();
+                    }
+                }
+            });
+
+            //"Connect"-Button
+            InvokeIfRequired((btn_VerbindeCom), (MethodInvoker)delegate()
+            {
+                if (m_oHwPort != null)
+                {
+                    if (m_oHwPort.actuelConnectionState == COM.ConnectionState.ABORTED || m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE)
+                        btn_VerbindeCom.Enabled = true;
+                }
+            });
+
+            #endregion COM Schnittstelle
 
         }
 
