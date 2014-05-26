@@ -175,9 +175,9 @@ namespace PIC16F64_Simulator
         }
 
         //Parser wandelt die Datei um sodass diese verarbeitbar ist 
-        private void callParser(String filepath)
+        private void callParser(String DateiPfad)
         {
-            Uebersetzter parse = new Uebersetzter(filepath);
+            Uebersetzter parse = new Uebersetzter(DateiPfad);
             parse.readFile();
             fillListView();
         }
@@ -325,11 +325,11 @@ namespace PIC16F64_Simulator
         //Ueberpruefen ob an Checkboxen von PortA gecheckt und werte dementsprechend in die Register schreiben
         public void portAChecked(object sender, EventArgs e)
         {
-            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 0, cb_PortRa0.Checked);
-            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 1, cb_PortRa1.Checked);
-            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 2, cb_PortRa2.Checked);
-            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 3, cb_PortRa3.Checked);
-            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 4, cb_PortRa4.Checked);
+            m_oPIC.getSFR()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x05], 0, cb_PortRa0.Checked);
+            m_oPIC.getSFR()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x05], 1, cb_PortRa1.Checked);
+            m_oPIC.getSFR()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x05], 2, cb_PortRa2.Checked);
+            m_oPIC.getSFR()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x05], 3, cb_PortRa3.Checked);
+            m_oPIC.getSFR()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x05], 4, cb_PortRa4.Checked);
 
             GUI_UPDATE();
         }
@@ -337,14 +337,14 @@ namespace PIC16F64_Simulator
         //Ueberpruefen ob an Checkboxen von PortB gecheckt und werte dementsprechend in die Register schreiben
         public void portBChecked(object sender, EventArgs e)
         {
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 0, cb_PortRb0.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 1, cb_PortRb1.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 2, cb_PortRb2.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 3, cb_PortRb3.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 4, cb_PortRb4.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 5, cb_PortRb5.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 6, cb_PortRb6.Checked);
-            m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 7, cb_PortRb7.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 0, cb_PortRb0.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 1, cb_PortRb1.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 2, cb_PortRb2.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 3, cb_PortRb3.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 4, cb_PortRb4.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 5, cb_PortRb5.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 6, cb_PortRb6.Checked);
+            m_oPIC.getSFR()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFR()[0x06], 7, cb_PortRb7.Checked);
 
             GUI_UPDATE();
         }

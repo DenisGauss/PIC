@@ -14,23 +14,23 @@ namespace PIC16F64_Simulator
     {
         #region Variables
 
-        private String m_sFilePath; //DateiPfad als String
+        private String m_sDateiPfad; //DateiPfad als String
 
         #endregion
 
         #region Functions
 
         //Konstruktor mit Dateipfad
-        public Uebersetzter(String filepath)
+        public Uebersetzter(String DateiPfad)
         {
-            this.m_sFilePath = filepath;
+            this.m_sDateiPfad = DateiPfad;
         }
 
         //Datei einlesen
         public void readFile()
         {
             Befehlszeile codeLine = new Befehlszeile();
-            StreamReader streamReader = new StreamReader(this.m_sFilePath);
+            StreamReader streamReader = new StreamReader(this.m_sDateiPfad);
             String sLine = "";
             int lineNr = 0;
             while (sLine != null)

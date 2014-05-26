@@ -20,7 +20,7 @@ namespace PIC16F64_Simulator
 
                 InvokeIfRequired(((TextBox)m_htSFRRegister[i]), (MethodInvoker)delegate()
                 {
-                    ((TextBox)m_htSFRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getSFRMemory()[i].ToString()));
+                    ((TextBox)m_htSFRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getSFR()[i].ToString()));
                 });
             }
 
@@ -31,7 +31,7 @@ namespace PIC16F64_Simulator
 
                 InvokeIfRequired(((TextBox)m_htSFRRegister[i]), (MethodInvoker)delegate()
                 {
-                    ((TextBox)m_htSFRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getSFRMemory()[i].ToString()));
+                    ((TextBox)m_htSFRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getSFR()[i].ToString()));
                 });
             }
 
@@ -41,7 +41,7 @@ namespace PIC16F64_Simulator
             {
                 InvokeIfRequired(((TextBox)m_htGPRRegister[i]), (MethodInvoker)delegate()
                 {
-                    ((TextBox)m_htGPRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getGPRMemory()[i].ToString()));
+                    ((TextBox)m_htGPRRegister[i]).Text = String.Format("0x{0:x2}", System.Convert.ToInt32(m_oPIC.getGPR()[i].ToString()));
                 });
             }
 
@@ -172,35 +172,35 @@ namespace PIC16F64_Simulator
             //TrisA Label for RA4
             InvokeIfRequired((lbl_PortRa4), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x10) == 0x00) lbl_PortRa4.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x85] & 0x10) == 0x00) lbl_PortRa4.Text = "OUT";
                 else lbl_PortRa4.Text = "IN";
             });
 
             //TrisA Label for RA3
             InvokeIfRequired((lbl_PortRa3), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x08) == 0x00) lbl_PortRa3.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x85] & 0x08) == 0x00) lbl_PortRa3.Text = "OUT";
                 else lbl_PortRa3.Text = "IN";
             });
 
             //TrisA Label for RA2
             InvokeIfRequired((lbl_PortRa2), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x04) == 0x00) lbl_PortRa2.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x85] & 0x04) == 0x00) lbl_PortRa2.Text = "OUT";
                 else lbl_PortRa2.Text = "IN";
             });
 
             //TrisA Label for RA1
             InvokeIfRequired((lbl_PortRa1), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x02) == 0x00) lbl_PortRa1.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x85] & 0x02) == 0x00) lbl_PortRa1.Text = "OUT";
                 else lbl_PortRa1.Text = "IN";
             });
 
             //TrisA Label for RA0
             InvokeIfRequired((lbl_PortRa0), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x85] & 0x01) == 0x00) lbl_PortRa0.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x85] & 0x01) == 0x00) lbl_PortRa0.Text = "OUT";
                 else lbl_PortRa0.Text = "IN";
             });
 
@@ -208,7 +208,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRa0), (MethodInvoker)delegate()
             {
                 cb_PortRa0.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x01) == 0x00) cb_PortRa0.Checked = false;
+                if ((m_oPIC.getSFR()[0x05] & 0x01) == 0x00) cb_PortRa0.Checked = false;
                 else cb_PortRa0.Checked = true;
 
                 if (lbl_PortRa0.Text == "OUT")
@@ -226,7 +226,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRa1), (MethodInvoker)delegate()
             {
                 cb_PortRa1.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x02) == 0x00) cb_PortRa1.Checked = false;
+                if ((m_oPIC.getSFR()[0x05] & 0x02) == 0x00) cb_PortRa1.Checked = false;
                 else cb_PortRa1.Checked = true;
 
                 if (lbl_PortRa1.Text == "OUT")
@@ -244,7 +244,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRa2), (MethodInvoker)delegate()
             {
                 cb_PortRa2.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x04) == 0x00) cb_PortRa2.Checked = false;
+                if ((m_oPIC.getSFR()[0x05] & 0x04) == 0x00) cb_PortRa2.Checked = false;
                 else cb_PortRa2.Checked = true;
 
                 if (lbl_PortRa2.Text == "OUT")
@@ -262,7 +262,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRa3), (MethodInvoker)delegate()
             {
                 cb_PortRa3.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x08) == 0x00) cb_PortRa3.Checked = false;
+                if ((m_oPIC.getSFR()[0x05] & 0x08) == 0x00) cb_PortRa3.Checked = false;
                 else cb_PortRa3.Checked = true;
 
                 if (lbl_PortRa3.Text == "OUT")
@@ -280,7 +280,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRa4), (MethodInvoker)delegate()
             {
                 cb_PortRa4.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x05] & 0x10) == 0x00) cb_PortRa4.Checked = false;
+                if ((m_oPIC.getSFR()[0x05] & 0x10) == 0x00) cb_PortRa4.Checked = false;
                 else cb_PortRa4.Checked = true;
 
                 if (lbl_PortRa4.Text == "OUT")
@@ -301,56 +301,56 @@ namespace PIC16F64_Simulator
             //TrisB Label for RB7
             InvokeIfRequired((lbl_PortRb7), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x80) == 0x00) lbl_PortRb7.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x80) == 0x00) lbl_PortRb7.Text = "OUT";
                 else lbl_PortRb7.Text = "IN";
             });
 
             //TrisB Label for RB6
             InvokeIfRequired((lbl_PortRb6), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x40) == 0x00) lbl_PortRb6.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x40) == 0x00) lbl_PortRb6.Text = "OUT";
                 else lbl_PortRb6.Text = "IN";
             });
 
             //TrisB Label for RB5
             InvokeIfRequired((lbl_PortRb5), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x20) == 0x00) lbl_PortRb5.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x20) == 0x00) lbl_PortRb5.Text = "OUT";
                 else lbl_PortRb5.Text = "IN";
             });
 
             //TrisB Label for RB4
             InvokeIfRequired((lbl_PortRb4), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x10) == 0x00) lbl_PortRb4.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x10) == 0x00) lbl_PortRb4.Text = "OUT";
                 else lbl_PortRb4.Text = "IN";
             });
 
             //TrisB Label for RB3
             InvokeIfRequired((lbl_PortRb3), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x08) == 0x00) lbl_PortRb3.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x08) == 0x00) lbl_PortRb3.Text = "OUT";
                 else lbl_PortRb3.Text = "IN";
             });
 
             //TrisB Label for RB2
             InvokeIfRequired((lbl_PortRb2), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x04) == 0x00) lbl_PortRb2.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x04) == 0x00) lbl_PortRb2.Text = "OUT";
                 else lbl_PortRb2.Text = "IN";
             });
 
             //TrisB Label for RB1
             InvokeIfRequired((lbl_PortRb1), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x02) == 0x00) lbl_PortRb1.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x02) == 0x00) lbl_PortRb1.Text = "OUT";
                 else lbl_PortRb1.Text = "IN";
             });
 
             //TrisB Label for RB0
             InvokeIfRequired((lbl_PortRb0), (MethodInvoker)delegate()
             {
-                if ((m_oPIC.getSFRMemory()[0x86] & 0x01) == 0x00) lbl_PortRb0.Text = "OUT";
+                if ((m_oPIC.getSFR()[0x86] & 0x01) == 0x00) lbl_PortRb0.Text = "OUT";
                 else lbl_PortRb0.Text = "IN";
             });
 
@@ -358,7 +358,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb0), (MethodInvoker)delegate()
             {
                 cb_PortRb0.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x01) == 0x00) cb_PortRb0.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x01) == 0x00) cb_PortRb0.Checked = false;
                 else cb_PortRb0.Checked = true;
 
                 if (lbl_PortRb0.Text == "OUT")
@@ -376,7 +376,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb1), (MethodInvoker)delegate()
             {
                 cb_PortRb1.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x02) == 0x00) cb_PortRb1.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x02) == 0x00) cb_PortRb1.Checked = false;
                 else cb_PortRb1.Checked = true;
 
                 if (lbl_PortRb1.Text == "OUT")
@@ -394,7 +394,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb2), (MethodInvoker)delegate()
             {
                 cb_PortRb2.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x04) == 0x00) cb_PortRb2.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x04) == 0x00) cb_PortRb2.Checked = false;
                 else cb_PortRb2.Checked = true;
 
                 if (lbl_PortRb2.Text == "OUT")
@@ -411,7 +411,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb3), (MethodInvoker)delegate()
             {
                 cb_PortRb3.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x08) == 0x00) cb_PortRb3.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x08) == 0x00) cb_PortRb3.Checked = false;
                 else cb_PortRb3.Checked = true;
 
                 if (lbl_PortRb3.Text == "OUT")
@@ -429,7 +429,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb4), (MethodInvoker)delegate()
             {
                 cb_PortRb4.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x10) == 0x00) cb_PortRb4.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x10) == 0x00) cb_PortRb4.Checked = false;
                 else cb_PortRb4.Checked = true;
 
                 if (lbl_PortRb4.Text == "OUT")
@@ -446,7 +446,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb5), (MethodInvoker)delegate()
             {
                 cb_PortRb5.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x20) == 0x00) cb_PortRb5.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x20) == 0x00) cb_PortRb5.Checked = false;
                 else cb_PortRb5.Checked = true;
 
                 if (lbl_PortRb5.Text == "OUT")
@@ -463,7 +463,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb6), (MethodInvoker)delegate()
             {
                 cb_PortRb6.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x40) == 0x00) cb_PortRb6.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x40) == 0x00) cb_PortRb6.Checked = false;
                 else cb_PortRb6.Checked = true;
 
                 if (lbl_PortRb6.Text == "OUT")
@@ -480,7 +480,7 @@ namespace PIC16F64_Simulator
             InvokeIfRequired((cb_PortRb7), (MethodInvoker)delegate()
             {
                 cb_PortRb7.Enabled = true;
-                if ((m_oPIC.getSFRMemory()[0x06] & 0x80) == 0x00) cb_PortRb7.Checked = false;
+                if ((m_oPIC.getSFR()[0x06] & 0x80) == 0x00) cb_PortRb7.Checked = false;
                 else cb_PortRb7.Checked = true;
 
                 if (lbl_PortRb7.Text == "OUT")

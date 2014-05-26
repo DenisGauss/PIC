@@ -15,9 +15,9 @@ namespace PIC16F64_Simulator
 
         #region Variablen
 
-        private int[] m_aGPRMemory;             //GPRMemory als Array declarieren
-        private int[] m_aSFRMemory;             //SFRMemory als Array declarieren
-        private int[] m_aStack;                 //Stack als Array declarieren
+        private int[] m_aGPR;             //GPR als Array declarieren
+        private int[] m_aSFR;             //SFR als Array declarieren
+        private int[] m_aStack;           //Stack als Array declarieren
 
         private int m_iProgramCounter;          
         private int m_iCommandCounter;          
@@ -32,7 +32,7 @@ namespace PIC16F64_Simulator
         private int m_iSpeed;                   //Geschwindigkeit
         private int m_iOpCode;
         private int m_iStackPointer;
-        private bool m_bStep;                   //Schrittmodus boolean
+        private bool m_bStepModus;                   //Schrittmodus boolean
 
         #endregion
 
@@ -40,7 +40,7 @@ namespace PIC16F64_Simulator
 
         public PIC()
         {
-            m_bStep = false;
+            m_bStepModus = false;
             m_iProgramCounter = 0;
             m_iWRegister = 0;
             m_iCommandCounter = 0;
@@ -49,12 +49,12 @@ namespace PIC16F64_Simulator
             m_iWatchDogTimer = 0;
 
             //Initialisierung des GPR (Größe=48, weil 0x2F die größte Adresse im GPR ist)
-            m_aGPRMemory = new int[48];
-            System.Array.Clear(m_aGPRMemory, 0, m_aGPRMemory.Length);
+            m_aGPR = new int[48];
+            System.Array.Clear(m_aGPR, 0, m_aGPR.Length);
 
             // Initialisierung des SFR (Größe=138, weil 89h die größte Adresse im SFT ist)
-            m_aSFRMemory = new int[138];
-            System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
+            m_aSFR = new int[138];
+            System.Array.Clear(m_aSFR, 0, m_aSFR.Length);
             SFRinitialize();
 
             // Initialisierung des Stack 8 BIT
@@ -72,28 +72,28 @@ namespace PIC16F64_Simulator
             return this.m_aStack;
         }
 
-        public int[] getSFRMemory()
+        public int[] getSFR()
         {
-            return this.m_aSFRMemory;
+            return this.m_aSFR;
         }
 
-        public int[] getGPRMemory()
+        public int[] getGPR()
         {
-            return this.m_aGPRMemory;
+            return this.m_aGPR;
         }
 
-        public void setGPRMemoryValue(int iAdress, int iValue)
+        public void setGPRValue(int iAdress, int iValue)
         {
-            m_aGPRMemory[iAdress] = iValue;
+            m_aGPR[iAdress] = iValue;
         }
 
-        public void setSFRMemoryValue(int iAdress, int iValue)
+        public void setSFRValue(int iAdress, int iValue)
         {
             if (iAdress == 6)
             {
             
             }
-            m_aSFRMemory[iAdress] = iValue;
+            m_aSFR[iAdress] = iValue;
         }
 
         public int WRegisterValue
@@ -110,11 +110,11 @@ namespace PIC16F64_Simulator
                 m_iProgramCounter = value;
 
                 //update PCL (8 low bits of the programcounter) in data structure for SFR
-                setSFRMemoryValue(0x02, value & 0xFF);
+                setSFRValue(0x02, value & 0xFF);
 
                 // update PCLATH (5 high bits of the programcounter)
                 value = value >> 8;
-                setSFRMemoryValue(0x0A, value & 0x1F);
+                setSFRValue(0x0A, value & 0x1F);
             }
         }
 
@@ -132,8 +132,8 @@ namespace PIC16F64_Simulator
 
         public bool Step
         {
-            get { return m_bStep; }
-            set { m_bStep = value; }
+            get { return m_bStepModus; }
+            set { m_bStepModus = value; }
         }
 
         public int LatchA
@@ -208,14 +208,14 @@ namespace PIC16F64_Simulator
 
         internal int getRegisterValue(int addr)
         {
-            if (addr < 0x80 && addr > 0x0B) return getGPRMemory()[addr];
-            else return getSFRMemory()[addr];
+            if (addr < 0x80 && addr > 0x0B) return getGPR()[addr];
+            else return getSFR()[addr];
         }
 
         internal void setRegisterValue(int addr, int value)
         {
-            if (addr < 0x80 && addr > 0x0B) setGPRMemoryValue(addr, value);
-            else setSFRMemoryValue(addr, value);
+            if (addr < 0x80 && addr > 0x0B) setGPRValue(addr, value);
+            else setSFRValue(addr, value);
         }
 
         public Befehlszeile getNextBefehlszeile(PIC aCpu)
@@ -249,7 +249,7 @@ namespace PIC16F64_Simulator
         ///überprüft, ob indirekte Adressierung genutzt wird
         internal int checkIndirectAddressing(int addr)
         {
-            if (addr == 0x00) return getSFRMemory()[0x04];
+            if (addr == 0x00) return getSFR()[0x04];
             return addr;
         }
 
@@ -454,14 +454,14 @@ namespace PIC16F64_Simulator
 
         public void resetPIC()
         {
-            m_bStep = false;
+            m_bStepModus = false;
             m_iWatchDogTimer = 0;
             m_iProgramCounter = 0;
             m_iPreScaler = 0;
             m_iCommandCounter = 0;
             m_iDuration = 0;
 
-            resetSFRMemory();
+            resetSFR();
             resetStack();
             resetWRegister();
 
@@ -472,14 +472,14 @@ namespace PIC16F64_Simulator
             m_iWRegister = 0;
         }
 
-        public void resetGPRMemory()
+        public void resetGPR()
         {
-            System.Array.Clear(m_aGPRMemory, 0, m_aGPRMemory.Length);
+            System.Array.Clear(m_aGPR, 0, m_aGPR.Length);
         }
 
-        public void resetSFRMemory()
+        public void resetSFR()
         {
-            System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
+            System.Array.Clear(m_aSFR, 0, m_aSFR.Length);
             SFRinitialize();
             
         }
@@ -492,7 +492,7 @@ namespace PIC16F64_Simulator
         internal void resetWatchDog()
         {
             ProgramCounter = 0x0000;
-            getSFRMemory()[0x02] = 0x00; //PCL
+            getSFR()[0x02] = 0x00; //PCL
 
             //Status-Reg
             setPDFlag(); //PD
@@ -501,26 +501,26 @@ namespace PIC16F64_Simulator
             setBitAtPosition(getRegisterValue(0x03), 6, false); //RP1
             setBitAtPosition(getRegisterValue(0x03), 5, false); //RP0
 
-            getSFRMemory()[0x0A] = 0x00;  //PCLATH
-            getSFRMemory()[0x0B] &= 0x01; //INTCON
+            getSFR()[0x0A] = 0x00;  //PCLATH
+            getSFR()[0x0B] &= 0x01; //INTCON
 
-            getSFRMemory()[0x81] = 0xFF; //OPTION_REG
-            getSFRMemory()[0x85] = 0x1F; //TRISA
-            getSFRMemory()[0x86] = 0xFF; //TRISB
+            getSFR()[0x81] = 0xFF; //OPTION_REG
+            getSFR()[0x85] = 0x1F; //TRISA
+            getSFR()[0x86] = 0xFF; //TRISB
         }
 
         #endregion Reset Funtionen
 
-        #region SFRMemory Functionen
+        #region SFR Functionen
 
         //initialisieren des SFR
         public void SFRinitialize()
         {
-            System.Array.Clear(m_aSFRMemory, 0, m_aSFRMemory.Length);
-            m_aSFRMemory[0x03] = 0x18;
-            m_aSFRMemory[0x81] = 0xff;
-            m_aSFRMemory[0x85] = 0x1f;
-            m_aSFRMemory[0x86] = 0xff;
+            System.Array.Clear(m_aSFR, 0, m_aSFR.Length);
+            m_aSFR[0x03] = 0x18;
+            m_aSFR[0x81] = 0xff;
+            m_aSFR[0x85] = 0x1f;
+            m_aSFR[0x86] = 0xff;
         }
 
         //überprüft ob das Carrybit gesetzt werden muss oder nicht
@@ -561,110 +561,110 @@ namespace PIC16F64_Simulator
         //überprüft ob das RP0 Flag gesetzt ist
         public bool checkRP0Flag()
         {
-            if ((m_aSFRMemory[0x03] & 0x20) == 0x00) return false;
+            if ((m_aSFR[0x03] & 0x20) == 0x00) return false;
             return true;
         }
 
         //überprüft ob das PD Flag gesetzt ist
         public bool checkPDFlag()
         {
-            if ((m_aSFRMemory[0x03] & 0x08) == 0x00) return false;
+            if ((m_aSFR[0x03] & 0x08) == 0x00) return false;
             return true;
         }
 
         //überprüft ob das TO Flag gesetzt ist
         public bool checkTOFlag()
         {
-            if ((m_aSFRMemory[0x03] & 0x10) == 0x00) return false;
+            if ((m_aSFR[0x03] & 0x10) == 0x00) return false;
             return true;
         }
 
         //überprüft ob das Carry Flag gesetzt ist
         public bool checkCarryFlag()
         {
-            if ((m_aSFRMemory[0x03] & 0x01) == 0x00) return false;
+            if ((m_aSFR[0x03] & 0x01) == 0x00) return false;
             return true;
         }
 
         //überprüft ob das Zero Flag gesetzt ist
         public bool checkZeroFlag()
         {
-            if ((m_aSFRMemory[0x03] & 0x04) == 0x00) return false;
+            if ((m_aSFR[0x03] & 0x04) == 0x00) return false;
             return true;
         }
 
         //überprüft ob das DC Flag gesetzt ist
         public bool checkDCFlag()
         {
-            if ((m_aSFRMemory[0x03] & 0x02) == 0x00) return false;
+            if ((m_aSFR[0x03] & 0x02) == 0x00) return false;
             return true;
         }
 
-        #region SFRMemory Internals
+        #region SFR Internals
 
         internal void setDCFlag()
         {
-            m_aSFRMemory[0x03] |= 0x02;
+            m_aSFR[0x03] |= 0x02;
         }
 
         internal void unsetDCFlag()
         {
-            m_aSFRMemory[0x03] &= 0xFD;
+            m_aSFR[0x03] &= 0xFD;
         }
 
         internal void setTOFlag()
         {
-            m_aSFRMemory[0x03] |= 0x10;
+            m_aSFR[0x03] |= 0x10;
         }
 
         internal void unsetTOFlag()
         {
-            m_aSFRMemory[0x03] &= 0xEF;
+            m_aSFR[0x03] &= 0xEF;
         }
 
         internal void setPDFlag()
         {
-            m_aSFRMemory[0x03] |= 0x08;
+            m_aSFR[0x03] |= 0x08;
         }
 
         internal void unsetPDFlag()
         {
-            m_aSFRMemory[0x03] &= 0xF7;
+            m_aSFR[0x03] &= 0xF7;
         }
 
         internal void setRP0Flag()
         {
-            m_aSFRMemory[0x03] |= 0x20;
+            m_aSFR[0x03] |= 0x20;
         }
 
         internal void unsetRP0Flag()
         {
-            m_aSFRMemory[0x03] &= 0xDF;
+            m_aSFR[0x03] &= 0xDF;
         }
 
         internal void setCarry()
         {
-            m_aSFRMemory[0x03] |= 0x01;
+            m_aSFR[0x03] |= 0x01;
         }
 
         internal void unsetCarry()
         {
-            m_aSFRMemory[0x03] &= 0xFE;
+            m_aSFR[0x03] &= 0xFE;
         }
 
         internal void setZero()
         {
-            m_aSFRMemory[0x3] |= 0x04;
+            m_aSFR[0x3] |= 0x04;
         }
 
         internal void unsetZero()
         {
-            m_aSFRMemory[0x3] &= 0xFB;
+            m_aSFR[0x3] &= 0xFB;
         }
 
-        #endregion SFRMemory Internals
+        #endregion SFR Internals
 
-        #endregion SFRMemory Functionen
+        #endregion SFR Functionen
 
         #region Stack Functions
 

@@ -26,8 +26,6 @@
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
@@ -229,6 +227,8 @@
             this.lbl_RA1 = new System.Windows.Forms.Label();
             this.lbl_RA4 = new System.Windows.Forms.Label();
             this.gb_StatusRegister = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gb_SFR.SuspendLayout();
             this.gb_GPR.SuspendLayout();
@@ -306,13 +306,14 @@
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.versionToolStripMenuItem.Text = "Informationen";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
- 
             // 
             // gb_SFR
             // 
+            this.gb_SFR.Controls.Add(this.label27);
+            this.gb_SFR.Controls.Add(this.label26);
             this.gb_SFR.Controls.Add(this.label84);
             this.gb_SFR.Controls.Add(this.label81);
             this.gb_SFR.Controls.Add(this.label82);
@@ -322,8 +323,6 @@
             this.gb_SFR.Controls.Add(this.label79);
             this.gb_SFR.Controls.Add(this.label80);
             this.gb_SFR.Controls.Add(this.label73);
-            this.gb_SFR.Controls.Add(this.label74);
-            this.gb_SFR.Controls.Add(this.label75);
             this.gb_SFR.Controls.Add(this.label76);
             this.gb_SFR.Controls.Add(this.label71);
             this.gb_SFR.Controls.Add(this.label72);
@@ -351,7 +350,6 @@
             this.gb_SFR.TabIndex = 1;
             this.gb_SFR.TabStop = false;
             this.gb_SFR.Text = "SFR";
-            this.gb_SFR.Enter += new System.EventHandler(this.gb_Steuerung_Enter);
             // 
             // label84
             // 
@@ -442,7 +440,6 @@
             this.label73.Size = new System.Drawing.Size(50, 13);
             this.label73.TabIndex = 110;
             this.label73.Text = "EEDATA";
-
             // 
             // label76
             // 
@@ -493,7 +490,6 @@
             this.label69.Size = new System.Drawing.Size(32, 13);
             this.label69.TabIndex = 103;
             this.label69.Text = "INDF";
-            this.label69.Click += new System.EventHandler(this.label69_Click);
             // 
             // tb_Reg89
             // 
@@ -802,7 +798,6 @@
             this.gb_GPR.TabIndex = 9;
             this.gb_GPR.TabStop = false;
             this.gb_GPR.Text = "GPR";
-            this.gb_GPR.Enter += new System.EventHandler(this.gb_GPR_Enter);
             // 
             // tb_Reg2D
             // 
@@ -1641,7 +1636,6 @@
             this.lbl_Laufzeit.Size = new System.Drawing.Size(42, 13);
             this.lbl_Laufzeit.TabIndex = 0;
             this.lbl_Laufzeit.Text = "0,00 us";
-            this.lbl_Laufzeit.Click += new System.EventHandler(this.lbl_Laufzeit_Click);
             // 
             // gb_SerialPort
             // 
@@ -1712,7 +1706,6 @@
             this.watchDogPanel.Name = "watchDogPanel";
             this.watchDogPanel.Size = new System.Drawing.Size(17, 23);
             this.watchDogPanel.TabIndex = 2;
-            this.watchDogPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.watchDogPanel_Paint);
             // 
             // btn_WatchDog
             // 
@@ -1748,7 +1741,6 @@
             this.gb_Quarzfrequenz.TabIndex = 54;
             this.gb_Quarzfrequenz.TabStop = false;
             this.gb_Quarzfrequenz.Text = "Quarzfrequenz";
-            this.gb_Quarzfrequenz.Enter += new System.EventHandler(this.gb_Quarzfrequenz_Enter);
             // 
             // lbl_us
             // 
@@ -1821,7 +1813,6 @@
             this.tbStack0.TabIndex = 118;
             this.tbStack0.Text = "0x0000";
             this.tbStack0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbStack0.TextChanged += new System.EventHandler(this.tbStack0_TextChanged);
             // 
             // lbl_Stack_6
             // 
@@ -1896,7 +1887,6 @@
             this.tbStack7.TabIndex = 110;
             this.tbStack7.Text = "0x0000";
             this.tbStack7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbStack7.TextChanged += new System.EventHandler(this.tbStack7_TextChanged);
             // 
             // tbStack4
             // 
@@ -1930,7 +1920,6 @@
             this.tbStack2.TabIndex = 104;
             this.tbStack2.Text = "0x0000";
             this.tbStack2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbStack2.TextChanged += new System.EventHandler(this.tbStack2_TextChanged);
             // 
             // tbStack6
             // 
@@ -1942,7 +1931,6 @@
             this.tbStack6.TabIndex = 102;
             this.tbStack6.Text = "0x0000";
             this.tbStack6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbStack6.TextChanged += new System.EventHandler(this.tbStack6_TextChanged);
             // 
             // tbStack5
             // 
@@ -1954,7 +1942,6 @@
             this.tbStack5.TabIndex = 100;
             this.tbStack5.Text = "0x0000";
             this.tbStack5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbStack5.TextChanged += new System.EventHandler(this.tbStack5_TextChanged);
             // 
             // tbStack1
             // 
@@ -1966,7 +1953,6 @@
             this.tbStack1.TabIndex = 98;
             this.tbStack1.Text = "0x0000";
             this.tbStack1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbStack1.TextChanged += new System.EventHandler(this.tbStack1_TextChanged);
             // 
             // gb_Sonstige
             // 
@@ -1996,7 +1982,6 @@
             this.lbl_Bank.Size = new System.Drawing.Size(38, 13);
             this.lbl_Bank.TabIndex = 102;
             this.lbl_Bank.Text = "Bank0";
-            this.lbl_Bank.Click += new System.EventHandler(this.lbl_Bank0_Click);
             // 
             // gb_WorkingRegister
             // 
@@ -2080,7 +2065,6 @@
             this.cb_StatusZ.Size = new System.Drawing.Size(15, 14);
             this.cb_StatusZ.TabIndex = 99;
             this.cb_StatusZ.UseVisualStyleBackColor = true;
-            this.cb_StatusZ.CheckedChanged += new System.EventHandler(this.cb_StatusZ_CheckedChanged);
             // 
             // cb_StatusDc
             // 
@@ -2598,6 +2582,26 @@
             this.gb_StatusRegister.TabStop = false;
             this.gb_StatusRegister.Text = "Status Register";
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Location = new System.Drawing.Point(9, 150);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 13);
+            this.label26.TabIndex = 119;
+            this.label26.Text = "PORTB";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Location = new System.Drawing.Point(9, 128);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(44, 13);
+            this.label27.TabIndex = 120;
+            this.label27.Text = "PORTA";
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2776,8 +2780,6 @@
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
@@ -2875,6 +2877,8 @@
         private System.Windows.Forms.Button btn_TaktSetzen;
         private System.Windows.Forms.Label lbl_us;
         private System.Windows.Forms.Label lbl_TrisA;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
     }
 }
 

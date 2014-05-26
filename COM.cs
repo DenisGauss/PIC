@@ -15,7 +15,7 @@ namespace PIC16F64_Simulator
         private PIC m_oPIC;                                             //PIC Referenz
         private GUI m_oGUI;                                             //GUI Referenz
         private SerialPort m_oSerialPort;                               //SerialPort Referenz
-        private int m_iReadTimeOut = 400;                               //Timeout Zeit
+        private int m_iTimeOut= 400;                               //Timeout Zeit
         private String m_sPortName;                                     //Portname
         public enum ConnectionState { IDLE, CONNECTED, ABORTED, };      //Zustaende als Enum
         private ConnectionState m_eConnectionState;                     
@@ -66,7 +66,7 @@ namespace PIC16F64_Simulator
             try
             {
                 m_oSerialPort.Open();
-                m_oSerialPort.ReadTimeout = m_iReadTimeOut;
+                m_oSerialPort.ReadTimeout= m_iTimeOut;
                 actuelConnectionState = ConnectionState.CONNECTED;
             }
             catch
@@ -79,7 +79,7 @@ namespace PIC16F64_Simulator
         //Dekodier und Verschluessel-Funktion aufrufen
         private void update() 
         {
-            String temp = sendAndReceive(decodeDataToSend(m_oPIC.getSFRMemory()[0x05], m_oPIC.getSFRMemory()[0x06], m_oPIC.getSFRMemory()[0x85], m_oPIC.getSFRMemory()[0x86]));
+            String temp = sendAndReceive(decodeDataToSend(m_oPIC.getSFR()[0x05], m_oPIC.getSFR()[0x06], m_oPIC.getSFR()[0x85], m_oPIC.getSFR()[0x86]));
             
             if (temp != null) encodeReceivedData(temp);
 
@@ -111,16 +111,16 @@ namespace PIC16F64_Simulator
                 char[] temp = data.ToCharArray();
 
                 //Ueberpruefe PortA auf Aenderungen
-                if (m_oPIC.getSFRMemory()[0x05] != ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F))
+                if (m_oPIC.getSFR()[0x05] != ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F))
                 {
-                    m_oPIC.getSFRMemory()[0x05] = ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F);
+                    m_oPIC.getSFR()[0x05] = ((temp[0] & 0x01) << 4) + (temp[1] & 0x0F);
                     m_oPIC.PortRA4Interrupt();
                 }
 
                 //Ueberpruefe PortB auf Aenderungen
-                if (m_oPIC.getSFRMemory()[0x06] != ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F))
+                if (m_oPIC.getSFR()[0x06] != ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F))
                 {
-                    m_oPIC.getSFRMemory()[0x06] = ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F);
+                    m_oPIC.getSFR()[0x06] = ((temp[2] & 0x0F) << 4) + (temp[3] & 0x0F);
                     m_oPIC.INTInterrupt();
                 }
             }
