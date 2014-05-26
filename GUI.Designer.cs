@@ -309,10 +309,7 @@
             this.versionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.versionToolStripMenuItem.Text = "Informationen";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFile_FileOk);
+ 
             // 
             // gb_SFR
             // 
@@ -2624,7 +2621,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GUI";
             this.Text = "PIC16F84-Simulator";
-            this.Load += new System.EventHandler(this.MainView_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gb_SFR.ResumeLayout(false);

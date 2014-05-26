@@ -20,13 +20,13 @@ namespace PIC16F64_Simulator
 
         #region Functions
 
- 
         //Konstruktor mit Dateipfad
         public Uebersetzter(String filepath)
         {
             this.m_sFilePath = filepath;
         }
-        //
+
+        //Datei einlesen
         public void readFile()
         {
             Befehlszeile codeLine = new Befehlszeile();
@@ -46,14 +46,15 @@ namespace PIC16F64_Simulator
                     }
                 }
             }
-        }//readFile()
+        }
+
+        //Eingelesene Zeile aufteilen in einzelne Komponente fuer Uebersichtlichkeit
         private Befehlszeile parseLine(String sLine, int lineNr)
         {
             Befehlszeile line = new Befehlszeile();
 
             string[] myStrings = sLine.Split(new Char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            //m_iPc + binCode vorhanden 
             if (myStrings.Length > 2 && myStrings[0].Length == 4)
             {
                 line.PclAsString = myStrings[0];
@@ -86,7 +87,8 @@ namespace PIC16F64_Simulator
             }
 
             return null;
-        }//parseLine()
+        }
+
         #endregion
     }
 }

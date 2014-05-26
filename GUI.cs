@@ -95,80 +95,38 @@ namespace PIC16F64_Simulator
             m_htGPRRegister.Add(0x2F, tb_Reg2F);
 
             #endregion initGPRHash
-            #region Interrupt
-            //Eventhandlers for checkboxes
+
+            #region Eventhandlers
+            //Eventhandlers von den Interrupts Checkboxen
             cb_PortRa0.Click += new System.EventHandler(portAChecked);
             cb_PortRa1.Click += new System.EventHandler(portAChecked);
             cb_PortRa2.Click += new System.EventHandler(portAChecked);
             cb_PortRa3.Click += new System.EventHandler(portAChecked);
             cb_PortRa4.Click += new System.EventHandler(portAChecked);
             cb_PortRa4.Click += new System.EventHandler(RA4InterruptHandler);
-
             cb_PortRb0.Click += new System.EventHandler(portBChecked);
             cb_PortRb0.Click += new System.EventHandler(INTInterruptHandler);
-
             cb_PortRb1.Click += new System.EventHandler(portBChecked);
             cb_PortRb2.Click += new System.EventHandler(portBChecked);
             cb_PortRb3.Click += new System.EventHandler(portBChecked);
-
             cb_PortRb4.Click += new System.EventHandler(portBChecked);
             cb_PortRb4.Click += new System.EventHandler(RBInterruptHandler);
-
             cb_PortRb5.Click += new System.EventHandler(portBChecked);
             cb_PortRb5.Click += new System.EventHandler(RBInterruptHandler);
-
             cb_PortRb6.Click += new System.EventHandler(portBChecked);
             cb_PortRb6.Click += new System.EventHandler(RBInterruptHandler);
-
             cb_PortRb7.Click += new System.EventHandler(portBChecked);
             cb_PortRb7.Click += new System.EventHandler(RBInterruptHandler);
             #endregion
         }
 
-        private void saveFile_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void MainView_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gb_Steuerung_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        //Applikation Beenden - schliesst Programm
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void speichernUnterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string openFD = "";
-            if (openFileDialog1.ShowDialog() != DialogResult.OK)
-            {
-                openFD = openFileDialog1.FileName;
-            }
-        }
-
-        private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        //Version anzeigen
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
@@ -192,26 +150,14 @@ namespace PIC16F64_Simulator
                 MessageBoxIcon.Information);
         }
 
-        private void gb_GPR_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        //Geschwindigkeit ueber den Regler einstellbar
         private void trb_Speed_Scroll(object sender, EventArgs e)
         {
             m_oPIC.Speed = trb_Speed.Value * 50;
             tb_Speed.Text = Convert.ToString(m_oPIC.Speed);
         }
 
-        private void label69_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        /// <summary>
-        /// Dateiauswahl mit Übergabe an den Parser
-        /// </summary>
+        //Datei laden und Befehlszeilen in der GUI anzeigen
         private void ladenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -228,15 +174,15 @@ namespace PIC16F64_Simulator
             }
         }
 
-        /// <summary>
-        /// Übergibt dem Parser den Dateipfad, der diese dann für die Anzeige übersetzt
-        /// </summary>
+        //Parser wandelt die Datei um sodass diese verarbeitbar ist 
         private void callParser(String filepath)
         {
             Uebersetzter parse = new Uebersetzter(filepath);
             parse.readFile();
             fillListView();
-        }//callParser()
+        }
+
+        //BefehlszeilenListe wird mit den Befehlszeile gefuellt
         private void fillListView()
         {
             foreach (Befehlszeile zeile in BefehlszeilenSatz.Instanz.m_BefehlszeilenList)
@@ -249,12 +195,9 @@ namespace PIC16F64_Simulator
                 List.Items.Add(item);
             }
            
-        }//fillListView()
-        private void List_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
+        //Doku.pdf aufrufen oder gegebenfalls Fehlermeldung bringen
         private void dokumentationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -264,20 +207,22 @@ namespace PIC16F64_Simulator
             catch { MessageBox.Show("doku.pdf not found", "File not found", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
+        //Variableen aendern falls notwendig bzw. direkt aendern / Muss mit Invoke gemacht werden da es im Hintergrund laeuft - Thread
         private Object InvokeIfRequired(Control target, Delegate methodToInvoke)
         {
             if (target.InvokeRequired)
             {
-                // the control must be changed by invoke since it comes from a background thread.
+                
                 return target.Invoke(methodToInvoke);
             }
             else
             {
-                // The control can be changed directly
+               
                 return methodToInvoke.DynamicInvoke();
             }
-        }//InvokeIfRequired()
+        }
 
+        //Start Button gedruekt - ProgrammStart
         private void btn_Start_Click(object sender, EventArgs e)
         {
             m_oPIC.Step = false;
@@ -288,14 +233,16 @@ namespace PIC16F64_Simulator
             m_tCommandExecutor = new Thread(new ThreadStart(start));
             m_tCommandExecutor.Start();
         }
+
+        //Ersten bzw. naechsten Befehl einlesen
         private void start()
         {
-            //possible because pcl is initialized with 0
             LoadCommand(m_oPIC.getNextBefehlszeile(m_oPIC));
-        }//run()
+        }
+
         public void LoadCommand(Befehlszeile aktuelleZeile)
-        {
-             if (aktuelleZeile == null)
+    {
+             if (aktuelleZeile == null) // Falls Programm nicht läuft Start-Button = Enable
              {
                  InvokeIfRequired(btn_Start, (MethodInvoker)delegate()
                  {
@@ -305,7 +252,7 @@ namespace PIC16F64_Simulator
              }
          
 
-             //unmark previous codeLine
+             //Vorherige Zeile entmarkieren
              InvokeIfRequired(List, (MethodInvoker)delegate()
              {
                  if (m_letzteZeile != null)
@@ -314,7 +261,7 @@ namespace PIC16F64_Simulator
                  }
 
              });
-             //highlight current codeline
+             //Aktuelle Zeile markieren
              InvokeIfRequired(List, (MethodInvoker)delegate()
              {
                  List.Items[aktuelleZeile.LineNr].BackColor = Color.LightSkyBlue;
@@ -322,10 +269,10 @@ namespace PIC16F64_Simulator
                  List.EnsureVisible(aktuelleZeile.LineNr);
              });
 
-             //update gui
+             //GUI Updaten
              GUI_UPDATE();
 
-             //check for breakpoint
+             //Auf Breakpoints ueberpruefen
              InvokeIfRequired(List, (MethodInvoker)delegate()
              {
                  if (List.Items[aktuelleZeile.LineNr].Checked == true)
@@ -337,42 +284,57 @@ namespace PIC16F64_Simulator
                  }
              });
 
-             //cache TrisA&TrisB for latch logic
+             //TRISA und TRISB zwischenspeichern fuer Latch
              m_oPIC.cachedTrisA = m_oPIC.getRegisterValue(0x85);
              m_oPIC.cachedTrisB = m_oPIC.getRegisterValue(0x86);
 
-             //execute the Assembler command set get ProgramCounter for the next Command
+             //AssemblerBefehl der aktuellen Zeile ausfuehren
              m_oPIC.executeCommand(aktuelleZeile);
 
-             //check if TrisA or TrisB was changed (Latch Logic)
+             //Ueberpruefen ob TRISA und TRISB vertauscht wurden (Latch Logik)
              if (m_oPIC.cachedTrisA != m_oPIC.getRegisterValue(0x85))
                  m_oPIC.writeLatchToPort(m_oPIC.getRegisterValue(0x85), 0x05, m_oPIC.LatchA);
 
              if (m_oPIC.cachedTrisB != m_oPIC.getRegisterValue(0x86))
                  m_oPIC.writeLatchToPort(m_oPIC.getRegisterValue(0x86), 0x06, m_oPIC.LatchB);
 
-             //checks if watchdog is globally enabled
+             //Ueberpruefen ob WatchDog an
              if (checkWatchDog)
               {
                   m_oPIC.incWatchDog();
               }
              
-             //wait 500ms before executing the next Command
+             //Taktfrequenz - 250ms warten bis zum naechsten Befehl
              m_oPIC.timeOut(m_oPIC.Speed);
 
-             //check if step-button was pushed
+             //Ueberpruefen ob der Schrittmodus aktiv ist
              if (m_oPIC.Step == false)
              {
-                 //call this function again with the codeLine for the next Command
+                 //Rekursiver aufruf dieser Funktion ( naechster Schritt)
                  LoadCommand(BefehlszeilenSatz.Instanz.getNextBefehlszeile(m_oPIC.ProgramCounter));
              }
              else
-             {
+             {    
+                 //Anhalten bis Next gedrueckt
                  m_tCommandExecutor.Abort();
                  return;
              }
 
         }
+                
+        //Ueberpruefen ob an Checkboxen von PortA gecheckt und werte dementsprechend in die Register schreiben
+        public void portAChecked(object sender, EventArgs e)
+        {
+            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 0, cb_PortRa0.Checked);
+            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 1, cb_PortRa1.Checked);
+            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 2, cb_PortRa2.Checked);
+            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 3, cb_PortRa3.Checked);
+            m_oPIC.getSFRMemory()[0x05] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x05], 4, cb_PortRa4.Checked);
+
+            GUI_UPDATE();
+        }
+
+        //Ueberpruefen ob an Checkboxen von PortB gecheckt und werte dementsprechend in die Register schreiben
         public void portBChecked(object sender, EventArgs e)
         {
             m_oPIC.getSFRMemory()[0x06] = m_oPIC.setBitAtPosition(m_oPIC.getSFRMemory()[0x06], 0, cb_PortRb0.Checked);
@@ -386,26 +348,29 @@ namespace PIC16F64_Simulator
 
             GUI_UPDATE();
         }
-        public void portAChecked(object sender, EventArgs e)
+       
+        //Bei Aufruf Interrupt ausfuehren
+        public void RA4InterruptHandler(object sender, EventArgs e)
         {
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 0, cb_PortRa0.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 1, cb_PortRa1.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 2, cb_PortRa2.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 3, cb_PortRa3.Checked);
-             m_oPIC.getSFRMemory()[0x05] =  m_oPIC.setBitAtPosition( m_oPIC.getSFRMemory()[0x05], 4, cb_PortRa4.Checked);
-
+            m_oPIC.PortRA4Interrupt();
             GUI_UPDATE();
         }
+
+        //Bei Aufruf Interrupt ausfuehren
         public void RBInterruptHandler(object sender, EventArgs e)
         {
             m_oPIC.PortRBInterrupt();
             GUI_UPDATE();
         }
-        public void RA4InterruptHandler(object sender, EventArgs e)
+
+        //Bei Aufruf Interrupt ausfuehren
+        public void INTInterruptHandler(object sender, EventArgs e)
         {
-             m_oPIC.PortRA4Interrupt();
+            m_oPIC.INTInterrupt();
             GUI_UPDATE();
         }
+
+        //Ueberpruefen ob WatchDog aktiviert falls ja Variable setzen
         private void btn_WatchDog_Click(object sender, EventArgs e)
         {
             if (watchDogPanel.BackColor == Color.Red)
@@ -426,6 +391,7 @@ namespace PIC16F64_Simulator
 
         }
 
+        //Schrittmodus aktivieren andere Buttons
         private void btn_Next_Click(object sender, EventArgs e)
         {
             ladenToolStripMenuItem.Enabled = false;
@@ -445,26 +411,13 @@ namespace PIC16F64_Simulator
             }
         }
 
-        private void gb_Quarzfrequenz_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        //Eingegebene Quarzfrequenz als Taktfrequenz setzten
         private void btn_TaktSetzen_Click(object sender, EventArgs e)
         {
             m_oPIC.Speed = Convert.ToInt32(tb_Speed.Text);
         }
 
-        private void lbl_Laufzeit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Bank0_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Befehlsabarbeitung abbrechen
         private void btn_Stop_Click(object sender, EventArgs e)
         {
             m_tCommandExecutor.Abort();
@@ -475,14 +428,11 @@ namespace PIC16F64_Simulator
            
             return;
         }
-        public void INTInterruptHandler(object sender, EventArgs e)
-        {
-            m_oPIC.INTInterrupt();
-            GUI_UPDATE();
-        }
+ 
+        //Reset durchfuehren - Werte Ruecksetzten - COM Verbindung trennen
         private void btn_Reset_Click(object sender, EventArgs e)
         {
-            //abort the SerialPort thread
+            //Serial Port Thread beenden
             if (m_tSerialPortThread != null)
             {
                 m_oHwPort.sPort.Close();
@@ -490,8 +440,10 @@ namespace PIC16F64_Simulator
                 m_tSerialPortThread.Abort();
             }
 
-            //enable Connect button
+            //COM Verbinde Button wieder an
             btn_VerbindeCom.Enabled = true;
+
+
             if (m_tCommandExecutor != null)
             {
                 m_tCommandExecutor.Abort();
@@ -511,62 +463,23 @@ namespace PIC16F64_Simulator
             }
         }
 
-        private void tbStack1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbStack6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbStack2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbStack7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbStack0_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbStack5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cb_StatusZ_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void watchDogPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        //COM Schnittstelle aktiviern und Farben aendern
         private void btn_VerbindeCom_Click(object sender, EventArgs e)
         {
             if (serialPanel.BackColor == Color.Red)
             {
-                //disable "Connect"-Button
+                //COM Verbinde Button ausschalten
                 btn_VerbindeCom.Enabled = false;
 
                 GUI temp = this;
 
-                //create HardwarePort Object and start the thread
+                //Neues COM Objekt erzeugen via Konstruktor
                 m_oHwPort = new COM(ref m_oPIC, ref temp, "COM1");
                 m_tSerialPortThread = new Thread(new ThreadStart(m_oHwPort.run));
                 m_tSerialPortThread.Start();
                 while (m_oHwPort.actuelConnectionState == COM.ConnectionState.IDLE)
                 {
-                    //wait 
+                    //Waren bis Verbindung Steht
                 }
                 GUI_UPDATE();
             }
